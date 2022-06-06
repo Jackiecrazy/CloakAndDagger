@@ -1,0 +1,72 @@
+package jackiecrazy.cloakanddagger.client;
+
+import jackiecrazy.cloakanddagger.CloakAndDagger;
+import jackiecrazy.cloakanddagger.capability.vision.CombatData;
+import jackiecrazy.cloakanddagger.capability.vision.IVision;
+import jackiecrazy.cloakanddagger.capability.skill.CasterData;
+import jackiecrazy.cloakanddagger.client.screen.SkillCastScreen;
+import jackiecrazy.cloakanddagger.client.screen.SkillSelectionScreen;
+import jackiecrazy.cloakanddagger.config.ClientConfig;
+import jackiecrazy.cloakanddagger.networking.CombatChannel;
+import jackiecrazy.cloakanddagger.networking.CombatModePacket;
+import jackiecrazy.cloakanddagger.networking.EvokeSkillPacket;
+import jackiecrazy.cloakanddagger.networking.ShoutPacket;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.client.util.InputMappings;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.client.settings.IKeyConflictContext;
+import net.minecraftforge.client.settings.KeyConflictContext;
+import net.minecraftforge.client.settings.KeyModifier;
+import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import org.lwjgl.glfw.GLFW;
+
+@Mod.EventBusSubscriber(value = Dist.CLIENT, modid = CloakAndDagger.MODID)
+public class Keybinds {
+    public static final IKeyConflictContext IN_COMBAT = new IKeyConflictContext() {
+
+        @Override
+        public boolean isActive() {
+            return Minecraft.getInstance().player != null && CombatData.getCap(Minecraft.getInstance().player).isCombatMode() && !KeyConflictContext.GUI.isActive();
+        }
+
+        @Override
+        public boolean conflicts(IKeyConflictContext other) {
+            return other != KeyConflictContext.GUI;
+        }
+    };
+    public static final KeyBinding COMBAT = new KeyBinding("wardance.combat", KeyConflictContext.IN_GAME, KeyModifier.SHIFT, InputMappings.Type.KEYSYM, GLFW.GLFW_KEY_R, "key.categories.gameplay");
+    public static final KeyBinding CAST = new KeyBinding("wardance.skill", IN_COMBAT, InputMappings.Type.KEYSYM, GLFW.GLFW_KEY_R, "key.categories.gameplay");
+    public static final KeyBinding BINDCAST = new KeyBinding("wardance.bindCast", IN_COMBAT, InputMappings.Type.MOUSE, GLFW.GLFW_MOUSE_BUTTON_MIDDLE, "key.categories.gameplay");
+    public static final KeyBinding SELECT = new KeyBinding("wardance.selectSkill", KeyConflictContext.IN_GAME, InputMappings.Type.KEYSYM, GLFW.GLFW_KEY_V, "key.categories.gameplay");
+    public static final KeyBinding PARRY = new KeyBinding("wardance.parry", KeyConflictContext.IN_GAME, InputMappings.Type.KEYSYM, GLFW.GLFW_KEY_LEFT_ALT, "key.categories.gameplay");
+    public static final KeyBinding SHOUT = new KeyBinding("wardance.shout", IN_COMBAT, KeyModifier.SHIFT, InputMappings.Type.KEYSYM, GLFW.GLFW_KEY_T, "key.categories.gameplay");
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void handleInputEvent(InputEvent event) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.player == null) return;
+        IVision itsc = CombatData.getCap(mc.player);
+        if (COMBAT.getKeyConflictContext().isActive() && COMBAT.consumeClick()) {
+            ClientEvents.combatTicks = Integer.MAX_VALUE;
+            mc.player.displayClientMessage(new TranslationTextComponent("wardance.combat." + (itsc.isCombatMode() ? "off" : "on")), true);
+            CombatChannel.INSTANCE.sendToServer(new CombatModePacket());
+        }
+        if (CAST.getKeyConflictContext().isActive() && CAST.consumeClick() && mc.player.isAlive()) {
+            mc.setScreen(new SkillCastScreen(CasterData.getCap(mc.player).getEquippedSkills()));
+        }
+        if (SELECT.getKeyConflictContext().isActive() && SELECT.consumeClick() && mc.player.isAlive()) {
+            mc.setScreen(new SkillSelectionScreen());
+        }
+        if (BINDCAST.getKeyConflictContext().isActive() && BINDCAST.consumeClick() && mc.player.isAlive()) {
+            CombatChannel.INSTANCE.sendToServer(new EvokeSkillPacket());
+        }
+        if (SHOUT.getKeyConflictContext().isActive() && SHOUT.consumeClick() && mc.player.isAlive()) {
+            CombatChannel.INSTANCE.sendToServer(new ShoutPacket(ClientConfig.shout));
+        }
+    }
+}

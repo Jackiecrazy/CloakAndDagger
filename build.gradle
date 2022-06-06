@@ -19,8 +19,8 @@ apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
 version = '0.8.7.1'
-group = 'jackiecrazy.wardance' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'wardance'
+group = 'jackiecrazy.cloakanddagger' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'cloakanddagger'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
@@ -41,7 +41,7 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-            arg "-mixin.config=wardance.mixins.json"
+            arg "-mixin.config=cloakanddagger.mixins.json"
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
 
@@ -52,7 +52,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                wardance {
+                cloakanddagger {
                     source sourceSets.main
                 }
             }
@@ -60,7 +60,7 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-            arg "-mixin.config=wardance.mixins.json"
+            arg "-mixin.config=cloakanddagger.mixins.json"
 
             // Recommended logging data for a userdev environment
             //property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
@@ -69,7 +69,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                wardance {
+                cloakanddagger {
                     source sourceSets.main
                 }
             }
@@ -88,7 +88,7 @@ minecraft {
             args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                wardance {
+                cloakanddagger {
                     source sourceSets.main
                 }
             }
@@ -124,14 +124,14 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "wardance",
+            "Specification-Title": "cloakanddagger",
             "Specification-Vendor": "jackiecrazy",
             "Specification-Version": "1", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
             "Implementation-Vendor" :"jackiecrazy",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-            "MixinConfigs": "wardance.mixins.json"
+            "MixinConfigs": "cloakanddagger.mixins.json"
         ])
     }
 }
@@ -156,5 +156,5 @@ publishing {
 }
 
 mixin {
-    add sourceSets.main, "wardance.refmap.json"
+    add sourceSets.main, "cloakanddagger.refmap.json"
 }
