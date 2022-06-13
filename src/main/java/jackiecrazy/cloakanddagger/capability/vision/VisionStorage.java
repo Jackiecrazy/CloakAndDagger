@@ -7,7 +7,7 @@ import net.minecraftforge.common.capabilities.Capability;
 
 import javax.annotation.Nullable;
 
-public class CombatStorage implements Capability.IStorage<IVision> {
+public class VisionStorage implements Capability.IStorage<IVision> {
     @Nullable
     @Override
     public INBT writeNBT(Capability<IVision> capability, IVision iCombatCapability, Direction direction) {

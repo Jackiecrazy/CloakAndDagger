@@ -1,8 +1,8 @@
 package jackiecrazy.cloakanddagger.mixin;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import jackiecrazy.cloakanddagger.capability.vision.CombatData;
-import jackiecrazy.cloakanddagger.config.StealthConfig;
+import jackiecrazy.cloakanddagger.capability.vision.VisionData;
+import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderType;
@@ -39,10 +39,10 @@ public abstract class MixinMobStealth<T extends LivingEntity, M extends EntityMo
                     @Constant(floatValue = 1.0F, ordinal = 7)
             })
     private float invisible(float constant) {
-        if (!StealthConfig.playerStealth || Minecraft.getInstance().player == null) return constant;
+        if (!GeneralConfig.playerStealth || Minecraft.getInstance().player == null) return constant;
         if (mob.tickCount == lastcalculation) return cache;
         lastcalculation = mob.tickCount;
-        double visible = CombatData.getCap(Minecraft.getInstance().player).visionRange() * mob.getVisibilityPercent(Minecraft.getInstance().player);
+        double visible = VisionData.getCap(Minecraft.getInstance().player).visionRange() * mob.getVisibilityPercent(Minecraft.getInstance().player);
         visible *= visible;
         double distsq = Minecraft.getInstance().player.distanceToSqr(mob);
         float ret;
@@ -54,7 +54,7 @@ public abstract class MixinMobStealth<T extends LivingEntity, M extends EntityMo
 
     @ModifyVariable(method = "render(Lnet/minecraft/entity/LivingEntity;FFLcom/mojang/blaze3d/matrix/MatrixStack;Lnet/minecraft/client/renderer/IRenderTypeBuffer;I)V", at = @At(value = "STORE"), ordinal = 0, require = 0)
     private RenderType rt(RenderType former) {
-        if (!StealthConfig.playerStealth || cache >= 0.9) return former;
+        if (!GeneralConfig.playerStealth || cache >= 0.9) return former;
         return RenderType.itemEntityTranslucentCull(getTextureLocation(mob));
     }
 }

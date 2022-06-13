@@ -1,9 +1,9 @@
 package jackiecrazy.cloakanddagger.utils;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
-import jackiecrazy.cloakanddagger.config.StealthConfig;
+import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import jackiecrazy.footwork.event.EntityAwarenessEvent;
-import jackiecrazy.cloakanddagger.potion.WarEffects;
+import jackiecrazy.footwork.potion.FootworkEffects;
 import jackiecrazy.footwork.utils.StealthUtils;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
@@ -77,18 +77,18 @@ public class StealthOverride extends StealthUtils {
         if (target == null || attacker == target)
             return Awareness.ALERT;//the cases that don't make sense.
         //players are alert because being jumped with 2.5x daggers feel bad, and obviously nothing else applies if stealth is turned off
-        if (!StealthConfig.stealthSystem || target instanceof PlayerEntity)
+        if (!GeneralConfig.stealthSystem || target instanceof PlayerEntity)
             return Awareness.ALERT;
         StealthData sd = stealthMap.getOrDefault(target.getType().getRegistryName(), STEALTH);
         Awareness a = Awareness.ALERT;
         //sleep, paralysis, and petrify take highest priority
-        if (target.hasEffect(WarEffects.SLEEP.get()) || target.hasEffect(WarEffects.PARALYSIS.get()) || target.hasEffect(WarEffects.PETRIFY.get()))
+        if (target.hasEffect(FootworkEffects.SLEEP.get()) || target.hasEffect(FootworkEffects.PARALYSIS.get()) || target.hasEffect(FootworkEffects.PETRIFY.get()))
             a = Awareness.UNAWARE;
             //idle and not vigilant
         else if (!sd.isVigilant() && target.getLastHurtByMob() == null && (!(target instanceof MobEntity) || ((MobEntity) target).getTarget() == null))
             a = Awareness.UNAWARE;
             //distraction, confusion, and choking take top priority in inferior tier
-        else if (target.hasEffect(WarEffects.DISTRACTION.get()) || target.hasEffect(WarEffects.CONFUSION.get()) || target.getAirSupply() <= 0)
+        else if (target.hasEffect(FootworkEffects.DISTRACTION.get()) || target.hasEffect(FootworkEffects.CONFUSION.get()) || target.getAirSupply() <= 0)
             a = Awareness.DISTRACTED;
             //looking around for you, but cannot see
         else if (attacker != null && attacker.isInvisible() && !sd.isObservant())

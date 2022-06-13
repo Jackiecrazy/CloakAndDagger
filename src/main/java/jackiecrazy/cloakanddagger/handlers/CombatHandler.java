@@ -2,16 +2,15 @@ package jackiecrazy.cloakanddagger.handlers;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.utils.CombatUtils;
-import jackiecrazy.cloakanddagger.utils.GeneralUtils;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.utils.StealthUtils;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -30,17 +29,18 @@ public class CombatHandler {
 
     @SubscribeEvent
     public static void critHooks(CriticalHitEvent e) {
-        if (!e.getEntityLiving().level.isClientSide) {
-            LivingEntity uke = e.getEntityLiving();
+        if (!e.getEntityLiving().level.isClientSide && e.getTarget() instanceof LivingEntity) {
+            LivingEntity uke = (LivingEntity) e.getTarget();
             LivingEntity seme = e.getPlayer();
-            //TODO should stealth attacks automatically crit?
+            //stealth attacks automatically crit
+            StealthUtils.Awareness awareness = StealthUtils.INSTANCE.getAwareness(seme, uke);
+            if (awareness == StealthUtils.Awareness.UNAWARE)
+                e.setResult(Event.Result.ALLOW);
         }
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void pain(LivingHurtEvent e) {
-        if (GeneralConfig.debug)
-            CloakAndDagger.LOGGER.debug("damage from " + e.getSource() + " received with amount " + e.getAmount());
         LivingEntity uke = e.getEntityLiving();
         //FIXME it is physically impossible for effects to factor in stealth if they are removed first
         LivingEntity kek = null;
@@ -56,8 +56,6 @@ public class CombatHandler {
                     e.setAmount((float) (e.getAmount() * CombatUtils.getDamageMultiplier(awareness, CombatUtils.getAttackingItemStack(ds))));
                 }
             }
-            double luckDiff = CloakAndDagger.rand.nextFloat() * (GeneralUtils.getAttributeValueSafe(seme, Attributes.LUCK)) - CloakAndDagger.rand.nextFloat() * (GeneralUtils.getAttributeValueSafe(uke, Attributes.LUCK));
-            e.setAmount(e.getAmount() + (float) luckDiff * GeneralConfig.luck);
         }
     }
 }

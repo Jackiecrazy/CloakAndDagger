@@ -1,7 +1,7 @@
 package jackiecrazy.cloakanddagger.mixin;
 
-import jackiecrazy.cloakanddagger.api.WarAttributes;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
+import jackiecrazy.footwork.api.WarAttributes;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

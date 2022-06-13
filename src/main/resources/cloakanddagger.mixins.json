@@ -2,21 +2,13 @@
   "required": true,
   "package": "jackiecrazy.cloakanddagger.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "wardance.refmap.json",
+  "refmap": "cloakanddagger.refmap.json",
   "mixins": [
     "MixinArmorStealth",
-    "MixinAttackSpeed",
     "MixinMobSound",
-    "MixinNewSweepAttack",
-    "MixinPlayerEntity",
-    "MixinShieldDisabler",
-    "MixinSoundAlert",
-    "MixinSuppressSwapSound",
-    "MixinSweepDurabilitySuppressor",
-    "ProjectileImpactMixin"
+    "MixinSoundAlert"
   ],
   "client": [
-    "MixinEquipProgress",
     "MixinMobStealth"
   ],
   "injectors": {

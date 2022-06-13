@@ -1,10 +1,12 @@
 package jackiecrazy.cloakanddagger.utils;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
-import jackiecrazy.cloakanddagger.config.StealthConfig;
+import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import jackiecrazy.footwork.api.CombatDamageSource;
+import jackiecrazy.footwork.api.WarAttributes;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -14,30 +16,22 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
 public class CombatUtils {
-    public static final UUID off = UUID.fromString("8c8028c8-da69-49a2-99cd-f92d7ad22534");
-    private static final UUID main = UUID.fromString("8c8028c8-da67-49a2-99cd-f92d7ad22534");
-    public static HashMap<ResourceLocation, Float> customPosture = new HashMap<>();
-    public static HashMap<Item, AttributeModifier[]> armorStats = new HashMap<>();
-    public static HashMap<Item, AttributeModifier[]> shieldStat = new HashMap<>();
-    public static boolean isSweeping = false;
-    public static boolean suppress = false;
+    public static HashMap<Item, AttributeModifier> armorStats = new HashMap<>();
     private static StabInfo DEFAULTMELEE = new StabInfo(1, 1);
     private static HashMap<Item, StabInfo> combatList = new HashMap<>();
-    private static ArrayList<Item> unarmed = new ArrayList<>();
 
-    public static void updateItems(List<? extends String> interpretC, List<? extends String> interpretA, List<? extends String> interpretU) {
-        DEFAULTMELEE = new StabInfo(StealthConfig.distract, StealthConfig.unaware);
+    public static void updateItems(List<? extends String> interpretC, List<? extends String> interpretA) {
+        DEFAULTMELEE = new StabInfo(GeneralConfig.distract, GeneralConfig.unaware);
         combatList = new HashMap<>();
         for (String s : interpretC) {
             String[] val = s.split(",");
             String name = val[0];
-            double distract = StealthConfig.distract, unaware = StealthConfig.unaware;
+            double distract = GeneralConfig.distract, unaware = GeneralConfig.unaware;
             try {
                 distract = Double.parseDouble(val[1].trim());
                 unaware = Double.parseDouble(val[2].trim());
@@ -54,6 +48,28 @@ public class CombatUtils {
             if (ForgeRegistries.ITEMS.containsKey(key)) {
                 final Item item = ForgeRegistries.ITEMS.getValue(key);
                 combatList.put(item, new StabInfo(distract, unaware));
+            }
+            //System.out.print("\"" + name+ "\", ");
+        }
+        for (String s : interpretA) {
+            String[] val = s.split(",");
+            String name = val[0];
+            double stealth = 0;
+            try {
+                stealth = Double.parseDouble(val[1]);
+            } catch (Exception ignored) {
+                CloakAndDagger.LOGGER.warn("armor data for config entry " + s + " is not properly formatted, ignoring.");
+            }
+            ResourceLocation key = null;
+            try {
+                key = new ResourceLocation(name);
+            } catch (Exception e) {
+                CloakAndDagger.LOGGER.warn(name + " is not a proper item name, it will not be registered.");
+            }
+            if (ForgeRegistries.ITEMS.containsKey(key) && (ForgeRegistries.ITEMS.getValue(key)) instanceof ArmorItem) {
+                final Item armor = ForgeRegistries.ITEMS.getValue(key);
+                UUID touse = WarAttributes.MODIFIERS[((ArmorItem) armor).getSlot().getIndex()];
+                armorStats.put(armor, new AttributeModifier(touse, "war dance modifier", stealth, AttributeModifier.Operation.ADDITION));
             }
             //System.out.print("\"" + name+ "\", ");
         }
@@ -86,7 +102,7 @@ public class CombatUtils {
     }
 
     public static double getDamageMultiplier(StealthOverride.Awareness a, ItemStack is) {
-        if (!StealthConfig.stealthSystem || is == null) return 1;
+        if (!GeneralConfig.stealthSystem || is == null) return 1;
         StabInfo ci = combatList.getOrDefault(is.getItem(), DEFAULTMELEE);
         switch (a) {
             case DISTRACTED:

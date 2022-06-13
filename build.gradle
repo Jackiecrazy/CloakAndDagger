@@ -106,16 +106,30 @@ repositories {
     maven {
         url "https://www.cursemaven.com"
     }
+    flatDir {
+             dir 'libs'
+         }
 }
 
 dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
+
+    // Real mod deobf dependency examples - these get remapped to your current mappings
+    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
+    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
+    // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
+
+    // Examples using mod jars from ./libs
+    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
+
+    // For more info...
+    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
+    // http://www.gradle.org/docs/current/userguide/dependency_management.html
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.22'
-    compile fg.deobf("curse.maven:footwork-608407:3742224")
-    compile fg.deobf("curse.maven:elenaidodge2-442962:3221492")
     compileOnly fg.deobf("com.blamejared.crafttweaker:CraftTweaker-1.16.4:7.1.0.84")
+    implementation fg.deobf("jackiecrazy.footwork:footwork-1.0:1.16.5")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     //compile fg.deobf("curse.maven:offhandcombat-417112:3203449")
 }

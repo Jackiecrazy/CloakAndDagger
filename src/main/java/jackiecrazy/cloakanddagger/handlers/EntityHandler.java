@@ -2,16 +2,17 @@ package jackiecrazy.cloakanddagger.handlers;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.capability.goal.GoalCapabilityProvider;
-import jackiecrazy.cloakanddagger.capability.vision.CombatData;
-import jackiecrazy.cloakanddagger.config.StealthConfig;
+import jackiecrazy.cloakanddagger.capability.vision.IVision;
+import jackiecrazy.cloakanddagger.capability.vision.VisionData;
+import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import jackiecrazy.cloakanddagger.entity.ai.InvestigateSoundGoal;
-import jackiecrazy.cloakanddagger.networking.CombatChannel;
+import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.UpdateTargetPacket;
-import jackiecrazy.cloakanddagger.potion.WarEffects;
-import jackiecrazy.cloakanddagger.utils.GeneralUtils;
-import jackiecrazy.cloakanddagger.utils.LuckUtils;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.api.WarAttributes;
+import jackiecrazy.footwork.potion.FootworkEffects;
+import jackiecrazy.footwork.utils.GeneralUtils;
+import jackiecrazy.footwork.utils.LuckUtils;
 import jackiecrazy.footwork.utils.StealthUtils;
 import net.minecraft.command.arguments.EntityAnchorArgument;
 import net.minecraft.entity.CreatureEntity;
@@ -93,7 +94,7 @@ public class EntityHandler {
         max is 0.045 in absolute darkness standing still behind
         min is 0.595 in above conditions but full armor
          */
-        if (e.getLookingEntity() != e.getEntityLiving() && e.getLookingEntity() instanceof LivingEntity && StealthConfig.stealthSystem) {
+        if (e.getLookingEntity() != e.getEntityLiving() && e.getLookingEntity() instanceof LivingEntity && GeneralConfig.stealthSystem) {
             double mult = 1;
             LivingEntity sneaker = e.getEntityLiving(), watcher = (LivingEntity) e.getLookingEntity();
             StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(watcher.getType().getRegistryName(), StealthOverride.STEALTH);
@@ -117,7 +118,7 @@ public class EntityHandler {
                 if (watcher.hasEffect(Effects.BLINDNESS) && !sd.isEyeless())
                     mult /= 8;
                 //mobs that can't see behind their backs get a hefty debuff
-                if (!sd.isAllSeeing() && !GeneralUtils.isFacingEntity(watcher, sneaker, StealthConfig.baseHorizontalDetection, StealthConfig.baseVerticalDetection))
+                if (!sd.isAllSeeing() && !GeneralUtils.isFacingEntity(watcher, sneaker, GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection))
                     mult *= (1 - (0.7 * negMult)) * posMult;
                 //slow is smooth, smooth is fast
                 if (!sd.isPerceptive()) {
@@ -129,7 +130,7 @@ public class EntityHandler {
                     World world = sneaker.level;
                     if (world.isAreaLoaded(sneaker.blockPosition(), 5) && world.isAreaLoaded(watcher.blockPosition(), 5)) {
                         final int slight = StealthOverride.getActualLightLevel(world, sneaker.blockPosition());
-                        final int wlight = CombatData.getCap(watcher).getRetina();
+                        final int wlight = VisionData.getCap(watcher).getRetina();
                         float m = (1 + (slight - wlight) / 15f) * (slight + 3) / 15f;//ugly, but welp.
                         float lightMalus = MathHelper.clamp(1 - m, 0f, 0.7f);
                         mult *= (1 - (lightMalus * negMult)) * posMult;
@@ -148,9 +149,9 @@ public class EntityHandler {
         if (e.getTarget() == null) return;
         if (!(e.getEntityLiving() instanceof MobEntity)) return;
         final MobEntity mob = (MobEntity) e.getEntityLiving();
-        if (mob.hasEffect(WarEffects.FEAR.get()) || mob.hasEffect(WarEffects.CONFUSION.get()) || mob.hasEffect(WarEffects.SLEEP.get()))
+        if (mob.hasEffect(FootworkEffects.FEAR.get()) || mob.hasEffect(FootworkEffects.CONFUSION.get()) || mob.hasEffect(FootworkEffects.SLEEP.get()))
             mob.setTarget(null);
-        if (mob.getLastHurtByMob() != e.getTarget() && StealthConfig.stealthSystem && !GeneralUtils.isFacingEntity(mob, e.getTarget(), StealthConfig.baseHorizontalDetection, StealthConfig.baseVerticalDetection)) {
+        if (mob.getLastHurtByMob() != e.getTarget() && GeneralConfig.stealthSystem && !GeneralUtils.isFacingEntity(mob, e.getTarget(), GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection)) {
             StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(mob.getType().getRegistryName(), StealthOverride.STEALTH);
             if (sd.isAllSeeing() || sd.isWary()) return;
             //outside of LoS, perform luck check. Pray to RNGesus!
@@ -173,12 +174,12 @@ public class EntityHandler {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void sync(LivingSetAttackTargetEvent e) {
         if (!e.getEntityLiving().level.isClientSide())
-            CombatChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(e::getEntityLiving), new UpdateTargetPacket(e.getEntityLiving().getId(), e.getTarget() == null ? -1 : e.getTarget().getId()));
+            StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(e::getEntityLiving), new UpdateTargetPacket(e.getEntityLiving().getId(), e.getTarget() == null ? -1 : e.getTarget().getId()));
     }
 
     @SubscribeEvent
     public static void nigerundayo(final PotionEvent.PotionAddedEvent e) {
-        if (e.getPotionEffect().getEffect() == Effects.BLINDNESS && GeneralConfig.blindness) {
+        if (e.getPotionEffect().getEffect() == Effects.BLINDNESS) {
             if (e.getEntityLiving() instanceof MobEntity)
                 ((MobEntity) e.getEntityLiving()).setTarget(null);
             e.getEntityLiving().setLastHurtByMob(null);
@@ -208,4 +209,13 @@ public class EntityHandler {
         alertTracker.clear();
     }
 
+    @SubscribeEvent
+    public static void tickMobs(LivingEvent.LivingUpdateEvent e) {
+        LivingEntity elb = e.getEntityLiving();
+        if (!elb.level.isClientSide && !(elb instanceof PlayerEntity)) {
+            IVision cap = VisionData.getCap(elb);
+            if (elb.tickCount % 100 == 0 || mustUpdate.containsValue(elb))
+                cap.serverTick();
+        }
+    }
 }

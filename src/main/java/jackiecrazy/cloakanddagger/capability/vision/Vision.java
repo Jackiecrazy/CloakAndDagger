@@ -1,9 +1,9 @@
 package jackiecrazy.cloakanddagger.capability.vision;
 
-import jackiecrazy.cloakanddagger.networking.CombatChannel;
+import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.UpdateClientPacket;
-import jackiecrazy.cloakanddagger.potion.WarEffects;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
+import jackiecrazy.footwork.potion.FootworkEffects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -39,7 +39,7 @@ public class Vision implements IVision {
         if (ticks < 1) return;//sometimes time runs backwards
         //update max values
         vision = (float) elb.getAttributeValue(Attributes.FOLLOW_RANGE);
-        if (elb.hasEffect(WarEffects.SLEEP.get()) || elb.hasEffect(WarEffects.PARALYSIS.get()) || elb.hasEffect(WarEffects.PETRIFY.get()))
+        if (elb.hasEffect(FootworkEffects.SLEEP.get()) || elb.hasEffect(FootworkEffects.PARALYSIS.get()) || elb.hasEffect(FootworkEffects.PETRIFY.get()))
             vision = -1;
         //update internal retina values
         int light = StealthOverride.getActualLightLevel(elb.level, elb.blockPosition());
@@ -63,9 +63,9 @@ public class Vision implements IVision {
 
         LivingEntity elb = dude.get();
         if (elb == null || elb.level.isClientSide) return;
-        CombatChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(() -> elb), new UpdateClientPacket(elb.getId(), write()));
+        StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(() -> elb), new UpdateClientPacket(elb.getId(), write()));
         if (!(elb instanceof FakePlayer) && elb instanceof ServerPlayerEntity)
-            CombatChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) elb), new UpdateClientPacket(elb.getId(), write()));
+            StealthChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) elb), new UpdateClientPacket(elb.getId(), write()));
 
     }
 

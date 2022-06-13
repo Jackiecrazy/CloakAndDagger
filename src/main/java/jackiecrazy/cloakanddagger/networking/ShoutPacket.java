@@ -1,7 +1,7 @@
 package jackiecrazy.cloakanddagger.networking;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
-import jackiecrazy.cloakanddagger.config.StealthConfig;
+import jackiecrazy.cloakanddagger.config.SoundConfig;
 import jackiecrazy.cloakanddagger.handlers.EntityHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;
@@ -47,7 +47,7 @@ public class ShoutPacket {
                 if (uke == null) return;
                 if (se == null) se = SoundEvents.PILLAGER_AMBIENT;
                 uke.level.playSound(null, uke.getX(), uke.getY(), uke.getZ(), se, SoundCategory.PLAYERS, 0.75f + CloakAndDagger.rand.nextFloat() * 0.5f, 0.75f + CloakAndDagger.rand.nextFloat() * 0.5f);
-                EntityHandler.alertTracker.put(new Tuple<>(uke.level, new BlockPos(uke.getX(), uke.getY(), uke.getZ())), (float) StealthConfig.shout);
+                EntityHandler.alertTracker.put(new Tuple<>(uke.level, new BlockPos(uke.getX(), uke.getY(), uke.getZ())), (float) SoundConfig.shout);
             });
             contextSupplier.get().setPacketHandled(true);
         }

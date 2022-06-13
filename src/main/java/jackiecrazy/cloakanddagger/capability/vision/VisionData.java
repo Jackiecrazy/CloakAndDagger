@@ -11,7 +11,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class CombatData implements ICapabilitySerializable<CompoundNBT> {
+public class VisionData implements ICapabilitySerializable<CompoundNBT> {
     private static IVision OHNO=new DummyVision();
 
     @CapabilityInject(IVision.class)
@@ -23,7 +23,7 @@ public class CombatData implements ICapabilitySerializable<CompoundNBT> {
 
     private final LazyOptional<IVision> instance;
 
-    public CombatData(LivingEntity e) {
+    public VisionData(LivingEntity e) {
         instance = LazyOptional.of(() -> new Vision(e));
     }
 
