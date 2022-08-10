@@ -52,7 +52,7 @@ A mod about stealth and detection. Slink through the shadows and deliver devasta
 [[dependencies.cloakanddagger]]
     modId="footwork"
     mandatory=true
-    versionRange="[1.0,1.1)"
+    versionRange="[1.0,)"
     ordering="AFTER"
     side="BOTH"
 [[dependencies.footwork]]

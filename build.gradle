@@ -18,7 +18,7 @@ apply plugin: 'com.matthewprenger.cursegradle'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '0.8.7.1'
+version = '0.2'
 group = 'jackiecrazy.cloakanddagger' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'cloakanddagger'
 
@@ -128,8 +128,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.22'
-    compileOnly fg.deobf("com.blamejared.crafttweaker:CraftTweaker-1.16.4:7.1.0.84")
-    implementation fg.deobf("jackiecrazy.footwork:footwork-1.0:1.16.5")
+    implementation fg.deobf("jackiecrazy.footwork:footwork-1.1:1.16.5")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     //compile fg.deobf("curse.maven:offhandcombat-417112:3203449")
 }

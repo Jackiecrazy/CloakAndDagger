@@ -76,8 +76,8 @@ public class StealthOverride extends StealthUtils {
     public Awareness getAwareness(LivingEntity attacker, LivingEntity target) {
         if (target == null || attacker == target)
             return Awareness.ALERT;//the cases that don't make sense.
-        //players are alert because being jumped with 2.5x daggers feel bad, and obviously nothing else applies if stealth is turned off
-        if (!GeneralConfig.stealthSystem || target instanceof PlayerEntity)
+        //players are alert because being jumped with 2.5x daggers feel bad
+        if (target instanceof PlayerEntity)
             return Awareness.ALERT;
         StealthData sd = stealthMap.getOrDefault(target.getType().getRegistryName(), STEALTH);
         Awareness a = Awareness.ALERT;

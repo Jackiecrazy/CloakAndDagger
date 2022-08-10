@@ -94,7 +94,7 @@ public class EntityHandler {
         max is 0.045 in absolute darkness standing still behind
         min is 0.595 in above conditions but full armor
          */
-        if (e.getLookingEntity() != e.getEntityLiving() && e.getLookingEntity() instanceof LivingEntity && GeneralConfig.stealthSystem) {
+        if (e.getLookingEntity() != e.getEntityLiving() && e.getLookingEntity() instanceof LivingEntity) {
             double mult = 1;
             LivingEntity sneaker = e.getEntityLiving(), watcher = (LivingEntity) e.getLookingEntity();
             StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(watcher.getType().getRegistryName(), StealthOverride.STEALTH);
@@ -151,7 +151,7 @@ public class EntityHandler {
         final MobEntity mob = (MobEntity) e.getEntityLiving();
         if (mob.hasEffect(FootworkEffects.FEAR.get()) || mob.hasEffect(FootworkEffects.CONFUSION.get()) || mob.hasEffect(FootworkEffects.SLEEP.get()))
             mob.setTarget(null);
-        if (mob.getLastHurtByMob() != e.getTarget() && GeneralConfig.stealthSystem && !GeneralUtils.isFacingEntity(mob, e.getTarget(), GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection)) {
+        if (mob.getLastHurtByMob() != e.getTarget() && !GeneralUtils.isFacingEntity(mob, e.getTarget(), GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection)) {
             StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(mob.getType().getRegistryName(), StealthOverride.STEALTH);
             if (sd.isAllSeeing() || sd.isWary()) return;
             //outside of LoS, perform luck check. Pray to RNGesus!

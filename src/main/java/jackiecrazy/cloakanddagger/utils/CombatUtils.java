@@ -102,7 +102,7 @@ public class CombatUtils {
     }
 
     public static double getDamageMultiplier(StealthOverride.Awareness a, ItemStack is) {
-        if (!GeneralConfig.stealthSystem || is == null) return 1;
+        if (is == null) return 1;
         StabInfo ci = combatList.getOrDefault(is.getItem(), DEFAULTMELEE);
         switch (a) {
             case DISTRACTED:

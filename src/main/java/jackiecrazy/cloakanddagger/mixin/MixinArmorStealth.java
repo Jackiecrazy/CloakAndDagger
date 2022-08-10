@@ -2,6 +2,7 @@ package jackiecrazy.cloakanddagger.mixin;
 
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.api.WarAttributes;
+import jackiecrazy.footwork.utils.GeneralUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -21,7 +22,7 @@ public abstract class MixinArmorStealth extends Entity {
     @Redirect(method = "getVisibilityPercent",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;getArmorCoverPercentage()F"))
     private float change(LivingEntity e) {
-        final double stealth = e.getAttributeValue(WarAttributes.STEALTH.get());
+        final double stealth = GeneralUtils.getAttributeValueSafe(e, WarAttributes.STEALTH.get());
         if (stealth >= 0) return 0;
         return (float) MathHelper.clamp(stealth / -10, 0, 1);
     }

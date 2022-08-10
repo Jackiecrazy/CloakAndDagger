@@ -16,7 +16,9 @@ public class GeneralConfig {
     public static final GeneralConfig CONFIG;
     public static final ForgeConfigSpec CONFIG_SPEC;
     public static float distract, unaware;
-    public static boolean stealthSystem, ignore, inv, playerStealth;
+    public static boolean ignore;
+    public static boolean inv;
+    public static boolean playerStealth;
     public static int baseHorizontalDetection, baseVerticalDetection;
 
     static {
