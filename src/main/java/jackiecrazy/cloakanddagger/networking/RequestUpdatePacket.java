@@ -2,10 +2,10 @@ package jackiecrazy.cloakanddagger.networking;
 
 import jackiecrazy.cloakanddagger.capability.vision.VisionData;
 import jackiecrazy.cloakanddagger.handlers.EntityHandler;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.network.PacketBuffer;
-import net.minecraftforge.fml.network.NetworkEvent;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.BiConsumer;
 import java.util.function.Function;
@@ -18,18 +18,18 @@ public class RequestUpdatePacket {
         e = ent;
     }
 
-    public static class RequestUpdateEncoder implements BiConsumer<RequestUpdatePacket, PacketBuffer> {
+    public static class RequestUpdateEncoder implements BiConsumer<RequestUpdatePacket, FriendlyByteBuf> {
 
         @Override
-        public void accept(RequestUpdatePacket updateClientPacket, PacketBuffer packetBuffer) {
+        public void accept(RequestUpdatePacket updateClientPacket, FriendlyByteBuf packetBuffer) {
             packetBuffer.writeInt(updateClientPacket.e);
         }
     }
 
-    public static class RequestUpdateDecoder implements Function<PacketBuffer, RequestUpdatePacket> {
+    public static class RequestUpdateDecoder implements Function<FriendlyByteBuf, RequestUpdatePacket> {
 
         @Override
-        public RequestUpdatePacket apply(PacketBuffer packetBuffer) {
+        public RequestUpdatePacket apply(FriendlyByteBuf packetBuffer) {
             return new RequestUpdatePacket(packetBuffer.readInt());
         }
     }
@@ -39,7 +39,7 @@ public class RequestUpdatePacket {
         @Override
         public void accept(RequestUpdatePacket updateClientPacket, Supplier<NetworkEvent.Context> contextSupplier) {
             contextSupplier.get().enqueueWork(() -> {
-                ServerPlayerEntity sender = contextSupplier.get().getSender();
+                ServerPlayer sender = contextSupplier.get().getSender();
                 if (sender != null && sender.level.getEntity(updateClientPacket.e) instanceof LivingEntity) {
                     EntityHandler.mustUpdate.put(sender, sender.level.getEntity(updateClientPacket.e));
                     VisionData.getCap(((LivingEntity) (sender.level.getEntity(updateClientPacket.e)))).serverTick();

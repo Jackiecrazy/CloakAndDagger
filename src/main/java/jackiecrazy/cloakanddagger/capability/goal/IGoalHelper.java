@@ -1,7 +1,7 @@
 package jackiecrazy.cloakanddagger.capability.goal;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.core.BlockPos;
 
 public interface IGoalHelper {
     void setForcedTarget(LivingEntity e);

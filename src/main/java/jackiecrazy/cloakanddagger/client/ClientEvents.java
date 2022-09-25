@@ -4,9 +4,9 @@ import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.RequestUpdatePacket;
 import net.minecraft.client.Minecraft;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,7 +27,7 @@ public class ClientEvents {
     @SubscribeEvent
     public static void tickPlayer(TickEvent.ClientTickEvent e) {
         Minecraft mc = Minecraft.getInstance();
-        PlayerEntity p = mc.player;
+        Player p = mc.player;
         if (p != null && !mc.isPaused()) {
             if (e.phase == TickEvent.Phase.START) {
                 Entity look = RenderEvents.getEntityLookedAt(p, 32);

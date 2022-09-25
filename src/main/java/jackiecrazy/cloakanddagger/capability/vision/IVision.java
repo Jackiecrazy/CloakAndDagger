@@ -1,7 +1,7 @@
 package jackiecrazy.cloakanddagger.capability.vision;
 
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.phys.Vec3;
 
 public interface IVision {
 
@@ -11,13 +11,13 @@ public interface IVision {
 
     void sync();
 
-    void read(CompoundNBT tag);
+    void read(CompoundTag tag);
 
     boolean isValid();
 
-    Vector3d getMotionConsistently();//I can't believe I have to do this.
+    Vec3 getMotionConsistently();//I can't believe I have to do this.
 
-    CompoundNBT write();
+    CompoundTag write();
 
     int getRetina();
 

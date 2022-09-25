@@ -2,7 +2,8 @@ package jackiecrazy.cloakanddagger.client;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.datafixers.util.Pair;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.capability.vision.VisionData;
@@ -12,27 +13,27 @@ import jackiecrazy.footwork.capability.resources.CombatData;
 import jackiecrazy.footwork.capability.resources.ICombatCapability;
 import jackiecrazy.footwork.config.DisplayConfigUtils;
 import jackiecrazy.footwork.utils.StealthUtils;
-import net.minecraft.client.MainWindow;
+import com.mojang.blaze3d.platform.Window;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.player.ClientPlayerEntity;
-import net.minecraft.client.gui.AbstractGui;
-import net.minecraft.client.renderer.ActiveRenderInfo;
-import net.minecraft.client.renderer.culling.ClippingHelper;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.world.ClientWorld;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.gui.GuiComponent;
+import net.minecraft.client.Camera;
+import net.minecraft.client.renderer.culling.Frustum;
+import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Tuple;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RayTraceContext;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.util.Mth;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.client.event.RenderWorldLastEvent;
+import net.minecraftforge.client.event.RenderLevelLastEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -52,19 +53,19 @@ public class RenderEvents {
      * @Author Vazkii
      */
     @SubscribeEvent
-    public static void down(RenderWorldLastEvent event) {
+    public static void down(RenderLevelLastEvent event) {
         Minecraft mc = Minecraft.getInstance();
 
-        ActiveRenderInfo camera = mc.gameRenderer.getMainCamera();
-        MatrixStack poseStack = event.getMatrixStack();
-        float partialTicks = event.getPartialTicks();
+        Camera camera = mc.gameRenderer.getMainCamera();
+        PoseStack poseStack = event.getPoseStack();
+        float partialTicks = event.getPartialTick();
         Entity cameraEntity = camera.getEntity() != null ? camera.getEntity() : mc.player;
 
-        Vector3d cameraPos = camera.getPosition();
-        final ClippingHelper frustum = new ClippingHelper(poseStack.last().pose(), event.getProjectionMatrix());
+        Vec3 cameraPos = camera.getPosition();
+        final Frustum frustum = new Frustum(poseStack.last().pose(), event.getProjectionMatrix());
         frustum.prepare(cameraPos.x(), cameraPos.y(), cameraPos.z());
 
-        ClientWorld client = mc.level;
+        ClientLevel client = mc.level;
         if (client != null && ClientConfig.showEyes) {
             Entity look = getEntityLookedAt(Minecraft.getInstance().player, 32);
             for (Entity entity : client.entitiesForRendering()) {
@@ -78,13 +79,13 @@ public class RenderEvents {
 
     @SubscribeEvent
     public static void displayCoolie(RenderGameOverlayEvent.Post event) {
-        MainWindow sr = event.getWindow();
+        Window sr = event.getWindow();
         final Minecraft mc = Minecraft.getInstance();
-        final MatrixStack stack = event.getMatrixStack();
+        final PoseStack stack = event.getMatrixStack();
 
         if (event.getType().equals(RenderGameOverlayEvent.ElementType.ALL))
-            if (mc.getCameraEntity() instanceof PlayerEntity && mc.player != null) {
-                ClientPlayerEntity player = mc.player;
+            if (mc.getCameraEntity() instanceof Player && mc.player != null) {
+                LocalPlayer player = mc.player;
                 ICombatCapability cap = CombatData.getCap(player);
                 int width = sr.getGuiScaledWidth();
                 int height = sr.getGuiScaledHeight();
@@ -112,8 +113,8 @@ public class RenderEvents {
                             }
                             if (info.getB() < 0)
                                 shift = 0;
-                            mc.getTextureManager().bind(stealth);
-                            AbstractGui.blit(stack, pair.getFirst() - 16, pair.getSecond() - 8, 0, shift * 16, 32, 16, 64, 64);
+                            RenderSystem.setShaderTexture(0, stealth);
+                            GuiComponent.blit(stack, pair.getFirst() - 16, pair.getSecond() - 8, 0, shift * 16, 32, 16, 64, 64);
                         }
                     }
                 }
@@ -127,17 +128,17 @@ public class RenderEvents {
     public static Entity getEntityLookedAt(Entity e, double finalDistance) {
         Entity foundEntity = null;
         double distance = finalDistance;
-        RayTraceResult pos = raycast(e, finalDistance);
-        Vector3d positionVector = e.position();
+        HitResult pos = raycast(e, finalDistance);
+        Vec3 positionVector = e.position();
 
-        if (e instanceof PlayerEntity)
+        if (e instanceof Player)
             positionVector = positionVector.add(0, e.getEyeHeight(e.getPose()), 0);
 
         if (pos != null)
             distance = pos.getLocation().distanceTo(positionVector);
 
-        Vector3d lookVector = e.getLookAngle();
-        Vector3d reachVector = positionVector.add(lookVector.x * finalDistance, lookVector.y * finalDistance, lookVector.z * finalDistance);
+        Vec3 lookVector = e.getLookAngle();
+        Vec3 reachVector = positionVector.add(lookVector.x * finalDistance, lookVector.y * finalDistance, lookVector.z * finalDistance);
 
         Entity lookedEntity = null;
         List<Entity> entitiesInBoundingBox = e.getCommandSenderWorld().getEntities(e, e.getBoundingBox().inflate(lookVector.x * finalDistance, lookVector.y * finalDistance, lookVector.z * finalDistance).expandTowards(1F, 1F, 1F));
@@ -145,8 +146,8 @@ public class RenderEvents {
 
         for (Entity entity : entitiesInBoundingBox) {
             if (entity.isPickable()) {
-                AxisAlignedBB collisionBox = entity.getBoundingBoxForCulling();
-                Optional<Vector3d> interceptPosition = collisionBox.clip(positionVector, reachVector);
+                AABB collisionBox = entity.getBoundingBoxForCulling();
+                Optional<Vec3> interceptPosition = collisionBox.clip(positionVector, reachVector);
 
                 if (collisionBox.contains(positionVector)) {
                     if (0.0D < minDistance || minDistance == 0.0D) {
@@ -170,21 +171,21 @@ public class RenderEvents {
         return foundEntity;
     }
 
-    public static RayTraceResult raycast(Entity e, double len) {
-        Vector3d vec = new Vector3d(e.getX(), e.getY(), e.getZ());
-        if (e instanceof PlayerEntity)
-            vec = vec.add(new Vector3d(0, e.getEyeHeight(e.getPose()), 0));
+    public static HitResult raycast(Entity e, double len) {
+        Vec3 vec = new Vec3(e.getX(), e.getY(), e.getZ());
+        if (e instanceof Player)
+            vec = vec.add(new Vec3(0, e.getEyeHeight(e.getPose()), 0));
 
-        Vector3d look = e.getLookAngle();
+        Vec3 look = e.getLookAngle();
         if (look == null)
             return null;
 
         return raycast(vec, look, e, len);
     }
 
-    public static RayTraceResult raycast(Vector3d origin, Vector3d ray, Entity e, double len) {
-        Vector3d next = origin.add(ray.normalize().scale(len));
-        return e.level.clip(new RayTraceContext(origin, next, RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE, e));
+    public static HitResult raycast(Vec3 origin, Vec3 ray, Entity e, double len) {
+        Vec3 next = origin.add(ray.normalize().scale(len));
+        return e.level.clip(new ClipContext(origin, next, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, e));
     }
 
     private static float updateValue(float f, float to) {
@@ -192,11 +193,11 @@ public class RenderEvents {
         boolean close = true;
         float temp = f;
         if (to > f) {
-            f += MathHelper.clamp((to - temp) / 20, 0.01, 0.1);
+            f += Mth.clamp((to - temp) / 20, 0.01, 0.1);
             close = false;
         }
         if (to < f) {
-            f += MathHelper.clamp((to - temp) / 20, -0.1, -0.01);
+            f += Mth.clamp((to - temp) / 20, -0.1, -0.01);
             close = !close;
         }
         if (close)
@@ -217,7 +218,7 @@ public class RenderEvents {
         return new Tuple<>(StealthOverride.Awareness.ALERT, 1d);
     }
 
-    private static void renderEye(LivingEntity passedEntity, float partialTicks, MatrixStack poseStack) {
+    private static void renderEye(LivingEntity passedEntity, float partialTicks, PoseStack poseStack) {
         final Tuple<StealthOverride.Awareness, Double> info = stealthInfo(passedEntity);
         double dist = info.getB();
         int shift = 0;
@@ -238,17 +239,17 @@ public class RenderEvents {
         double y = passedEntity.yo + (passedEntity.getY() - passedEntity.yo) * partialTicks;
         double z = passedEntity.zo + (passedEntity.getZ() - passedEntity.zo) * partialTicks;
 
-        EntityRendererManager renderDispatcher = Minecraft.getInstance().getEntityRenderDispatcher();
-        Vector3d renderPos = renderDispatcher.camera.getPosition();
+        EntityRenderDispatcher renderDispatcher = Minecraft.getInstance().getEntityRenderDispatcher();
+        Vec3 renderPos = renderDispatcher.camera.getPosition();
 
         poseStack.pushPose();
         poseStack.translate((float) (x - renderPos.x()), (float) (y - renderPos.y() + passedEntity.getBbHeight()), (float) (z - renderPos.z()));
-        Minecraft.getInstance().getTextureManager().bind(stealth);
+        RenderSystem.setShaderTexture(0, stealth);
         poseStack.translate(0.0D, (double) 0.5, 0.0D);
         poseStack.mulPose(Minecraft.getInstance().getEntityRenderDispatcher().cameraOrientation());
-        final float size = MathHelper.clamp(0.002F * getSize(passedEntity), 0.015f, 0.1f);
+        final float size = Mth.clamp(0.002F * getSize(passedEntity), 0.015f, 0.1f);
         poseStack.scale(-size, -size, size);
-        AbstractGui.blit(poseStack, -16, -8, 0, shift * 16, 32, 16, 64, 64);
+        GuiComponent.blit(poseStack, -16, -8, 0, shift * 16, 32, 16, 64, 64);
         poseStack.popPose();
 
         //poseStack.translate(0.0D, -(NeatConfig.backgroundHeight + NeatConfig.barHeight + NeatConfig.backgroundPadding), 0.0D);

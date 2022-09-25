@@ -5,8 +5,8 @@ import jackiecrazy.cloakanddagger.config.ClientConfig;
 import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.ShoutPacket;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.client.util.InputMappings;
+import net.minecraft.client.KeyMapping;
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.settings.KeyConflictContext;
@@ -18,7 +18,7 @@ import org.lwjgl.glfw.GLFW;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT, modid = CloakAndDagger.MODID)
 public class Keybind {
-    public static final KeyBinding SHOUT = new KeyBinding("wardance.shout", KeyConflictContext.IN_GAME, KeyModifier.SHIFT, InputMappings.Type.KEYSYM, GLFW.GLFW_KEY_T, "key.categories.gameplay");
+    public static final KeyMapping SHOUT = new KeyMapping("wardance.shout", KeyConflictContext.IN_GAME, KeyModifier.SHIFT, InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_T, "key.categories.gameplay");
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void handleInputEvent(InputEvent event) {

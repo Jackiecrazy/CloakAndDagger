@@ -55,7 +55,7 @@ A mod about stealth and detection. Slink through the shadows and deliver devasta
     versionRange="[1.0,)"
     ordering="AFTER"
     side="BOTH"
-[[dependencies.footwork]]
+[[dependencies.cloakanddagger]]
    modId="minecraft"
    mandatory=true
    # This version range declares a minimum of the current minecraft version up to but not including the next major version

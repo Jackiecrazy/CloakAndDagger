@@ -1,23 +1,20 @@
 package jackiecrazy.cloakanddagger.mixin;
 
-import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.PoseStack;
 import jackiecrazy.cloakanddagger.capability.vision.VisionData;
 import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
-import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.IEntityRenderer;
-import net.minecraft.client.renderer.entity.LivingRenderer;
-import net.minecraft.client.renderer.entity.model.EntityModel;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.client.renderer.entity.*;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(LivingRenderer.class)
-public abstract class MixinMobStealth<T extends LivingEntity, M extends EntityModel<T>> extends EntityRenderer<T> implements IEntityRenderer<T, M> {
+@Mixin(LivingEntityRenderer.class)
+public abstract class MixinMobStealth<T extends LivingEntity, M extends EntityModel<T>> extends EntityRenderer<T> implements RenderLayerParent<T, M> {
 
     private int lastcalculation = 0;
 
@@ -25,16 +22,16 @@ public abstract class MixinMobStealth<T extends LivingEntity, M extends EntityMo
 
     private T mob;
 
-    protected MixinMobStealth(EntityRendererManager renderManager) {
-        super(renderManager);
+    protected MixinMobStealth(EntityRendererProvider.Context p_174008_) {
+        super(p_174008_);
     }
 
-    @Inject(method = "render(Lnet/minecraft/entity/LivingEntity;FFLcom/mojang/blaze3d/matrix/MatrixStack;Lnet/minecraft/client/renderer/IRenderTypeBuffer;I)V", at = @At("HEAD"))
-    private void ah(T f3, float f4, float direction, MatrixStack ivertexbuilder, IRenderTypeBuffer i, int layerrenderer, CallbackInfo ci) {
+    @Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At("HEAD"))
+    private void ah(T f3, float f4, float direction, PoseStack ivertexbuilder, MultiBufferSource i, int layerrenderer, CallbackInfo ci) {
         mob = f3;
     }
 
-    @ModifyConstant(method = "render(Lnet/minecraft/entity/LivingEntity;FFLcom/mojang/blaze3d/matrix/MatrixStack;Lnet/minecraft/client/renderer/IRenderTypeBuffer;I)V", require = 0,
+    @ModifyConstant(method = "render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", require = 0,
             constant = {
                     @Constant(floatValue = 1.0F, ordinal = 7)
             })
@@ -52,7 +49,7 @@ public abstract class MixinMobStealth<T extends LivingEntity, M extends EntityMo
         return ret;
     }
 
-    @ModifyVariable(method = "render(Lnet/minecraft/entity/LivingEntity;FFLcom/mojang/blaze3d/matrix/MatrixStack;Lnet/minecraft/client/renderer/IRenderTypeBuffer;I)V", at = @At(value = "STORE"), ordinal = 0, require = 0)
+    @ModifyVariable(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At(value = "STORE"), ordinal = 0, require = 0)
     private RenderType rt(RenderType former) {
         if (!GeneralConfig.playerStealth || cache >= 0.9) return former;
         return RenderType.itemEntityTranslucentCull(getTextureLocation(mob));

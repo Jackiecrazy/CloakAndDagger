@@ -4,22 +4,22 @@ import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import jackiecrazy.cloakanddagger.config.SoundConfig;
 import jackiecrazy.cloakanddagger.handlers.EntityHandler;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.util.DamageSource;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.util.Tuple;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.core.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 //temporarily sealed away
-@Mixin(MobEntity.class)
+@Mixin(Mob.class)
 public abstract class MixinMobAlert {
 
     @Inject(method = "playHurtSound", at = @At("TAIL"))
     private void alert(DamageSource source, CallbackInfo ci) {
-        MobEntity me = ((MobEntity) (Object) this);
+        Mob me = ((Mob) (Object) this);
         if (me.isSilent() || StealthOverride.stealthMap.getOrDefault(me.getType().getRegistryName(), StealthOverride.STEALTH).isQuiet())
             return;
         float volume = ((MixinMobSound) me).callGetSoundVolume();

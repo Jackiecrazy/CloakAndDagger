@@ -4,11 +4,11 @@ import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.UpdateClientPacket;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.potion.FootworkEffects;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.fml.network.PacketDistributor;
 
@@ -21,7 +21,7 @@ public class Vision implements IVision {
     private float vision;
     private int retina;
     private long lastUpdate;
-    private Vector3d motion;
+    private Vec3 motion;
 
     public Vision(LivingEntity e) {
         dude = new WeakReference<>(e);
@@ -64,13 +64,13 @@ public class Vision implements IVision {
         LivingEntity elb = dude.get();
         if (elb == null || elb.level.isClientSide) return;
         StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(() -> elb), new UpdateClientPacket(elb.getId(), write()));
-        if (!(elb instanceof FakePlayer) && elb instanceof ServerPlayerEntity)
-            StealthChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) elb), new UpdateClientPacket(elb.getId(), write()));
+        if (!(elb instanceof FakePlayer) && elb instanceof ServerPlayer)
+            StealthChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) elb), new UpdateClientPacket(elb.getId(), write()));
 
     }
 
     @Override
-    public void read(CompoundNBT c) {
+    public void read(CompoundTag c) {
         lastUpdate = c.getLong("lastUpdate");
         retina = c.getInt("retina");
         vision = c.getFloat("vision");
@@ -82,14 +82,14 @@ public class Vision implements IVision {
     }
 
     @Override
-    public Vector3d getMotionConsistently() {
-        if (dude.get() == null || motion == null) return Vector3d.ZERO;
+    public Vec3 getMotionConsistently() {
+        if (dude.get() == null || motion == null) return Vec3.ZERO;
         return dude.get().position().subtract(motion).scale(0.25);
     }
 
     @Override
-    public CompoundNBT write() {
-        CompoundNBT c = new CompoundNBT();
+    public CompoundTag write() {
+        CompoundTag c = new CompoundTag();
         c.putInt("retina", getRetina());
         c.putFloat("vision", visionRange());
         c.putLong("lastUpdate", lastUpdate);

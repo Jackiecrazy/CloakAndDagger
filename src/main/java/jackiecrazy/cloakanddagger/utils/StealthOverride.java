@@ -5,22 +5,24 @@ import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import jackiecrazy.footwork.event.EntityAwarenessEvent;
 import jackiecrazy.footwork.potion.FootworkEffects;
 import jackiecrazy.footwork.utils.StealthUtils;
-import net.minecraft.block.material.Material;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.LightType;
-import net.minecraft.world.World;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.Mth;
+import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+
+import jackiecrazy.footwork.utils.StealthUtils.Awareness;
 
 public class StealthOverride extends StealthUtils {
     public static final StealthData STEALTH = new StealthData("");
@@ -77,7 +79,7 @@ public class StealthOverride extends StealthUtils {
         if (target == null || attacker == target)
             return Awareness.ALERT;//the cases that don't make sense.
         //players are alert because being jumped with 2.5x daggers feel bad
-        if (target instanceof PlayerEntity)
+        if (target instanceof Player)
             return Awareness.ALERT;
         StealthData sd = stealthMap.getOrDefault(target.getType().getRegistryName(), STEALTH);
         Awareness a = Awareness.ALERT;
@@ -85,7 +87,7 @@ public class StealthOverride extends StealthUtils {
         if (target.hasEffect(FootworkEffects.SLEEP.get()) || target.hasEffect(FootworkEffects.PARALYSIS.get()) || target.hasEffect(FootworkEffects.PETRIFY.get()))
             a = Awareness.UNAWARE;
             //idle and not vigilant
-        else if (!sd.isVigilant() && target.getLastHurtByMob() == null && (!(target instanceof MobEntity) || ((MobEntity) target).getTarget() == null))
+        else if (!sd.isVigilant() && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null))
             a = Awareness.UNAWARE;
             //distraction, confusion, and choking take top priority in inferior tier
         else if (target.hasEffect(FootworkEffects.DISTRACTION.get()) || target.hasEffect(FootworkEffects.CONFUSION.get()) || target.getAirSupply() <= 0)
@@ -97,7 +99,7 @@ public class StealthOverride extends StealthUtils {
         else if (inWeb(target) && !sd.isCheliceric())
             a = Awareness.DISTRACTED;
             //hurt by something else
-        else if (!sd.isMindful() && target.getLastHurtByMob() != attacker && (!(target instanceof MobEntity) || ((MobEntity) target).getTarget() != attacker))
+        else if (!sd.isMindful() && target.getLastHurtByMob() != attacker && (!(target instanceof Mob) || ((Mob) target).getTarget() != attacker))
             a = Awareness.DISTRACTED;
         //event for more compat
         EntityAwarenessEvent eae = new EntityAwarenessEvent(target, attacker, a);
@@ -120,15 +122,15 @@ public class StealthOverride extends StealthUtils {
         return false;
     }
 
-    public static int getActualLightLevel(World world, BlockPos pos) {
+    public static int getActualLightLevel(Level world, BlockPos pos) {
         int i = 0;
         if (world.dimensionType().hasSkyLight()) {
             world.updateSkyBrightness();
             int dark = world.getSkyDarken();
-            i = world.getBrightness(LightType.SKY, pos) - dark;
+            i = world.getBrightness(LightLayer.SKY, pos) - dark;
         }
 
-        i = MathHelper.clamp(Math.max(world.getBrightness(LightType.BLOCK, pos), i), 0, 15);
+        i = Mth.clamp(Math.max(world.getBrightness(LightLayer.BLOCK, pos), i), 0, 15);
         return i;
     }
 

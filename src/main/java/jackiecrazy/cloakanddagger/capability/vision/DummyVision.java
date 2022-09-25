@@ -2,9 +2,9 @@ package jackiecrazy.cloakanddagger.capability.vision;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.phys.Vec3;
 
 public class DummyVision implements IVision {
 
@@ -24,7 +24,7 @@ public class DummyVision implements IVision {
     }
 
     @Override
-    public void read(CompoundNBT tag) {
+    public void read(CompoundTag tag) {
 
     }
 
@@ -34,13 +34,13 @@ public class DummyVision implements IVision {
     }
 
     @Override
-    public Vector3d getMotionConsistently() {
-        return Vector3d.ZERO;
+    public Vec3 getMotionConsistently() {
+        return Vec3.ZERO;
     }
 
     @Override
-    public CompoundNBT write() {
-        return new CompoundNBT();
+    public CompoundTag write() {
+        return new CompoundTag();
     }
 
     @Override

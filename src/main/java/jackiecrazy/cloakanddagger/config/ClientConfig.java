@@ -2,10 +2,11 @@ package jackiecrazy.cloakanddagger.config;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.footwork.config.DisplayConfigUtils;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.config.ModConfigEvent;
 import org.apache.commons.lang3.tuple.Pair;
 
 public class ClientConfig {
@@ -37,7 +38,7 @@ public class ClientConfig {
     }
 
     @SubscribeEvent
-    public static void loadConfig(ModConfig.ModConfigEvent e) {
+    public static void loadConfig(ModConfigEvent e) {
         if (e.getConfig().getSpec() == CONFIG_SPEC) {
             bake();
         }

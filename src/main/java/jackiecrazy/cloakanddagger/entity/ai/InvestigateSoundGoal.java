@@ -2,16 +2,16 @@ package jackiecrazy.cloakanddagger.entity.ai;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.capability.goal.GoalCapabilityProvider;
-import net.minecraft.entity.CreatureEntity;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.goal.MoveToBlockGoal;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IWorldReader;
+import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.MoveToBlockGoal;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.LevelReader;
 
 public class InvestigateSoundGoal extends MoveToBlockGoal {
     int hesitation;
 
-    public InvestigateSoundGoal(CreatureEntity c) {
+    public InvestigateSoundGoal(PathfinderMob c) {
         super(c, 0.6, 32);
     }
 
@@ -29,7 +29,7 @@ public class InvestigateSoundGoal extends MoveToBlockGoal {
     }
 
     @Override
-    protected boolean isValidTarget(IWorldReader w, BlockPos b) {
+    protected boolean isValidTarget(LevelReader w, BlockPos b) {
         double rangesq = mob.getAttributeValue(Attributes.FOLLOW_RANGE);
         rangesq *= rangesq;
         return (mob.blockPosition().distSqr(b) < rangesq);
