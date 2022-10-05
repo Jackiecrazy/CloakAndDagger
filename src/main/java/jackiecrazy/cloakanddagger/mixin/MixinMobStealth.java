@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.*;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.world.entity.LivingEntity;
+import org.checkerframework.checker.units.qual.A;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -32,6 +33,7 @@ public abstract class MixinMobStealth<T extends LivingEntity, M extends EntityMo
     }
 
     @ModifyConstant(method = "render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", require = 0,
+            slice = @Slice(from = @At(value = "INVOKE", target = "")),
             constant = {
                     @Constant(floatValue = 1.0F, ordinal = 7)
             })

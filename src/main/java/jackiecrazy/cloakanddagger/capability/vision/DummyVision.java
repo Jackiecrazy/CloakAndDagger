@@ -1,9 +1,6 @@
 package jackiecrazy.cloakanddagger.capability.vision;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.util.Hand;
 import net.minecraft.world.phys.Vec3;
 
 public class DummyVision implements IVision {

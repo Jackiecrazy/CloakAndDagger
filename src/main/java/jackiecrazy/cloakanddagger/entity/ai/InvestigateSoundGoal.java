@@ -1,7 +1,7 @@
 package jackiecrazy.cloakanddagger.entity.ai;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
-import jackiecrazy.cloakanddagger.capability.goal.GoalCapabilityProvider;
+import jackiecrazy.footwork.capability.goal.GoalCapabilityProvider;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.MoveToBlockGoal;

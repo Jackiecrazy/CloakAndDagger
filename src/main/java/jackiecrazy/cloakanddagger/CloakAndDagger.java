@@ -1,25 +1,20 @@
 package jackiecrazy.cloakanddagger;
 
-import jackiecrazy.cloakanddagger.capability.goal.GoalCapability;
-import jackiecrazy.cloakanddagger.capability.goal.IGoalHelper;
-import jackiecrazy.cloakanddagger.capability.vision.DummyVision;
 import jackiecrazy.cloakanddagger.capability.vision.IVision;
-import jackiecrazy.cloakanddagger.capability.vision.VisionStorage;
 import jackiecrazy.cloakanddagger.client.Keybind;
 import jackiecrazy.cloakanddagger.config.*;
 import jackiecrazy.cloakanddagger.networking.*;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
+import jackiecrazy.footwork.capability.resources.ICombatCapability;
+import jackiecrazy.footwork.capability.weaponry.ICombatItemCapability;
 import jackiecrazy.footwork.utils.StealthUtils;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraftforge.client.ClientRegistry;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.capabilities.CapabilityManager;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -42,6 +37,7 @@ public class CloakAndDagger {
     public CloakAndDagger() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::caps);
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
@@ -58,14 +54,16 @@ public class CloakAndDagger {
 
     private void setup(final FMLCommonSetupEvent event) {
         StealthUtils.INSTANCE = new StealthOverride();
-        CapabilityManager.INSTANCE.register(IVision.class, new VisionStorage(), DummyVision::new);
-        CapabilityManager.INSTANCE.register(IGoalHelper.class, new GoalCapability.Storage(), GoalCapability::new);
         // some preinit code
         int index = 0;
         StealthChannel.INSTANCE.registerMessage(index++, UpdateClientPacket.class, new UpdateClientPacket.UpdateClientEncoder(), new UpdateClientPacket.UpdateClientDecoder(), new UpdateClientPacket.UpdateClientHandler());
         StealthChannel.INSTANCE.registerMessage(index++, RequestUpdatePacket.class, new RequestUpdatePacket.RequestUpdateEncoder(), new RequestUpdatePacket.RequestUpdateDecoder(), new RequestUpdatePacket.RequestUpdateHandler());
         StealthChannel.INSTANCE.registerMessage(index++, UpdateTargetPacket.class, new UpdateTargetPacket.UpdateTargetEncoder(), new UpdateTargetPacket.UpdateTargetDecoder(), new UpdateTargetPacket.UpdateTargetHandler());
         StealthChannel.INSTANCE.registerMessage(index++, ShoutPacket.class, new ShoutPacket.ShoutEncoder(), new ShoutPacket.ShoutDecoder(), new ShoutPacket.ShoutHandler());
+    }
+
+    private void caps(final RegisterCapabilitiesEvent event) {
+        event.register(IVision.class);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -78,10 +76,10 @@ public class CloakAndDagger {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void attributes(EntityAttributeModificationEvent event) {
-            for (EntityType<? extends LivingEntity> t : event.getTypes()) {
-                if (!event.has(t, Attributes.ATTACK_SPEED)) event.add(t, Attributes.ATTACK_SPEED, 4);
-                if (!event.has(t, Attributes.LUCK)) event.add(t, Attributes.LUCK, 0);
-            }
+//            for (EntityType<? extends LivingEntity> t : event.getTypes()) {
+//                if (!event.has(t, Attributes.ATTACK_SPEED)) event.add(t, Attributes.ATTACK_SPEED, 4);
+//                if (!event.has(t, Attributes.LUCK)) event.add(t, Attributes.LUCK, 0);
+//            }
         }
     }
 }
