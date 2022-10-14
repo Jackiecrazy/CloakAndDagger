@@ -27,7 +27,7 @@ public abstract class MixinMobStealth<T extends LivingEntity, M extends EntityMo
         super(p_174008_);
     }
 
-    @Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At("HEAD"))
+    /*@Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At("HEAD"))
     private void ah(T f3, float f4, float direction, PoseStack ivertexbuilder, MultiBufferSource i, int layerrenderer, CallbackInfo ci) {
         mob = f3;
     }
@@ -55,5 +55,5 @@ public abstract class MixinMobStealth<T extends LivingEntity, M extends EntityMo
     private RenderType rt(RenderType former) {
         if (!GeneralConfig.playerStealth || cache >= 0.9) return former;
         return RenderType.itemEntityTranslucentCull(getTextureLocation(mob));
-    }
+    }*/
 }
