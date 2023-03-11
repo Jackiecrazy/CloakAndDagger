@@ -1,14 +1,10 @@
 package jackiecrazy.cloakanddagger;
 
 import jackiecrazy.cloakanddagger.capability.vision.IVision;
-import jackiecrazy.cloakanddagger.client.Keybind;
 import jackiecrazy.cloakanddagger.config.*;
 import jackiecrazy.cloakanddagger.networking.*;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
-import jackiecrazy.footwork.capability.resources.ICombatCapability;
-import jackiecrazy.footwork.capability.weaponry.ICombatItemCapability;
 import jackiecrazy.footwork.utils.StealthUtils;
-import net.minecraftforge.client.ClientRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
@@ -69,7 +65,6 @@ public class CloakAndDagger {
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         ClientConfig.bake();
-        ClientRegistry.registerKeyBinding(Keybind.SHOUT);
     }
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)

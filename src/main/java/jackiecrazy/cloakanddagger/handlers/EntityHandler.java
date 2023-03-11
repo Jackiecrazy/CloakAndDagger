@@ -15,27 +15,24 @@ import jackiecrazy.footwork.utils.GeneralUtils;
 import jackiecrazy.footwork.utils.LuckUtils;
 import jackiecrazy.footwork.utils.StealthUtils;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
-import net.minecraft.world.entity.PathfinderMob;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import net.minecraft.util.Tuple;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Tuple;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.core.BlockPos;
-import net.minecraft.util.Mth;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.living.LivingChangeTargetEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
-import net.minecraftforge.event.entity.living.PotionEvent;
+import net.minecraftforge.event.entity.living.LivingSpawnEvent;
+import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.event.server.ServerStoppingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -72,12 +69,11 @@ public class EntityHandler {
     }
 
     @SubscribeEvent
-    public static void takeThis(EntityJoinWorldEvent e) {
-        if (e.getEntity() instanceof Mob) {
-            Mob mob = (Mob) e.getEntity();
-            if (e.getEntity() instanceof PathfinderMob) {
-                PathfinderMob creature = (PathfinderMob) e.getEntity();
-                if (!StealthOverride.stealthMap.getOrDefault(creature.getType().getRegistryName(), StealthOverride.STEALTH).isDeaf())
+    public static void takeThis(LivingSpawnEvent e) {
+        if (e.getEntity() != null) {
+            Mob mob = e.getEntity();
+            if (e.getEntity() instanceof PathfinderMob creature) {
+                if (!StealthOverride.stealthMap.getOrDefault(EntityType.getKey(creature.getType()), StealthOverride.STEALTH).isDeaf())
                     mob.goalSelector.addGoal(0, new InvestigateSoundGoal(creature));
             }
         }
@@ -94,11 +90,11 @@ public class EntityHandler {
         max is 0.045 in absolute darkness standing still behind
         min is 0.595 in above conditions but full armor
          */
-        if (e.getLookingEntity() != e.getEntityLiving() && e.getLookingEntity() instanceof LivingEntity) {
+        if (e.getLookingEntity() != e.getEntity() && e.getLookingEntity() instanceof LivingEntity) {
             double mult = 1;
-            LivingEntity sneaker = e.getEntityLiving(), watcher = (LivingEntity) e.getLookingEntity();
-            StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(watcher.getType().getRegistryName(), StealthOverride.STEALTH);
-            if (StealthOverride.stealthMap.getOrDefault(sneaker.getType().getRegistryName(), StealthOverride.STEALTH).isCheliceric())
+            LivingEntity sneaker = e.getEntity(), watcher = (LivingEntity) e.getLookingEntity();
+            StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(watcher.getType()), StealthOverride.STEALTH);
+            if (StealthOverride.stealthMap.getOrDefault(EntityType.getKey(sneaker.getType()), StealthOverride.STEALTH).isCheliceric())
                 return;
             if (watcher.getKillCredit() != sneaker && watcher.getLastHurtByMob() != sneaker && watcher.getLastHurtMob() != sneaker && (!(watcher instanceof Mob) || ((Mob) watcher).getTarget() != sneaker)) {
                 double stealth = GeneralUtils.getAttributeValueSafe(sneaker, WarAttributes.STEALTH.get());
@@ -147,44 +143,44 @@ public class EntityHandler {
     }
 
     @SubscribeEvent
-    public static void pray(LivingSetAttackTargetEvent e) {
-        if (e.getTarget() == null) return;
-        if (!(e.getEntityLiving() instanceof Mob)) return;
-        final Mob mob = (Mob) e.getEntityLiving();
+    public static void pray(LivingChangeTargetEvent e) {
+        if (e.getNewTarget() == null) return;
+        if (!(e.getEntity() instanceof Mob)) return;
+        final Mob mob = (Mob) e.getEntity();
         if (mob.hasEffect(FootworkEffects.FEAR.get()) || mob.hasEffect(FootworkEffects.CONFUSION.get()) || mob.hasEffect(FootworkEffects.SLEEP.get()))
             mob.setTarget(null);
-        if (mob.getLastHurtByMob() != e.getTarget() && !GeneralUtils.isFacingEntity(mob, e.getTarget(), GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection)) {
-            StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(mob.getType().getRegistryName(), StealthOverride.STEALTH);
+        if (mob.getLastHurtByMob() != e.getNewTarget() && !GeneralUtils.isFacingEntity(mob, e.getNewTarget(), GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection)) {
+            StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(mob.getType()), StealthOverride.STEALTH);
             if (sd.isAllSeeing() || sd.isWary()) return;
             //outside of LoS, perform luck check. Pray to RNGesus!
-            double luckDiff = GeneralUtils.getAttributeValueSafe(e.getTarget(), Attributes.LUCK) - GeneralUtils.getAttributeValueSafe(mob, Attributes.LUCK);
-            if (luckDiff <= 0 || !LuckUtils.luckRoll(e.getTarget(), (float) (luckDiff / (2 + luckDiff)))) {
+            double luckDiff = GeneralUtils.getAttributeValueSafe(e.getNewTarget(), Attributes.LUCK) - GeneralUtils.getAttributeValueSafe(mob, Attributes.LUCK);
+            if (luckDiff <= 0 || !LuckUtils.luckRoll(e.getNewTarget(), (float) (luckDiff / (2 + luckDiff)))) {
                 //you failed!
                 if (sd.isSkeptical()) {
                     mob.setTarget(null);
-                    mob.lookAt(EntityAnchorArgument.Anchor.FEET, e.getTarget().position());//.getLookController().setLookPositionWithEntity(e.getTarget(), 0, 0);
+                    mob.lookAt(EntityAnchorArgument.Anchor.FEET, e.getNewTarget().position());//.getLookController().setLookPositionWithEntity(e.getTarget(), 0, 0);
                 }
             } else {
                 //success!
                 mob.setTarget(null);
                 if (!sd.isLazy())
-                    mob.lookAt(EntityAnchorArgument.Anchor.FEET, e.getTarget().position());//.getLookController().setLookPositionWithEntity(e.getTarget(), 0, 0);
+                    mob.lookAt(EntityAnchorArgument.Anchor.FEET, e.getNewTarget().position());//.getLookController().setLookPositionWithEntity(e.getTarget(), 0, 0);
             }
         }
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    public static void sync(LivingSetAttackTargetEvent e) {
-        if (!e.getEntityLiving().level.isClientSide())
-            StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(e::getEntityLiving), new UpdateTargetPacket(e.getEntityLiving().getId(), e.getTarget() == null ? -1 : e.getTarget().getId()));
+    public static void sync(LivingChangeTargetEvent e) {
+        if (!e.getNewTarget().level.isClientSide())
+            StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(e::getEntity), new UpdateTargetPacket(e.getNewTarget().getId(), e.getNewTarget() == null ? -1 : e.getNewTarget().getId()));
     }
 
     @SubscribeEvent
-    public static void nigerundayo(final PotionEvent.PotionAddedEvent e) {
-        if (e.getPotionEffect().getEffect() == MobEffects.BLINDNESS) {
-            if (e.getEntityLiving() instanceof Mob)
-                ((Mob) e.getEntityLiving()).setTarget(null);
-            e.getEntityLiving().setLastHurtByMob(null);
+    public static void nigerundayo(final MobEffectEvent e) {
+        if (e.getEffectInstance() != null && e.getEffectInstance().getEffect() == MobEffects.BLINDNESS) {
+            if (e.getEntity() instanceof Mob)
+                ((Mob) e.getEntity()).setTarget(null);
+            e.getEntity().setLastHurtByMob(null);
         }
     }
 
@@ -196,7 +192,7 @@ public class EntityHandler {
                 Map.Entry<Tuple<Level, BlockPos>, Float> n = it.next();
                 if (n.getKey().getA().isAreaLoaded(n.getKey().getB(), n.getValue().intValue())) {
                     for (PathfinderMob c : (n.getKey().getA().getEntitiesOfClass(PathfinderMob.class, new AABB(n.getKey().getB()).inflate(n.getValue())))) {
-                        if (StealthUtils.INSTANCE.getAwareness(null, c) == StealthOverride.Awareness.UNAWARE && !StealthOverride.stealthMap.getOrDefault(c.getType().getRegistryName(), StealthOverride.STEALTH).isDeaf()) {
+                        if (StealthUtils.INSTANCE.getAwareness(null, c) == StealthOverride.Awareness.UNAWARE && !StealthOverride.stealthMap.getOrDefault(EntityType.getKey(c.getType()), StealthOverride.STEALTH).isDeaf()) {
                             c.goalSelector.disableControlFlag(Goal.Flag.MOVE);
                             c.getNavigation().stop();
                             c.getNavigation().moveTo(c.getNavigation().createPath(n.getKey().getB(), (int) (n.getValue() + 3)), 1);
@@ -212,8 +208,8 @@ public class EntityHandler {
     }
 
     @SubscribeEvent
-    public static void tickMobs(LivingEvent.LivingUpdateEvent e) {
-        LivingEntity elb = e.getEntityLiving();
+    public static void tickMobs(LivingEvent.LivingTickEvent e) {
+        LivingEntity elb = e.getEntity();
         if (!elb.level.isClientSide && !(elb instanceof Player)) {
             IVision cap = VisionData.getCap(elb);
             if (elb.tickCount % 100 == 0 || mustUpdate.containsValue(elb))

@@ -52,13 +52,13 @@ A mod about stealth and detection. Slink through the shadows and deliver devasta
 [[dependencies.cloakanddagger]]
     modId="footwork"
     mandatory=true
-    versionRange="[1.0,)"
+    versionRange="[2.0,)"
     ordering="AFTER"
     side="BOTH"
 [[dependencies.cloakanddagger]]
    modId="minecraft"
    mandatory=true
    # This version range declares a minimum of the current minecraft version up to but not including the next major version
-   versionRange="[1.16.5,1.17)"
+   versionRange="[1.18.0,1.19)"
    ordering="NONE"
    side="BOTH"
