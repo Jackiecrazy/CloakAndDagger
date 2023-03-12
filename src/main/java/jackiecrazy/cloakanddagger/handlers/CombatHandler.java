@@ -1,11 +1,19 @@
 package jackiecrazy.cloakanddagger.handlers;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
+import jackiecrazy.cloakanddagger.config.SoundConfig;
+import jackiecrazy.cloakanddagger.mixin.MixinMobSound;
 import jackiecrazy.cloakanddagger.utils.CombatUtils;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.utils.StealthUtils;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.Tuple;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Mob;
+import net.minecraftforge.event.PlayLevelSoundEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -29,9 +37,9 @@ public class CombatHandler {
 
     @SubscribeEvent
     public static void critHooks(CriticalHitEvent e) {
-        if (!e.getEntityLiving().level.isClientSide && e.getTarget() instanceof LivingEntity) {
+        if (!e.getEntity().level.isClientSide && e.getTarget() instanceof LivingEntity) {
             LivingEntity uke = (LivingEntity) e.getTarget();
-            LivingEntity seme = e.getPlayer();
+            LivingEntity seme = e.getEntity();
             //stealth attacks automatically crit
             StealthUtils.Awareness awareness = StealthUtils.INSTANCE.getAwareness(seme, uke);
             if (awareness == StealthUtils.Awareness.UNAWARE)
@@ -41,7 +49,7 @@ public class CombatHandler {
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void pain(LivingHurtEvent e) {
-        LivingEntity uke = e.getEntityLiving();
+        LivingEntity uke = e.getEntity();
         //FIXME it is physically impossible for effects to factor in stealth if they are removed first
         LivingEntity kek = null;
         DamageSource ds = e.getSource();
@@ -57,5 +65,24 @@ public class CombatHandler {
                 }
             }
         }
+    }
+
+    /**
+     * we finally have a sound playing event!
+     */
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void pingus(PlayLevelSoundEvent.AtPosition e) {
+        if (e.getSound() == null) return;
+        if (StealthOverride.soundMap.containsKey(e.getSound().get()))
+            EntityHandler.alertTracker.put(new Tuple<>(e.getLevel(), new BlockPos(e.getPosition())), (float) (StealthOverride.soundMap.get(e.getSound().get())));
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void apingus(PlayLevelSoundEvent.AtEntity e) {
+        if (e.getSound() == null) return;
+        Entity entityIn = e.getEntity();
+        double x = entityIn.getX(), y = entityIn.getY(), z = entityIn.getZ();
+        if (StealthOverride.soundMap.containsKey(e.getSound().get()))
+            EntityHandler.alertTracker.put(new Tuple<>(e.getLevel(), new BlockPos(x, y, z)), (float) (StealthOverride.soundMap.get(e.getSound().get())));
     }
 }

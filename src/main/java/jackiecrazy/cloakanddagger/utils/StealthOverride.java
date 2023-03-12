@@ -5,6 +5,7 @@ import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import jackiecrazy.footwork.event.EntityAwarenessEvent;
 import jackiecrazy.footwork.potion.FootworkEffects;
 import jackiecrazy.footwork.utils.StealthUtils;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -59,7 +60,7 @@ public class StealthOverride extends StealthUtils {
                 if (s.startsWith("*")) {
                     String contain = val[0].substring(1);
                     for (SoundEvent se : ForgeRegistries.SOUND_EVENTS) {
-                        if (se.getRegistryName().toString().contains(contain))
+                        if (se.getLocation().toString().contains(contain))
                             soundMap.put(se, Integer.parseInt(val[1].trim()));
                     }
                 } else {
@@ -81,7 +82,7 @@ public class StealthOverride extends StealthUtils {
         //players are alert because being jumped with 2.5x daggers feel bad
         if (target instanceof Player)
             return Awareness.ALERT;
-        StealthData sd = stealthMap.getOrDefault(target.getType().getRegistryName(), STEALTH);
+        StealthData sd = stealthMap.getOrDefault(EntityType.getKey(target.getType()), STEALTH);
         Awareness a = Awareness.ALERT;
         //sleep, paralysis, and petrify take highest priority
         if (target.hasEffect(FootworkEffects.SLEEP.get()) || target.hasEffect(FootworkEffects.PARALYSIS.get()) || target.hasEffect(FootworkEffects.PETRIFY.get()))
