@@ -2,7 +2,7 @@ package jackiecrazy.cloakanddagger.handlers;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.utils.CombatUtils;
-import jackiecrazy.footwork.api.WarAttributes;
+import jackiecrazy.footwork.api.FootworkAttributes;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
@@ -17,7 +17,7 @@ public class ItemEventHandler {
     public static void items(ItemAttributeModifierEvent e) {
         if (CombatUtils.armorStats.containsKey(e.getItemStack().getItem()) && (!e.getOriginalModifiers().isEmpty() || (!(e.getItemStack().getItem() instanceof ArmorItem) && e.getSlotType() == EquipmentSlot.OFFHAND))) {//presumably this is the correct equipment slot
             AttributeModifier a = CombatUtils.armorStats.get(e.getItemStack().getItem());
-            e.addModifier(WarAttributes.STEALTH.get(), a);
+            e.addModifier(FootworkAttributes.STEALTH.get(), a);
         }
     }
 

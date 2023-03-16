@@ -8,7 +8,7 @@ import jackiecrazy.cloakanddagger.entity.ai.InvestigateSoundGoal;
 import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.UpdateTargetPacket;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
-import jackiecrazy.footwork.api.WarAttributes;
+import jackiecrazy.footwork.api.FootworkAttributes;
 import jackiecrazy.footwork.capability.goal.GoalCapabilityProvider;
 import jackiecrazy.footwork.potion.FootworkEffects;
 import jackiecrazy.footwork.utils.GeneralUtils;
@@ -64,8 +64,10 @@ public class EntityHandler {
 
     @SubscribeEvent
     public static void caps(AttachCapabilitiesEvent<Entity> e) {
-        if (e.getObject() instanceof Mob)
+        if (e.getObject() instanceof Mob m) {
             e.addCapability(new ResourceLocation("wardance:targeting"), new GoalCapabilityProvider());
+            e.addCapability(new ResourceLocation("wardance:vision"), new VisionData(m));
+        }
     }
 
     @SubscribeEvent
@@ -97,7 +99,7 @@ public class EntityHandler {
             if (StealthOverride.stealthMap.getOrDefault(EntityType.getKey(sneaker.getType()), StealthOverride.STEALTH).isCheliceric())
                 return;
             if (watcher.getKillCredit() != sneaker && watcher.getLastHurtByMob() != sneaker && watcher.getLastHurtMob() != sneaker && (!(watcher instanceof Mob) || ((Mob) watcher).getTarget() != sneaker)) {
-                double stealth = GeneralUtils.getAttributeValueSafe(sneaker, WarAttributes.STEALTH.get());
+                double stealth = GeneralUtils.getAttributeValueSafe(sneaker, FootworkAttributes.STEALTH.get());
                 double negMult = 1;
                 double posMult = 1;
                 //each level of negative stealth reduces effectiveness by 5%
@@ -116,7 +118,7 @@ public class EntityHandler {
                 //mobs that can't see behind their backs get a hefty debuff
                 if (!sd.isAllSeeing() && !GeneralUtils.isFacingEntity(watcher, sneaker, GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection))
                     mult *= (1 - (0.7 * negMult)) * posMult;
-                float lightMalus=0;
+                float lightMalus = 0;
                 //stay dark, stay dank
                 if (!sd.isNightVision() && !watcher.hasEffect(MobEffects.NIGHT_VISION) && !sneaker.hasEffect(MobEffects.GLOWING) && sneaker.getRemainingFireTicks() <= 0) {
                     Level world = sneaker.level;
@@ -145,24 +147,23 @@ public class EntityHandler {
     @SubscribeEvent
     public static void pray(LivingChangeTargetEvent e) {
         if (e.getNewTarget() == null) return;
-        if (!(e.getEntity() instanceof Mob)) return;
-        final Mob mob = (Mob) e.getEntity();
+        if (!(e.getEntity() instanceof final Mob mob)) return;
         if (mob.hasEffect(FootworkEffects.FEAR.get()) || mob.hasEffect(FootworkEffects.CONFUSION.get()) || mob.hasEffect(FootworkEffects.SLEEP.get()))
-            mob.setTarget(null);
+            e.setCanceled(true);
         if (mob.getLastHurtByMob() != e.getNewTarget() && !GeneralUtils.isFacingEntity(mob, e.getNewTarget(), GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection)) {
             StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(mob.getType()), StealthOverride.STEALTH);
             if (sd.isAllSeeing() || sd.isWary()) return;
-            //outside of LoS, perform luck check. Pray to RNGesus!
+            //outside LoS, perform luck check. Pray to RNGesus!
             double luckDiff = GeneralUtils.getAttributeValueSafe(e.getNewTarget(), Attributes.LUCK) - GeneralUtils.getAttributeValueSafe(mob, Attributes.LUCK);
             if (luckDiff <= 0 || !LuckUtils.luckRoll(e.getNewTarget(), (float) (luckDiff / (2 + luckDiff)))) {
                 //you failed!
                 if (sd.isSkeptical()) {
-                    mob.setTarget(null);
+                    e.setCanceled(true);
                     mob.lookAt(EntityAnchorArgument.Anchor.FEET, e.getNewTarget().position());//.getLookController().setLookPositionWithEntity(e.getTarget(), 0, 0);
                 }
             } else {
                 //success!
-                mob.setTarget(null);
+                e.setCanceled(true);
                 if (!sd.isLazy())
                     mob.lookAt(EntityAnchorArgument.Anchor.FEET, e.getNewTarget().position());//.getLookController().setLookPositionWithEntity(e.getTarget(), 0, 0);
             }
@@ -171,7 +172,7 @@ public class EntityHandler {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void sync(LivingChangeTargetEvent e) {
-        if (!e.getNewTarget().level.isClientSide())
+        if (!e.getEntity().level.isClientSide())
             StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(e::getEntity), new UpdateTargetPacket(e.getNewTarget().getId(), e.getNewTarget() == null ? -1 : e.getNewTarget().getId()));
     }
 

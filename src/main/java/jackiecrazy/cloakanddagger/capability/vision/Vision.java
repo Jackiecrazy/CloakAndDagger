@@ -7,6 +7,7 @@ import jackiecrazy.footwork.potion.FootworkEffects;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.FakePlayer;
@@ -74,6 +75,9 @@ public class Vision implements IVision {
         lastUpdate = c.getLong("lastUpdate");
         retina = c.getInt("retina");
         vision = c.getFloat("vision");
+        if (dude.get() instanceof Mob m && m.level.getEntity(c.getInt("target")) instanceof LivingEntity t) {
+            m.setTarget(t);
+        }
     }
 
     @Override
@@ -93,6 +97,9 @@ public class Vision implements IVision {
         c.putInt("retina", getRetina());
         c.putFloat("vision", visionRange());
         c.putLong("lastUpdate", lastUpdate);
+        if (dude.get() instanceof Mob m && m.getTarget() != null) {
+            c.putInt("target", m.getTarget().getId());
+        }
         return c;
     }
 

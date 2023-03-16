@@ -9,12 +9,15 @@ import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.capability.vision.VisionData;
 import jackiecrazy.cloakanddagger.config.ClientConfig;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
+import jackiecrazy.footwork.api.FootworkAttributes;
 import jackiecrazy.footwork.capability.resources.CombatData;
 import jackiecrazy.footwork.capability.resources.ICombatCapability;
 import jackiecrazy.footwork.config.DisplayConfigUtils;
+import jackiecrazy.footwork.utils.GeneralUtils;
 import jackiecrazy.footwork.utils.StealthUtils;
 import com.mojang.blaze3d.platform.Window;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.client.Camera;
@@ -33,6 +36,7 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
+import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -54,6 +58,7 @@ public class RenderEvents {
     @SubscribeEvent
     public static void down(RenderLevelStageEvent event) {
         Minecraft mc = Minecraft.getInstance();
+        if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_CUTOUT_BLOCKS) return;
 
         Camera camera = mc.gameRenderer.getMainCamera();
         PoseStack poseStack = event.getPoseStack();
@@ -74,6 +79,12 @@ public class RenderEvents {
             }
         }
 
+    }
+
+    @SubscribeEvent
+    public static void stealthystealth(RenderLivingEvent.Pre<LivingEntity, EntityModel<LivingEntity>> e) {
+        if (GeneralUtils.getAttributeValueSafe(e.getEntity(), FootworkAttributes.STEALTH.get()) > 0 && e.getEntity().isInvisible())
+            e.setCanceled(true);
     }
 
     /**
@@ -210,8 +221,6 @@ public class RenderEvents {
     }
 
     private static float getSize(LivingEntity elb) {
-        float ret = CombatData.getCap(elb).getTrueMaxPosture();
-        if (ret != 0) return ret;
         return (float) Math.ceil(10 / 1.09 * elb.getBbWidth() * elb.getBbHeight());
     }
 }

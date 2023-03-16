@@ -29,7 +29,6 @@ public class StealthOverlay implements IGuiOverlay {
         Minecraft mc = Minecraft.getInstance();
         if (mc.getCameraEntity() instanceof Player && mc.player != null) {
             LocalPlayer player = mc.player;
-            ICombatCapability cap = CombatData.getCap(player);
             Entity look = RenderEvents.getEntityLookedAt(player, 32);
             if (look instanceof LivingEntity) {
                 LivingEntity looked = (LivingEntity) look;

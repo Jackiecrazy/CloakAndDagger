@@ -1,10 +1,13 @@
 package jackiecrazy.cloakanddagger;
 
 import jackiecrazy.cloakanddagger.capability.vision.IVision;
+import jackiecrazy.cloakanddagger.client.StealthOverlay;
 import jackiecrazy.cloakanddagger.config.*;
 import jackiecrazy.cloakanddagger.networking.*;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.utils.StealthUtils;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
+import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
@@ -36,6 +39,7 @@ public class CloakAndDagger {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::caps);
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::registerOverlay);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -65,6 +69,11 @@ public class CloakAndDagger {
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         ClientConfig.bake();
+    }
+
+    private void registerOverlay(final RegisterGuiOverlaysEvent event) {
+        // do something that can only be done on the client
+        event.registerAbove(VanillaGuiOverlay.HOTBAR.id(), "cloakdagger", new StealthOverlay());
     }
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)

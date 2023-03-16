@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "jackiecrazy.cloakanddagger.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_17",
   "refmap": "cloakanddagger.refmap.json",
   "mixins": [
     "MixinArmorStealth",
@@ -12,7 +12,7 @@
     "MixinMobStealth"
   ],
   "injectors": {
-    "defaultRequire": 0
+    "defaultRequire": 1
   },
   "minVersion": "0.8"
 }

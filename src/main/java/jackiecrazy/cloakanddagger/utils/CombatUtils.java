@@ -3,7 +3,7 @@ package jackiecrazy.cloakanddagger.utils;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import jackiecrazy.footwork.api.CombatDamageSource;
-import jackiecrazy.footwork.api.WarAttributes;
+import jackiecrazy.footwork.api.FootworkAttributes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ArmorItem;
@@ -68,7 +68,7 @@ public class CombatUtils {
             }
             if (ForgeRegistries.ITEMS.containsKey(key) && (ForgeRegistries.ITEMS.getValue(key)) instanceof ArmorItem) {
                 final Item armor = ForgeRegistries.ITEMS.getValue(key);
-                UUID touse = WarAttributes.MODIFIERS[((ArmorItem) armor).getSlot().getIndex()];
+                UUID touse = FootworkAttributes.MODIFIERS[((ArmorItem) armor).getSlot().getIndex()];
                 armorStats.put(armor, new AttributeModifier(touse, "war dance modifier", stealth, AttributeModifier.Operation.ADDITION));
             }
             //System.out.print("\"" + name+ "\", ");
