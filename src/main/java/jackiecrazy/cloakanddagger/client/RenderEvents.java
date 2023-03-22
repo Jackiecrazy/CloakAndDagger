@@ -73,7 +73,11 @@ public class RenderEvents {
         if (client != null && ClientConfig.showEyes) {
             Entity look = getEntityLookedAt(Minecraft.getInstance().player, 32);
             for (Entity entity : client.entitiesForRendering()) {
-                if (entity != null && (entity != look || !ClientConfig.CONFIG.stealth.enabled) && entity instanceof LivingEntity && entity != cameraEntity && entity.isAlive() && !entity.getIndirectPassengers().iterator().hasNext() && entity.shouldRender(cameraPos.x(), cameraPos.y(), cameraPos.z()) && (entity.noCulling || frustum.isVisible(entity.getBoundingBox()))) {
+                if (entity != null && (entity != look || !ClientConfig.CONFIG.stealth.enabled) && entity instanceof LivingEntity le && le != cameraEntity && le.isAlive() &&
+                        !entity.getIndirectPassengers().iterator().hasNext() &&
+                        entity.shouldRender(cameraPos.x(), cameraPos.y(), cameraPos.z()) &&
+                        !GeneralUtils.viewBlocked(mc.player, le, false)&&
+                        (entity.noCulling || frustum.isVisible(entity.getBoundingBox()))) {
                     renderEye((LivingEntity) entity, partialTicks, poseStack);
                 }
             }
