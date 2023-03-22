@@ -4,6 +4,7 @@ import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.capability.vision.IVision;
 import jackiecrazy.cloakanddagger.capability.vision.VisionData;
 import jackiecrazy.cloakanddagger.config.GeneralConfig;
+import jackiecrazy.cloakanddagger.config.SoundConfig;
 import jackiecrazy.cloakanddagger.entity.ai.InvestigateSoundGoal;
 import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.UpdateTargetPacket;
@@ -29,6 +30,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingChangeTargetEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
@@ -71,9 +73,8 @@ public class EntityHandler {
     }
 
     @SubscribeEvent
-    public static void takeThis(LivingSpawnEvent e) {
-        if (e.getEntity() != null) {
-            Mob mob = e.getEntity();
+    public static void takeThis(EntityJoinLevelEvent e) {
+        if (e.getEntity() instanceof Mob mob) {
             if (e.getEntity() instanceof PathfinderMob creature) {
                 if (!StealthOverride.stealthMap.getOrDefault(EntityType.getKey(creature.getType()), StealthOverride.STEALTH).isDeaf())
                     mob.goalSelector.addGoal(0, new InvestigateSoundGoal(creature));
@@ -173,7 +174,7 @@ public class EntityHandler {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void sync(LivingChangeTargetEvent e) {
         if (!e.getEntity().level.isClientSide())
-            StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(e::getEntity), new UpdateTargetPacket(e.getNewTarget().getId(), e.getNewTarget() == null ? -1 : e.getNewTarget().getId()));
+            StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(e::getEntity), new UpdateTargetPacket(e.getEntity().getId(), e.getNewTarget() == null ? -1 : e.getNewTarget().getId()));
     }
 
     @SubscribeEvent
@@ -187,23 +188,22 @@ public class EntityHandler {
 
     @SubscribeEvent
     public static void lure(TickEvent.ServerTickEvent e) {
-        Iterator<Map.Entry<Tuple<Level, BlockPos>, Float>> it = alertTracker.entrySet().iterator();
-        {
-            while (it.hasNext()) {
-                Map.Entry<Tuple<Level, BlockPos>, Float> n = it.next();
-                if (n.getKey().getA().isAreaLoaded(n.getKey().getB(), n.getValue().intValue())) {
-                    for (PathfinderMob c : (n.getKey().getA().getEntitiesOfClass(PathfinderMob.class, new AABB(n.getKey().getB()).inflate(n.getValue())))) {
-                        if (StealthUtils.INSTANCE.getAwareness(null, c) == StealthOverride.Awareness.UNAWARE && !StealthOverride.stealthMap.getOrDefault(EntityType.getKey(c.getType()), StealthOverride.STEALTH).isDeaf()) {
-                            c.goalSelector.disableControlFlag(Goal.Flag.MOVE);
-                            c.getNavigation().stop();
-                            c.getNavigation().moveTo(c.getNavigation().createPath(n.getKey().getB(), (int) (n.getValue() + 3)), 1);
-                            BlockPos vec = n.getKey().getB();
-                            c.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(vec.getX(), vec.getY(), vec.getZ()));
-                            c.getCapability(GoalCapabilityProvider.CAP).ifPresent(a -> a.setSoundLocation(n.getKey().getB()));
-                        }
+        int checked = 0;
+        for (Map.Entry<Tuple<Level, BlockPos>, Float> n : alertTracker.entrySet()) {
+            if (checked > SoundConfig.cap) break;
+            if (n.getKey().getA().isAreaLoaded(n.getKey().getB(), n.getValue().intValue())) {
+                for (PathfinderMob c : (n.getKey().getA().getEntitiesOfClass(PathfinderMob.class, new AABB(n.getKey().getB()).inflate(n.getValue())))) {
+                    if (StealthUtils.INSTANCE.getAwareness(null, c) == StealthOverride.Awareness.UNAWARE && !StealthOverride.stealthMap.getOrDefault(EntityType.getKey(c.getType()), StealthOverride.STEALTH).isDeaf()) {
+                        c.goalSelector.disableControlFlag(Goal.Flag.MOVE);
+                        c.getNavigation().stop();
+                        c.getNavigation().moveTo(c.getNavigation().createPath(n.getKey().getB(), (int) (n.getValue() + 3)), 1);
+                        BlockPos vec = n.getKey().getB();
+                        c.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(vec.getX(), vec.getY(), vec.getZ()));
+                        c.getCapability(GoalCapabilityProvider.CAP).ifPresent(a -> a.setSoundLocation(n.getKey().getB()));
                     }
                 }
             }
+            checked++;
         }
         alertTracker.clear();
     }

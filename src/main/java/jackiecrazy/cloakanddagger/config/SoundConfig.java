@@ -40,6 +40,7 @@ public class SoundConfig {
             "entity.ravager.roar, 16"
     };
     public static double shout;
+    public static int cap;
 
     static {
         final Pair<SoundConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(SoundConfig::new);
@@ -48,11 +49,13 @@ public class SoundConfig {
     }
     private final ForgeConfigSpec.ConfigValue<List<? extends String>> _sounds;
     private final ForgeConfigSpec.IntValue _shoutSize;
+    private final ForgeConfigSpec.IntValue _soundSize;
 
     public SoundConfig(ForgeConfigSpec.Builder b) {
         //feature toggle, resource, defense, compat, stealth, lists
         _sounds = b.translation("cloakanddagger.config.sound").comment("Define which sounds generate cues for mobs to detect, followed by their size. Use *snippet to select all sounds that include the snippet in their full name. The list is processed top-down, so putting *tags first will allow you to override specific ones later. Shouting disregards this and always generates a sound cue of the defined radius, regardless of which sound clients have it set as.").defineList("sound cue list", Arrays.asList(SOUND), String.class::isInstance);
         _shoutSize=b.translation("cloakanddagger.config.shoutSize").comment("Define the loudness of a shout. All shouts, regardless of which client-defined sound is used, will generate a sound cue of this radius.").defineInRange("shout cue radius", 16, 0, 100);
+        _soundSize=b.translation("cloakanddagger.config.soundSize").comment("Define the maximum number of sounds every tick that the server should calculate sound cues for. Lowering this value will increase performance, but cause mobs to notice their surroundings less.").defineInRange("sound calculation cap", 100, 0, Integer.MAX_VALUE);
     }
 
     private static void bake() {

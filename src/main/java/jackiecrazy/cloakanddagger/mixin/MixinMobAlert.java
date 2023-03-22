@@ -24,6 +24,7 @@ public abstract class MixinMobAlert {
         if (me.isSilent() || StealthOverride.stealthMap.getOrDefault(EntityType.getKey(me.getType()), StealthOverride.STEALTH).isQuiet())
             return;
         float volume = ((MixinMobSound) me).callGetSoundVolume();
+
         EntityHandler.alertTracker.put(new Tuple<>(me.level, new BlockPos(me.getX(), me.getY(), me.getZ())), (float) (volume * SoundConfig.shout));
     }
 
