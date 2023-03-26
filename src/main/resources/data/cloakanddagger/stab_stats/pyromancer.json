@@ -1,0 +1,54 @@
+{
+"pyromancer:blazing_journal":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"pyromancer:call_of_flames":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"pyromancer:court_of_embers":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"pyromancer:diamond_mace":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"pyromancer:firelink":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"pyromancer:flammenklinge":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"pyromancer:golden_mace":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"pyromancer:iron_mace":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"pyromancer:netherite_mace":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"pyromancer:schmelzstern":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"pyromancer:sizzling_hand":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"pyromancer:slingshot":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"pyromancyer:hogwhip":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}

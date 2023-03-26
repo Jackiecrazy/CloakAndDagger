@@ -1,0 +1,1726 @@
+{
+"spartanshields:shield_basic_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_constantan":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_obsidian":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_basic_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_botania_elementium":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_botania_manasteel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_botania_terrasteel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_mekanism_lapis_lazuli":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_mekanism_osmium":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_mekanism_refined_glowstone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_mekanism_refined_obsidian":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_constantan":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_obsidian":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanshields:shield_tower_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:battleaxe_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:boomerang_bronze":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_copper":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_diamond":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_electrum":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_gold":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_invar":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_iron":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_lead":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_netherite":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_nickel":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_platinum":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_silver":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_steel":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_stone":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_tin":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:boomerang_wood":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:cestus":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:cestus_studded":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:club_studded":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:club_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:dagger_bronze":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_copper":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_diamond":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_electrum":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_gold":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_invar":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_iron":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_lead":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_netherite":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_nickel":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_platinum":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_silver":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_steel":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_stone":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_tin":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:dagger_wood":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:flanged_mace_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:flanged_mace_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:glaive_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:greatsword_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:halberd_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:hammer_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:heavy_crossbow_bronze":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_copper":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_diamond":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_electrum":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_gold":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_invar":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_iron":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_lead":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_leather":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_netherite":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_nickel":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_platinum":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_silver":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_steel":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_tin":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:heavy_crossbow_wood":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:javelin_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:javelin_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:katana_bronze":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_copper":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_diamond":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_electrum":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_gold":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_invar":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_iron":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_lead":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_netherite":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_nickel":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_platinum":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_silver":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_steel":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_stone":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_tin":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:katana_wood":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:lance_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:lance_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:longbow_bronze":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_copper":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_diamond":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_electrum":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_gold":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_invar":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_iron":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_lead":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_leather":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_netherite":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_nickel":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_platinum":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_silver":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_steel":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_tin":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longbow_wood":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"spartanweaponry:longsword_bronze":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_copper":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_diamond":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_electrum":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_gold":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_invar":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_iron":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_lead":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_netherite":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_nickel":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_platinum":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_silver":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_steel":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_stone":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_tin":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:longsword_wood":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:parrying_dagger_bronze":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_copper":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_diamond":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_electrum":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_gold":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_invar":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_iron":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_lead":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_netherite":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_nickel":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_platinum":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_silver":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_steel":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_stone":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_tin":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:parrying_dagger_wood":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"spartanweaponry:pike_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:pike_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:quarterstaff_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:rapier_bronze":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_copper":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_diamond":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_electrum":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_gold":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_invar":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_iron":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_lead":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_netherite":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_nickel":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_platinum":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_silver":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_steel":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_stone":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_tin":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:rapier_wood":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"spartanweaponry:saber_bronze":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_copper":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_diamond":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_electrum":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_gold":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_invar":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_iron":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_lead":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_netherite":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_nickel":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_platinum":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_silver":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_steel":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_stone":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_tin":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:saber_wood":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"spartanweaponry:scythe_bronze":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_copper":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_diamond":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_electrum":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_gold":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_invar":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_iron":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_lead":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_netherite":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_nickel":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_platinum":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_silver":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_steel":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_stone":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_tin":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:scythe_wood":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"spartanweaponry:spear_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:spear_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:throwing_knife_bronze":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_copper":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_diamond":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_electrum":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_gold":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_invar":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_iron":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_lead":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_netherite":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_nickel":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_platinum":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_silver":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_steel":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_stone":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_tin":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:throwing_knife_wood":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"spartanweaponry:tomahawk_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:tomahawk_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_bronze":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_copper":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_diamond":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_electrum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_gold":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_invar":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_iron":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_lead":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_netherite":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_nickel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_platinum":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_silver":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_stone":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_tin":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"spartanweaponry:warhammer_wood":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}

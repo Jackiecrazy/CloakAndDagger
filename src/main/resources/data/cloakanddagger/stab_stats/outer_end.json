@@ -1,0 +1,14 @@
+{
+"outer_end:azure_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"outer_end:azure_sign":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"outer_end:azure_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}

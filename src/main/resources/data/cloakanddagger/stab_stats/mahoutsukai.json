@@ -1,0 +1,30 @@
+{
+"mahoutsukai:caliburn":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"mahoutsukai:clarent":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"mahoutsukai:dagger":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"mahoutsukai:morgan":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"mahoutsukai:proximity_projection_keys":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"mahoutsukai:theripper":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"mahoutsukai:weapon_projectile_bow":{
+        "distracted": "1",
+        "unaware": "1"
+    }
+}

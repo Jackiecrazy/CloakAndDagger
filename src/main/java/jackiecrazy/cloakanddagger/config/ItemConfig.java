@@ -13,10 +13,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import java.util.Arrays;
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = CloakAndDagger.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ItemConfig {
-    public static final ItemConfig CONFIG;
-    public static final ForgeConfigSpec CONFIG_SPEC;
     private static final String[] THANKS_DARKMEGA = {
             "example:sword, 1.25, 1.5",
             "minecraft:diamond_axe, 1.1, 1.2",
@@ -2138,29 +2135,4 @@ public class ItemConfig {
             "wyrmroost:red_geode_helmet, -3",
             "wyrmroost:red_geode_leggings, -6"
     };
-
-    static {
-        final Pair<ItemConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(ItemConfig::new);
-        CONFIG = specPair.getLeft();
-        CONFIG_SPEC = specPair.getRight();
-    }
-
-    private final ForgeConfigSpec.ConfigValue<List<? extends String>> _combatItems;
-    private final ForgeConfigSpec.ConfigValue<List<? extends String>> _customArmor;
-
-    public ItemConfig(ForgeConfigSpec.Builder b) {
-        _combatItems = b.translation("wardance.config.combatItems").comment("Items eligible for parrying. Format should be name, attack posture consumption, defense multiplier, is shield. If the item is a shield, the next two numbers are their barrier cooldown and barrier size (as a decimal percentage of max posture); if the item is a weapon, the next two numbers are distracted stab damage bonus and unaware stab damage bonus. Set defense multiplier to a negative value to disable parrying with that item, and attack posture to a negative value to have it deal that posture while ignoring parries. Default values provided graciously by DarkMega, thank you!").defineList("combat items", Arrays.asList(THANKS_DARKMEGA), String.class::isInstance);
-        _customArmor = b.translation("wardance.config.armorItems").comment("define protective stats of armor here. Format is item, absorption, deflection, shatter, stealth (generally negative).").defineList("custom protection attributes", Lists.newArrayList(ARMOR), String.class::isInstance);
-    }
-
-    private static void bake() {
-        CombatUtils.updateItems(CONFIG._combatItems.get(), CONFIG._customArmor.get());
-    }
-
-    @SubscribeEvent
-    public static void loadConfig(ModConfigEvent e) {
-        if (e.getConfig().getSpec() == CONFIG_SPEC) {
-            bake();
-        }
-    }
 }

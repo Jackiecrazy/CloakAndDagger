@@ -1,0 +1,258 @@
+{
+"byg:aspen_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:aspen_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:baobab_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:baobab_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:blue_enchanted_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:blue_enchanted_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:bulbis_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:bulbis_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:cherry_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:cherry_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:cika_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:cika_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:cypress_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:cypress_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:ebony_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:ebony_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:embur_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:embur_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:ether_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:ether_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:fir_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:fir_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:green_enchanted_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:green_enchanted_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:holly_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:holly_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:imparius_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:imparius_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:jacaranda_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:jacaranda_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:lament_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:lament_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:mahogany_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:mahogany_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:mangrove_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:mangrove_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:maple_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:maple_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:nightshade_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:nightshade_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:palm_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:palm_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:pendorite_axe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:pendorite_battleaxe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:pendorite_hoe":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"byg:pendorite_pickaxe":{
+        "distracted": "1.4",
+        "unaware": "2"
+    },
+"byg:pendorite_shovel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:pendorite_sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"byg:pine_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:pine_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:rainbow_eucalyptus_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:rainbow_eucalyptus_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:redwood_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:redwood_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:skyris_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:skyris_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:sythian_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:sythian_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:willow_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:willow_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:witch_hazel_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:witch_hazel_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:zelkova_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"byg:zelkova_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}

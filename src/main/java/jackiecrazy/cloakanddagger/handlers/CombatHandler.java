@@ -51,7 +51,6 @@ public class CombatHandler {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void pain(LivingHurtEvent e) {
         LivingEntity uke = e.getEntity();
-        //FIXME it is physically impossible for effects to factor in stealth if they are removed first
         LivingEntity kek = null;
         DamageSource ds = e.getSource();
         if (ds.getDirectEntity() instanceof LivingEntity) {

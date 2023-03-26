@@ -1,0 +1,406 @@
+{
+"simplyswords:arcanethyst":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"simplyswords:awakened_lichblade":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:bramblethorn":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"simplyswords:brimstone_claymore":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:diamond_chakram":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"simplyswords:diamond_claymore":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:diamond_cutlass":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:diamond_glaive":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:diamond_greataxe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:diamond_greathammer":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:diamond_halberd":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:diamond_katana":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:diamond_longsword":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:diamond_rapier":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"simplyswords:diamond_sai":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"simplyswords:diamond_scythe":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"simplyswords:diamond_spear":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:diamond_twinblade":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:diamond_warglaive":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:emberblade":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:frostfall":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:gold_chakram":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"simplyswords:gold_claymore":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:gold_cutlass":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:gold_glaive":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:gold_greataxe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:gold_greathammer":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:gold_halberd":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:gold_katana":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:gold_longsword":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:gold_rapier":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"simplyswords:gold_sai":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"simplyswords:gold_scythe":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"simplyswords:gold_spear":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:gold_twinblade":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:gold_warglaive":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:hearthflame":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:icewhisper":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"simplyswords:iron_chakram":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"simplyswords:iron_claymore":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:iron_cutlass":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:iron_glaive":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:iron_greataxe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:iron_greathammer":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:iron_halberd":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:iron_katana":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:iron_longsword":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:iron_rapier":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"simplyswords:iron_sai":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"simplyswords:iron_scythe":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"simplyswords:iron_spear":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:iron_twinblade":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:iron_warglaive":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:livyatan":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:mjolnir":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:molten_edge":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:netherite_chakram":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"simplyswords:netherite_claymore":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:netherite_cutlass":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:netherite_glaive":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:netherite_greataxe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:netherite_greathammer":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:netherite_halberd":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:netherite_katana":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:netherite_longsword":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:netherite_rapier":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"simplyswords:netherite_sai":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"simplyswords:netherite_scythe":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"simplyswords:netherite_spear":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:netherite_twinblade":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:netherite_warglaive":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:runic_chakram":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"simplyswords:runic_claymore":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:runic_cutlass":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:runic_glaive":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:runic_greataxe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:runic_greathammer":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:runic_halberd":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:runic_katana":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:runic_longsword":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:runic_rapier":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"simplyswords:runic_sai":{
+        "distracted": "1.75",
+        "unaware": "2"
+    },
+"simplyswords:runic_scythe":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"simplyswords:runic_spear":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:runic_twinblade":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:runic_warglaive":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:shadowsting":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"simplyswords:slumbering_lichblade":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:soulkeeper":{
+        "distracted": "1.3",
+        "unaware": "1.6"
+    },
+"simplyswords:soulpyre":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:soulrender":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:soulstealer":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:stormbringer":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:storms_edge":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:sword_on_a_stick":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:thunderbrand":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:toxic_longsword":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"simplyswords:twisted_blade":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"simplyswords:waking_lichblade":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:watcher_claymore":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"simplyswords:watching_warglaive":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}

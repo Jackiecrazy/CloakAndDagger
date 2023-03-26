@@ -1,0 +1,54 @@
+{
+"greekfantasy:bident":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"greekfantasy:discus":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"greekfantasy:flint_knife":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"greekfantasy:iron_club":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"greekfantasy:iron_spear":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"greekfantasy:ivory_sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"greekfantasy:staff_of_healing":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"greekfantasy:stone_club":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"greekfantasy:stone_spear":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"greekfantasy:throwing_axe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"greekfantasy:thyrsus":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"greekfantasy:wooden_club":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"greekfantasy:wooden_spear":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}

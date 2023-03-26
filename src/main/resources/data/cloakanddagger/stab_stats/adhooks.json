@@ -1,0 +1,14 @@
+{
+"adhooks:pudge_launcher":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"adhooks:spear_launcher":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"adhooks:web_launcher":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}

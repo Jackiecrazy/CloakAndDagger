@@ -15,7 +15,8 @@ public class ItemTooltipHandler {
     @SubscribeEvent()
     public static void tooltip(ItemTooltipEvent e) {
         if (CombatUtils.isWeapon(e.getItemStack())) {
-            e.getToolTip().add(Component.translatable("wardance.tooltip.attack", CombatUtils.getDamageMultiplier(StealthOverride.Awareness.DISTRACTED, e.getItemStack()) + "x", CombatUtils.getDamageMultiplier(StealthOverride.Awareness.UNAWARE, e.getItemStack()) + "x").withStyle(ChatFormatting.GRAY));
+            e.getToolTip().add(Component.translatable("cloak.tooltip.distract", CombatUtils.getDamageMultiplier(StealthOverride.Awareness.DISTRACTED, e.getItemStack()) + "x").withStyle(ChatFormatting.GRAY));
+            e.getToolTip().add(Component.translatable("cloak.tooltip.unaware", CombatUtils.getDamageMultiplier(StealthOverride.Awareness.UNAWARE, e.getItemStack()) + "x").withStyle(ChatFormatting.GRAY));
         }
     }
 }

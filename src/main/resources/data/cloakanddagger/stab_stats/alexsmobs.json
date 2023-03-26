@@ -1,0 +1,30 @@
+{
+"alexsmobs:falconry_glove":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"alexsmobs:ghostly_pickaxe":{
+        "distracted": "1.4",
+        "unaware": "2"
+    },
+"alexsmobs:hemolymph_blaster":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"alexsmobs:shield_of_the_deep":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"alexsmobs:skelewag_sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"alexsmobs:stink_ray":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"alexsmobs:tendon_whip":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}

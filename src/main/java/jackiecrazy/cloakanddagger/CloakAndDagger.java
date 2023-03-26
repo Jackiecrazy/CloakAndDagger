@@ -10,6 +10,7 @@ import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
+import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -45,7 +46,6 @@ public class CloakAndDagger {
         MinecraftForge.EVENT_BUS.register(this);
         FMLPaths.getOrCreateGameRelativePath(FMLPaths.CONFIGDIR.get().resolve(MODID), MODID);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, GeneralConfig.CONFIG_SPEC, MODID + "/stealth.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ItemConfig.CONFIG_SPEC, MODID + "/items.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SoundConfig.CONFIG_SPEC, MODID + "/sound.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MobConfig.CONFIG_SPEC, MODID + "/mob.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfig.CONFIG_SPEC, MODID + "/client.toml");
@@ -76,14 +76,12 @@ public class CloakAndDagger {
         event.registerAbove(VanillaGuiOverlay.HOTBAR.id(), "cloakdagger", new StealthOverlay());
     }
 
+    @SubscribeEvent
+    public void onJsonListener(AddReloadListenerEvent event) {
+        WeaponStats.register(event);
+    }
+
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
-        @SubscribeEvent
-        public static void attributes(EntityAttributeModificationEvent event) {
-//            for (EntityType<? extends LivingEntity> t : event.getTypes()) {
-//                if (!event.has(t, Attributes.ATTACK_SPEED)) event.add(t, Attributes.ATTACK_SPEED, 4);
-//                if (!event.has(t, Attributes.LUCK)) event.add(t, Attributes.LUCK, 0);
-//            }
-        }
     }
 }

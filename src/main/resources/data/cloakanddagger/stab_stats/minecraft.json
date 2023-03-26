@@ -1,0 +1,270 @@
+{
+"minecraft:acacia_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:acacia_sign":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:acacia_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:birch_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:birch_sign":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:birch_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:bow":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"minecraft:crimson_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:crimson_sign":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:crimson_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:crossbow":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"minecraft:dark_oak_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:dark_oak_sign":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:dark_oak_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:diamond_axe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:diamond_hoe":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"minecraft:diamond_pickaxe":{
+        "distracted": "1.4",
+        "unaware": "2"
+    },
+"minecraft:diamond_shovel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:diamond_sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:end_rod":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:flint_and_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:golden_axe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:golden_hoe":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"minecraft:golden_pickaxe":{
+        "distracted": "1.4",
+        "unaware": "2"
+    },
+"minecraft:golden_shovel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:golden_sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:iron_axe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:iron_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:iron_hoe":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"minecraft:iron_pickaxe":{
+        "distracted": "1.4",
+        "unaware": "2"
+    },
+"minecraft:iron_shovel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:iron_sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:iron_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:jungle_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:jungle_sign":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:jungle_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:lantern":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:netherite_axe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:netherite_hoe":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"minecraft:netherite_pickaxe":{
+        "distracted": "1.4",
+        "unaware": "2"
+    },
+"minecraft:netherite_shovel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:netherite_sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:oak_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:oak_sign":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:oak_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:redstone_torch":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:shield":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:soul_lantern":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:spruce_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:spruce_sign":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:spruce_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:spyglass":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:stone_axe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:stone_hoe":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"minecraft:stone_pickaxe":{
+        "distracted": "1.4",
+        "unaware": "2"
+    },
+"minecraft:stone_shovel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:stone_sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:torch":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:trident":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:warped_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:warped_sign":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"minecraft:warped_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:wooden_axe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:wooden_hoe":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"minecraft:wooden_pickaxe":{
+        "distracted": "1.4",
+        "unaware": "2"
+    },
+"minecraft:wooden_shovel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"minecraft:wooden_sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    }
+}

@@ -1,0 +1,22 @@
+{
+"mutantbeasts:creeper_shard":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"mutantbeasts:endersoul_hand":{
+        "distracted": "1.5",
+        "unaware": "2"
+    },
+"mutantbeasts:hulk_hammer":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"mutantmore:blazing_scimitar":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"mutantmore:withered_claymore":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}

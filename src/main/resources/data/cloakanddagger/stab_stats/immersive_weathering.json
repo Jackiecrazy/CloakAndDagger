@@ -1,0 +1,34 @@
+{
+"immersive_weathering:ice_sickle":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"immersiveengineering:axe_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"immersiveengineering:hoe_steel":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"immersiveengineering:pickaxe_steel":{
+        "distracted": "1.4",
+        "unaware": "2"
+    },
+"immersiveengineering:revolver":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"immersiveengineering:shield":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"immersiveengineering:shovel_steel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"immersiveengineering:sword_steel":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    }
+}

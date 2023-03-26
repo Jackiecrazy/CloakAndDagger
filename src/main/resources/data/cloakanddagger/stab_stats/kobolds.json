@@ -1,0 +1,22 @@
+{
+"kobolds:kobold_axe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"kobolds:kobold_netherite_sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"kobolds:kobold_pickaxe":{
+        "distracted": "1.4",
+        "unaware": "2"
+    },
+"kobolds:kobold_shovel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"kobolds:kobold_sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    }
+}

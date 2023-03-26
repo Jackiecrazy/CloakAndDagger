@@ -1,0 +1,14 @@
+{
+"davespotioneering:netherite_gauntlet":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"davespotioneering:potioneer_gauntlet":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"davespotioneering:rudimentary_gauntlet":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}

@@ -1,0 +1,58 @@
+{
+"monstersandmushrooms:avalasword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"monstersandmushrooms:blazewand":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"monstersandmushrooms:brutesword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"monstersandmushrooms:bugsywand":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"monstersandmushrooms:chorussword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"monstersandmushrooms:drownedsword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"monstersandmushrooms:endstaff":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"monstersandmushrooms:endwand":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"monstersandmushrooms:gnomesword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"monstersandmushrooms:maggartstaff":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"monstersandmushrooms:magmacubestaff":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"monstersandmushrooms:meangreenwand":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"monstersandmushrooms:shroomsterstaff":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"monstersandmushrooms:straystaff":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}

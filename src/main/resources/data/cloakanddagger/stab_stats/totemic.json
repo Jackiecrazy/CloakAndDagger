@@ -1,0 +1,10 @@
+{
+"totemic:baykok_bow":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"totemic:totem_whittling_knife":{
+        "distracted": "2",
+        "unaware": "2.5"
+    }
+}

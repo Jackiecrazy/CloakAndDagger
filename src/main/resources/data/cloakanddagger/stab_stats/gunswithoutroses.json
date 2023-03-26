@@ -1,0 +1,22 @@
+{
+"gunswithoutroses:diamond_gatling":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"gunswithoutroses:diamond_shotgun":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"gunswithoutroses:diamond_sniper":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"gunswithoutroses:gold_gun":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"gunswithoutroses:iron_gun":{
+        "distracted": "1",
+        "unaware": "1"
+    }
+}

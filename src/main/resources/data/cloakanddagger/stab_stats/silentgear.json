@@ -1,0 +1,78 @@
+{
+"silentgear:axe":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"silentgear:bow":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"silentgear:crossbow":{
+        "distracted": "1",
+        "unaware": "1"
+    },
+"silentgear:dagger":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"silentgear:excavator":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"silentgear:hammer":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"silentgear:katana":{
+        "distracted": "1.2",
+        "unaware": "1.4"
+    },
+"silentgear:knife":{
+        "distracted": "2",
+        "unaware": "2.5"
+    },
+"silentgear:machete":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"silentgear:mattock":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"silentgear:paxel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"silentgear:pickaxe":{
+        "distracted": "1.4",
+        "unaware": "2"
+    },
+"silentgear:prospector_hammer":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"silentgear:saw":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"silentgear:shield":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"silentgear:shovel":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"silentgear:sickle":{
+        "distracted": "1.4",
+        "unaware": "1.8"
+    },
+"silentgear:spear":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"silentgear:sword":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    }
+}

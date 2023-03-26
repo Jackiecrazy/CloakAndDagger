@@ -1,0 +1,14 @@
+{
+"traverse:fir_door":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    },
+"traverse:fir_sign":{
+        "distracted": "1.25",
+        "unaware": "1.5"
+    },
+"traverse:fir_trapdoor":{
+        "distracted": "1.1",
+        "unaware": "1.2"
+    }
+}
