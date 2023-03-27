@@ -1,0 +1,142 @@
+{
+"wyrmroost:blue_geode_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.2",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:blue_geode_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10.4",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:blue_geode_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.2",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:blue_geode_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-7.8",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:drake_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.5",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:drake_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-7",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:drake_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.5",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:drake_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.3",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:platinum_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.8",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:platinum_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-7.6",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:platinum_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.8",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:platinum_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.7",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:purple_geode_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.8",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:purple_geode_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-11.6",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:purple_geode_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.8",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:purple_geode_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.7",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:red_geode_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.4",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:red_geode_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10.8",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:red_geode_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.4",
+        "operation":"ADDITION"
+      }
+    ],
+"wyrmroost:red_geode_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.1",
+        "operation":"ADDITION"
+      }
+    ]
+}

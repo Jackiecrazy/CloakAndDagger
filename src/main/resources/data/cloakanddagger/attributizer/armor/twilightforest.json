@@ -1,0 +1,198 @@
+{
+"twilightforest:arctic_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.6",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:arctic_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.2",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:arctic_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.6",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:arctic_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.9",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:fiery_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.6",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:fiery_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-9.2",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:fiery_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.6",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:fiery_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.9",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:ironwood_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.5",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:ironwood_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:ironwood_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.5",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:ironwood_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.8",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:knightmetal_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.8",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:knightmetal_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-7.6",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:knightmetal_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.8",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:knightmetal_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.7",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:naga_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.2",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:naga_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.2",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:phantom_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-9.2",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:phantom_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.6",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:steeleaf_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.2",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:steeleaf_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.4",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:steeleaf_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.2",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:steeleaf_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.3",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:yeti_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.8",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:yeti_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.6",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:yeti_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.8",
+        "operation":"ADDITION"
+      }
+    ],
+"twilightforest:yeti_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.2",
+        "operation":"ADDITION"
+      }
+    ]
+}

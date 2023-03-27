@@ -1,0 +1,58 @@
+{
+"arsmagicalegacy:battlemage_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.8",
+        "operation":"ADDITION"
+      }
+    ],
+"arsmagicalegacy:battlemage_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.6",
+        "operation":"ADDITION"
+      }
+    ],
+"arsmagicalegacy:battlemage_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.8",
+        "operation":"ADDITION"
+      }
+    ],
+"arsmagicalegacy:battlemage_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.2",
+        "operation":"ADDITION"
+      }
+    ],
+"arsmagicalegacy:mage_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.2",
+        "operation":"ADDITION"
+      }
+    ],
+"arsmagicalegacy:mage_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.4",
+        "operation":"ADDITION"
+      }
+    ],
+"arsmagicalegacy:mage_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.2",
+        "operation":"ADDITION"
+      }
+    ],
+"arsmagicalegacy:mage_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.3",
+        "operation":"ADDITION"
+      }
+    ]
+}

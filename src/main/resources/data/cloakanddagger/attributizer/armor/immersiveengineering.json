@@ -1,0 +1,58 @@
+{
+"immersiveengineering:armor_faraday_chest":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.7",
+        "operation":"ADDITION"
+      }
+    ],
+"immersiveengineering:armor_faraday_feet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.9",
+        "operation":"ADDITION"
+      }
+    ],
+"immersiveengineering:armor_faraday_head":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.9",
+        "operation":"ADDITION"
+      }
+    ],
+"immersiveengineering:armor_faraday_legs":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.7",
+        "operation":"ADDITION"
+      }
+    ],
+"immersiveengineering:armor_steel_chest":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.7",
+        "operation":"ADDITION"
+      }
+    ],
+"immersiveengineering:armor_steel_feet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.9",
+        "operation":"ADDITION"
+      }
+    ],
+"immersiveengineering:armor_steel_head":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.9",
+        "operation":"ADDITION"
+      }
+    ],
+"immersiveengineering:armor_steel_legs":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.7",
+        "operation":"ADDITION"
+      }
+    ]
+}

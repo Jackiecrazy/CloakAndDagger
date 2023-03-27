@@ -1,0 +1,30 @@
+{
+"bloodmagic:livingboots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.4",
+        "operation":"ADDITION"
+      }
+    ],
+"bloodmagic:livinghelmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.4",
+        "operation":"ADDITION"
+      }
+    ],
+"bloodmagic:livingleggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.1",
+        "operation":"ADDITION"
+      }
+    ],
+"bloodmagic:livingplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10.8",
+        "operation":"ADDITION"
+      }
+    ]
+}

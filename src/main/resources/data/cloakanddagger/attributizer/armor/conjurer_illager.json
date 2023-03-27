@@ -1,0 +1,9 @@
+{
+"conjurer_illager:conjurer_hat":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.7",
+        "operation":"ADDITION"
+      }
+    ]
+}

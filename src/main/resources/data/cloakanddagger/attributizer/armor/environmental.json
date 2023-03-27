@@ -1,0 +1,30 @@
+{
+"environmental:architect_belt":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.5",
+        "operation":"ADDITION"
+      }
+    ],
+"environmental:healer_pouch":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.6",
+        "operation":"ADDITION"
+      }
+    ],
+"environmental:thief_hood":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.3",
+        "operation":"ADDITION"
+      }
+    ],
+"environmental:wanderer_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.3",
+        "operation":"ADDITION"
+      }
+    ]
+}

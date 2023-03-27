@@ -1,0 +1,107 @@
+{
+"alexsmobs:centipede_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.2",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:crocodile_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.2",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:emu_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.2",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:fedora":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.4",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:flying_fish_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.3",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:frontier_cap":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.4",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:froststalker_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.3",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:moose_headgear":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.1",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:novelty_hat":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.9",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:roadrunner_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.4",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:rocky_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-11.2",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:sombrero":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.7",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:spiked_turtle_shell":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.1",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:tarantula_hawk_elytra":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.6",
+        "operation":"ADDITION"
+      }
+    ],
+"alexsmobs:unsettling_kimono":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.6",
+        "operation":"ADDITION"
+      }
+    ]
+}

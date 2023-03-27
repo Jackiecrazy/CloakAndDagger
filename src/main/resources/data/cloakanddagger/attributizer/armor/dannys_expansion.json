@@ -1,0 +1,37 @@
+{
+"dannys_expansion:antique_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"dannys_expansion:antique_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.8",
+        "operation":"ADDITION"
+      }
+    ],
+"dannys_expansion:antique_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"dannys_expansion:antique_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.1",
+        "operation":"ADDITION"
+      }
+    ],
+"dannys_expansion:mummy_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.6",
+        "operation":"ADDITION"
+      }
+    ]
+}

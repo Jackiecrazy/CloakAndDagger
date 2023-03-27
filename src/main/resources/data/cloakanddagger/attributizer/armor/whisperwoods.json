@@ -1,0 +1,9 @@
+{
+"whisperwoods:hirschgeist_skull":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.9",
+        "operation":"ADDITION"
+      }
+    ]
+}

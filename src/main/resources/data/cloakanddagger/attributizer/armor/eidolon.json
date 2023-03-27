@@ -1,0 +1,30 @@
+{
+"eidolon:top_hat":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.4",
+        "operation":"ADDITION"
+      }
+    ],
+"eidolon:warlock_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.2",
+        "operation":"ADDITION"
+      }
+    ],
+"eidolon:warlock_cloak":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.4",
+        "operation":"ADDITION"
+      }
+    ],
+"eidolon:warlock_hat":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.2",
+        "operation":"ADDITION"
+      }
+    ]
+}

@@ -1,0 +1,471 @@
+{
+"magistuarmory:armet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.2",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:barbute":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.1",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:bascinet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:brigandine_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.2",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:ceremonial_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.3",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:ceremonial_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.6",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:ceremonialarmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.7",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:chainmail_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.8",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:chainmail_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.6",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:chainmail_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.8",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:chainmail_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.7",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:coif":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.3",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:crusader_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.6",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:crusader_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-11.2",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:crusader_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:cuirassier_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.6",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:cuirassier_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-7.2",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:cuirassier_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.6",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:cuirassier_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:face_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.6",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:gambeson_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:gambeson_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.8",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:gothic_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.6",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:gothic_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-11.2",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:gothic_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:grand_bascinet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.2",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:greathelm":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.8",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:halfarmor_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:jousting_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-7",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:jousting_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-14",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:jousting_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10.5",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:kastenbrust_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.2",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:kastenbrust_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:kastenbrust_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.3",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:kettlehat":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.5",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:knight_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:knight_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:knight_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-7.5",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:lamellar_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.8",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:lamellar_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-7.6",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:maximilian_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:maximilian_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10.8",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:maximilian_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:maximilian_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.1",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:norman_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:pantyhose":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.6",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:platemail_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.2",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:platemail_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:platemail_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.3",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:rustedbarbute":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.6",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:rustedchainmail_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.7",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:rustedchainmail_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:rustedchainmail_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.7",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:rustedchainmail_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.6",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:rustedcrusader_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:rustedcrusader_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:rustedgreathelm":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:rustedhalfarmor_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.8",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:rustedkettlehat":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.2",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:rustednorman_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.2",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:sallet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.5",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:shishak":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.7",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:stechhelm":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.5",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:wingedhussar_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10.8",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:xivcenturyknight_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.4",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:xivcenturyknight_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10.8",
+        "operation":"ADDITION"
+      }
+    ],
+"magistuarmory:xivcenturyknight_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.1",
+        "operation":"ADDITION"
+      }
+    ]
+}

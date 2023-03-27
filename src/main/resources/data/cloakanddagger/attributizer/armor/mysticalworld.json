@@ -1,0 +1,170 @@
+{
+"mysticalworld:copper_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:copper_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:copper_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:copper_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.5",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:lead_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.2",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:lead_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10.4",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:lead_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.2",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:lead_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-7.8",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:quicksilver_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.2",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:quicksilver_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4.4",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:quicksilver_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.2",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:quicksilver_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.3",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:sapphire_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.4",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:sapphire_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10.8",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:sapphire_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.4",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:sapphire_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.1",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:silver_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:silver_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:silver_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:silver_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:tin_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:tin_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.8",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:tin_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"mysticalworld:tin_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.1",
+        "operation":"ADDITION"
+      }
+    ]
+}

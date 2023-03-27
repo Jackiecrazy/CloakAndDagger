@@ -1,0 +1,93 @@
+{
+"pyromancer:armor_of_hellblaze_monarch_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:armor_of_hellblaze_monarch_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-10",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:armor_of_hellblaze_monarch_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:armor_of_hellblaze_monarch_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-7.5",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:marauders_armor_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.5",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:marauders_armor_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:marauders_armor_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.5",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:marauders_armor_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.8",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:netherite_mask_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.1",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:pyromancer_armor_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.3",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:pyromancer_armor_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.6",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:pyromancer_armor_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.3",
+        "operation":"ADDITION"
+      }
+    ],
+"pyromancer:pyromancer_armor_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.5",
+        "operation":"ADDITION"
+      }
+    ]
+}

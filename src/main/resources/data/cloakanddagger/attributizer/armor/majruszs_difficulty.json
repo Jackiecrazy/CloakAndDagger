@@ -1,0 +1,93 @@
+{
+"majruszs_difficulty:end_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.6",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszs_difficulty:end_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-13.2",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszs_difficulty:end_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.6",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszs_difficulty:end_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-9.9",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszs_difficulty:hermes_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.2",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszsdifficulty:enderium_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.6",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszsdifficulty:enderium_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-13.2",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszsdifficulty:enderium_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.6",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszsdifficulty:enderium_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-9.9",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszsdifficulty:tattered_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.3",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszsdifficulty:tattered_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.6",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszsdifficulty:tattered_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.3",
+        "operation":"ADDITION"
+      }
+    ],
+"majruszsdifficulty:tattered_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-0.5",
+        "operation":"ADDITION"
+      }
+    ]
+}

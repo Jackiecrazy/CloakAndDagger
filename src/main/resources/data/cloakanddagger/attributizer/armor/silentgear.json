@@ -1,0 +1,30 @@
+{
+"silentgear:boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"silentgear:chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.8",
+        "operation":"ADDITION"
+      }
+    ],
+"silentgear:helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"silentgear:leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.1",
+        "operation":"ADDITION"
+      }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+"mutantbeasts:mutant_skeleton_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.5",
+        "operation":"ADDITION"
+      }
+    ],
+"mutantbeasts:mutant_skeleton_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3",
+        "operation":"ADDITION"
+      }
+    ],
+"mutantbeasts:mutant_skeleton_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.3",
+        "operation":"ADDITION"
+      }
+    ],
+"mutantbeasts:mutant_skeleton_skull":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.5",
+        "operation":"ADDITION"
+      }
+    ],
+"mutantmore:mutant_wither_skeleton_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.5",
+        "operation":"ADDITION"
+      }
+    ],
+"mutantmore:mutant_wither_skeleton_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3",
+        "operation":"ADDITION"
+      }
+    ],
+"mutantmore:mutant_wither_skeleton_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.3",
+        "operation":"ADDITION"
+      }
+    ],
+"mutantmore:mutant_wither_skeleton_skull":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.5",
+        "operation":"ADDITION"
+      }
+    ]
+}

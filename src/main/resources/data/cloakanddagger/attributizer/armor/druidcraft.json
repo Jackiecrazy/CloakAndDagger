@@ -1,0 +1,86 @@
+{
+"druidcraft:bone_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.7",
+        "operation":"ADDITION"
+      }
+    ],
+"druidcraft:bone_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"druidcraft:bone_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.7",
+        "operation":"ADDITION"
+      }
+    ],
+"druidcraft:bone_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.6",
+        "operation":"ADDITION"
+      }
+    ],
+"druidcraft:chitin_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4",
+        "operation":"ADDITION"
+      }
+    ],
+"druidcraft:chitin_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8",
+        "operation":"ADDITION"
+      }
+    ],
+"druidcraft:chitin_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-4",
+        "operation":"ADDITION"
+      }
+    ],
+"druidcraft:chitin_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6",
+        "operation":"ADDITION"
+      }
+    ],
+"druidcraft:moonstone_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.6",
+        "operation":"ADDITION"
+      }
+    ],
+"druidcraft:moonstone_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-11.2",
+        "operation":"ADDITION"
+      }
+    ],
+"druidcraft:moonstone_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.6",
+        "operation":"ADDITION"
+      }
+    ],
+"druidcraft:moonstone_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.4",
+        "operation":"ADDITION"
+      }
+    ]
+}

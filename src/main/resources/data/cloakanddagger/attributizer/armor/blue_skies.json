@@ -1,0 +1,170 @@
+{
+"blue_skies:aquite_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:aquite_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.8",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:aquite_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:aquite_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.1",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:charoite_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.9",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:charoite_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-11.8",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:charoite_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.9",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:charoite_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-8.9",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:diopside_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:diopside_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-12",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:diopside_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:diopside_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-9",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:horizonite_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.9",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:horizonite_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.8",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:horizonite_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.9",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:horizonite_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.9",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:pyrope_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.9",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:pyrope_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.8",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:pyrope_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-1.9",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:pyrope_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-2.9",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:shadow_boots":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:shadow_chestplate":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-6.8",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:shadow_helmet":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-3.4",
+        "operation":"ADDITION"
+      }
+    ],
+"blue_skies:shadow_leggings":[
+      {
+        "attribute":"footwork:stealth",
+        "modify":"-5.1",
+        "operation":"ADDITION"
+      }
+    ]
+}
