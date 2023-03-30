@@ -2,29 +2,29 @@
 "advancedrocketry:spaceboots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2.6
       }
     ],
 "advancedrocketry:spacechest":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.2
       }
     ],
 "advancedrocketry:spacehelmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2.6
       }
     ],
 "advancedrocketry:spaceleggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.9
       }
     ]
 }

@@ -30,6 +30,10 @@ public class StealthOverride extends StealthUtils {
     public static HashMap<ResourceLocation, StealthData> stealthMap = new HashMap<>();
     public static HashMap<SoundEvent, Integer> soundMap = new HashMap<>();
 
+    public static StealthData getStealth(LivingEntity e) {
+        return stealthMap.getOrDefault(EntityType.getKey(e.getType()), STEALTH);
+    }
+
     public static void updateMobDetection(List<? extends String> interpretS) {
         stealthMap.clear();
         for (String s : interpretS) {
@@ -76,38 +80,6 @@ public class StealthOverride extends StealthUtils {
         }
     }
 
-    public Awareness getAwareness(LivingEntity attacker, LivingEntity target) {
-        if (target == null || attacker == target)
-            return Awareness.ALERT;//the cases that don't make sense.
-        //players are alert because being jumped with 2.5x daggers feel bad
-        if (target instanceof Player)
-            return Awareness.ALERT;
-        StealthData sd = stealthMap.getOrDefault(EntityType.getKey(target.getType()), STEALTH);
-        Awareness a = Awareness.ALERT;
-        //sleep, paralysis, and petrify take highest priority
-        if (target.hasEffect(FootworkEffects.SLEEP.get()) || target.hasEffect(FootworkEffects.PARALYSIS.get()) || target.hasEffect(FootworkEffects.PETRIFY.get()))
-            a = Awareness.UNAWARE;
-            //idle and not vigilant
-        else if (!sd.isVigilant() && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null))
-            a = Awareness.UNAWARE;
-            //distraction, confusion, and choking take top priority in inferior tier
-        else if (target.hasEffect(FootworkEffects.DISTRACTION.get()) || target.hasEffect(FootworkEffects.CONFUSION.get()) || target.getAirSupply() <= 0)
-            a = Awareness.DISTRACTED;
-            //looking around for you, but cannot see
-        else if (attacker != null && attacker.isInvisible() && !sd.isObservant())
-            a = Awareness.DISTRACTED;
-            //webbed and not a spider
-        else if (inWeb(target) && !sd.isCheliceric())
-            a = Awareness.DISTRACTED;
-            //hurt by something else
-        else if (!sd.isMindful() && target.getLastHurtByMob() != attacker && (!(target instanceof Mob) || ((Mob) target).getTarget() != attacker))
-            a = Awareness.DISTRACTED;
-        //event for more compat
-        EntityAwarenessEvent eae = new EntityAwarenessEvent(target, attacker, a);
-        MinecraftForge.EVENT_BUS.post(eae);
-        return eae.getAwareness();
-    }
-
     public static boolean inWeb(LivingEntity e) {
         if (!e.level.isAreaLoaded(e.blockPosition(), (int) Math.ceil(e.getBbWidth()))) return false;
         double minX = e.getX() - e.getBbWidth() / 2, minY = e.getY(), minZ = e.getZ() - e.getBbWidth() / 2;
@@ -133,6 +105,38 @@ public class StealthOverride extends StealthUtils {
 
         i = Mth.clamp(Math.max(world.getBrightness(LightLayer.BLOCK, pos), i), 0, 15);
         return i;
+    }
+
+    public Awareness getAwareness(LivingEntity attacker, LivingEntity target) {
+        if (target == null || attacker == target)
+            return Awareness.ALERT;//the cases that don't make sense.
+        //players are alert because being jumped with 2.5x daggers feel bad
+        if (target instanceof Player)
+            return Awareness.ALERT;
+        StealthData sd = stealthMap.getOrDefault(EntityType.getKey(target.getType()), STEALTH);
+        Awareness a = Awareness.ALERT;
+        //sleep, paralysis, and petrify take highest priority
+        if (target.hasEffect(FootworkEffects.SLEEP.get()) || target.hasEffect(FootworkEffects.PARALYSIS.get()) || target.hasEffect(FootworkEffects.PETRIFY.get()))
+            a = Awareness.UNAWARE;
+            //idle and not vigilant
+        else if (!sd.isVigilant() && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null))
+            a = target.getHealth() > target.getMaxHealth() * 0.75 ? Awareness.UNAWARE : Awareness.DISTRACTED;
+            //distraction, confusion, and choking take top priority in inferior tier
+        else if (target.hasEffect(FootworkEffects.DISTRACTION.get()) || target.hasEffect(FootworkEffects.CONFUSION.get()) || target.getAirSupply() <= 0)
+            a = Awareness.DISTRACTED;
+            //looking around for you, but cannot see
+        else if (attacker != null && attacker.isInvisible() && !sd.isObservant())
+            a = Awareness.DISTRACTED;
+            //webbed and not a spider
+        else if (inWeb(target) && !sd.isCheliceric())
+            a = Awareness.DISTRACTED;
+            //hurt by something else
+        else if (!sd.isMindful() && target.getLastHurtByMob() != attacker && (!(target instanceof Mob) || ((Mob) target).getTarget() != attacker))
+            a = Awareness.DISTRACTED;
+        //event for more compat
+        EntityAwarenessEvent eae = new EntityAwarenessEvent(target, attacker, a);
+        MinecraftForge.EVENT_BUS.post(eae);
+        return eae.getAwareness();
     }
 
     public static class StealthData {

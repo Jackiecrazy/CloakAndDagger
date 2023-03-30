@@ -2,29 +2,29 @@
 "bloodmagic:livingboots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.4
       }
     ],
 "bloodmagic:livinghelmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.4
       }
     ],
 "bloodmagic:livingleggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-8.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-8.1
       }
     ],
 "bloodmagic:livingplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-10.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-10.8
       }
     ]
 }

@@ -2,29 +2,29 @@
 "hexerei:mushroom_witch_hat":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.2
       }
     ],
 "hexerei:witch_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.2
       }
     ],
 "hexerei:witch_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "hexerei:witch_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.2
       }
     ]
 }

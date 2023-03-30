@@ -2,106 +2,106 @@
 "greekfantasy:achilles_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4.8
       }
     ],
 "greekfantasy:achilles_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-9.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-9.6
       }
     ],
 "greekfantasy:achilles_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4.8
       }
     ],
 "greekfantasy:achilles_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7.2
       }
     ],
 "greekfantasy:hellenic_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4.8
       }
     ],
 "greekfantasy:hellenic_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-9.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-9.6
       }
     ],
 "greekfantasy:hellenic_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4.8
       }
     ],
 "greekfantasy:hellenic_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7.2
       }
     ],
 "greekfantasy:helm_of_darkness":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.4
       }
     ],
 "greekfantasy:nemean_lion_hide":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.2
       }
     ],
 "greekfantasy:snakeskin_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "greekfantasy:snakeskin_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "greekfantasy:snakeskin_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "greekfantasy:snakeskin_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "greekfantasy:winged_sandals":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.1
       }
     ]
 }

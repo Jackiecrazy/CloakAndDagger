@@ -2,169 +2,169 @@
 "atum:body_of_atem":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-12.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-12.4
       }
     ],
 "atum:body_of_ra":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-12.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-12.4
       }
     ],
 "atum:desert_boots_diamond":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.8
       }
     ],
 "atum:desert_boots_gold":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.2
       }
     ],
 "atum:desert_boots_iron":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.6
       }
     ],
 "atum:desert_chest_diamond":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-11.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-11.6
       }
     ],
 "atum:desert_chest_gold":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.4
       }
     ],
 "atum:desert_chest_iron":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7.2
       }
     ],
 "atum:desert_helmet_diamond":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.8
       }
     ],
 "atum:desert_helmet_gold":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.2
       }
     ],
 "atum:desert_helmet_iron":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.6
       }
     ],
 "atum:desert_legs_diamond":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-8.7",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-8.7
       }
     ],
 "atum:desert_legs_gold":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4.8
       }
     ],
 "atum:desert_legs_iron":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.4
       }
     ],
 "atum:eyes_of_atem":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.2
       }
     ],
 "atum:feet_of_atem":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.2
       }
     ],
 "atum:feet_of_ra":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.2
       }
     ],
 "atum:halo_of_ra":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.2
       }
     ],
 "atum:legs_of_atem":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-9.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-9.3
       }
     ],
 "atum:legs_of_ra":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-9.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-9.3
       }
     ],
 "atum:wanderer_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.3
       }
     ],
 "atum:wanderer_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "atum:wanderer_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.3
       }
     ],
 "atum:wanderer_legs":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.5",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.5
       }
     ]
 }

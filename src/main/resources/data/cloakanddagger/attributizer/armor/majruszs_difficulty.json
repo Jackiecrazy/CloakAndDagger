@@ -2,92 +2,92 @@
 "majruszs_difficulty:end_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.6
       }
     ],
 "majruszs_difficulty:end_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-13.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-13.2
       }
     ],
 "majruszs_difficulty:end_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.6
       }
     ],
 "majruszs_difficulty:end_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-9.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-9.9
       }
     ],
 "majruszs_difficulty:hermes_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.2
       }
     ],
 "majruszsdifficulty:enderium_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.6
       }
     ],
 "majruszsdifficulty:enderium_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-13.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-13.2
       }
     ],
 "majruszsdifficulty:enderium_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.6
       }
     ],
 "majruszsdifficulty:enderium_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-9.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-9.9
       }
     ],
 "majruszsdifficulty:tattered_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.3
       }
     ],
 "majruszsdifficulty:tattered_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "majruszsdifficulty:tattered_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.3
       }
     ],
 "majruszsdifficulty:tattered_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.5",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.5
       }
     ]
 }

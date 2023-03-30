@@ -2,106 +2,106 @@
 "alexsmobs:centipede_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.2
       }
     ],
 "alexsmobs:crocodile_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4.2
       }
     ],
 "alexsmobs:emu_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.2
       }
     ],
 "alexsmobs:fedora":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "alexsmobs:flying_fish_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.3
       }
     ],
 "alexsmobs:frontier_cap":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "alexsmobs:froststalker_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.3
       }
     ],
 "alexsmobs:moose_headgear":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2.1
       }
     ],
 "alexsmobs:novelty_hat":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.9
       }
     ],
 "alexsmobs:roadrunner_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "alexsmobs:rocky_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-11.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-11.2
       }
     ],
 "alexsmobs:sombrero":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.7",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.7
       }
     ],
 "alexsmobs:spiked_turtle_shell":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2.1
       }
     ],
 "alexsmobs:tarantula_hawk_elytra":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "alexsmobs:unsettling_kimono":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ]
 }

@@ -2,29 +2,29 @@
 "savageandravage:griefer_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2.1
       }
     ],
 "savageandravage:griefer_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4.2
       }
     ],
 "savageandravage:griefer_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2.1
       }
     ],
 "savageandravage:griefer_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.2
       }
     ]
 }

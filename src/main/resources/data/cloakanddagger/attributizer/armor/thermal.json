@@ -2,85 +2,85 @@
 "thermal:beekeeper_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "thermal:beekeeper_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "thermal:beekeeper_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "thermal:beekeeper_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "thermal:diving_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "thermal:diving_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "thermal:diving_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "thermal:diving_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "thermal:hazmat_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "thermal:hazmat_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "thermal:hazmat_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "thermal:hazmat_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ]
 }

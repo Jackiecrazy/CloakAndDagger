@@ -2,57 +2,57 @@
 "hmag:ancient_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.4
       }
     ],
 "hmag:ancient_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-10.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-10.8
       }
     ],
 "hmag:ancient_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.4
       }
     ],
 "hmag:ancient_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-8.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-8.1
       }
     ],
 "hmag:necrotic_chainmail_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2
       }
     ],
 "hmag:necrotic_chainmail_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4
       }
     ],
 "hmag:necrotic_chainmail_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2
       }
     ],
 "hmag:necrotic_chainmail_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3
       }
     ]
 }

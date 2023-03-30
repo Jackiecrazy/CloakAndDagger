@@ -87,8 +87,8 @@ public class RenderEvents {
 
     @SubscribeEvent
     public static void stealthystealth(RenderLivingEvent.Pre<LivingEntity, EntityModel<LivingEntity>> e) {
-        if (GeneralUtils.getAttributeValueSafe(e.getEntity(), FootworkAttributes.STEALTH.get()) > 0 && e.getEntity().isInvisible())
-            e.setCanceled(true);
+//        if (GeneralUtils.getAttributeValueSafe(e.getEntity(), FootworkAttributes.STEALTH.get()) > 0 && e.getEntity().isInvisible())
+//            e.setCanceled(true);
     }
 
     /**

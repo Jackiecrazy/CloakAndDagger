@@ -2,8 +2,8 @@
 "fins:fwinged_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.3
       }
     ]
 }

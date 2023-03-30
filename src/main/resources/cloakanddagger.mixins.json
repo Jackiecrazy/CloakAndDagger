@@ -5,8 +5,10 @@
   "refmap": "cloakanddagger.refmap.json",
   "mixins": [
     "MixinArmorStealth",
-    "MixinMobSound",
-    "MixinMobAlert"
+    "MixinGiveUpRevenge",
+    "MixinInvisibleRevenge",
+    "MixinMobAlert",
+    "MixinMobSound"
   ],
   "client": [
     "MixinMobStealth"

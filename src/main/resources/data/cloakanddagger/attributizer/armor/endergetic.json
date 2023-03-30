@@ -2,8 +2,8 @@
 "endergetic:booflo_vest":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ]
 }

@@ -2,113 +2,113 @@
 "aquaculture:neptunium_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7.4
       }
     ],
 "aquaculture:neptunium_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-14.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-14.8
       }
     ],
 "aquaculture:neptunium_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7.4
       }
     ],
 "aquaculture:neptunium_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-11.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-11.1
       }
     ],
 "aquamirae:abyssal_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7.4
       }
     ],
 "aquamirae:abyssal_brigantine":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-14.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-14.8
       }
     ],
 "aquamirae:abyssal_heaume":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7.4
       }
     ],
 "aquamirae:abyssal_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-11.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-11.1
       }
     ],
 "aquamirae:terrible_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.2
       }
     ],
 "aquamirae:terrible_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-12.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-12.4
       }
     ],
 "aquamirae:terrible_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.2
       }
     ],
 "aquamirae:terrible_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-9.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-9.3
       }
     ],
 "aquamirae:three_bolt_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.6
       }
     ],
 "aquamirae:three_bolt_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.6
       }
     ],
 "aquamirae:three_bolt_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.4
       }
     ],
 "aquamirae:three_bolt_suit":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7.2
       }
     ]
 }

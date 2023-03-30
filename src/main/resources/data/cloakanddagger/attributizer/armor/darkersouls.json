@@ -2,29 +2,29 @@
 "darkersouls:crown_of_tempest":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.2
       }
     ],
 "darkersouls:golden_greaves":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-9.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-9.3
       }
     ],
 "darkersouls:nameless_king_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-12.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-12.4
       }
     ],
 "darkersouls:nameless_king_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-9.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-9.3
       }
     ]
 }

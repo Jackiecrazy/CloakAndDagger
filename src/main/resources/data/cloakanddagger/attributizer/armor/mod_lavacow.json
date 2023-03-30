@@ -2,92 +2,92 @@
 "mod_lavacow:faminearmor_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.2
       }
     ],
 "mod_lavacow:faminearmor_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "mod_lavacow:faminearmor_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.2
       }
     ],
 "mod_lavacow:faminearmor_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.3
       }
     ],
 "mod_lavacow:felarmor_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2.3
       }
     ],
 "mod_lavacow:felarmor_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4.6
       }
     ],
 "mod_lavacow:felarmor_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2.3
       }
     ],
 "mod_lavacow:felarmor_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.5",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.5
       }
     ],
 "mod_lavacow:skeletonking_crown":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "mod_lavacow:swinearmor_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "mod_lavacow:swinearmor_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.2
       }
     ],
 "mod_lavacow:swinearmor_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "mod_lavacow:swinearmor_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.9
       }
     ]
 }

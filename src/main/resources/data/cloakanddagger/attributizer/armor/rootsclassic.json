@@ -2,57 +2,57 @@
 "rootsclassic:sylvan_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.2
       }
     ],
 "rootsclassic:sylvan_hood":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.1
       }
     ],
 "rootsclassic:sylvan_robe":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.3
       }
     ],
 "rootsclassic:sylvan_tunic":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.3
       }
     ],
 "rootsclassic:wildwood_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4.6
       }
     ],
 "rootsclassic:wildwood_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.9
       }
     ],
 "rootsclassic:wildwood_mask":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4.6
       }
     ],
 "rootsclassic:wildwood_plate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-9.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-9.2
       }
     ]
 }

@@ -2,141 +2,141 @@
 "wyrmroost:blue_geode_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.2
       }
     ],
 "wyrmroost:blue_geode_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-10.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-10.4
       }
     ],
 "wyrmroost:blue_geode_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.2
       }
     ],
 "wyrmroost:blue_geode_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7.8
       }
     ],
 "wyrmroost:drake_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.5",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.5
       }
     ],
 "wyrmroost:drake_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7
       }
     ],
 "wyrmroost:drake_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.5",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.5
       }
     ],
 "wyrmroost:drake_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.3
       }
     ],
 "wyrmroost:platinum_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.8
       }
     ],
 "wyrmroost:platinum_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7.6
       }
     ],
 "wyrmroost:platinum_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3.8
       }
     ],
 "wyrmroost:platinum_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.7",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.7
       }
     ],
 "wyrmroost:purple_geode_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.8
       }
     ],
 "wyrmroost:purple_geode_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-11.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-11.6
       }
     ],
 "wyrmroost:purple_geode_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.8
       }
     ],
 "wyrmroost:purple_geode_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-8.7",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-8.7
       }
     ],
 "wyrmroost:red_geode_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.4
       }
     ],
 "wyrmroost:red_geode_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-10.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-10.8
       }
     ],
 "wyrmroost:red_geode_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.4
       }
     ],
 "wyrmroost:red_geode_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-8.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-8.1
       }
     ]
 }

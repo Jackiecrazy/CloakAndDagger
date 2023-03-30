@@ -2,29 +2,29 @@
 "deeperdarker:warden_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.6
       }
     ],
 "deeperdarker:warden_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-13.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-13.2
       }
     ],
 "deeperdarker:warden_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-6.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-6.6
       }
     ],
 "deeperdarker:warden_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-9.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-9.9
       }
     ]
 }

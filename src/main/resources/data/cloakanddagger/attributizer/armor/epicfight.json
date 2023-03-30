@@ -2,22 +2,22 @@
 "epicfight:stray_hat":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.7",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.7
       }
     ],
 "epicfight:stray_pants":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.1
       }
     ],
 "epicfight:stray_robes":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.4
       }
     ]
 }

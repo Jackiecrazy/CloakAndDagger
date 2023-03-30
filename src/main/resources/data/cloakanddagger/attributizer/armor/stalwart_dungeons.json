@@ -2,78 +2,78 @@
 "stalwart_dungeons:chorundum_armor_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.3
       }
     ],
 "stalwart_dungeons:chorundum_armor_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-10.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-10.6
       }
     ],
 "stalwart_dungeons:chorundum_armor_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.3
       }
     ],
 "stalwart_dungeons:chorundum_armor_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-8
       }
     ],
 "stalwart_dungeons:tungsten_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.3
       }
     ],
 "stalwart_dungeons:tungsten_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-10.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-10.6
       }
     ],
 "stalwart_dungeons:tungsten_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.3
       }
     ],
 "stalwart_dungeons:tungsten_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-8
       }
     ],
 "stalwart_dungeons:warted_tungsten_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-10.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-10.4
       }
     ],
 "stalwart_dungeons:warted_tungsten_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.2
       }
     ],
 "stalwart_dungeons:warted_tungsten_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-7.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-7.8
       }
     ]
 }

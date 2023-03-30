@@ -2,85 +2,85 @@
 "wizard-staff:druid_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.5",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.5
       }
     ],
 "wizard-staff:druid_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1
       }
     ],
 "wizard-staff:druid_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.5",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.5
       }
     ],
 "wizard-staff:druid_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "wizard-staff:warlock_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2
       }
     ],
 "wizard-staff:warlock_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-4
       }
     ],
 "wizard-staff:warlock_helmet":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-2
       }
     ],
 "wizard-staff:warlock_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-3
       }
     ],
 "wizard-staff:wizard_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.5",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.5
       }
     ],
 "wizard-staff:wizard_chestplate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1
       }
     ],
 "wizard-staff:wizard_hat":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.3
       }
     ],
 "wizard-staff:wizard_leggings":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ]
 }

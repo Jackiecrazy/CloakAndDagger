@@ -76,7 +76,7 @@ public class EntityHandler {
     public static void takeThis(EntityJoinLevelEvent e) {
         if (e.getEntity() instanceof Mob mob) {
             if (e.getEntity() instanceof PathfinderMob creature) {
-                if (!StealthOverride.stealthMap.getOrDefault(EntityType.getKey(creature.getType()), StealthOverride.STEALTH).isDeaf())
+                if (!StealthOverride.getStealth(creature).isDeaf())
                     mob.goalSelector.addGoal(0, new InvestigateSoundGoal(creature));
             }
         }
@@ -96,11 +96,13 @@ public class EntityHandler {
         if (e.getLookingEntity() != e.getEntity() && e.getLookingEntity() instanceof LivingEntity) {
             double mult = 1;
             LivingEntity sneaker = e.getEntity(), watcher = (LivingEntity) e.getLookingEntity();
-            StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(watcher.getType()), StealthOverride.STEALTH);
+            StealthOverride.StealthData sd = StealthOverride.getStealth(watcher);
             if (StealthOverride.stealthMap.getOrDefault(EntityType.getKey(sneaker.getType()), StealthOverride.STEALTH).isCheliceric())
                 return;
             if (watcher.getKillCredit() != sneaker && watcher.getLastHurtByMob() != sneaker && watcher.getLastHurtMob() != sneaker && (!(watcher instanceof Mob) || ((Mob) watcher).getTarget() != sneaker)) {
                 double stealth = GeneralUtils.getAttributeValueSafe(sneaker, FootworkAttributes.STEALTH.get());
+                //it's time for RNGesus!
+                double luckDiff = GeneralUtils.getAttributeValueSafe(sneaker, FootworkAttributes.STEALTH.get()) - GeneralUtils.getAttributeValueSafe(watcher, FootworkAttributes.STEALTH.get());
                 double negMult = 1;
                 double posMult = 1;
                 //each level of negative stealth reduces effectiveness by 5%
@@ -109,16 +111,10 @@ public class EntityHandler {
                     stealth++;
                 }
                 //each level of positive stealth multiplies ineffectiveness by 0.93
-                while (stealth > 1) {
+                while (stealth > 0.99) {
                     posMult *= 0.933;
                     stealth--;
                 }
-                //blinded mobs cannot see
-                if (watcher.hasEffect(MobEffects.BLINDNESS) && !sd.isEyeless())
-                    mult /= 8;
-                //mobs that can't see behind their backs get a hefty debuff
-                if (!sd.isAllSeeing() && !GeneralUtils.isFacingEntity(watcher, sneaker, GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection))
-                    mult *= (1 - (0.7 * negMult)) * posMult;
                 float lightMalus = 0;
                 //stay dark, stay dank
                 if (!sd.isNightVision() && !watcher.hasEffect(MobEffects.NIGHT_VISION) && !sneaker.hasEffect(MobEffects.GLOWING) && sneaker.getRemainingFireTicks() <= 0) {
@@ -126,22 +122,36 @@ public class EntityHandler {
                     if (world.isAreaLoaded(sneaker.blockPosition(), 5) && world.isAreaLoaded(watcher.blockPosition(), 5)) {
                         final int slight = StealthOverride.getActualLightLevel(world, sneaker.blockPosition());
                         final int wlight = VisionData.getCap(watcher).getRetina();
-                        float m = (1 + (slight - wlight) / 15f) * (slight + 3) / 15f;//ugly, but welp.
-                        lightMalus = Mth.clamp(1 - m, 0f, 0.7f);
-                        mult *= (1 - (lightMalus * negMult)) * posMult;
+                        float m = (1 + (slight - wlight) / 15f) * (slight + 3) / 15f;//ugly, but welp. Lower is better
+                        float effectiveLightMalus = Mth.clamp(1 - m, 0f, 0.7f); //higher is better
+                        effectiveLightMalus += (0.7 - lightMalus) * posMult;
+                        mult *= (1 - (effectiveLightMalus * negMult));
                     }
                 }
                 //slow is smooth, smooth is fast, modified by light
                 if (!sd.isPerceptive()) {
                     final double speedSq = GeneralUtils.getSpeedSq(sneaker);
-                    mult *= (1 - (0.5 - Mth.sqrt((float) speedSq) * 2 * posMult) * negMult * lightMalus);
+                    final float speed = Mth.sqrt((float) speedSq);
+                    mult *= (1 - (0.5 - speed * 2 * posMult) * negMult * (1-lightMalus));
                 }
-
+                //internally enforced 3 blocks of vision, the other two can bypass this
+                mult = Math.max(mult, 3 / (watcher.getAttributeValue(Attributes.FOLLOW_RANGE) + 1));
+                //mobs that can't see behind their backs get a hefty debuff
+                if (!sd.isAllSeeing() && !GeneralUtils.isFacingEntity(watcher, sneaker, GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection))
+                    mult *= (1 - (0.7 * negMult));
             }
+            //blinded mobs cannot see
+            if (watcher.hasEffect(MobEffects.BLINDNESS) && !sd.isEyeless())
+                mult /= 8;
+            //invisible debuff to accuracy
+            if (watcher.hasEffect(MobEffects.INVISIBILITY) && !sd.isEyeless())
+                mult /= 8;
             //is this LoS?
             if (!sd.isHeatSeeking() && GeneralUtils.viewBlocked(watcher, sneaker, true))
                 mult *= (0.4);
-            e.modifyVisibility(Mth.clamp(mult, 0.001, 1));
+            //dude you literally just bumped into me
+            mult = Math.max(mult, 0.5 / (watcher.getAttributeValue(Attributes.FOLLOW_RANGE) + 1));
+            e.modifyVisibility(Mth.clamp(mult, 0, 1));
         }
     }
 

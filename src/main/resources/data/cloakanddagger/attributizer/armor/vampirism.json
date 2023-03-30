@@ -2,330 +2,330 @@
 "vampirism:armor_of_swiftness_chest_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.4
       }
     ],
 "vampirism:armor_of_swiftness_chest_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.2
       }
     ],
 "vampirism:armor_of_swiftness_chest_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.6
       }
     ],
 "vampirism:armor_of_swiftness_feet_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.7",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.7
       }
     ],
 "vampirism:armor_of_swiftness_feet_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "vampirism:armor_of_swiftness_feet_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "vampirism:armor_of_swiftness_head_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.7",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.7
       }
     ],
 "vampirism:armor_of_swiftness_head_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "vampirism:armor_of_swiftness_head_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "vampirism:armor_of_swiftness_legs_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.1
       }
     ],
 "vampirism:armor_of_swiftness_legs_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.9
       }
     ],
 "vampirism:armor_of_swiftness_legs_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.2
       }
     ],
 "vampirism:hunter_coat_chest_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.4
       }
     ],
 "vampirism:hunter_coat_chest_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.2
       }
     ],
 "vampirism:hunter_coat_chest_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.6
       }
     ],
 "vampirism:hunter_coat_feet_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.7",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.7
       }
     ],
 "vampirism:hunter_coat_feet_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "vampirism:hunter_coat_feet_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "vampirism:hunter_coat_head_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.7",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.7
       }
     ],
 "vampirism:hunter_coat_head_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ],
 "vampirism:hunter_coat_head_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "vampirism:hunter_coat_legs_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.1",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.1
       }
     ],
 "vampirism:hunter_coat_legs_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.9
       }
     ],
 "vampirism:hunter_coat_legs_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.2
       }
     ],
 "vampirism:hunter_hat_head_0":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-1.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-1.4
       }
     ],
 "vampirism:hunter_hat_head_1":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.7",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.7
       }
     ],
 "vampirism:obsidian_armor_chest_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-11.2",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-11.2
       }
     ],
 "vampirism:obsidian_armor_chest_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-10.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-10.6
       }
     ],
 "vampirism:obsidian_armor_chest_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-11.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-11.8
       }
     ],
 "vampirism:obsidian_armor_feet_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.6
       }
     ],
 "vampirism:obsidian_armor_feet_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.3
       }
     ],
 "vampirism:obsidian_armor_feet_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.9
       }
     ],
 "vampirism:obsidian_armor_head_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.6
       }
     ],
 "vampirism:obsidian_armor_head_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.3",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.3
       }
     ],
 "vampirism:obsidian_armor_head_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-5.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-5.9
       }
     ],
 "vampirism:obsidian_armor_legs_enhanced":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-8.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-8.4
       }
     ],
 "vampirism:obsidian_armor_legs_normal":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-8
       }
     ],
 "vampirism:obsidian_armor_legs_ultimate":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-8.9",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-8.9
       }
     ],
 "vampirism:vampire_cloak_black_blue":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "vampirism:vampire_cloak_black_red":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "vampirism:vampire_cloak_black_white":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "vampirism:vampire_cloak_red_black":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "vampirism:vampire_cloak_white_black":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "vampirism:vampire_clothing_boots":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "vampirism:vampire_clothing_crown":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.8",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.8
       }
     ],
 "vampirism:vampire_clothing_hat":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.4",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.4
       }
     ],
 "vampirism:vampire_clothing_legs":[
       {
         "attribute":"footwork:stealth",
-        "modify":"-0.6",
-        "operation":"ADDITION"
+        "operation":"ADDITION",
+        "modify":-0.6
       }
     ]
 }
