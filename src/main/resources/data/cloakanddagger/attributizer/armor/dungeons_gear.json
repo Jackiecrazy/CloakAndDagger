@@ -3,112 +3,112 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-1
       }
     ],
 "dungeons_gear:archers_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.5
+        "modify":-1
       }
     ],
 "dungeons_gear:archers_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.5
+        "modify":-2
       }
     ],
 "dungeons_gear:archers_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.5
+        "modify":-3
       }
     ],
 "dungeons_gear:arctic_fox_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-1
       }
     ],
 "dungeons_gear:arctic_fox_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-3
       }
     ],
 "dungeons_gear:arctic_fox_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-1
       }
     ],
 "dungeons_gear:arctic_fox_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.5
+        "modify":-2
       }
     ],
-"dungeons_gear:battle_chestplate":[
+"dungeons_gear:battle_robes_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10
+        "modify":-3
       }
     ],
-"dungeons_gear:battle_chestplates_boots":[
+"dungeons_gear:battle_robes_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
-"dungeons_gear:battle_chestplates_helmet":[
+"dungeons_gear:battle_robes_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.8
+        "modify":-1
       }
     ],
-"dungeons_gear:battle_chestplates_leggings":[
+"dungeons_gear:battle_robes_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.8
+        "modify":-2
       }
     ],
 "dungeons_gear:beehive_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.9
+        "modify":-2
       }
     ],
 "dungeons_gear:beehive_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.8
+        "modify":-4
       }
     ],
 "dungeons_gear:beehive_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.9
+        "modify":-2
       }
     ],
 "dungeons_gear:beehive_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.9
+        "modify":-3
       }
     ],
 "dungeons_gear:beenest_boots":[
@@ -171,1113 +171,1113 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:champions_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.8
+        "modify":-5
       }
     ],
 "dungeons_gear:champions_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:champions_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.1
+        "modify":-4
       }
     ],
 "dungeons_gear:climbing_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.8
+        "modify":-2
       }
     ],
 "dungeons_gear:climbing_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.6
+        "modify":-4
       }
     ],
 "dungeons_gear:climbing_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.8
+        "modify":-2
       }
     ],
 "dungeons_gear:climbing_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.7
+        "modify":-3
       }
     ],
 "dungeons_gear:curious_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:curious_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.8
+        "modify":-5
       }
     ],
 "dungeons_gear:curious_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:curious_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.1
+        "modify":-4
       }
     ],
 "dungeons_gear:dark_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ],
 "dungeons_gear:dark_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.8
+        "modify":-8
       }
     ],
 "dungeons_gear:dark_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ],
 "dungeons_gear:dark_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8.1
+        "modify":-6
       }
     ],
-"dungeons_gear:ember_hat":[
+"dungeons_gear:ember_robes_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
-"dungeons_gear:ember_chestplate":[
+"dungeons_gear:ember_robes_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.5
+        "modify":-3
       }
     ],
-"dungeons_gear:ember_chestplates_boots":[
+"dungeons_gear:ember_robes_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-1
       }
     ],
-"dungeons_gear:ember_chestplates_leggings":[
+"dungeons_gear:ember_robes_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-2
       }
     ],
 "dungeons_gear:emerald_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:emerald_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.8
+        "modify":-5
       }
     ],
 "dungeons_gear:emerald_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:emerald_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.1
+        "modify":-4
       }
     ],
-"dungeons_gear:evocation_hat":[
+"dungeons_gear:evocation_robes_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
-"dungeons_gear:evocation_chestplate":[
+"dungeons_gear:evocation_robes_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10
+        "modify":-3
       }
     ],
-"dungeons_gear:evocation_chestplates_boots":[
+"dungeons_gear:evocation_robes_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
-"dungeons_gear:evocation_chestplates_leggings":[
+"dungeons_gear:evocation_robes_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.8
+        "modify":-2
       }
     ],
 "dungeons_gear:fox_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-1
       }
     ],
 "dungeons_gear:fox_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.5
+        "modify":-1
       }
     ],
 "dungeons_gear:fox_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.5
+        "modify":-2
       }
     ],
 "dungeons_gear:fox_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.5
+        "modify":-3
       }
     ],
 "dungeons_gear:frost_bite_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.6
+        "modify":-3
       }
     ],
 "dungeons_gear:frost_bite_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.2
+        "modify":-5
       }
     ],
 "dungeons_gear:frost_bite_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.6
+        "modify":-3
       }
     ],
 "dungeons_gear:frost_bite_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ],
 "dungeons_gear:frost_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.4
+        "modify":-3
       }
     ],
 "dungeons_gear:frost_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8.8
+        "modify":-6
       }
     ],
 "dungeons_gear:frost_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.4
+        "modify":-3
       }
     ],
 "dungeons_gear:frost_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.6
+        "modify":-5
       }
     ],
 "dungeons_gear:full_metal_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.8
+        "modify":-3
       }
     ],
 "dungeons_gear:full_metal_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-9.6
+        "modify":-7
       }
     ],
 "dungeons_gear:full_metal_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.8
+        "modify":-3
       }
     ],
 "dungeons_gear:full_metal_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.2
+        "modify":-5
       }
     ],
 "dungeons_gear:gilded_glory_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.8
+        "modify":-3
       }
     ],
 "dungeons_gear:gilded_glory_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-9.6
+        "modify":-7
       }
     ],
 "dungeons_gear:gilded_glory_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.8
+        "modify":-3
       }
     ],
 "dungeons_gear:gilded_glory_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.2
+        "modify":-5
       }
     ],
 "dungeons_gear:goat_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "dungeons_gear:goat_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-3
       }
     ],
 "dungeons_gear:goat_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "dungeons_gear:goat_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-2
       }
     ],
 "dungeons_gear:grim_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.9
+        "modify":-2
       }
     ],
 "dungeons_gear:grim_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.8
+        "modify":-4
       }
     ],
 "dungeons_gear:grim_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.9
+        "modify":-2
       }
     ],
 "dungeons_gear:grim_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.9
+        "modify":-3
       }
     ],
-"dungeons_gear:guard_chestplate":[
+"dungeons_gear:guards_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.8
+        "modify":-5
       }
     ],
 "dungeons_gear:guards_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:guards_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:guards_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.1
+        "modify":-4
       }
     ],
 "dungeons_gear:heros_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.8
+        "modify":-3
       }
     ],
 "dungeons_gear:heros_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.6
+        "modify":-6
       }
     ],
 "dungeons_gear:heros_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.8
+        "modify":-3
       }
     ],
 "dungeons_gear:heros_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.7
+        "modify":-4
       }
     ],
 "dungeons_gear:highland_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.3
+        "modify":-2
       }
     ],
 "dungeons_gear:highland_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.6
+        "modify":-5
       }
     ],
 "dungeons_gear:highland_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.3
+        "modify":-2
       }
     ],
 "dungeons_gear:highland_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.5
+        "modify":-3
       }
     ],
 "dungeons_gear:hungry_horror_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.7
+        "modify":-2
       }
     ],
 "dungeons_gear:hungry_horror_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-4
       }
     ],
 "dungeons_gear:hungry_horror_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.7
+        "modify":-2
       }
     ],
 "dungeons_gear:hungry_horror_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.6
+        "modify":-3
       }
     ],
 "dungeons_gear:hunters_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "dungeons_gear:hunters_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "dungeons_gear:hunters_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-2
       }
     ],
 "dungeons_gear:hunters_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10
+        "modify":-3
       }
     ],
 "dungeons_gear:mercenary_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.9
+        "modify":-2
       }
     ],
 "dungeons_gear:mercenary_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.8
+        "modify":-4
       }
     ],
 "dungeons_gear:mercenary_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.9
+        "modify":-2
       }
     ],
 "dungeons_gear:mercenary_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.9
+        "modify":-3
       }
     ],
 "dungeons_gear:ocelot_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "dungeons_gear:ocelot_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10
+        "modify":-1
       }
     ],
 "dungeons_gear:ocelot_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-2
       }
     ],
 "dungeons_gear:ocelot_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10
+        "modify":-3
       }
     ],
 "dungeons_gear:opulent_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.2
+        "modify":-4
       }
     ],
 "dungeons_gear:opulent_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.4
+        "modify":-7
       }
     ],
 "dungeons_gear:opulent_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.2
+        "modify":-4
       }
     ],
 "dungeons_gear:opulent_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.8
+        "modify":-6
       }
     ],
 "dungeons_gear:phantom_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:phantom_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.8
+        "modify":-5
       }
     ],
 "dungeons_gear:phantom_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:phantom_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.1
+        "modify":-4
       }
     ],
 "dungeons_gear:plate_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.4
+        "modify":-3
       }
     ],
 "dungeons_gear:plate_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8.8
+        "modify":-6
       }
     ],
 "dungeons_gear:plate_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.4
+        "modify":-3
       }
     ],
 "dungeons_gear:plate_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.6
+        "modify":-5
       }
     ],
 "dungeons_gear:reinforced_mail_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.4
+        "modify":-3
       }
     ],
 "dungeons_gear:reinforced_mail_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8.8
+        "modify":-6
       }
     ],
 "dungeons_gear:reinforced_mail_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.4
+        "modify":-3
       }
     ],
 "dungeons_gear:reinforced_mail_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.6
+        "modify":-5
       }
     ],
 "dungeons_gear:renegade_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.3
+        "modify":-2
       }
     ],
 "dungeons_gear:renegade_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.6
+        "modify":-5
       }
     ],
 "dungeons_gear:renegade_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.3
+        "modify":-2
       }
     ],
 "dungeons_gear:renegade_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.5
+        "modify":-3
       }
     ],
 "dungeons_gear:royal_guard_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.8
+        "modify":-8
       }
     ],
 "dungeons_gear:royal_guard_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ],
 "dungeons_gear:rugged_climbing_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "dungeons_gear:rugged_climbing_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-3
       }
     ],
 "dungeons_gear:rugged_climbing_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "dungeons_gear:rugged_climbing_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-2
       }
     ],
 "dungeons_gear:scale_mail_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.9
+        "modify":-2
       }
     ],
 "dungeons_gear:scale_mail_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.8
+        "modify":-4
       }
     ],
 "dungeons_gear:scale_mail_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.9
+        "modify":-2
       }
     ],
 "dungeons_gear:scale_mail_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.9
+        "modify":-3
       }
     ],
 "dungeons_gear:shadow_walker_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "dungeons_gear:shadow_walker_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5
+        "modify":-1
       }
     ],
 "dungeons_gear:shadow_walker_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-2
       }
     ],
 "dungeons_gear:shadow_walker_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5
+        "modify":-3
       }
     ],
 "dungeons_gear:snow_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:snow_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.8
+        "modify":-5
       }
     ],
 "dungeons_gear:snow_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "dungeons_gear:snow_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.1
+        "modify":-4
       }
     ],
 "dungeons_gear:soul_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "dungeons_gear:soul_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10
+        "modify":-1
       }
     ],
 "dungeons_gear:soul_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-2
       }
     ],
 "dungeons_gear:soul_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10
+        "modify":-3
       }
     ],
 "dungeons_gear:souldancer_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "dungeons_gear:souldancer_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5
+        "modify":-1
       }
     ],
 "dungeons_gear:souldancer_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-2
       }
     ],
 "dungeons_gear:souldancer_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5
+        "modify":-3
       }
     ],
 "dungeons_gear:spelunker_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.9
+        "modify":-2
       }
     ],
 "dungeons_gear:spelunker_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.8
+        "modify":-4
       }
     ],
 "dungeons_gear:spelunker_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.9
+        "modify":-2
       }
     ],
 "dungeons_gear:spelunker_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.9
+        "modify":-3
       }
     ],
 "dungeons_gear:spider_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "dungeons_gear:spider_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5
+        "modify":-1
       }
     ],
 "dungeons_gear:spider_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-2
       }
     ],
 "dungeons_gear:spider_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5
+        "modify":-3
       }
     ],
 "dungeons_gear:splendid_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5
+        "modify":-3
       }
     ],
 "dungeons_gear:stalwart_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.2
+        "modify":-4
       }
     ],
 "dungeons_gear:stalwart_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.4
+        "modify":-7
       }
     ],
 "dungeons_gear:stalwart_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.2
+        "modify":-4
       }
     ],
 "dungeons_gear:stalwart_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.8
+        "modify":-6
       }
     ],
 "dungeons_gear:thief_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "dungeons_gear:thief_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10
+        "modify":-1
       }
     ],
 "dungeons_gear:thief_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-2
       }
     ],
 "dungeons_gear:thief_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10
+        "modify":-3
       }
     ],
 "dungeons_gear:titans_shroud_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.2
+        "modify":-4
       }
     ],
 "dungeons_gear:titans_shroud_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.4
+        "modify":-7
       }
     ],
 "dungeons_gear:titans_shroud_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.2
+        "modify":-4
       }
     ],
 "dungeons_gear:titans_shroud_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.8
+        "modify":-6
       }
     ],
 "dungeons_gear:wither_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.3
+        "modify":-2
       }
     ],
 "dungeons_gear:wither_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.6
+        "modify":-5
       }
     ],
 "dungeons_gear:wither_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.3
+        "modify":-2
       }
     ],
 "dungeons_gear:wither_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.5
+        "modify":-3
       }
     ],
 "dungeons_gear:wolf_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "dungeons_gear:wolf_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10
+        "modify":-1
       }
     ],
 "dungeons_gear:wolf_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-2
       }
     ],
 "dungeons_gear:wolf_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10
+        "modify":-3
       }
     ]
 }

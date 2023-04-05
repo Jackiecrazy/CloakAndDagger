@@ -3,105 +3,105 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.8
+        "modify":-4
       }
     ],
 "greekfantasy:achilles_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-9.6
+        "modify":-7
       }
     ],
 "greekfantasy:achilles_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.8
+        "modify":-4
       }
     ],
 "greekfantasy:achilles_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.2
+        "modify":-5
       }
     ],
 "greekfantasy:hellenic_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.8
+        "modify":-4
       }
     ],
 "greekfantasy:hellenic_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-9.6
+        "modify":-7
       }
     ],
 "greekfantasy:hellenic_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.8
+        "modify":-4
       }
     ],
 "greekfantasy:hellenic_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.2
+        "modify":-5
       }
     ],
 "greekfantasy:helm_of_darkness":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ],
 "greekfantasy:nemean_lion_hide":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.2
+        "modify":-2
       }
     ],
 "greekfantasy:snakeskin_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "greekfantasy:snakeskin_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.8
+        "modify":-3
       }
     ],
 "greekfantasy:snakeskin_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "greekfantasy:snakeskin_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-2
       }
     ],
 "greekfantasy:winged_sandals":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.1
+        "modify":-1
       }
     ]
 }

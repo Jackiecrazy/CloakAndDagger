@@ -3,28 +3,28 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.6
+        "modify":-2
       }
     ],
 "advancedrocketry:spacechest":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.2
+        "modify":-5
       }
     ],
 "advancedrocketry:spacehelmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.6
+        "modify":-2
       }
     ],
 "advancedrocketry:spaceleggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.9
+        "modify":-3
       }
     ]
 }

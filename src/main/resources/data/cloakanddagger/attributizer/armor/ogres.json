@@ -3,28 +3,28 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.1
+        "modify":-2
       }
     ],
 "ogres:ogre_armor_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.2
+        "modify":-3
       }
     ],
 "ogres:ogre_armor_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.1
+        "modify":-2
       }
     ],
 "ogres:ogre_armor_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.7
+        "modify":-2
       }
     ]
 }

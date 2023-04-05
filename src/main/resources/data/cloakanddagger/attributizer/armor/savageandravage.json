@@ -3,28 +3,28 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.1
+        "modify":-2
       }
     ],
 "savageandravage:griefer_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.2
+        "modify":-5
       }
     ],
 "savageandravage:griefer_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.1
+        "modify":-2
       }
     ],
 "savageandravage:griefer_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.2
+        "modify":-3
       }
     ]
 }

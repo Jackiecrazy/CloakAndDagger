@@ -3,28 +3,28 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.6
+        "modify":-5
       }
     ],
 "deeperdarker:warden_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-13.2
+        "modify":-9
       }
     ],
 "deeperdarker:warden_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.6
+        "modify":-5
       }
     ],
 "deeperdarker:warden_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-9.9
+        "modify":-7
       }
     ]
 }

@@ -3,49 +3,49 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "mowziesmobs:barakoa_mask_bliss":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "mowziesmobs:barakoa_mask_fear":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "mowziesmobs:barakoa_mask_fury":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "mowziesmobs:barakoa_mask_misery":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "mowziesmobs:barakoa_mask_rage":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "mowziesmobs:wrought_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.6
+        "modify":-3
       }
     ]
 }

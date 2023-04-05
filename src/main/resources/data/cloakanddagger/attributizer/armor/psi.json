@@ -3,28 +3,28 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.6
+        "modify":-3
       }
     ],
 "psi:psimetal_exosuit_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.2
+        "modify":-5
       }
     ],
 "psi:psimetal_exosuit_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.6
+        "modify":-3
       }
     ],
 "psi:psimetal_exosuit_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ]
 }

@@ -3,28 +3,28 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "eidolon:warlock_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.2
+        "modify":-2
       }
     ],
 "eidolon:warlock_cloak":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.4
+        "modify":-5
       }
     ],
 "eidolon:warlock_hat":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.2
+        "modify":-2
       }
     ]
 }

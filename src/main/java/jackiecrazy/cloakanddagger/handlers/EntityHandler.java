@@ -144,13 +144,13 @@ public class EntityHandler {
             if (watcher.hasEffect(MobEffects.BLINDNESS) && !sd.isEyeless())
                 mult /= 8;
             //invisible debuff to accuracy
-            if (watcher.hasEffect(MobEffects.INVISIBILITY) && !sd.isEyeless())
+            if (watcher.isInvisible() && !sd.isEyeless())
                 mult /= 8;
             //is this LoS?
             if (!sd.isHeatSeeking() && GeneralUtils.viewBlocked(watcher, sneaker, true))
                 mult *= (0.4);
             //dude you literally just bumped into me
-            mult = Math.max(mult, 0.5 / (watcher.getAttributeValue(Attributes.FOLLOW_RANGE) + 1));
+            mult = Math.max(mult, 1 / (watcher.getAttributeValue(Attributes.FOLLOW_RANGE) + 1));
             e.modifyVisibility(Mth.clamp(mult, 0, 1));
         }
     }

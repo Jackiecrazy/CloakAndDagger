@@ -3,91 +3,91 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.6
+        "modify":-5
       }
     ],
 "majruszs_difficulty:end_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-13.2
+        "modify":-9
       }
     ],
 "majruszs_difficulty:end_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.6
+        "modify":-5
       }
     ],
 "majruszs_difficulty:end_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-9.9
+        "modify":-7
       }
     ],
 "majruszs_difficulty:hermes_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.2
+        "modify":-5
       }
     ],
 "majruszsdifficulty:enderium_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.6
+        "modify":-5
       }
     ],
 "majruszsdifficulty:enderium_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-13.2
+        "modify":-9
       }
     ],
 "majruszsdifficulty:enderium_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.6
+        "modify":-5
       }
     ],
 "majruszsdifficulty:enderium_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-9.9
+        "modify":-7
       }
     ],
 "majruszsdifficulty:tattered_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-1
       }
     ],
 "majruszsdifficulty:tattered_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-3
       }
     ],
 "majruszsdifficulty:tattered_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-1
       }
     ],
 "majruszsdifficulty:tattered_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.5
+        "modify":-2
       }
     ]
 }

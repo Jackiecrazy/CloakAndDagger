@@ -18,7 +18,7 @@ public class GeneralConfig {
     public static final ForgeConfigSpec CONFIG_SPEC;
     public static float distract, unaware;
     public static boolean ignore;
-    public static boolean inv;
+    public static int inv;
     public static boolean playerStealth;
     public static int baseHorizontalDetection, baseVerticalDetection;
 
@@ -27,7 +27,7 @@ public class GeneralConfig {
         CONFIG = specPair.getLeft();
         CONFIG_SPEC = specPair.getRight();
     }
-    private final ForgeConfigSpec.BooleanValue _removeInv;
+    private final ForgeConfigSpec.IntValue _removeInv;
     private final ForgeConfigSpec.BooleanValue _player;
     private final ForgeConfigSpec.DoubleValue _distract;
     private final ForgeConfigSpec.DoubleValue _unaware;
@@ -37,7 +37,7 @@ public class GeneralConfig {
 
     public GeneralConfig(ForgeConfigSpec.Builder b) {
         //feature toggle, resource, defense, compat, stealth, lists
-        _removeInv = b.translation("wardance.config.removeInvis").comment("whether invisibility will be removed on attack").define("attacking dispels invisibility", true);
+        _removeInv = b.translation("wardance.config.removeInvis").comment("how many ticks invisibility should be nullified for after an attack. The invisibility potion effect is not removed, so long-lasting sources are still useful. Set to 0 to disable.").defineInRange("damage expose time", 80, 0, Integer.MAX_VALUE);
         _player = b.translation("wardance.config.player").comment("whether you must pass stealth checks to perceive a mob. Currently rather incomplete. I am not responsible for ragequits caused by this option. This physically ceases to work with Optifine installed.").define("use player senses", false);
         _baseDetectionHorizontal = b.translation("wardance.config.detectH").comment("angle of detection on the xz plane").defineInRange("default mob horizontal FoV", 120, 0, 360);
         _baseDetectionVertical = b.translation("wardance.config.detectV").comment("angle of detection on the y axis").defineInRange("default mob vertical FoV", 60, 0, 360);
@@ -61,11 +61,5 @@ public class GeneralConfig {
         if (e.getConfig().getSpec() == CONFIG_SPEC) {
             bake();
         }
-    }
-
-    public enum ThirdOption {
-        TRUE,
-        FALSE,
-        FORCED
     }
 }

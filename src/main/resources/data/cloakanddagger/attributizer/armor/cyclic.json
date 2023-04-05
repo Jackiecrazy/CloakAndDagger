@@ -3,63 +3,63 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ],
 "cyclic:crystal_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.8
+        "modify":-8
       }
     ],
 "cyclic:crystal_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ],
 "cyclic:crystal_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8.1
+        "modify":-6
       }
     ],
 "cyclic:emerald_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ],
 "cyclic:emerald_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.8
+        "modify":-8
       }
     ],
 "cyclic:emerald_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ],
 "cyclic:emerald_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8.1
+        "modify":-6
       }
     ],
 "cyclic:glowing_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.1
+        "modify":-3
       }
     ]
 }

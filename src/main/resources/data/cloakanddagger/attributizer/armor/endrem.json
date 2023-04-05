@@ -3,28 +3,28 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7
+        "modify":-5
       }
     ],
 "endrem:end_crystal_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-14
+        "modify":-10
       }
     ],
 "endrem:end_crystal_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7
+        "modify":-5
       }
     ],
 "endrem:end_crystal_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.5
+        "modify":-7
       }
     ]
 }

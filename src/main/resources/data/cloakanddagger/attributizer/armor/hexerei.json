@@ -3,28 +3,28 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "hexerei:witch_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "hexerei:witch_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-3
       }
     ],
 "hexerei:witch_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ]
 }

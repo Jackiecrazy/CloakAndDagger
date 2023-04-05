@@ -31,147 +31,147 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ],
 "minecraft:diamond_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.8
+        "modify":-8
       }
     ],
 "minecraft:diamond_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.4
+        "modify":-4
       }
     ],
 "minecraft:diamond_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8.1
+        "modify":-6
       }
     ],
 "minecraft:golden_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4
+        "modify":-3
       }
     ],
 "minecraft:golden_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8
+        "modify":-6
       }
     ],
 "minecraft:golden_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4
+        "modify":-3
       }
     ],
 "minecraft:golden_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6
+        "modify":-4
       }
     ],
 "minecraft:iron_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "minecraft:iron_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.8
+        "modify":-5
       }
     ],
 "minecraft:iron_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-3
       }
     ],
 "minecraft:iron_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.1
+        "modify":-4
       }
     ],
 "minecraft:leather_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "minecraft:leather_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.8
+        "modify":-3
       }
     ],
 "minecraft:leather_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "minecraft:leather_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-2
       }
     ],
 "minecraft:netherite_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.5
+        "modify":-3
       }
     ],
 "minecraft:netherite_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7
+        "modify":-6
       }
     ],
 "minecraft:netherite_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.5
+        "modify":-3
       }
     ],
 "minecraft:netherite_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.3
+        "modify":-5
       }
     ],
 "minecraft:turtle_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.9
+        "modify":-2
       }
     ]
 }

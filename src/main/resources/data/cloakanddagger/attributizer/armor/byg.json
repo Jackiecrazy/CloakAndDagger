@@ -3,28 +3,28 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6
+        "modify":-4
       }
     ],
 "byg:ametrine_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-12
+        "modify":-8
       }
     ],
 "byg:ametrine_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6
+        "modify":-4
       }
     ],
 "byg:ametrine_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-9
+        "modify":-6
       }
     ]
 }

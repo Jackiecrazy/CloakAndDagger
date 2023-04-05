@@ -3,7 +3,7 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ]
 }

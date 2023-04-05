@@ -3,14 +3,14 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.9
+        "modify":-1
       }
     ],
 "comfortable_nether:padded_leather_boots_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ]
 }

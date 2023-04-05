@@ -3,21 +3,21 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.7
+        "modify":-1
       }
     ],
 "epicfight:stray_pants":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.1
+        "modify":-2
       }
     ],
 "epicfight:stray_robes":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.4
+        "modify":-3
       }
     ]
 }

@@ -3,28 +3,28 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6.2
+        "modify":-4
       }
     ],
 "darkersouls:golden_greaves":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-9.3
+        "modify":-7
       }
     ],
 "darkersouls:nameless_king_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-12.4
+        "modify":-9
       }
     ],
 "darkersouls:nameless_king_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-9.3
+        "modify":-7
       }
     ]
 }

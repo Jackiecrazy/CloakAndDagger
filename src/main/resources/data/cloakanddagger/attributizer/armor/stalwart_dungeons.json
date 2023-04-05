@@ -3,77 +3,77 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.3
+        "modify":-4
       }
     ],
 "stalwart_dungeons:chorundum_armor_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.6
+        "modify":-8
       }
     ],
 "stalwart_dungeons:chorundum_armor_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.3
+        "modify":-4
       }
     ],
 "stalwart_dungeons:chorundum_armor_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8
+        "modify":-6
       }
     ],
 "stalwart_dungeons:tungsten_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.3
+        "modify":-4
       }
     ],
 "stalwart_dungeons:tungsten_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.6
+        "modify":-8
       }
     ],
 "stalwart_dungeons:tungsten_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.3
+        "modify":-4
       }
     ],
 "stalwart_dungeons:tungsten_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8
+        "modify":-6
       }
     ],
 "stalwart_dungeons:warted_tungsten_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-10.4
+        "modify":-8
       }
     ],
 "stalwart_dungeons:warted_tungsten_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.2
+        "modify":-4
       }
     ],
 "stalwart_dungeons:warted_tungsten_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-7.8
+        "modify":-6
       }
     ]
 }

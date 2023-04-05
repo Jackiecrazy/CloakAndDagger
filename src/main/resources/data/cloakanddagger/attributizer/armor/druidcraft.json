@@ -3,84 +3,84 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.7
+        "modify":-2
       }
     ],
 "druidcraft:bone_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.4
+        "modify":-4
       }
     ],
 "druidcraft:bone_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.7
+        "modify":-2
       }
     ],
 "druidcraft:bone_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.6
+        "modify":-3
       }
     ],
 "druidcraft:chitin_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4
+        "modify":-3
       }
     ],
 "druidcraft:chitin_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8
+        "modify":-6
       }
     ],
 "druidcraft:chitin_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4
+        "modify":-3
       }
     ],
 "druidcraft:chitin_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-6
+        "modify":-4
       }
     ],
 "druidcraft:moonstone_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.6
+        "modify":-4
       }
     ],
 "druidcraft:moonstone_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-11.2
+        "modify":-8
       }
     ],
 "druidcraft:moonstone_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-5.6
+        "modify":-4
       }
     ],
 "druidcraft:moonstone_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-8.4
+        "modify":-6
       }
     ]
 }

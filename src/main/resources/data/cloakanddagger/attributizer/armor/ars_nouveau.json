@@ -3,84 +3,84 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "ars_nouveau:apprentice_hood":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "ars_nouveau:apprentice_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-2
       }
     ],
 "ars_nouveau:apprentice_robes":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.8
+        "modify":-3
       }
     ],
 "ars_nouveau:archmage_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "ars_nouveau:archmage_hood":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "ars_nouveau:archmage_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-2
       }
     ],
 "ars_nouveau:archmage_robes":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-3
       }
     ],
 "ars_nouveau:novice_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.8
+        "modify":-1
       }
     ],
 "ars_nouveau:novice_hood":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.8
+        "modify":-1
       }
     ],
 "ars_nouveau:novice_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.2
+        "modify":-2
       }
     ],
 "ars_nouveau:novice_robes":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.6
+        "modify":-3
       }
     ]
 }

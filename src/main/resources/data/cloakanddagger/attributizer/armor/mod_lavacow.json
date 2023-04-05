@@ -3,91 +3,91 @@
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "mod_lavacow:faminearmor_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-3
       }
     ],
 "mod_lavacow:faminearmor_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.2
+        "modify":-1
       }
     ],
 "mod_lavacow:faminearmor_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.3
+        "modify":-2
       }
     ],
 "mod_lavacow:felarmor_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.3
+        "modify":-2
       }
     ],
 "mod_lavacow:felarmor_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-4.6
+        "modify":-5
       }
     ],
 "mod_lavacow:felarmor_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-2.3
+        "modify":-2
       }
     ],
 "mod_lavacow:felarmor_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-3.5
+        "modify":-4
       }
     ],
 "mod_lavacow:skeletonking_crown":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.4
+        "modify":-1
       }
     ],
 "mod_lavacow:swinearmor_boots":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-1
       }
     ],
 "mod_lavacow:swinearmor_chestplate":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-1.2
+        "modify":-3
       }
     ],
 "mod_lavacow:swinearmor_helmet":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.6
+        "modify":-1
       }
     ],
 "mod_lavacow:swinearmor_leggings":[
       {
         "attribute":"footwork:stealth",
         "operation":"ADDITION",
-        "modify":-0.9
+        "modify":-2
       }
     ]
 }
