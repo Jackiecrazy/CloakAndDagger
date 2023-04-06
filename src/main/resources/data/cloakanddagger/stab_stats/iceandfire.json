@@ -1,258 +1,258 @@
 {
 "iceandfire:amphithere_macuahuitl":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:copper_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:copper_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "iceandfire:copper_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "iceandfire:copper_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:copper_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:deathworm_gauntlet_red":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:deathworm_gauntlet_white":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:deathworm_gauntlet_yellow":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:dragonbone_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:dragonbone_bow":{
-        "distracted": "1",
-        "unaware": "1"
+        "distracted": 1,
+        "unaware": 1
     },
 "iceandfire:dragonbone_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "iceandfire:dragonbone_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "iceandfire:dragonbone_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:dragonbone_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:dragonbone_sword_fire":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:dragonbone_sword_ice":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:dragonbone_sword_lightning":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:dragonsteel_fire_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:dragonsteel_fire_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "iceandfire:dragonsteel_fire_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "iceandfire:dragonsteel_fire_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:dragonsteel_fire_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:dragonsteel_ice_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:dragonsteel_ice_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "iceandfire:dragonsteel_ice_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "iceandfire:dragonsteel_ice_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:dragonsteel_ice_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:dragonsteel_lightning_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:dragonsteel_lightning_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "iceandfire:dragonsteel_lightning_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "iceandfire:dragonsteel_lightning_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:dragonsteel_lightning_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:dread_knight_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:dread_queen_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:dread_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:ghost_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:hippocampus_slapper":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:hippogryph_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:myrmex_desert_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:myrmex_desert_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "iceandfire:myrmex_desert_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "iceandfire:myrmex_desert_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:myrmex_desert_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:myrmex_desert_sword_venom":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:myrmex_jungle_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:myrmex_jungle_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "iceandfire:myrmex_jungle_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "iceandfire:myrmex_jungle_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:myrmex_jungle_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:myrmex_jungle_sword_venom":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:silver_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:silver_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "iceandfire:silver_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "iceandfire:silver_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:silver_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "iceandfire:stymphalian_bird_dagger":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "iceandfire:troll_weapon_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:troll_weapon_column":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:troll_weapon_column_forest":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:troll_weapon_column_frost":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:troll_weapon_hammer":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:troll_weapon_trunk":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "iceandfire:troll_weapon_trunk_frost":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     }
 }

@@ -1,18 +1,18 @@
 {
 "meetyourfight:cocktail_cutlass":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "meetyourfight:cocktail_shotgun":{
-        "distracted": "1",
-        "unaware": "1"
+        "distracted": 1,
+        "unaware": 1
     },
 "meetyourfight:depth_star":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "meetyourfight:phantasmal_rifle":{
-        "distracted": "1",
-        "unaware": "1"
+        "distracted": 1,
+        "unaware": 1
     }
 }

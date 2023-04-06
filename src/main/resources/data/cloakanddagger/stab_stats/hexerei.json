@@ -1,14 +1,14 @@
 {
 "hexerei:mahogany_broom":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "hexerei:warhammer":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "hexerei:willow_broom":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     }
 }

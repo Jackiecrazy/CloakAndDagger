@@ -1,0 +1,434 @@
+{
+"l2weaponry:iron_claw ":{
+        "distracted": 1.5,
+        "unaware": 2
+    },
+"l2weaponry:iron_dagger ":{
+        "distracted": 2,
+        "unaware": 2.5
+    },
+"l2weaponry:iron_machete ":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:iron_throwing_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:iron_hammer ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:iron_battle_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:iron_spear ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:iron_javelin ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:iron_round_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:iron_plate_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:gold_claw ":{
+        "distracted": 1.5,
+        "unaware": 2
+    },
+"l2weaponry:gold_dagger ":{
+        "distracted": 2,
+        "unaware": 2.5
+    },
+"l2weaponry:gold_machete ":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:gold_throwing_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:gold_hammer ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:gold_battle_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:gold_spear ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:gold_javelin ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:gold_round_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:gold_plate_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:diamond_claw ":{
+        "distracted": 1.5,
+        "unaware": 2
+    },
+"l2weaponry:diamond_dagger ":{
+        "distracted": 2,
+        "unaware": 2.5
+    },
+"l2weaponry:diamond_machete ":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:diamond_throwing_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:diamond_hammer ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:diamond_battle_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:diamond_spear ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:diamond_javelin ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:diamond_round_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:diamond_plate_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:netherite_claw ":{
+        "distracted": 1.5,
+        "unaware": 2
+    },
+"l2weaponry:netherite_dagger ":{
+        "distracted": 2,
+        "unaware": 2.5
+    },
+"l2weaponry:netherite_machete ":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:netherite_throwing_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:netherite_hammer ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:netherite_battle_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:netherite_spear ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:netherite_javelin ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:netherite_round_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:netherite_plate_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:totemic_gold_claw ":{
+        "distracted": 1.5,
+        "unaware": 2
+    },
+"l2weaponry:totemic_gold_dagger ":{
+        "distracted": 2,
+        "unaware": 2.5
+    },
+"l2weaponry:totemic_gold_machete ":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:totemic_gold_throwing_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:totemic_gold_hammer ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:totemic_gold_battle_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:totemic_gold_spear ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:totemic_gold_javelin ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:totemic_gold_round_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:totemic_gold_plate_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:poseidite_claw ":{
+        "distracted": 1.5,
+        "unaware": 2
+    },
+"l2weaponry:poseidite_dagger ":{
+        "distracted": 2,
+        "unaware": 2.5
+    },
+"l2weaponry:poseidite_machete ":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:poseidite_throwing_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:poseidite_hammer ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:poseidite_battle_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:poseidite_spear ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:poseidite_javelin ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:poseidite_round_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:poseidite_plate_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:shulkerate_claw ":{
+        "distracted": 1.5,
+        "unaware": 2
+    },
+"l2weaponry:shulkerate_dagger ":{
+        "distracted": 2,
+        "unaware": 2.5
+    },
+"l2weaponry:shulkerate_machete ":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:shulkerate_throwing_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:shulkerate_hammer ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:shulkerate_battle_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:shulkerate_spear ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:shulkerate_javelin ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:shulkerate_round_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:shulkerate_plate_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:sculkium_claw ":{
+        "distracted": 1.5,
+        "unaware": 2
+    },
+"l2weaponry:sculkium_dagger ":{
+        "distracted": 2,
+        "unaware": 2.5
+    },
+"l2weaponry:sculkium_machete ":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:sculkium_throwing_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:sculkium_hammer ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:sculkium_battle_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:sculkium_spear ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:sculkium_javelin ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:sculkium_round_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:sculkium_plate_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:eternium_claw ":{
+        "distracted": 1.5,
+        "unaware": 2
+    },
+"l2weaponry:eternium_dagger ":{
+        "distracted": 2,
+        "unaware": 2.5
+    },
+"l2weaponry:eternium_machete ":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:eternium_throwing_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:eternium_hammer ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:eternium_battle_axe ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:eternium_spear ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:eternium_javelin ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:eternium_round_shield ":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:eternium_plate_shield":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:vampire_desire":{
+        "distracted": 1.5,
+        "unaware": 2
+    },
+"l2weaponry:claw_of_determination":{
+        "distracted": 1.5,
+        "unaware": 2
+    },
+"l2weaponry:shadow_hunter":{
+        "distracted": 2,
+        "unaware": 2.5
+    },
+"l2weaponry:abyss_shock":{
+        "distracted": 2,
+        "unaware": 2.5
+    },
+"l2weaponry:shadow_shredder":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:abyss_resonance":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:blade_of_illusion":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"l2weaponry:barbaric_hallow":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:hammer_of_incarceration":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:abyss_echo":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:dogmatic_punishment":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:dogmatic_standoff":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:axe_of_cursed_flame":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:abyss_terror":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:spear_of_winter_storm":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:haunting_demon_of_the_end":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:poseidon_madness":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"l2weaponry:void_escape":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    }
+}

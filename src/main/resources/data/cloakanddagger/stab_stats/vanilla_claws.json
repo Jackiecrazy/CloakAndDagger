@@ -1,74 +1,74 @@
 {
 "vanilla_claws:black_opal_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:citrine_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:copper_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:diamond_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:emerald_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:gobber2_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:gobber2_end_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:gobber2_nether_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:gold_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:iron_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:netherite_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:soapy_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:stone_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:tanzanite_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:wooden_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanilla_claws:zircon_claws":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "vanillafoodpantry:flint_butcher_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "vanillafoodpantry:rolling_pin":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     }
 }

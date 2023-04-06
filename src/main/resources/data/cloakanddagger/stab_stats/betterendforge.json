@@ -1,402 +1,402 @@
 {
 "betterendforge:aeternium_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:aeternium_hammer":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:aeternium_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "betterendforge:aeternium_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "betterendforge:aeternium_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:aeternium_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:diamond_hammer":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:dragon_tree_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:dragon_tree_sign":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:dragon_tree_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:end_lotus_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:end_lotus_sign":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:end_lotus_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:golden_hammer":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:helix_tree_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:helix_tree_sign":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:helix_tree_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:iron_hammer":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:jellyshroom_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:jellyshroom_sign":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:jellyshroom_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:lacugrove_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:lacugrove_sign":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:lacugrove_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:lucernia_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:lucernia_sign":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:lucernia_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:mossy_glowshroom_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:mossy_glowshroom_sign":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:mossy_glowshroom_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:netherite_hammer":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:pythadendron_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:pythadendron_sign":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:pythadendron_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:tenanea_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:tenanea_sign":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:tenanea_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:terminite_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:terminite_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:terminite_hammer":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:terminite_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "betterendforge:terminite_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "betterendforge:terminite_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:terminite_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:terminite_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:thallasium_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:thallasium_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:thallasium_hammer":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:thallasium_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "betterendforge:thallasium_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "betterendforge:thallasium_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:thallasium_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:thallasium_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:umbrella_tree_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betterendforge:umbrella_tree_sign":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betterendforge:umbrella_tree_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:anchor_tree_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:anchor_tree_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:bone_cincinnasite_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:bone_reed_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:cincinnasite_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:cincinnasite_axe_diamond":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:cincinnasite_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "betternether:cincinnasite_hoe_diamond":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "betternether:cincinnasite_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "betternether:cincinnasite_pickaxe_diamond":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "betternether:cincinnasite_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:cincinnasite_shovel_diamond":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:cincinnasite_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:cincinnasite_sword_diamond":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:mushroom_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:mushroom_fir_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:mushroom_fir_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:mushroom_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:nether_ruby_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:nether_ruby_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "betternether:nether_ruby_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "betternether:nether_ruby_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:nether_ruby_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:nether_sakura_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:nether_sakura_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:reeds_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:reeds_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:rubeus_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:rubeus_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:sign_anchor_tree":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:sign_mushroom":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:sign_mushroom_fir":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:sign_nether_sakura":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:sign_reed":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:sign_rubeus":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:sign_stalagnate":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:sign_wart":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:sign_willow":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "betternether:stalagnate_planks_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:stalagnate_planks_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:wart_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:wart_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:willow_door":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "betternether:willow_trapdoor":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     }
 }

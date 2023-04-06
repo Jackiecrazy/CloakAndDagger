@@ -1,74 +1,74 @@
 {
 "pathogen:battle_hook_crimson":{
-        "distracted": "1.4",
-        "unaware": "1.8"
+        "distracted": 1.4,
+        "unaware": 1.8
     },
 "pathogen:battle_hook_ender":{
-        "distracted": "1.4",
-        "unaware": "1.8"
+        "distracted": 1.4,
+        "unaware": 1.8
     },
 "pathogen:battle_hook_jungle":{
-        "distracted": "1.4",
-        "unaware": "1.8"
+        "distracted": 1.4,
+        "unaware": 1.8
     },
 "pathogen:battle_hook_mesa":{
-        "distracted": "1.4",
-        "unaware": "1.8"
+        "distracted": 1.4,
+        "unaware": 1.8
     },
 "pathogen:battle_hook_swamp":{
-        "distracted": "1.4",
-        "unaware": "1.8"
+        "distracted": 1.4,
+        "unaware": 1.8
     },
 "pathogen:battle_hook_warped":{
-        "distracted": "1.4",
-        "unaware": "1.8"
+        "distracted": 1.4,
+        "unaware": 1.8
     },
 "pathogen:beast_slayer_crimson":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "pathogen:beast_slayer_ender":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "pathogen:beast_slayer_jungle":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "pathogen:beast_slayer_mesa":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "pathogen:beast_slayer_swamp":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "pathogen:beast_slayer_warped":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "pathogen:katana_crimson":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "pathogen:katana_ender":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "pathogen:katana_jungle":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "pathogen:katana_mesa":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "pathogen:katana_swamp":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "pathogen:katana_warped":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     }
 }

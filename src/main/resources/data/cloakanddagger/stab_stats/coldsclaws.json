@@ -1,26 +1,26 @@
 {
 "coldsclaws:diamond_claw":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "coldsclaws:golden_claw":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "coldsclaws:iron_claw":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "coldsclaws:netherite_claw":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "coldsclaws:stone_claw":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     },
 "coldsclaws:wooden_claw":{
-        "distracted": "1.5",
-        "unaware": "2"
+        "distracted": 1.5,
+        "unaware": 2
     }
 }

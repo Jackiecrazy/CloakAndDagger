@@ -1,254 +1,254 @@
 {
 "mysticalworld:cactus_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:cactus_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "mysticalworld:cactus_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:cactus_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "mysticalworld:cactus_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:cactus_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:cactus_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "mysticalworld:copper_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:copper_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "mysticalworld:copper_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:copper_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "mysticalworld:copper_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:copper_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:copper_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "mysticalworld:diamond_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:diamond_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:gold_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:gold_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:iron_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:iron_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:lead_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:lead_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "mysticalworld:lead_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:lead_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "mysticalworld:lead_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:lead_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:lead_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "mysticalworld:quicksilver_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:quicksilver_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "mysticalworld:quicksilver_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:quicksilver_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "mysticalworld:quicksilver_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:quicksilver_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:quicksilver_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "mysticalworld:sapphire_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:sapphire_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "mysticalworld:sapphire_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:sapphire_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "mysticalworld:sapphire_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:sapphire_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:sapphire_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "mysticalworld:silver_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:silver_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:silver_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "mysticalworld:silver_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:silver_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "mysticalworld:silver_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "mysticalworld:silver_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:silver_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:silver_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:silver_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "mysticalworld:silver_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "mysticalworld:stone_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:stone_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:tin_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:tin_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "mysticalworld:tin_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:tin_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "mysticalworld:tin_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:tin_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "mysticalworld:tin_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "mysticalworld:wood_knife":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "mysticalworld:wood_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     }
 }

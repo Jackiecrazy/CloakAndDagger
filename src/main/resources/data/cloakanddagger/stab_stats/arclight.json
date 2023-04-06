@@ -1,42 +1,42 @@
 {
 "arclight:angel_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "arclight:arclight_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "arclight:bloodstone_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "arclight:bloodstone_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "arclight:cryorium_battle_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "arclight:cryorium_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "arclight:jade_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "arclight:moonlight_glaive":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "arclight:moonlight_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "arclight:sculk_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     }
 }

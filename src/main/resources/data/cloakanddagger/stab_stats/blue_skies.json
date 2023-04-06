@@ -1,342 +1,342 @@
 {
 "blue_skies:aquite_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:aquite_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:aquite_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:aquite_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:aquite_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:bluebright_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:bluebright_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:bluebright_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:bluebright_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:bluebright_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:bluebright_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:charoite_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:charoite_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:charoite_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:charoite_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:charoite_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:cherry_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:cherry_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:cherry_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:cherry_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:cherry_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:cherry_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:crushing_hammer":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:different_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:diopside_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:diopside_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:diopside_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:diopside_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:diopside_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:dusk_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:dusk_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:dusk_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:dusk_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:dusk_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:dusk_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:frostbright_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:frostbright_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:frostbright_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:frostbright_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:frostbright_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:frostbright_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:horizonite_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:horizonite_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:horizonite_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:horizonite_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:horizonite_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:infused_arc_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:lunar_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:lunar_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:lunar_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:lunar_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:lunar_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:lunar_stone_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:lunar_stone_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:lunar_stone_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:lunar_stone_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:lunar_stone_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:lunar_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:maple_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:maple_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:maple_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:maple_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:maple_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:maple_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:moonstone_shield":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:pyrope_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:pyrope_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:pyrope_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:pyrope_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:pyrope_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:soulbound_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:spike_shield":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:starlit_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:starlit_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:starlit_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:starlit_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:starlit_spear":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:starlit_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:summoning_tome":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:turquoise_stone_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:turquoise_stone_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "blue_skies:turquoise_stone_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "blue_skies:turquoise_stone_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "blue_skies:turquoise_stone_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "blue_skies:zeal_lighter":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     }
 }

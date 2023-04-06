@@ -1,10 +1,10 @@
 {
 "arsmagicalegacy:crystal_wrench":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "arsmagicalegacy:spell_book":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     }
 }

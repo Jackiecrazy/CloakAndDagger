@@ -1,90 +1,90 @@
 {
 "forbidden_arcanus:deorum_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:deorum_blacksmith_gavel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:deorum_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "forbidden_arcanus:diamond_blacksmith_gavel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:draco_arcanus_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:draco_arcanus_hoe":{
-        "distracted": "1.2",
-        "unaware": "1.4"
+        "distracted": 1.2,
+        "unaware": 1.4
     },
 "forbidden_arcanus:draco_arcanus_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "forbidden_arcanus:draco_arcanus_scepter":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:draco_arcanus_shovel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:draco_arcanus_staff":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:draco_arcanus_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "forbidden_arcanus:golden_blacksmith_gavel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:iron_blacksmith_gavel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:mystical_dagger":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "forbidden_arcanus:netherite_blacksmith_gavel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:reinforced_deorum_axe":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:reinforced_deorum_blacksmith_gavel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:reinforced_deorum_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
 "forbidden_arcanus:slimec_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     },
 "forbidden_arcanus:stone_blacksmith_gavel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:wooden_blacksmith_gavel":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "forbidden_arcanus:zombie_arm":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     }
 }

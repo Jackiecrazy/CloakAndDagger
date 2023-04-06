@@ -1,10 +1,10 @@
 {
 "switchbow:switchbow":{
-        "distracted": "1",
-        "unaware": "1"
+        "distracted": 1,
+        "unaware": 1
     },
 "switchbow:switchcrossbow":{
-        "distracted": "1",
-        "unaware": "1"
+        "distracted": 1,
+        "unaware": 1
     }
 }

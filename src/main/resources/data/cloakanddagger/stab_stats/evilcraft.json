@@ -1,18 +1,22 @@
 {
 "evilcraft:mace_of_destruction":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "evilcraft:mace_of_distortion":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "evilcraft:vein_sword":{
-        "distracted": "1.25",
-        "unaware": "1.5"
+        "distracted": 1.25,
+        "unaware": 1.5
     },
+  "evilcraft:spikey_claws":{
+    "distracted": 1.5,
+    "unaware": 2
+  },
 "evilcraft:vengeance_pickaxe":{
-        "distracted": "1.4",
-        "unaware": "2"
+        "distracted": 1.4,
+        "unaware": 2
     }
 }

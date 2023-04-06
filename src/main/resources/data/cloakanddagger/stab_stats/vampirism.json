@@ -1,70 +1,70 @@
 {
 "vampirism:basic_crossbow":{
-        "distracted": "1",
-        "unaware": "1"
+        "distracted": 1,
+        "unaware": 1
     },
 "vampirism:basic_double_crossbow":{
-        "distracted": "1",
-        "unaware": "1"
+        "distracted": 1,
+        "unaware": 1
     },
 "vampirism:basic_tech_crossbow":{
-        "distracted": "1",
-        "unaware": "1"
+        "distracted": 1,
+        "unaware": 1
     },
 "vampirism:enhanced_crossbow":{
-        "distracted": "1",
-        "unaware": "1"
+        "distracted": 1,
+        "unaware": 1
     },
 "vampirism:enhanced_double_crossbow":{
-        "distracted": "1",
-        "unaware": "1"
+        "distracted": 1,
+        "unaware": 1
     },
 "vampirism:enhanced_tech_crossbow":{
-        "distracted": "1",
-        "unaware": "1"
+        "distracted": 1,
+        "unaware": 1
     },
 "vampirism:heart_seeker_enhanced":{
-        "distracted": "1.4",
-        "unaware": "1.8"
+        "distracted": 1.4,
+        "unaware": 1.8
     },
 "vampirism:heart_seeker_normal":{
-        "distracted": "1.4",
-        "unaware": "1.8"
+        "distracted": 1.4,
+        "unaware": 1.8
     },
 "vampirism:heart_seeker_ultimate":{
-        "distracted": "1.4",
-        "unaware": "1.8"
+        "distracted": 1.4,
+        "unaware": 1.8
     },
 "vampirism:heart_striker_enhanced":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "vampirism:heart_striker_normal":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "vampirism:heart_striker_ultimate":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     },
 "vampirism:hunter_axe_enhanced":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "vampirism:hunter_axe_normal":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "vampirism:hunter_axe_ultimate":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "vampirism:pitchfork":{
-        "distracted": "1.1",
-        "unaware": "1.2"
+        "distracted": 1.1,
+        "unaware": 1.2
     },
 "vampirism:stake":{
-        "distracted": "2",
-        "unaware": "2.5"
+        "distracted": 2,
+        "unaware": 2.5
     }
 }
