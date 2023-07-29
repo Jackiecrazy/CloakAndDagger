@@ -44,6 +44,7 @@ public class CombatHandler {
         DamageSource ds = e.getSource();
         if (ds.getEntity() instanceof LivingEntity seme && GeneralConfig.inv > 0) {
             seme.addEffect(new MobEffectInstance(FootworkEffects.EXPOSED.get(), GeneralConfig.inv));
+            EntityHandler.lastDecoy.clear();
         }
     }
 

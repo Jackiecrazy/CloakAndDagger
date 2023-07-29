@@ -1,11 +1,19 @@
 package jackiecrazy.cloakanddagger.utils;
 
+import io.netty.util.CharsetUtil;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.config.GeneralConfig;
+import jackiecrazy.cloakanddagger.networking.StealthChannel;
+import jackiecrazy.cloakanddagger.networking.SyncItemDataPacket;
+import jackiecrazy.cloakanddagger.networking.SyncMobDataPacket;
+import jackiecrazy.cloakanddagger.networking.SyncTagDataPacket;
 import jackiecrazy.footwork.event.EntityAwarenessEvent;
 import jackiecrazy.footwork.potion.FootworkEffects;
 import jackiecrazy.footwork.utils.StealthUtils;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -17,11 +25,13 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import jackiecrazy.footwork.utils.StealthUtils.Awareness;
 
@@ -29,6 +39,14 @@ public class StealthOverride extends StealthUtils {
     public static final StealthData STEALTH = new StealthData("");
     public static HashMap<ResourceLocation, StealthData> stealthMap = new HashMap<>();
     public static HashMap<SoundEvent, Integer> soundMap = new HashMap<>();
+
+    public static void sendMobData(ServerPlayer p) {
+        StealthChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> p), new SyncMobDataPacket(stealthMap));
+    }
+
+    public static void clientMobOverride(Map<ResourceLocation, StealthData> server) {
+        stealthMap = new HashMap<>(server);
+    }
 
     public static StealthData getStealth(LivingEntity e) {
         return stealthMap.getOrDefault(EntityType.getKey(e.getType()), STEALTH);
@@ -140,6 +158,8 @@ public class StealthOverride extends StealthUtils {
     }
 
     public static class StealthData {
+
+        private final String string;
         private final boolean allSeeing, blind, cheliceric, deaf, eyeless, heatSeeking, lazy, mindful, nightvision, observant, perceptive, skeptical, quiet, vigil, wary;
 
         public StealthData(String value) {
@@ -158,6 +178,7 @@ public class StealthOverride extends StealthUtils {
             quiet = value.contains("s");
             vigil = value.contains("v");
             wary = value.contains("w");
+            string = value;
         }
 
         public boolean isBlind() {
@@ -215,6 +236,18 @@ public class StealthOverride extends StealthUtils {
         public boolean isHeatSeeking() {
             return heatSeeking;
         }
+
+        public static StealthData read(FriendlyByteBuf f) {
+            int length=f.readInt();
+            return new StealthData(String.valueOf(f.readCharSequence(length, CharsetUtil.US_ASCII)));
+        }
+
+        public void write(FriendlyByteBuf f) {
+            f.writeInt(string.length());
+            f.writeCharSequence(string, CharsetUtil.US_ASCII);
+        }
+
+
     }
 
 }

@@ -1,9 +1,0 @@
-{
-"endergetic:booflo_vest":[
-      {
-        "attribute":"footwork:stealth",
-        "operation":"ADDITION",
-        "modify":-3
-      }
-    ]
-}

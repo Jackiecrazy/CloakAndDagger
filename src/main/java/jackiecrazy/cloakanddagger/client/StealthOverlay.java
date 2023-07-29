@@ -27,7 +27,7 @@ public class StealthOverlay implements IGuiOverlay {
     @Override
     public void render(ForgeGui gui, PoseStack stack, float partialTick, int width, int height) {
         Minecraft mc = Minecraft.getInstance();
-        if (mc.getCameraEntity() instanceof Player && mc.player != null) {
+        if (mc.getCameraEntity() instanceof Player && mc.player != null && !mc.options.hideGui) {
             LocalPlayer player = mc.player;
             Entity look = RenderEvents.getEntityLookedAt(player, 32);
             if (look instanceof LivingEntity) {

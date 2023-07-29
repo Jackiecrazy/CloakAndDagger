@@ -1,9 +1,0 @@
-{
-"quark:forgotten_hat":[
-      {
-        "attribute":"footwork:stealth",
-        "operation":"ADDITION",
-        "modify":-2
-      }
-    ]
-}

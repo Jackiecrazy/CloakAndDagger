@@ -1,9 +1,0 @@
-{
-"pandoras_creatures:plant_hat":[
-      {
-        "attribute":"footwork:stealth",
-        "operation":"ADDITION",
-        "modify":-1
-      }
-    ]
-}

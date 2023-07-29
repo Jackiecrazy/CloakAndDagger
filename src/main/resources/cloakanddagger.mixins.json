@@ -9,7 +9,8 @@
     "MixinInvisibleRevenge",
     "MixinMobAlert",
     "MixinMobSound",
-    "MixinNotInvisible"
+    "MixinNotInvisible",
+    "RevengeAccessor"
   ],
   "client": [
     "MixinMobStealth"

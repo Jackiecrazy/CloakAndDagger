@@ -56,7 +56,7 @@ public class RenderEvents {
      * @Author Vazkii
      */
     @SubscribeEvent
-    public static void down(RenderLevelStageEvent event) {
+    public static void eyes(RenderLevelStageEvent event) {
         Minecraft mc = Minecraft.getInstance();
         if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_CUTOUT_BLOCKS) return;
 

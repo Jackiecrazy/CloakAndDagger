@@ -1,16 +1,20 @@
 package jackiecrazy.cloakanddagger;
 
 import jackiecrazy.cloakanddagger.capability.vision.IVision;
+import jackiecrazy.cloakanddagger.client.SpyglassOverlay;
 import jackiecrazy.cloakanddagger.client.StealthOverlay;
 import jackiecrazy.cloakanddagger.config.*;
 import jackiecrazy.cloakanddagger.networking.*;
+import jackiecrazy.cloakanddagger.utils.CombatUtils;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.utils.StealthUtils;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AddReloadListenerEvent;
+import net.minecraftforge.event.OnDatapackSyncEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -60,6 +64,16 @@ public class CloakAndDagger {
         StealthChannel.INSTANCE.registerMessage(index++, RequestUpdatePacket.class, new RequestUpdatePacket.RequestUpdateEncoder(), new RequestUpdatePacket.RequestUpdateDecoder(), new RequestUpdatePacket.RequestUpdateHandler());
         StealthChannel.INSTANCE.registerMessage(index++, UpdateTargetPacket.class, new UpdateTargetPacket.UpdateTargetEncoder(), new UpdateTargetPacket.UpdateTargetDecoder(), new UpdateTargetPacket.UpdateTargetHandler());
         StealthChannel.INSTANCE.registerMessage(index++, ShoutPacket.class, new ShoutPacket.ShoutEncoder(), new ShoutPacket.ShoutDecoder(), new ShoutPacket.ShoutHandler());
+        StealthChannel.INSTANCE.registerMessage(index++, SyncItemDataPacket.class, new SyncItemDataPacket.Encoder(), new SyncItemDataPacket.Decoder(), new SyncItemDataPacket.Handler());
+        StealthChannel.INSTANCE.registerMessage(index++, SyncMobDataPacket.class, new SyncMobDataPacket.Encoder(), new SyncMobDataPacket.Decoder(), new SyncMobDataPacket.Handler());
+        StealthChannel.INSTANCE.registerMessage(index++, SyncTagDataPacket.class, new SyncTagDataPacket.Encoder(), new SyncTagDataPacket.Decoder(), new SyncTagDataPacket.Handler());
+    }
+
+    @SubscribeEvent
+    public static void reload(OnDatapackSyncEvent e){
+        for(ServerPlayer p: e.getPlayerList().getPlayers()){
+            CombatUtils.sendItemData(p);
+        }
     }
 
     private void caps(final RegisterCapabilitiesEvent event) {
@@ -73,7 +87,8 @@ public class CloakAndDagger {
 
     private void registerOverlay(final RegisterGuiOverlaysEvent event) {
         // do something that can only be done on the client
-        event.registerAbove(VanillaGuiOverlay.HOTBAR.id(), "cloakdagger", new StealthOverlay());
+        event.registerAboveAll("cloakdagger", new StealthOverlay());
+        event.registerAbove(VanillaGuiOverlay.SPYGLASS.id(), "stealth_observation", new SpyglassOverlay());
     }
 
     @SubscribeEvent

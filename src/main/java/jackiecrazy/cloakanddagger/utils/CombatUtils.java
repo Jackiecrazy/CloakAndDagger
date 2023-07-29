@@ -4,8 +4,13 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.config.GeneralConfig;
+import jackiecrazy.cloakanddagger.networking.StealthChannel;
+import jackiecrazy.cloakanddagger.networking.SyncItemDataPacket;
+import jackiecrazy.cloakanddagger.networking.SyncTagDataPacket;
 import jackiecrazy.footwork.api.CombatDamageSource;
 import jackiecrazy.footwork.api.FootworkAttributes;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -20,6 +25,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
@@ -29,6 +35,19 @@ public class CombatUtils {
     public static HashMap<TagKey<Item>, StabInfo> archetypes = new HashMap<>();
     private static StabInfo DEFAULTMELEE = new StabInfo(1, 1);
     private static HashMap<Item, StabInfo> combatList = new HashMap<>();
+
+    public static void sendItemData(ServerPlayer p) {
+        StealthChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> p), new SyncItemDataPacket(combatList));
+        StealthChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> p), new SyncTagDataPacket(archetypes));
+    }
+
+    public static void clientWeaponOverride(Map<Item, StabInfo> server) {
+        combatList = new HashMap<>(server);
+    }
+
+    public static void clientTagOverride(Map<TagKey<Item>, StabInfo> server) {
+        archetypes = new HashMap<>(server);
+    }
 
     public static void updateItems(Map<ResourceLocation, JsonElement> object, ResourceManager rm, ProfilerFiller profiler) {
         DEFAULTMELEE = new StabInfo(GeneralConfig.distract, GeneralConfig.unaware);
@@ -123,13 +142,25 @@ public class CombatUtils {
         return lookupStats(itemStack) != DEFAULTMELEE;
     }
 
-    private static class StabInfo {
+    public static class StabInfo {
         private double distractDamageBonus;
         private double unawareDamageBonus;
 
         private StabInfo(double distract, double unaware) {
             distractDamageBonus = distract;
             unawareDamageBonus = unaware;
+        }
+
+        public static StabInfo read(FriendlyByteBuf f) {
+            StabInfo ret = new StabInfo(0, 0);
+            ret.distractDamageBonus = f.readDouble();
+            ret.unawareDamageBonus = f.readDouble();
+            return ret;
+        }
+
+        public void write(FriendlyByteBuf f) {
+            f.writeDouble(distractDamageBonus);
+            f.writeDouble(unawareDamageBonus);
         }
     }
 }

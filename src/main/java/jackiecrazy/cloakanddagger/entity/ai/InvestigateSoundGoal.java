@@ -12,7 +12,7 @@ public class InvestigateSoundGoal extends MoveToBlockGoal {
     int hesitation;
 
     public InvestigateSoundGoal(PathfinderMob c) {
-        super(c, 0.6, 32);
+        super(c, 0.8, 32);
     }
 
     @Override
