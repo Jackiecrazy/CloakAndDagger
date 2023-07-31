@@ -6,6 +6,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.datafixers.util.Pair;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
+import jackiecrazy.cloakanddagger.action.PermissionData;
 import jackiecrazy.cloakanddagger.capability.vision.VisionData;
 import jackiecrazy.cloakanddagger.config.ClientConfig;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
@@ -58,6 +59,7 @@ public class RenderEvents {
     @SubscribeEvent
     public static void eyes(RenderLevelStageEvent event) {
         Minecraft mc = Minecraft.getInstance();
+        if (!PermissionData.getCap(mc.player).canSee()) return;
         if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_CUTOUT_BLOCKS) return;
 
         Camera camera = mc.gameRenderer.getMainCamera();

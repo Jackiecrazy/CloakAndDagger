@@ -7,6 +7,7 @@ import jackiecrazy.cloakanddagger.mixin.MixinMobSound;
 import jackiecrazy.cloakanddagger.utils.CombatUtils;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.potion.FootworkEffects;
+import jackiecrazy.footwork.utils.EffectUtils;
 import jackiecrazy.footwork.utils.StealthUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Tuple;
@@ -76,6 +77,9 @@ public class CombatHandler {
                 }
             }
         }
+
+        if (e.getSource().getEntity() instanceof LivingEntity a)
+            EffectUtils.causeFear(uke, a, 100);
     }
 
     /**

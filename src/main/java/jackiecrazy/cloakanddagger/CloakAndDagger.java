@@ -3,6 +3,7 @@ package jackiecrazy.cloakanddagger;
 import jackiecrazy.cloakanddagger.capability.vision.IVision;
 import jackiecrazy.cloakanddagger.client.SpyglassOverlay;
 import jackiecrazy.cloakanddagger.client.StealthOverlay;
+import jackiecrazy.cloakanddagger.command.CloakCommand;
 import jackiecrazy.cloakanddagger.config.*;
 import jackiecrazy.cloakanddagger.networking.*;
 import jackiecrazy.cloakanddagger.utils.CombatUtils;
@@ -15,6 +16,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.OnDatapackSyncEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -53,6 +55,7 @@ public class CloakAndDagger {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MobConfig.CONFIG_SPEC, MODID + "/mob.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfig.CONFIG_SPEC, MODID + "/client.toml");
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        MinecraftForge.EVENT_BUS.addListener(this::commands);
 
     }
 
@@ -67,6 +70,7 @@ public class CloakAndDagger {
         StealthChannel.INSTANCE.registerMessage(index++, SyncItemDataPacket.class, new SyncItemDataPacket.Encoder(), new SyncItemDataPacket.Decoder(), new SyncItemDataPacket.Handler());
         StealthChannel.INSTANCE.registerMessage(index++, SyncMobDataPacket.class, new SyncMobDataPacket.Encoder(), new SyncMobDataPacket.Decoder(), new SyncMobDataPacket.Handler());
         StealthChannel.INSTANCE.registerMessage(index++, SyncTagDataPacket.class, new SyncTagDataPacket.Encoder(), new SyncTagDataPacket.Decoder(), new SyncTagDataPacket.Handler());
+        StealthChannel.INSTANCE.registerMessage(index++, UpdateClientPermissionPacket.class, new UpdateClientPermissionPacket.Encoder(), new UpdateClientPermissionPacket.Decoder(), new UpdateClientPermissionPacket.Handler());
     }
 
     @SubscribeEvent
@@ -96,7 +100,7 @@ public class CloakAndDagger {
         WeaponStats.register(event);
     }
 
-    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class RegistryEvents {
+    private void commands(final RegisterCommandsEvent event) {
+        CloakCommand.register(event.getDispatcher());
     }
 }

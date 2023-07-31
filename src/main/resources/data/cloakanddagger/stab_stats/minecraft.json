@@ -1,6 +1,170 @@
 {
+"minecraft:bow":{
+        "distracted": 1,
+        "unaware": 1
+    },
+"minecraft:crossbow":{
+        "distracted": 1,
+        "unaware": 1
+    },
+"minecraft:diamond_axe":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:diamond_hoe":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"minecraft:diamond_pickaxe":{
+        "distracted": 1.4,
+        "unaware": 2
+    },
+"minecraft:diamond_shovel":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:diamond_sword":{
+        "distracted": 1.25,
+        "unaware": 1.5
+    },
+"minecraft:end_rod":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:flint_and_steel":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:golden_axe":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:golden_hoe":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"minecraft:golden_pickaxe":{
+        "distracted": 1.4,
+        "unaware": 2
+    },
+"minecraft:golden_shovel":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:golden_sword":{
+        "distracted": 1.25,
+        "unaware": 1.5
+    },
+"minecraft:iron_axe":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:iron_hoe":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
 "minecraft:iron_nugget":{
         "distracted": 1,
         "unaware": 1
+    },
+"minecraft:iron_pickaxe":{
+        "distracted": 1.4,
+        "unaware": 2
+    },
+"minecraft:iron_shovel":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:iron_sword":{
+        "distracted": 1.25,
+        "unaware": 1.5
+    },
+"minecraft:lantern":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:netherite_axe":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:netherite_hoe":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"minecraft:netherite_pickaxe":{
+        "distracted": 1.4,
+        "unaware": 2
+    },
+"minecraft:netherite_shovel":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:netherite_sword":{
+        "distracted": 1.25,
+        "unaware": 1.5
+    },
+"minecraft:redstone_torch":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:shield":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:soul_lantern":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:spyglass":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:stone_axe":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:stone_hoe":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"minecraft:stone_pickaxe":{
+        "distracted": 1.4,
+        "unaware": 2
+    },
+"minecraft:stone_shovel":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:stone_sword":{
+        "distracted": 1.25,
+        "unaware": 1.5
+    },
+"minecraft:torch":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:trident":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:wooden_axe":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:wooden_hoe":{
+        "distracted": 1.2,
+        "unaware": 1.4
+    },
+"minecraft:wooden_pickaxe":{
+        "distracted": 1.4,
+        "unaware": 2
+    },
+"minecraft:wooden_shovel":{
+        "distracted": 1.1,
+        "unaware": 1.2
+    },
+"minecraft:wooden_sword":{
+        "distracted": 1.25,
+        "unaware": 1.5
     }
 }

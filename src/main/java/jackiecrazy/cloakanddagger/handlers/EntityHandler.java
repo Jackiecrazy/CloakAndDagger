@@ -1,6 +1,7 @@
 package jackiecrazy.cloakanddagger.handlers;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
+import jackiecrazy.cloakanddagger.action.PermissionData;
 import jackiecrazy.cloakanddagger.capability.vision.IVision;
 import jackiecrazy.cloakanddagger.capability.vision.VisionData;
 import jackiecrazy.cloakanddagger.config.GeneralConfig;
@@ -79,9 +80,12 @@ public class EntityHandler {
     @SubscribeEvent
     public static void caps(AttachCapabilitiesEvent<Entity> e) {
         if (e.getObject() instanceof Mob m) {
-            e.addCapability(new ResourceLocation("wardance:targeting"), new GoalCapabilityProvider());
-            e.addCapability(new ResourceLocation("wardance:vision"), new VisionData(m));
+            e.addCapability(new ResourceLocation("cloakanddagger:targeting"), new GoalCapabilityProvider());
+            e.addCapability(new ResourceLocation("cloakanddagger:vision"), new VisionData(m));
+
         }
+        if(e.getObject() instanceof Player p)
+            e.addCapability(new ResourceLocation("cloakanddagger:permissions"), new PermissionData(p));
     }
 
     @SubscribeEvent
@@ -178,7 +182,7 @@ public class EntityHandler {
     @SubscribeEvent
     public static void pray(LivingChangeTargetEvent e) {
         if (e.getNewTarget() == null) return;
-        if (e.getOriginalTarget() instanceof DecoyEntity) return;
+        if (e.getOriginalTarget() instanceof DecoyEntity && CloakAndDagger.rand.nextFloat() < 0.3) return;
         if (!(e.getEntity() instanceof final Mob mob)) return;
         if (mob.hasEffect(FootworkEffects.FEAR.get()) || mob.hasEffect(FootworkEffects.CONFUSION.get()) || mob.hasEffect(FootworkEffects.SLEEP.get()))
             e.setCanceled(true);
@@ -253,7 +257,7 @@ public class EntityHandler {
         }
         if (!elb.level.isClientSide && elb.tickCount % 108 == 0 && elb.isInvisible()) {
             DummyEntity d = new DecoyEntity(FootworkEntities.DUMMY.get(), elb.level).setBoundTo(elb).setTicksToLive(100);
-            d.setPos(elb.getEyePosition());
+            d.setPos(elb.getEyePosition().add(CloakAndDagger.rand.nextInt(6) - 3, 0, CloakAndDagger.rand.nextInt(6) - 3));
             elb.level.addFreshEntity(d);
             lastDecoy.put(elb, d);
         }

@@ -1,4 +1,9 @@
 {
+  "cloak.command.permission.SEE.true": "%1$s can see the stealth display",
+  "cloak.command.permission.SEE.false": "%1$s cannot see the stealth display",
+  "cloak.command.permission.STAB.true": "%1$s can perform backstabs",
+  "cloak.command.permission.STAB.false": "%1$s cannot perform backstabs",
+
   "cloak.tooltip.distract": "%s distracted damage",
   "cloak.tooltip.unaware": "%s unaware damage",
   "cloak.tag.allsee": "All-Seeing",

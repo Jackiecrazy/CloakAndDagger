@@ -2,6 +2,7 @@ package jackiecrazy.cloakanddagger.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
+import jackiecrazy.cloakanddagger.action.PermissionData;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -29,6 +30,7 @@ public class SpyglassOverlay implements IGuiOverlay {
     @Override
     public void render(ForgeGui gui, PoseStack stack, float partialTick, int width, int height) {
         Minecraft mc = Minecraft.getInstance();
+        if (!PermissionData.getCap(mc.player).canSee()) return;
         if (mc.getCameraEntity() instanceof Player && mc.player != null && !mc.options.hideGui && mc.player.isScoping()) {
             LocalPlayer player = mc.player;
             Entity look = RenderEvents.getEntityLookedAt(player, 32);

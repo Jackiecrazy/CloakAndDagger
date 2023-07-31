@@ -1,6 +1,7 @@
 package jackiecrazy.cloakanddagger.handlers;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
+import jackiecrazy.cloakanddagger.action.PermissionData;
 import jackiecrazy.cloakanddagger.utils.CombatUtils;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import net.minecraft.ChatFormatting;
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 public class ItemTooltipHandler {
     @SubscribeEvent()
     public static void tooltip(ItemTooltipEvent e) {
+        if (!PermissionData.getCap(e.getEntity()).canStab()) return;
         if (CombatUtils.isWeapon(e.getItemStack())) {
             e.getToolTip().add(Component.translatable("cloak.tooltip.distract", CombatUtils.getDamageMultiplier(StealthOverride.Awareness.DISTRACTED, e.getItemStack()) + "x").withStyle(ChatFormatting.GRAY));
             e.getToolTip().add(Component.translatable("cloak.tooltip.unaware", CombatUtils.getDamageMultiplier(StealthOverride.Awareness.UNAWARE, e.getItemStack()) + "x").withStyle(ChatFormatting.GRAY));

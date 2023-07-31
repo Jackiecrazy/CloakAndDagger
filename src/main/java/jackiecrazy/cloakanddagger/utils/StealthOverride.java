@@ -2,6 +2,7 @@ package jackiecrazy.cloakanddagger.utils;
 
 import io.netty.util.CharsetUtil;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
+import jackiecrazy.cloakanddagger.action.PermissionData;
 import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.SyncItemDataPacket;
@@ -130,6 +131,9 @@ public class StealthOverride extends StealthUtils {
             return Awareness.ALERT;//the cases that don't make sense.
         //players are alert because being jumped with 2.5x daggers feel bad
         if (target instanceof Player)
+            return Awareness.ALERT;
+        //no permission to stab, permanently treated as alert
+        if (attacker instanceof Player p && !PermissionData.getCap(p).canStab())
             return Awareness.ALERT;
         StealthData sd = stealthMap.getOrDefault(EntityType.getKey(target.getType()), STEALTH);
         Awareness a = Awareness.ALERT;

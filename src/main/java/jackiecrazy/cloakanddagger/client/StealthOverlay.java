@@ -4,6 +4,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.datafixers.util.Pair;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
+import jackiecrazy.cloakanddagger.action.PermissionData;
 import jackiecrazy.cloakanddagger.config.ClientConfig;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.capability.resources.CombatData;
@@ -27,6 +28,7 @@ public class StealthOverlay implements IGuiOverlay {
     @Override
     public void render(ForgeGui gui, PoseStack stack, float partialTick, int width, int height) {
         Minecraft mc = Minecraft.getInstance();
+        if (!PermissionData.getCap(mc.player).canSee()) return;
         if (mc.getCameraEntity() instanceof Player && mc.player != null && !mc.options.hideGui) {
             LocalPlayer player = mc.player;
             Entity look = RenderEvents.getEntityLookedAt(player, 32);
