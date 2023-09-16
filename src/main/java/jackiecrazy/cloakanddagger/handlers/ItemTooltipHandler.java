@@ -1,7 +1,7 @@
 package jackiecrazy.cloakanddagger.handlers;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
-import jackiecrazy.cloakanddagger.action.PermissionData;
+import jackiecrazy.cloakanddagger.capability.action.PermissionData;
 import jackiecrazy.cloakanddagger.utils.CombatUtils;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import net.minecraft.ChatFormatting;

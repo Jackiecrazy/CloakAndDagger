@@ -1,4 +1,4 @@
-package jackiecrazy.cloakanddagger.action;
+package jackiecrazy.cloakanddagger.capability.action;
 
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;

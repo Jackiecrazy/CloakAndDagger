@@ -1,4 +1,5 @@
 {
+  "cloak.command.missing": "unknown command",
   "cloak.command.permission.SEE.true": "%1$s can see the stealth display",
   "cloak.command.permission.SEE.false": "%1$s cannot see the stealth display",
   "cloak.command.permission.STAB.true": "%1$s can perform backstabs",

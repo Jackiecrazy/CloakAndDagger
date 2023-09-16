@@ -1,25 +1,16 @@
 package jackiecrazy.cloakanddagger.client;
 
-import com.google.common.cache.Cache;
-import com.google.common.cache.CacheBuilder;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.datafixers.util.Pair;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
-import jackiecrazy.cloakanddagger.action.PermissionData;
-import jackiecrazy.cloakanddagger.capability.vision.VisionData;
+import jackiecrazy.cloakanddagger.capability.action.PermissionData;
+import jackiecrazy.cloakanddagger.capability.vision.SenseData;
 import jackiecrazy.cloakanddagger.config.ClientConfig;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
-import jackiecrazy.footwork.api.FootworkAttributes;
-import jackiecrazy.footwork.capability.resources.CombatData;
-import jackiecrazy.footwork.capability.resources.ICombatCapability;
-import jackiecrazy.footwork.config.DisplayConfigUtils;
 import jackiecrazy.footwork.utils.GeneralUtils;
 import jackiecrazy.footwork.utils.StealthUtils;
-import com.mojang.blaze3d.platform.Window;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.client.Camera;
 import net.minecraft.client.renderer.culling.Frustum;
@@ -44,13 +35,10 @@ import net.minecraftforge.fml.common.Mod;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT, modid = CloakAndDagger.MODID)
 public class RenderEvents {
     static final DecimalFormat formatter = new DecimalFormat("#.#");
-    private static final Cache<LivingEntity, Tuple<StealthOverride.Awareness, Double>> cache = CacheBuilder.newBuilder().weakKeys().expireAfterWrite(1, TimeUnit.SECONDS).build();
     private static final ResourceLocation stealth = new ResourceLocation(CloakAndDagger.MODID, "textures/hud/stealth.png");
 
     /**
@@ -78,7 +66,7 @@ public class RenderEvents {
                 if (entity != null && (entity != look || !ClientConfig.CONFIG.stealth.enabled) && entity instanceof LivingEntity le && le != cameraEntity && le.isAlive() &&
                         !entity.getIndirectPassengers().iterator().hasNext() &&
                         entity.shouldRender(cameraPos.x(), cameraPos.y(), cameraPos.z()) &&
-                        !GeneralUtils.viewBlocked(mc.player, le, false)&&
+                        !GeneralUtils.viewBlocked(mc.player, le, false) &&
                         (entity.noCulling || frustum.isVisible(entity.getBoundingBox()))) {
                     renderEye((LivingEntity) entity, partialTicks, poseStack);
                 }
@@ -176,24 +164,11 @@ public class RenderEvents {
         return f;
     }
 
-    static Tuple<StealthOverride.Awareness, Double> stealthInfo(LivingEntity at) {
-        try {
-            return cache.get(at, () -> {
-                StealthOverride.Awareness a = StealthUtils.INSTANCE.getAwareness(Minecraft.getInstance().player, at);
-                double mult = Minecraft.getInstance().player.getVisibilityPercent(at);
-                return new Tuple<>(a, mult * VisionData.getCap(at).visionRange());
-            });
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-        return new Tuple<>(StealthOverride.Awareness.ALERT, 1d);
-    }
-
     private static void renderEye(LivingEntity passedEntity, float partialTicks, PoseStack poseStack) {
-        final Tuple<StealthOverride.Awareness, Double> info = stealthInfo(passedEntity);
-        double dist = info.getB();
+        final StealthInfo info = StealthInfo.stealthInfo(passedEntity);
+        double dist = info.getRange();
         int shift = 0;
-        switch (info.getA()) {
+        switch (info.getAwareness()) {
             case ALERT:
                 return;
             case DISTRACTED:
@@ -204,13 +179,14 @@ public class RenderEvents {
                     shift = passedEntity.distanceToSqr(Minecraft.getInstance().player) < dist * dist ? 2 : 3;
                 break;
         }
-        if (info.getB() < 0)
+        if (info.getRange() < 0)
             shift = 0;
         double x = passedEntity.xo + (passedEntity.getX() - passedEntity.xo) * partialTicks;
         double y = passedEntity.yo + (passedEntity.getY() - passedEntity.yo) * partialTicks;
         double z = passedEntity.zo + (passedEntity.getZ() - passedEntity.zo) * partialTicks;
 
         EntityRenderDispatcher renderDispatcher = Minecraft.getInstance().getEntityRenderDispatcher();
+        if (renderDispatcher == null || renderDispatcher.camera == null) return;//what
         Vec3 renderPos = renderDispatcher.camera.getPosition();
 
         poseStack.pushPose();
@@ -220,7 +196,18 @@ public class RenderEvents {
         poseStack.mulPose(Minecraft.getInstance().getEntityRenderDispatcher().cameraOrientation());
         final float size = Mth.clamp(0.002F * getSize(passedEntity), 0.015f, 0.1f);
         poseStack.scale(-size, -size, size);
+        //draws the eye
+        poseStack.pushPose();
         GuiComponent.blit(poseStack, -16, -8, 0, shift * 16, 32, 16, 64, 64);
+        poseStack.popPose();
+        //draws the red filling overlay
+        poseStack.pushPose();
+        if (info.getAwareness() == StealthUtils.Awareness.UNAWARE) {
+            RenderSystem.setShaderColor(1, 0, 0, 1);
+            GuiComponent.blit(poseStack, -16, -8, 0, shift * 16, (int) (32 * SenseData.getCap(passedEntity).getDetection(Minecraft.getInstance().player)), 16, 64, 64);
+            RenderSystem.setShaderColor(1, 1, 1, 1);
+        }
+        poseStack.popPose();
         poseStack.popPose();
 
         //poseStack.translate(0.0D, -(NeatConfig.backgroundHeight + NeatConfig.barHeight + NeatConfig.backgroundPadding), 0.0D);

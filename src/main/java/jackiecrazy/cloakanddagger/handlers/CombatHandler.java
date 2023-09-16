@@ -77,9 +77,6 @@ public class CombatHandler {
                 }
             }
         }
-
-        if (e.getSource().getEntity() instanceof LivingEntity a)
-            EffectUtils.causeFear(uke, a, 100);
     }
 
     /**

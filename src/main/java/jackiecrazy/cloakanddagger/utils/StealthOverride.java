@@ -2,19 +2,16 @@ package jackiecrazy.cloakanddagger.utils;
 
 import io.netty.util.CharsetUtil;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
-import jackiecrazy.cloakanddagger.action.PermissionData;
-import jackiecrazy.cloakanddagger.config.GeneralConfig;
+import jackiecrazy.cloakanddagger.capability.action.PermissionData;
+import jackiecrazy.cloakanddagger.capability.vision.SenseData;
 import jackiecrazy.cloakanddagger.networking.StealthChannel;
-import jackiecrazy.cloakanddagger.networking.SyncItemDataPacket;
 import jackiecrazy.cloakanddagger.networking.SyncMobDataPacket;
-import jackiecrazy.cloakanddagger.networking.SyncTagDataPacket;
 import jackiecrazy.footwork.event.EntityAwarenessEvent;
 import jackiecrazy.footwork.potion.FootworkEffects;
 import jackiecrazy.footwork.utils.StealthUtils;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -33,8 +30,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-
-import jackiecrazy.footwork.utils.StealthUtils.Awareness;
 
 public class StealthOverride extends StealthUtils {
     public static final StealthData STEALTH = new StealthData("");
@@ -142,7 +137,7 @@ public class StealthOverride extends StealthUtils {
             a = Awareness.UNAWARE;
             //idle and not vigilant
         else if (!sd.isVigilant() && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null))
-            a = target.getHealth() > target.getMaxHealth() * 0.75 ? Awareness.UNAWARE : Awareness.DISTRACTED;
+            a = target.level.isClientSide || target.getHealth() > target.getMaxHealth() * (1 - SenseData.getCap(target).getDetectionPerc(attacker)) ? Awareness.UNAWARE : Awareness.DISTRACTED;
             //distraction, confusion, and choking take top priority in inferior tier
         else if (target.hasEffect(FootworkEffects.DISTRACTION.get()) || target.hasEffect(FootworkEffects.CONFUSION.get()) || target.getAirSupply() <= 0)
             a = Awareness.DISTRACTED;
@@ -183,6 +178,11 @@ public class StealthOverride extends StealthUtils {
             vigil = value.contains("v");
             wary = value.contains("w");
             string = value;
+        }
+
+        public static StealthData read(FriendlyByteBuf f) {
+            int length = f.readInt();
+            return new StealthData(String.valueOf(f.readCharSequence(length, CharsetUtil.US_ASCII)));
         }
 
         public boolean isBlind() {
@@ -239,11 +239,6 @@ public class StealthOverride extends StealthUtils {
 
         public boolean isHeatSeeking() {
             return heatSeeking;
-        }
-
-        public static StealthData read(FriendlyByteBuf f) {
-            int length=f.readInt();
-            return new StealthData(String.valueOf(f.readCharSequence(length, CharsetUtil.US_ASCII)));
         }
 
         public void write(FriendlyByteBuf f) {

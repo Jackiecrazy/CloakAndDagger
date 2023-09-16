@@ -4,11 +4,10 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.datafixers.util.Pair;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
-import jackiecrazy.cloakanddagger.action.PermissionData;
+import jackiecrazy.cloakanddagger.capability.action.PermissionData;
+import jackiecrazy.cloakanddagger.capability.vision.SenseData;
 import jackiecrazy.cloakanddagger.config.ClientConfig;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
-import jackiecrazy.footwork.capability.resources.CombatData;
-import jackiecrazy.footwork.capability.resources.ICombatCapability;
 import jackiecrazy.footwork.config.DisplayConfigUtils;
 import jackiecrazy.footwork.utils.StealthUtils;
 import net.minecraft.client.Minecraft;
@@ -24,6 +23,8 @@ import net.minecraftforge.client.gui.overlay.IGuiOverlay;
 
 public class StealthOverlay implements IGuiOverlay {
     private static final ResourceLocation stealth = new ResourceLocation(CloakAndDagger.MODID, "textures/hud/stealth.png");
+    private double prevTick = 0;
+    private int lastTick = 0;
 
     @Override
     public void render(ForgeGui gui, PoseStack stack, float partialTick, int width, int height) {
@@ -38,10 +39,10 @@ public class StealthOverlay implements IGuiOverlay {
                 {
                     if (ClientConfig.CONFIG.stealth.enabled) {
                         Pair<Integer, Integer> pair = DisplayConfigUtils.translateCoords(ClientConfig.CONFIG.stealth, width, height);
-                        final Tuple<StealthOverride.Awareness, Double> info = RenderEvents.stealthInfo(looked);
-                        double dist = info.getB();
+                        final StealthInfo info = StealthInfo.stealthInfo(looked);
+                        double dist = info.getRange();
                         int shift = 0;
-                        switch (info.getA()) {
+                        switch (info.getAwareness()) {
                             case ALERT:
                                 break stealth;
                             case DISTRACTED:
@@ -52,10 +53,19 @@ public class StealthOverlay implements IGuiOverlay {
                                     shift = looked.distanceToSqr(Minecraft.getInstance().player) < dist * dist ? 2 : 3;
                                 break;
                         }
-                        if (info.getB() < 0)
+                        if (info.getRange() < 0)
                             shift = 0;
                         RenderSystem.setShaderTexture(0, stealth);
                         GuiComponent.blit(stack, pair.getFirst() - 16, pair.getSecond() - 8, 0, shift * 16, 32, 16, 64, 64);
+                        if (info.getAwareness() == StealthUtils.Awareness.UNAWARE) {
+                            RenderSystem.setShaderColor(1, 0, 0, 1);
+                            GuiComponent.blit(stack, pair.getFirst() - 16, pair.getSecond() - 8, 0, shift * 16, (int) (32 * (prevTick + (SenseData.getCap(looked).getDetection(player) - prevTick) * (partialTick))), 16, 64, 64);
+                            RenderSystem.setShaderColor(1, 1, 1, 1);
+                        }
+                        if (player.tickCount != lastTick) {
+                            lastTick = player.tickCount;
+                            prevTick = SenseData.getCap(looked).getDetection(player);
+                        }
                     }
                 }
             }

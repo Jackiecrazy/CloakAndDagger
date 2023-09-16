@@ -7,7 +7,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
-import jackiecrazy.cloakanddagger.action.PermissionData;
+import jackiecrazy.cloakanddagger.capability.action.PermissionData;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -16,7 +16,7 @@ import net.minecraft.world.entity.player.Player;
 
 public class CloakCommand {
 
-    public static final SimpleCommandExceptionType MISSING_ARGUMENT = new SimpleCommandExceptionType(Component.translatable("wardance.command.missing"));
+    public static final SimpleCommandExceptionType MISSING_ARGUMENT = new SimpleCommandExceptionType(Component.translatable("cloak.command.missing"));
 
     public static int missingArgument(CommandContext<CommandSourceStack> ctx) throws CommandSyntaxException {
         throw MISSING_ARGUMENT.create();

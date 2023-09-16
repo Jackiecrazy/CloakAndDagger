@@ -24,7 +24,7 @@ public abstract class MixinArmorStealth extends Entity {
     private float change(LivingEntity e) {
         final double stealth = GeneralUtils.getAttributeValueSafe(e, FootworkAttributes.STEALTH.get());
         if (stealth >= 0) return 0;
-        return (float) Mth.clamp(stealth / -10, 0, 1);
+        return (float) Mth.clamp(stealth / -20, 0, 1);
     }
 
     @Redirect(method = "getVisibilityPercent",

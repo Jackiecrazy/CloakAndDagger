@@ -1,6 +1,6 @@
 package jackiecrazy.cloakanddagger.networking;
 
-import jackiecrazy.cloakanddagger.capability.vision.VisionData;
+import jackiecrazy.cloakanddagger.capability.vision.SenseData;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.world.entity.Entity;
@@ -49,7 +49,7 @@ public class UpdateClientPacket {
                 ClientLevel world = Minecraft.getInstance().level;
                 if (world != null) {
                     Entity entity = world.getEntity(updateClientPacket.e);
-                    if (entity instanceof LivingEntity) VisionData.getCap((LivingEntity) entity).read(updateClientPacket.icc);
+                    if (entity instanceof LivingEntity) SenseData.getCap((LivingEntity) entity).read(updateClientPacket.icc);
                 }
             }));
             contextSupplier.get().setPacketHandled(true);

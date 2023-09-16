@@ -1,6 +1,6 @@
 package jackiecrazy.cloakanddagger;
 
-import jackiecrazy.cloakanddagger.capability.vision.IVision;
+import jackiecrazy.cloakanddagger.capability.vision.ISense;
 import jackiecrazy.cloakanddagger.client.SpyglassOverlay;
 import jackiecrazy.cloakanddagger.client.StealthOverlay;
 import jackiecrazy.cloakanddagger.command.CloakCommand;
@@ -17,6 +17,7 @@ import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.OnDatapackSyncEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -74,14 +75,23 @@ public class CloakAndDagger {
     }
 
     @SubscribeEvent
+    public static void login(PlayerEvent.PlayerLoggedInEvent e) {
+        if (e.getEntity() instanceof ServerPlayer sp) {
+            CombatUtils.sendItemData(sp);
+            StealthOverride.sendMobData(sp);
+        }
+    }
+
+    @SubscribeEvent
     public static void reload(OnDatapackSyncEvent e){
         for(ServerPlayer p: e.getPlayerList().getPlayers()){
             CombatUtils.sendItemData(p);
+            StealthOverride.sendMobData(p);
         }
     }
 
     private void caps(final RegisterCapabilitiesEvent event) {
-        event.register(IVision.class);
+        event.register(ISense.class);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

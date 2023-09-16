@@ -1,6 +1,6 @@
 package jackiecrazy.cloakanddagger.networking;
 
-import jackiecrazy.cloakanddagger.capability.vision.VisionData;
+import jackiecrazy.cloakanddagger.capability.vision.SenseData;
 import jackiecrazy.cloakanddagger.handlers.EntityHandler;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -42,7 +42,7 @@ public class RequestUpdatePacket {
                 ServerPlayer sender = contextSupplier.get().getSender();
                 if (sender != null && sender.level.getEntity(updateClientPacket.e) instanceof LivingEntity) {
                     EntityHandler.mustUpdate.put(sender, sender.level.getEntity(updateClientPacket.e));
-                    VisionData.getCap(((LivingEntity) (sender.level.getEntity(updateClientPacket.e)))).serverTick();
+                    SenseData.getCap(((LivingEntity) (sender.level.getEntity(updateClientPacket.e)))).serverTick();
                 } else EntityHandler.mustUpdate.put(sender, null);
             });
             contextSupplier.get().setPacketHandled(true);

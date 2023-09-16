@@ -1,18 +1,9 @@
 package jackiecrazy.cloakanddagger.mixin;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import jackiecrazy.cloakanddagger.capability.vision.VisionData;
-import jackiecrazy.cloakanddagger.config.GeneralConfig;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.*;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.world.entity.LivingEntity;
-import org.checkerframework.checker.units.qual.A;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.*;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntityRenderer.class)
 public abstract class MixinMobStealth<T extends LivingEntity, M extends EntityModel<T>> extends EntityRenderer<T> implements RenderLayerParent<T, M> {

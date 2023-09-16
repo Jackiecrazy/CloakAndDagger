@@ -2,7 +2,7 @@ package jackiecrazy.cloakanddagger.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
-import jackiecrazy.cloakanddagger.action.PermissionData;
+import jackiecrazy.cloakanddagger.capability.action.PermissionData;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;

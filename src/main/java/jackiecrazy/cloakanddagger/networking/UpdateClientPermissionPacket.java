@@ -1,6 +1,6 @@
 package jackiecrazy.cloakanddagger.networking;
 
-import jackiecrazy.cloakanddagger.action.PermissionData;
+import jackiecrazy.cloakanddagger.capability.action.PermissionData;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.nbt.CompoundTag;

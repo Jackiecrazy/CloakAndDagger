@@ -5,26 +5,37 @@ import jackiecrazy.cloakanddagger.networking.UpdateClientPacket;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.potion.FootworkEffects;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.TagType;
+import net.minecraft.nbt.TagTypes;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Mth;
+import net.minecraft.util.Tuple;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.network.PacketDistributor;
+import org.checkerframework.checker.units.qual.C;
 
 import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-public class Vision implements IVision {
+public class Sense implements ISense {
 
+    public static final DetectionData DUMMY = new DetectionData(0);
+    private static final int SEE_COOLDOWN = 20;
     private final WeakReference<LivingEntity> dude;
-    int lastRangeTick = 0;
+    private final HashMap<LivingEntity, DetectionData> detectionTracker = new HashMap<>();
     private float vision;
     private int retina;
     private long lastUpdate;
     private Vec3 motion;
 
-    public Vision(LivingEntity e) {
+    public Sense(LivingEntity e) {
         dude = new WeakReference<>(e);
     }
 
@@ -38,6 +49,16 @@ public class Vision implements IVision {
         if (elb == null) return;
         final int ticks = (int) (elb.level.getGameTime() - lastUpdate);
         if (ticks < 1) return;//sometimes time runs backwards
+        for (Iterator<Map.Entry<LivingEntity, DetectionData>> it = detectionTracker.entrySet().iterator(); it.hasNext(); ) {
+            Map.Entry<LivingEntity, DetectionData> next = it.next();
+            final DetectionData data = next.getValue();
+            if (data.lastUpdate + SEE_COOLDOWN < next.getKey().tickCount)
+                data.current -= (0.01f * ticks);
+            else data.current = Math.min(data.current + data.perTick * ticks, 1);
+            if (next.getKey().isDeadOrDying() || data.current <= 0)
+                it.remove();
+        }
+        ;
         //update max values
         vision = (float) elb.getAttributeValue(Attributes.FOLLOW_RANGE);
         if (elb.hasEffect(FootworkEffects.SLEEP.get()) || elb.hasEffect(FootworkEffects.PARALYSIS.get()) || elb.hasEffect(FootworkEffects.PETRIFY.get()))
@@ -75,8 +96,17 @@ public class Vision implements IVision {
         lastUpdate = c.getLong("lastUpdate");
         retina = c.getInt("retina");
         vision = c.getFloat("vision");
-        if (dude.get() instanceof Mob m && m.level.getEntity(c.getInt("target")) instanceof LivingEntity t) {
+        final LivingEntity dude = this.dude.get();
+        if (dude instanceof Mob m && m.level.getEntity(c.getInt("target")) instanceof LivingEntity t) {
             m.setTarget(t);
+        }
+        detectionTracker.clear();
+        if (c.get("detecting") instanceof CompoundTag ct && dude != null) {
+            for (String i : ct.getAllKeys()) {
+                if (dude.level.getEntity(Integer.valueOf(i)) instanceof LivingEntity elb) {
+                    detectionTracker.put(elb, new DetectionData(ct.getFloat(i)));
+                }
+            }
         }
     }
 
@@ -100,6 +130,9 @@ public class Vision implements IVision {
         if (dude.get() instanceof Mob m && m.getTarget() != null) {
             c.putInt("target", m.getTarget().getId());
         }
+        CompoundTag list = new CompoundTag();
+        detectionTracker.forEach((a, b) -> list.putFloat(String.valueOf(a.getId()), b.current));
+        c.put("detecting", list);
         return c;
     }
 
@@ -111,5 +144,47 @@ public class Vision implements IVision {
     @Override
     public float visionRange() {
         return vision;
+    }
+
+    @Override
+    public void modifyDetection(LivingEntity target, float amnt) {
+        final int lastCheck = detectionTracker.getOrDefault(target, DUMMY).lastUpdate;
+        if (lastCheck < target.tickCount) {
+            //interpolate a bit
+//            if (lastCheck + SEE_COOLDOWN > target.tickCount)
+//                amnt *= (target.tickCount - lastCheck) / 20f;
+            detectionTracker.merge(target, new DetectionData(target.tickCount, amnt), (a, b) -> new DetectionData(target.tickCount, Mth.clamp(b.perTick, 0, getMaxDetection(target)), a.current));
+        }
+    }
+
+    @Override
+    public float getDetection(LivingEntity target) {
+        return detectionTracker.getOrDefault(target, DUMMY).current;
+    }
+
+    @Override
+    public void resetDetection(LivingEntity target) {
+        detectionTracker.remove(target);
+    }
+
+    private static class DetectionData {
+        int lastUpdate = 0;
+        float perTick = 0;
+        float current = 0;
+
+        public DetectionData(int lastUpdate, float perTick) {
+            this.lastUpdate = lastUpdate;
+            this.perTick = perTick;
+        }
+
+        public DetectionData(int lastUpdate, float perTick, float current) {
+            this.lastUpdate = lastUpdate;
+            this.perTick = perTick;
+            this.current = current;
+        }
+
+        public DetectionData(float current) {
+            this.current = current;
+        }
     }
 }

@@ -1,4 +1,4 @@
-package jackiecrazy.cloakanddagger.action;
+package jackiecrazy.cloakanddagger.capability.action;
 
 import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.UpdateClientPermissionPacket;

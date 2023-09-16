@@ -1,9 +1,10 @@
 package jackiecrazy.cloakanddagger.capability.vision;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 
-public class DummyVision implements IVision {
+public class DummySense implements ISense {
 
     @Override
     public void clientTick() {
@@ -48,5 +49,20 @@ public class DummyVision implements IVision {
     @Override
     public float visionRange() {
         return 0;
+    }
+
+    @Override
+    public void modifyDetection(LivingEntity target, float amnt) {
+
+    }
+
+    @Override
+    public float getDetection(LivingEntity target) {
+        return 0;
+    }
+
+    @Override
+    public void resetDetection(LivingEntity target) {
+
     }
 }

@@ -12,20 +12,20 @@ import net.minecraftforge.common.util.LazyOptional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class VisionData implements ICapabilitySerializable<CompoundTag> {
-    private static IVision OHNO=new DummyVision();
+public class SenseData implements ICapabilitySerializable<CompoundTag> {
+    private static ISense OHNO=new DummySense();
 
-    public static Capability<IVision> CAP = CapabilityManager.get(new CapabilityToken<>() {
+    public static Capability<ISense> CAP = CapabilityManager.get(new CapabilityToken<>() {
     });
 
-    public static IVision getCap(LivingEntity le) {
+    public static ISense getCap(LivingEntity le) {
         return le.getCapability(CAP).orElse(OHNO);//.orElseThrow(() -> new IllegalArgumentException("attempted to find a nonexistent capability"));
     }
 
-    private final IVision instance;
+    private final ISense instance;
 
-    public VisionData(LivingEntity e) {
-        instance = new Vision(e);
+    public SenseData(LivingEntity e) {
+        instance = new Sense(e);
     }
 
     @Nonnull
