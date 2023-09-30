@@ -38,20 +38,20 @@ public class SpyglassOverlay implements IGuiOverlay {
                 descY = 10;
                 StealthOverride.StealthData sd = StealthOverride.getStealth(looked);
                 boolean adv = player.isShiftKeyDown();
-                if (sd.isAllSeeing()) describe(stack, "allsee", adv);
-                if (sd.isCheliceric()) describe(stack, "cheliceric", adv);
-                if (sd.isDeaf()) describe(stack, "deaf", adv, ChatFormatting.GREEN);
-                if (sd.isEyeless()) describe(stack, "eyeless", adv);
-                if (sd.isHeatSeeking()) describe(stack, "heat", adv);
-                if (sd.isLazy()) describe(stack, "lazy", adv, ChatFormatting.GREEN);
-                if (sd.isMindful()) describe(stack, "mindful", adv);
-                if (sd.isNightVision()) describe(stack, "night", adv, ChatFormatting.RED);
-                if (sd.isObservant()) describe(stack, "observant", adv);
-                if (sd.isPerceptive()) describe(stack, "perceptive", adv);
-                if (sd.isQuiet()) describe(stack, "quiet", adv, ChatFormatting.GREEN);
-                if (sd.isSkeptical()) describe(stack, "skeptical", adv, ChatFormatting.GREEN);
-                if (sd.isVigilant()) describe(stack, "vigilant", adv);
-                if (sd.isWary()) describe(stack, "wary", adv);
+                if (sd.allSeeing) describe(stack, "allsee", adv);
+                if (sd.cheliceric) describe(stack, "cheliceric", adv);
+                if (sd.deaf) describe(stack, "deaf", adv, ChatFormatting.GREEN);
+                if (sd.eyeless) describe(stack, "eyeless", adv);
+                if (sd.heatSeeking) describe(stack, "heat", adv);
+                if (sd.lazy) describe(stack, "lazy", adv, ChatFormatting.GREEN);
+                if (sd.mindful) describe(stack, "mindful", adv);
+                if (sd.nightvision) describe(stack, "night", adv, ChatFormatting.RED);
+                if (sd.observant) describe(stack, "observant", adv);
+                if (sd.perceptive) describe(stack, "perceptive", adv);
+                if (sd.quiet) describe(stack, "quiet", adv, ChatFormatting.GREEN);
+                if (sd.skeptical) describe(stack, "skeptical", adv, ChatFormatting.GREEN);
+                if (sd.vigil) describe(stack, "vigilant", adv);
+                if (sd.wary) describe(stack, "wary", adv);
             }
         }
     }

@@ -332,6 +332,7 @@ public class MobConfig {
                 "\n(d)eaf mobs ignore sound cues. " +
                 "\n(e)yeless mobs cannot be blinded. " +
                 "\n(h)eat-seeking mobs ignore LoS modifiers. " +
+                "\n(i)nstant mobs skip the search phase. " +
                 "\n(k)lutzy mobs have effectively no stealth. " +
                 "\n(l)azy mobs do not turn around to search for you on a successful luck check. " +
                 "\n(m)indful mobs are treated as alert even when attacking entities other than you. " +

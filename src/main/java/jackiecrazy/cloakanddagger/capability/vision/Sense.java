@@ -35,6 +35,8 @@ public class Sense implements ISense {
     private long lastUpdate;
     private Vec3 motion;
 
+    private LivingEntity target;
+
     public Sense(LivingEntity e) {
         dude = new WeakReference<>(e);
     }
@@ -165,6 +167,16 @@ public class Sense implements ISense {
     @Override
     public void resetDetection(LivingEntity target) {
         detectionTracker.remove(target);
+    }
+
+    @Override
+    public LivingEntity getLookingFor() {
+        return target;
+    }
+
+    @Override
+    public void setLookingFor(LivingEntity target) {
+        this.target = target;
     }
 
     private static class DetectionData {

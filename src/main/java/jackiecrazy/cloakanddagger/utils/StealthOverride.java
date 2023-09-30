@@ -136,19 +136,19 @@ public class StealthOverride extends StealthUtils {
         if (target.hasEffect(FootworkEffects.SLEEP.get()) || target.hasEffect(FootworkEffects.PARALYSIS.get()) || target.hasEffect(FootworkEffects.PETRIFY.get()))
             a = Awareness.UNAWARE;
             //idle and not vigilant
-        else if (!sd.isVigilant() && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null))
+        else if (!sd.vigil && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null))
             a = target.level.isClientSide || target.getHealth() > target.getMaxHealth() * (1 - SenseData.getCap(target).getDetectionPerc(attacker)) ? Awareness.UNAWARE : Awareness.DISTRACTED;
             //distraction, confusion, and choking take top priority in inferior tier
         else if (target.hasEffect(FootworkEffects.DISTRACTION.get()) || target.hasEffect(FootworkEffects.CONFUSION.get()) || target.getAirSupply() <= 0)
             a = Awareness.DISTRACTED;
             //looking around for you, but cannot see
-        else if (attacker != null && attacker.isInvisible() && !sd.isObservant())
+        else if (attacker != null && attacker.isInvisible() && !sd.observant)
             a = Awareness.DISTRACTED;
             //webbed and not a spider
-        else if (inWeb(target) && !sd.isCheliceric())
+        else if (inWeb(target) && !sd.cheliceric)
             a = Awareness.DISTRACTED;
             //hurt by something else
-        else if (!sd.isMindful() && target.getLastHurtByMob() != attacker && (!(target instanceof Mob) || ((Mob) target).getTarget() != attacker))
+        else if (!sd.mindful && target.getLastHurtByMob() != attacker && (!(target instanceof Mob) || ((Mob) target).getTarget() != attacker))
             a = Awareness.DISTRACTED;
         //event for more compat
         EntityAwarenessEvent eae = new EntityAwarenessEvent(target, attacker, a);
@@ -159,7 +159,7 @@ public class StealthOverride extends StealthUtils {
     public static class StealthData {
 
         private final String string;
-        private final boolean allSeeing, blind, cheliceric, deaf, eyeless, heatSeeking, lazy, mindful, nightvision, observant, perceptive, skeptical, quiet, vigil, wary;
+        public final boolean allSeeing, blind, cheliceric, deaf, eyeless, heatSeeking, instant, lazy, mindful, nightvision, observant, perceptive, skeptical, quiet, vigil, wary;
 
         public StealthData(String value) {
             allSeeing = value.contains("a");
@@ -168,6 +168,7 @@ public class StealthOverride extends StealthUtils {
             deaf = value.contains("d");
             eyeless = value.contains("e");
             heatSeeking = value.contains("h");
+            instant = value.contains("i");
             lazy = value.contains("l");
             mindful = value.contains("m");
             nightvision = value.contains("n");
@@ -183,62 +184,6 @@ public class StealthOverride extends StealthUtils {
         public static StealthData read(FriendlyByteBuf f) {
             int length = f.readInt();
             return new StealthData(String.valueOf(f.readCharSequence(length, CharsetUtil.US_ASCII)));
-        }
-
-        public boolean isBlind() {
-            return blind;
-        }
-
-        public boolean isCheliceric() {
-            return cheliceric;
-        }
-
-        public boolean isEyeless() {
-            return eyeless;
-        }
-
-        public boolean isLazy() {
-            return lazy;
-        }
-
-        public boolean isMindful() {
-            return mindful;
-        }
-
-        public boolean isSkeptical() {
-            return skeptical;
-        }
-
-        public boolean isVigilant() {
-            return vigil;
-        }
-
-        public boolean isDeaf() {
-            return deaf;
-        }
-
-        public boolean isNightVision() {
-            return nightvision;
-        }
-
-        public boolean isAllSeeing() {
-            return allSeeing;
-        }
-
-        public boolean isObservant() {
-            return observant;
-        }
-
-        public boolean isPerceptive() {
-            return perceptive;
-        }
-
-        public boolean isWary() {return wary;}
-
-        public boolean isQuiet() {return quiet;}
-
-        public boolean isHeatSeeking() {
-            return heatSeeking;
         }
 
         public void write(FriendlyByteBuf f) {

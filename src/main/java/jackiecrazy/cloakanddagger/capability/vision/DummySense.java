@@ -65,4 +65,14 @@ public class DummySense implements ISense {
     public void resetDetection(LivingEntity target) {
 
     }
+
+    @Override
+    public LivingEntity getLookingFor() {
+        return null;
+    }
+
+    @Override
+    public void setLookingFor(LivingEntity target) {
+
+    }
 }

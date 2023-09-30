@@ -30,9 +30,11 @@ public abstract class MixinArmorStealth extends Entity {
     @Redirect(method = "getVisibilityPercent",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isInvisible()Z"))
     private boolean observant(LivingEntity e) {
-        if (e != null)
-            if (StealthOverride.stealthMap.getOrDefault(EntityType.getKey(e.getType()), StealthOverride.STEALTH).isObservant())
+        if (e != null) {
+            StealthOverride.StealthData stealthData = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(e.getType()), StealthOverride.STEALTH);
+            if (stealthData.observant)
                 return false;
+        }
         return isInvisible();
     }
 }

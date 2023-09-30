@@ -38,4 +38,7 @@ public interface ISense {
         return getDetection(target)/getMaxDetection(target);
     }
     void resetDetection(LivingEntity target);
+
+    LivingEntity getLookingFor();
+    void setLookingFor(LivingEntity target);
 }
