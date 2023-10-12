@@ -19,7 +19,7 @@ import org.lwjgl.glfw.GLFW;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT, modid = CloakAndDagger.MODID)
 public class Keybind {
-    public static final KeyMapping SHOUT = new KeyMapping("wardance.shout", KeyConflictContext.IN_GAME, KeyModifier.SHIFT, InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_T, "key.categories.gameplay");
+    public static final KeyMapping SHOUT = new KeyMapping("cloak.shout", KeyConflictContext.IN_GAME, KeyModifier.SHIFT, InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_T, "key.categories.gameplay");
 
     @SubscribeEvent
     public static void inputs(RegisterKeyMappingsEvent event) {

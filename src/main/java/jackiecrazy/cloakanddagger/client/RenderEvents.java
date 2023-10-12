@@ -1,29 +1,27 @@
 package jackiecrazy.cloakanddagger.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.*;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.capability.action.PermissionData;
 import jackiecrazy.cloakanddagger.capability.vision.SenseData;
 import jackiecrazy.cloakanddagger.config.ClientConfig;
-import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.utils.GeneralUtils;
 import jackiecrazy.footwork.utils.StealthUtils;
+import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.gui.GuiComponent;
-import net.minecraft.client.Camera;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
-import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Tuple;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.util.Mth;
 import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
@@ -31,6 +29,7 @@ import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.joml.Matrix4f;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -71,6 +70,7 @@ public class RenderEvents {
                     renderEye((LivingEntity) entity, partialTicks, poseStack);
                 }
             }
+
         }
 
     }
@@ -79,6 +79,23 @@ public class RenderEvents {
     public static void stealthystealth(RenderLivingEvent.Pre<LivingEntity, EntityModel<LivingEntity>> e) {
 //        if (GeneralUtils.getAttributeValueSafe(e.getEntity(), FootworkAttributes.STEALTH.get()) > 0 && e.getEntity().isInvisible())
 //            e.setCanceled(true);
+    }
+
+    private static void innerBlit(PoseStack ps, ResourceLocation p_283461_, int x, int x1, int y, int y1, int z, float u, float u1, float v, float v1) {
+        RenderSystem.setShaderTexture(0, p_283461_);
+        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        Matrix4f matrix4f = ps.last().pose();
+        BufferBuilder bufferbuilder = Tesselator.getInstance().getBuilder();
+        bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
+        bufferbuilder.vertex(matrix4f, (float)x, (float)y, (float)z).uv(u, v).endVertex();
+        bufferbuilder.vertex(matrix4f, (float)x, (float)y1, (float)z).uv(u, v1).endVertex();
+        bufferbuilder.vertex(matrix4f, (float)x1, (float)y1, (float)z).uv(u1, v1).endVertex();
+        bufferbuilder.vertex(matrix4f, (float)x1, (float)y, (float)z).uv(u1, v).endVertex();
+        BufferUploader.drawWithShader(bufferbuilder.end());
+    }
+
+    private static void blit(PoseStack ps, float p_282942_, int p_281922_) {
+        innerBlit(ps, RenderEvents.stealth, -16, -16 + p_281922_, -8, 8, 0, ((float) 0.0 + 0.0F) / (float) 64, ((float) 0.0 + (float) p_281922_) / (float) 64, (p_282942_ + 0.0F) / (float) 64, (p_282942_ + (float) 16) / (float) 64);
     }
 
     /**
@@ -144,7 +161,7 @@ public class RenderEvents {
 
     static HitResult raycast(Vec3 origin, Vec3 ray, Entity e, double len) {
         Vec3 next = origin.add(ray.normalize().scale(len));
-        return e.level.clip(new ClipContext(origin, next, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, e));
+        return e.level().clip(new ClipContext(origin, next, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, e));
     }
 
     private static float updateValue(float f, float to) {
@@ -198,13 +215,13 @@ public class RenderEvents {
         poseStack.scale(-size, -size, size);
         //draws the eye
         poseStack.pushPose();
-        GuiComponent.blit(poseStack, -16, -8, 0, shift * 16, 32, 16, 64, 64);
+        blit(poseStack, shift * 16, 32);
         poseStack.popPose();
         //draws the red filling overlay
         poseStack.pushPose();
         if (info.getAwareness() == StealthUtils.Awareness.UNAWARE) {
             RenderSystem.setShaderColor(1, 0, 0, 1);
-            GuiComponent.blit(poseStack, -16, -8, 0, shift * 16, (int) (32 * SenseData.getCap(passedEntity).getDetection(Minecraft.getInstance().player)), 16, 64, 64);
+            blit(poseStack, shift * 16, (int) (32 * SenseData.getCap(passedEntity).getDetection(Minecraft.getInstance().player)));
             RenderSystem.setShaderColor(1, 1, 1, 1);
         }
         poseStack.popPose();

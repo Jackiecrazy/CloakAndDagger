@@ -5,19 +5,14 @@ import jackiecrazy.cloakanddagger.networking.UpdateClientPacket;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.potion.FootworkEffects;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.TagType;
-import net.minecraft.nbt.TagTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
-import net.minecraft.util.Tuple;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.network.PacketDistributor;
-import org.checkerframework.checker.units.qual.C;
 
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
@@ -49,7 +44,7 @@ public class Sense implements ISense {
     public void serverTick() {
         LivingEntity elb = dude.get();
         if (elb == null) return;
-        final int ticks = (int) (elb.level.getGameTime() - lastUpdate);
+        final int ticks = (int) (elb.level().getGameTime() - lastUpdate);
         if (ticks < 1) return;//sometimes time runs backwards
         for (Iterator<Map.Entry<LivingEntity, DetectionData>> it = detectionTracker.entrySet().iterator(); it.hasNext(); ) {
             Map.Entry<LivingEntity, DetectionData> next = it.next();
@@ -66,7 +61,7 @@ public class Sense implements ISense {
         if (elb.hasEffect(FootworkEffects.SLEEP.get()) || elb.hasEffect(FootworkEffects.PARALYSIS.get()) || elb.hasEffect(FootworkEffects.PETRIFY.get()))
             vision = -1;
         //update internal retina values
-        int light = StealthOverride.getActualLightLevel(elb.level, elb.blockPosition());
+        int light = StealthOverride.getActualLightLevel(elb.level(), elb.blockPosition());
         for (long x = lastUpdate + ticks; x > lastUpdate; x--) {
             if (x % 3 == 0) {
                 if (light > retina)
@@ -78,7 +73,7 @@ public class Sense implements ISense {
         //store motion for further use
         if (ticks > 5 || (lastUpdate + ticks) % 5 != lastUpdate % 5)
             motion = elb.position();
-        lastUpdate = elb.level.getGameTime();
+        lastUpdate = elb.level().getGameTime();
         sync();
     }
 
@@ -86,7 +81,7 @@ public class Sense implements ISense {
     public void sync() {
 
         LivingEntity elb = dude.get();
-        if (elb == null || elb.level.isClientSide) return;
+        if (elb == null || elb.level().isClientSide) return;
         StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(() -> elb), new UpdateClientPacket(elb.getId(), write()));
         if (!(elb instanceof FakePlayer) && elb instanceof ServerPlayer)
             StealthChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) elb), new UpdateClientPacket(elb.getId(), write()));
@@ -99,13 +94,13 @@ public class Sense implements ISense {
         retina = c.getInt("retina");
         vision = c.getFloat("vision");
         final LivingEntity dude = this.dude.get();
-        if (dude instanceof Mob m && m.level.getEntity(c.getInt("target")) instanceof LivingEntity t) {
+        if (dude instanceof Mob m && m.level().getEntity(c.getInt("target")) instanceof LivingEntity t) {
             m.setTarget(t);
         }
         detectionTracker.clear();
         if (c.get("detecting") instanceof CompoundTag ct && dude != null) {
             for (String i : ct.getAllKeys()) {
-                if (dude.level.getEntity(Integer.valueOf(i)) instanceof LivingEntity elb) {
+                if (dude.level().getEntity(Integer.valueOf(i)) instanceof LivingEntity elb) {
                     detectionTracker.put(elb, new DetectionData(ct.getFloat(i)));
                 }
             }

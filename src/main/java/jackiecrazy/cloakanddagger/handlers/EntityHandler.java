@@ -144,7 +144,7 @@ public class EntityHandler {
                 //up to 60%
                 //let's try this for a while: light difference directly adds to stealth score instead. Bad stealth bottoms out at -10 to amend for diamond
                 if (!sd.nightvision && !watcher.hasEffect(MobEffects.NIGHT_VISION) && !sneaker.hasEffect(MobEffects.GLOWING) && sneaker.getRemainingFireTicks() <= 0) {
-                    Level world = sneaker.level;
+                    Level world = sneaker.level();
                     if (world.isAreaLoaded(sneaker.blockPosition(), 5) && world.isAreaLoaded(watcher.blockPosition(), 5)) {
                         final int slight = StealthOverride.getActualLightLevel(world, sneaker.blockPosition());
                         final int wlight = SenseData.getCap(watcher).getRetina();
@@ -153,7 +153,7 @@ public class EntityHandler {
                         lightDiff -= Math.min(0, slight - magicLightCutoff);//less than 10? bonus
                         lightDiff += Math.max(0, wlight - magicLightCutoff);//more than 10? bonus
                         float modifiedLight = 1 - lightDiff / magicLightCutoff;//lower is better, 10 is baseline
-                        lightMalus = (float) Mth.clamp((1 - modifiedLight) / posMult, -10f, 0.6f); //higher is better
+                        lightMalus = (float) Mth.clamp((1 - modifiedLight) / posMult, -10f, 0.7f); //higher is better
                         mult *= (1 - (lightMalus * negMult));
                     }
                 }
@@ -161,13 +161,13 @@ public class EntityHandler {
                 if (!sd.perceptive) {
                     final double speedSq = GeneralUtils.getSpeedSq(sneaker);
                     final float speed = Mth.sqrt((float) speedSq);
-                    mult *= (1 - (0.4 - speed * 6 * posMult) * negMult);// * (1 - lightMalus)
+                    mult *= (1 - (0.5 - speed * 2 * posMult) * negMult);// * (1 - lightMalus)
                 }
                 //internally enforced 3 blocks of vision, the other two can bypass this
                 mult = Math.max(mult, 3 / (watcher.getAttributeValue(Attributes.FOLLOW_RANGE) + 1));
                 //mobs that can't see behind their backs get a hefty debuff
                 if (!sd.allSeeing && !GeneralUtils.isFacingEntity(watcher, sneaker, GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection))
-                    mult *= (1 - (0.6 * negMult));
+                    mult *= (1 - (0.7 * negMult));
             }
             //normalize values
             //mult = Math.min(1, mult);
@@ -175,7 +175,7 @@ public class EntityHandler {
             if (watcher.hasEffect(MobEffects.BLINDNESS) && !sd.eyeless) mult /= 11;
             //is this LoS?
             if (!sd.heatSeeking && GeneralUtils.viewBlocked(watcher, sneaker, true))
-                mult *= (0.5);
+                mult *= (0.6);
             //dude you literally just bumped into me
             mult = Math.max(mult, 2f / (watcher.getAttributeValue(Attributes.FOLLOW_RANGE) + 1));
             e.modifyVisibility(Math.max(mult, 0));
@@ -185,7 +185,7 @@ public class EntityHandler {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void detect(final LivingEvent.LivingVisibilityEvent e) {
         //if you are in detection range, add the range-modified multiplier to detection, otherwise subtract fixed amount
-        if (e.getLookingEntity() instanceof LivingEntity watcher && !watcher.level.isClientSide) {
+        if (e.getLookingEntity() instanceof LivingEntity watcher && !watcher.level().isClientSide) {
             final double maxDist = watcher.getAttributeValue(Attributes.FOLLOW_RANGE);
             double follow = maxDist * e.getVisibilityModifier();
             final double sqdist = e.getEntity().distanceToSqr(watcher);
@@ -219,7 +219,8 @@ public class EntityHandler {
         }
         //not (owner) or self revenge target
         if (mob instanceof OwnableEntity pet) {
-            if (pet.getOwner() instanceof LivingEntity owner) {
+            if (pet.getOwner() !=null) {
+                LivingEntity owner=pet.getOwner();
                 if (owner.getLastHurtByMob() == e.getNewTarget() || owner.getLastHurtMob() == e.getNewTarget())
                     return;
             }
@@ -252,7 +253,7 @@ public class EntityHandler {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void sync(LivingChangeTargetEvent e) {
-        if (!e.getEntity().level.isClientSide())
+        if (!e.getEntity().level().isClientSide())
             StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(e::getEntity), new UpdateTargetPacket(e.getEntity().getId(), e.getNewTarget() == null ? -1 : e.getNewTarget().getId()));
     }
 
@@ -294,15 +295,15 @@ public class EntityHandler {
     @SubscribeEvent
     public static void tickMobs(LivingEvent.LivingTickEvent e) {
         LivingEntity elb = e.getEntity();
-        if (!elb.level.isClientSide && !(elb instanceof Player)) {
+        if (!elb.level().isClientSide && !(elb instanceof Player)) {
             ISense cap = SenseData.getCap(elb);
             if (elb.tickCount % 100 == 0 || mustUpdate.containsValue(elb))
                 cap.serverTick();
         }
-        if (!elb.level.isClientSide && elb.tickCount % 108 == 0 && elb.isInvisible()) {
-            DummyEntity d = new DecoyEntity(FootworkEntities.DUMMY.get(), elb.level).setBoundTo(elb).setTicksToLive(100);
+        if (!elb.level().isClientSide && elb.tickCount % 108 == 0 && elb.isInvisible()) {
+            DummyEntity d = new DecoyEntity(FootworkEntities.DUMMY.get(), elb.level()).setBoundTo(elb).setTicksToLive(100);
             d.setPos(elb.getEyePosition().add(CloakAndDagger.rand.nextInt(6) - 3, 0, CloakAndDagger.rand.nextInt(6) - 3));
-            elb.level.addFreshEntity(d);
+            elb.level().addFreshEntity(d);
             lastDecoy.put(elb, d);
         }
     }

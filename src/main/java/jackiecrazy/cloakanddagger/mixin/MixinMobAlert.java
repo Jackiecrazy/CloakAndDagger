@@ -25,7 +25,7 @@ public abstract class MixinMobAlert {
             return;
         float volume = ((MixinMobSound) me).callGetSoundVolume();
 
-        EntityHandler.alertTracker.put(new Tuple<>(me.level, new BlockPos(me.getX(), me.getY(), me.getZ())), (float) (volume * SoundConfig.shout));
+        EntityHandler.alertTracker.put(new Tuple<>(me.level(), BlockPos.containing(me.getX(), me.getY(), me.getZ())), (float) (volume * SoundConfig.shout));
     }
 
 }

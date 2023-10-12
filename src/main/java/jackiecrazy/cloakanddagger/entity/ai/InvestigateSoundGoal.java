@@ -38,7 +38,7 @@ public class InvestigateSoundGoal extends MoveToBlockGoal {
     @Override
     protected boolean findNearestBlock() {
         mob.getCapability(GoalCapabilityProvider.CAP).ifPresent(a -> {
-            if (isValidTarget(mob.level, a.getSoundLocation()))
+            if (isValidTarget(mob.level(), a.getSoundLocation()))
                 this.blockPos = a.getSoundLocation();
             else this.blockPos = BlockPos.ZERO;
         });

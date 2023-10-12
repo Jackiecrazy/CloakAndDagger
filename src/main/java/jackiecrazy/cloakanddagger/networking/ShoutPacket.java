@@ -51,8 +51,8 @@ public class ShoutPacket {
                 SoundEvent se = ForgeRegistries.SOUND_EVENTS.getValue(updateClientPacket.voice);
                 if (uke == null) return;
                 if (se == null) se = SoundEvents.PILLAGER_AMBIENT;
-                uke.level.playSound(null, uke.getX(), uke.getY(), uke.getZ(), se, SoundSource.PLAYERS, 0.75f + CloakAndDagger.rand.nextFloat() * 0.5f, 0.75f + CloakAndDagger.rand.nextFloat() * 0.5f);
-                EntityHandler.alertTracker.put(new Tuple<>(uke.level, new BlockPos(uke.getX(), uke.getY(), uke.getZ())), (float) SoundConfig.shout);
+                uke.level().playSound(null, uke.getX(), uke.getY(), uke.getZ(), se, SoundSource.PLAYERS, 0.75f + CloakAndDagger.rand.nextFloat() * 0.5f, 0.75f + CloakAndDagger.rand.nextFloat() * 0.5f);
+                EntityHandler.alertTracker.put(new Tuple<>(uke.level(), BlockPos.containing(uke.getX(), uke.getY(), uke.getZ())), (float) SoundConfig.shout);
             });
             contextSupplier.get().setPacketHandled(true);
         }

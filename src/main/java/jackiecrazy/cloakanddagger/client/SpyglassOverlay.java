@@ -1,11 +1,11 @@
 package jackiecrazy.cloakanddagger.client;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.capability.action.PermissionData;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -19,16 +19,16 @@ public class SpyglassOverlay implements IGuiOverlay {
     private static final ResourceLocation stealth = new ResourceLocation(CloakAndDagger.MODID, "textures/hud/stealth.png");
     int descY = 10;
 
-    private void describe(PoseStack stack, String tag, boolean advanced, ChatFormatting... format) {
+    private void describe(GuiGraphics graphics, String tag, boolean advanced, ChatFormatting... format) {
         Minecraft mc = Minecraft.getInstance();
-        mc.font.drawShadow(stack, Component.translatable("cloak.tag." + tag).withStyle(format), 4, descY, 0xffffff);
+        graphics.drawString(mc.font, Component.translatable("cloak.tag." + tag).withStyle(format), 4, descY, 0xffffff);
         if (advanced)
-            mc.font.drawShadow(stack, Component.translatable("cloak.desc." + tag).withStyle(format), 8, descY + 8, 0xffffff);
+            graphics.drawString(mc.font, Component.translatable("cloak.desc." + tag).withStyle(format), 8, descY + 8, 0xffffff);
         descY += 20;
     }
 
     @Override
-    public void render(ForgeGui gui, PoseStack stack, float partialTick, int width, int height) {
+    public void render(ForgeGui gui, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
         Minecraft mc = Minecraft.getInstance();
         if (!PermissionData.getCap(mc.player).canSee()) return;
         if (mc.getCameraEntity() instanceof Player && mc.player != null && !mc.options.hideGui && mc.player.isScoping()) {
@@ -38,20 +38,20 @@ public class SpyglassOverlay implements IGuiOverlay {
                 descY = 10;
                 StealthOverride.StealthData sd = StealthOverride.getStealth(looked);
                 boolean adv = player.isShiftKeyDown();
-                if (sd.allSeeing) describe(stack, "allsee", adv);
-                if (sd.cheliceric) describe(stack, "cheliceric", adv);
-                if (sd.deaf) describe(stack, "deaf", adv, ChatFormatting.GREEN);
-                if (sd.eyeless) describe(stack, "eyeless", adv);
-                if (sd.heatSeeking) describe(stack, "heat", adv);
-                if (sd.lazy) describe(stack, "lazy", adv, ChatFormatting.GREEN);
-                if (sd.mindful) describe(stack, "mindful", adv);
-                if (sd.nightvision) describe(stack, "night", adv, ChatFormatting.RED);
-                if (sd.observant) describe(stack, "observant", adv);
-                if (sd.perceptive) describe(stack, "perceptive", adv);
-                if (sd.quiet) describe(stack, "quiet", adv, ChatFormatting.GREEN);
-                if (sd.skeptical) describe(stack, "skeptical", adv, ChatFormatting.GREEN);
-                if (sd.vigil) describe(stack, "vigilant", adv);
-                if (sd.wary) describe(stack, "wary", adv);
+                if (sd.allSeeing) describe(guiGraphics, "allsee", adv);
+                if (sd.cheliceric) describe(guiGraphics, "cheliceric", adv);
+                if (sd.deaf) describe(guiGraphics, "deaf", adv, ChatFormatting.GREEN);
+                if (sd.eyeless) describe(guiGraphics, "eyeless", adv);
+                if (sd.heatSeeking) describe(guiGraphics, "heat", adv);
+                if (sd.lazy) describe(guiGraphics, "lazy", adv, ChatFormatting.GREEN);
+                if (sd.mindful) describe(guiGraphics, "mindful", adv);
+                if (sd.nightvision) describe(guiGraphics, "night", adv, ChatFormatting.RED);
+                if (sd.observant) describe(guiGraphics, "observant", adv);
+                if (sd.perceptive) describe(guiGraphics, "perceptive", adv);
+                if (sd.quiet) describe(guiGraphics, "quiet", adv, ChatFormatting.GREEN);
+                if (sd.skeptical) describe(guiGraphics, "skeptical", adv, ChatFormatting.GREEN);
+                if (sd.vigil) describe(guiGraphics, "vigilant", adv);
+                if (sd.wary) describe(guiGraphics, "wary", adv);
             }
         }
     }

@@ -12,6 +12,7 @@ import jackiecrazy.footwork.api.FootworkAttributes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.profiling.ProfilerFiller;
@@ -100,19 +101,11 @@ public class CombatUtils {
         return null;
     }
 
-    public static boolean isMeleeAttack(DamageSource s) {
-        if (s instanceof CombatDamageSource) {
-            return ((CombatDamageSource) s).canProcAutoEffects();
-        }
-        return s.getEntity() == s.getDirectEntity() && !s.isExplosion() && !s.isFire() && !s.isMagic() && !s.isBypassArmor() && !s.isProjectile();
-    }
-
     public static boolean isPhysicalAttack(DamageSource s) {
-        if (s instanceof CombatDamageSource) {
-            CombatDamageSource cds = (CombatDamageSource) s;
+        if (s instanceof CombatDamageSource cds) {
             return cds.getDamageTyping() == CombatDamageSource.TYPE.PHYSICAL;
         }
-        return !s.isExplosion() && !s.isFire() && !s.isMagic() && !s.isBypassArmor();
+        return !s.is(DamageTypeTags.IS_EXPLOSION) && !s.is(DamageTypeTags.IS_FIRE) && !s.is(DamageTypeTags.WITCH_RESISTANT_TO) && !s.is(DamageTypeTags.BYPASSES_ARMOR);
     }
 
     private static StabInfo lookupStats(ItemStack is) {

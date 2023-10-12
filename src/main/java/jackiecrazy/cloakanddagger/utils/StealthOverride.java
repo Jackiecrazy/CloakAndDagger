@@ -9,19 +9,18 @@ import jackiecrazy.cloakanddagger.networking.SyncMobDataPacket;
 import jackiecrazy.footwork.event.EntityAwarenessEvent;
 import jackiecrazy.footwork.potion.FootworkEffects;
 import jackiecrazy.footwork.utils.StealthUtils;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.core.BlockPos;
-import net.minecraft.util.Mth;
-import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -94,21 +93,6 @@ public class StealthOverride extends StealthUtils {
         }
     }
 
-    public static boolean inWeb(LivingEntity e) {
-        if (!e.level.isAreaLoaded(e.blockPosition(), (int) Math.ceil(e.getBbWidth()))) return false;
-        double minX = e.getX() - e.getBbWidth() / 2, minY = e.getY(), minZ = e.getZ() - e.getBbWidth() / 2;
-        double maxX = e.getX() + e.getBbWidth() / 2, maxY = e.getY() + e.getBbHeight(), maxZ = e.getZ() + e.getBbWidth() / 2;
-        for (double x = minX; x <= maxX; x++) {
-            for (double y = minY; y <= maxY; y++) {
-                for (double z = minZ; z <= maxZ; z++) {
-                    if (e.level.getBlockState(e.blockPosition()).getMaterial().equals(Material.WEB))
-                        return true;
-                }
-            }
-        }
-        return false;
-    }
-
     public static int getActualLightLevel(Level world, BlockPos pos) {
         int i = 0;
         if (world.dimensionType().hasSkyLight()) {
@@ -137,7 +121,7 @@ public class StealthOverride extends StealthUtils {
             a = Awareness.UNAWARE;
             //idle and not vigilant
         else if (!sd.vigil && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null))
-            a = target.level.isClientSide || target.getHealth() > target.getMaxHealth() * (1 - SenseData.getCap(target).getDetectionPerc(attacker)) ? Awareness.UNAWARE : Awareness.DISTRACTED;
+            a = target.level().isClientSide || target.getHealth() > target.getMaxHealth() * (1 - SenseData.getCap(target).getDetectionPerc(attacker)) ? Awareness.UNAWARE : Awareness.DISTRACTED;
             //distraction, confusion, and choking take top priority in inferior tier
         else if (target.hasEffect(FootworkEffects.DISTRACTION.get()) || target.hasEffect(FootworkEffects.CONFUSION.get()) || target.getAirSupply() <= 0)
             a = Awareness.DISTRACTED;

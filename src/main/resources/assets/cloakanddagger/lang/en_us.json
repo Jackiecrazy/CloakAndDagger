@@ -37,5 +37,6 @@
   "cloak.desc.quiet": "no voice to cry suffering",
   "cloak.desc.skeptical": "always turns around to check",
   "cloak.desc.vigilant": "treated as alert when idle",
-  "cloak.desc.wary": "ignores luck"
+  "cloak.desc.wary": "ignores luck",
+  "cloak.shout": "Shout"
 }

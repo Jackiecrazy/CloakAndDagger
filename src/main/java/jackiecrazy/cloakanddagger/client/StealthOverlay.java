@@ -1,20 +1,17 @@
 package jackiecrazy.cloakanddagger.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.datafixers.util.Pair;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.capability.action.PermissionData;
 import jackiecrazy.cloakanddagger.capability.vision.SenseData;
 import jackiecrazy.cloakanddagger.config.ClientConfig;
-import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.config.DisplayConfigUtils;
 import jackiecrazy.footwork.utils.StealthUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiComponent;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Tuple;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -27,7 +24,7 @@ public class StealthOverlay implements IGuiOverlay {
     private int lastTick = 0;
 
     @Override
-    public void render(ForgeGui gui, PoseStack stack, float partialTick, int width, int height) {
+    public void render(ForgeGui gui, GuiGraphics guiGraphics, float partialTick, int width, int height) {
         Minecraft mc = Minecraft.getInstance();
         if (!PermissionData.getCap(mc.player).canSee()) return;
         if (mc.getCameraEntity() instanceof Player && mc.player != null && !mc.options.hideGui) {
@@ -55,11 +52,10 @@ public class StealthOverlay implements IGuiOverlay {
                         }
                         if (info.getRange() < 0)
                             shift = 0;
-                        RenderSystem.setShaderTexture(0, stealth);
-                        GuiComponent.blit(stack, pair.getFirst() - 16, pair.getSecond() - 8, 0, shift * 16, 32, 16, 64, 64);
+                        guiGraphics.blit(stealth, pair.getFirst() - 16, pair.getSecond() - 8, 0, shift * 16, 32, 16, 64, 64);
                         if (info.getAwareness() == StealthUtils.Awareness.UNAWARE) {
                             RenderSystem.setShaderColor(1, 0, 0, 1);
-                            GuiComponent.blit(stack, pair.getFirst() - 16, pair.getSecond() - 8, 0, shift * 16, (int) (32 * (prevTick + (SenseData.getCap(looked).getDetection(player) - prevTick) * (partialTick))), 16, 64, 64);
+                            guiGraphics.blit(stealth, pair.getFirst() - 16, pair.getSecond() - 8, 0, shift * 16, (int) (32 * (prevTick + (SenseData.getCap(looked).getDetection(player) - prevTick) * (partialTick))), 16, 64, 64);
                             RenderSystem.setShaderColor(1, 1, 1, 1);
                         }
                         if (player.tickCount != lastTick) {

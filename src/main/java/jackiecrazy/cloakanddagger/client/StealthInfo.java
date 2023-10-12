@@ -7,7 +7,6 @@ import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.utils.StealthUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.util.Tuple;
 import net.minecraft.world.entity.LivingEntity;
 
 import java.util.concurrent.ExecutionException;

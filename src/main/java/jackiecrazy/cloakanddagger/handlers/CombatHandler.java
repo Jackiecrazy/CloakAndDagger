@@ -51,7 +51,7 @@ public class CombatHandler {
 
     @SubscribeEvent
     public static void critHooks(CriticalHitEvent e) {
-        if (!e.getEntity().level.isClientSide && e.getTarget() instanceof LivingEntity) {
+        if (!e.getEntity().level().isClientSide && e.getTarget() instanceof LivingEntity) {
             LivingEntity uke = (LivingEntity) e.getTarget();
             LivingEntity seme = e.getEntity();
             //stealth attacks automatically crit
@@ -87,7 +87,7 @@ public class CombatHandler {
         if (e.getSound() == null) return;
         Vec3 vec = e.getPosition();
         if (StealthOverride.soundMap.containsKey(e.getSound()) && e.getLevel().hasNearbyAlivePlayer(vec.x, vec.y, vec.z, 40))
-            EntityHandler.alertTracker.put(new Tuple<>(e.getLevel(), new BlockPos(e.getPosition())), (float) (StealthOverride.soundMap.get(e.getSound())));
+            EntityHandler.alertTracker.put(new Tuple<>(e.getLevel(), BlockPos.containing(vec.x, vec.y, vec.z)), (float) (StealthOverride.soundMap.get(e.getSound())));
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
@@ -96,6 +96,6 @@ public class CombatHandler {
         Entity entityIn = e.getEntity();
         double x = entityIn.getX(), y = entityIn.getY(), z = entityIn.getZ();
         if (StealthOverride.soundMap.containsKey(e.getSound()) && e.getLevel().hasNearbyAlivePlayer(x, y, z, 40))
-            EntityHandler.alertTracker.put(new Tuple<>(e.getLevel(), new BlockPos(x, y, z)), (float) (StealthOverride.soundMap.get(e.getSound())));
+            EntityHandler.alertTracker.put(new Tuple<>(e.getLevel(), BlockPos.containing(x, y, z)), (float) (StealthOverride.soundMap.get(e.getSound())));
     }
 }

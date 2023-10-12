@@ -172,4 +172,6 @@ publishing {
 
 mixin {
     add sourceSets.main, "cloakanddagger.refmap.json"
+    config "cloakanddagger.mixins.json"
+    debug.verbose = true
 }

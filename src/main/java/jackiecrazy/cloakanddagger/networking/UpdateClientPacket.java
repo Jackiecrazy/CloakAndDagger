@@ -46,7 +46,7 @@ public class UpdateClientPacket {
         @Override
         public void accept(UpdateClientPacket updateClientPacket, Supplier<NetworkEvent.Context> contextSupplier) {
             contextSupplier.get().enqueueWork(() -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
-                ClientLevel world = Minecraft.getInstance().level;
+                ClientLevel world = Minecraft.getInstance().level();
                 if (world != null) {
                     Entity entity = world.getEntity(updateClientPacket.e);
                     if (entity instanceof LivingEntity) SenseData.getCap((LivingEntity) entity).read(updateClientPacket.icc);
