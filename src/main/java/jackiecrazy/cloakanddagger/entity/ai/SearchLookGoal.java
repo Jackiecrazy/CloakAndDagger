@@ -33,7 +33,7 @@ public class SearchLookGoal extends Goal {
     }
 
     public boolean canUse() {
-        if (SenseData.getCap(mob).getLookingFor() == null || mob.getCombatTracker().isInCombat() || mob.getTarget() != null) {
+        if (SenseData.getCap(mob).getLookingFor() == null || mob.getTarget() != null) {
             return false;
         } else {
             lookAt = SenseData.getCap(mob).getLookingFor();
@@ -45,7 +45,7 @@ public class SearchLookGoal extends Goal {
         if (lookAt == null) return false;
         if (!this.lookAt.isAlive()) {
             return false;
-        } else if (mob.getCombatTracker().isInCombat()) {
+        } else if (mob.getTarget()!=null) {
             return false;
         } else {
             return this.lookTime > 0;

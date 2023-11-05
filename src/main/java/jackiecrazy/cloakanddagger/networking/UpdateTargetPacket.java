@@ -44,7 +44,7 @@ public class UpdateTargetPacket {
         @Override
         public void accept(UpdateTargetPacket updateClientPacket, Supplier<NetworkEvent.Context> contextSupplier) {
             contextSupplier.get().enqueueWork(() -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
-                ClientLevel world = Minecraft.getInstance().level();
+                ClientLevel world = Minecraft.getInstance().level;
                 if (world != null) {
                     Entity mob = world.getEntity(updateClientPacket.m);
                     Entity target = world.getEntity(updateClientPacket.t);

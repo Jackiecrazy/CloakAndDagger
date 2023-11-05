@@ -56,7 +56,8 @@ public class CloakCommand {
             case STAB -> enabled = PermissionData.getCap(player).canStab();
             case SEE -> enabled = PermissionData.getCap(player).canSee();
         }
-        ctx.getSource().sendSuccess(Component.translatable("wardance.command.permission." + permission.name() + "." + enabled, player.getDisplayName()), false);
+        final boolean dammit=enabled;
+        ctx.getSource().sendSuccess(()->Component.translatable("wardance.command.permission." + permission.name() + "." + dammit, player.getDisplayName()), false);
 
         return enabled ? 1 : 0;
     }
@@ -68,7 +69,7 @@ public class CloakCommand {
             case STAB -> PermissionData.getCap(player).setStab(enabled);
             case SEE -> PermissionData.getCap(player).setSee(enabled);
         }
-        ctx.getSource().sendSuccess(Component.translatable("wardance.command.permission." + permission.name() + "." + enabled, player.getDisplayName()), false);
+        ctx.getSource().sendSuccess(()->Component.translatable("wardance.command.permission." + permission.name() + "." + enabled, player.getDisplayName()), false);
         return Command.SINGLE_SUCCESS;
     }
 

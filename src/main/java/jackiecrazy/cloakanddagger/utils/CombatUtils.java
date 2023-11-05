@@ -64,7 +64,12 @@ public class CombatUtils {
                         StabInfo put = new StabInfo(GeneralConfig.distract, GeneralConfig.unaware);
                         if (obj.has("distracted")) put.distractDamageBonus = obj.get("distracted").getAsDouble();
                         if (obj.has("unaware")) put.unawareDamageBonus = obj.get("unaware").getAsDouble();
-                        archetypes.put(ItemTags.create(new ResourceLocation(CloakAndDagger.MODID, name.substring(1))), put);
+                        ResourceLocation rl = null;
+                        if (name.contains(":"))
+                            rl = new ResourceLocation(name.substring(1));
+                        else
+                            rl = new ResourceLocation(CloakAndDagger.MODID, name.substring(1));
+                        archetypes.put(ItemTags.create(rl), put);
                     } catch (Exception x) {
                         CloakAndDagger.LOGGER.error("malformed json under " + name + "!");
                         x.printStackTrace();

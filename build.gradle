@@ -33,7 +33,7 @@ minecraft {
     // Simply re-run your setup task after changing the mappings to update your workspace.
     mappings channel: 'official', version: "${mc_version}"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    
+
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     // Default run configurations.
@@ -107,31 +107,18 @@ repositories {
         url "https://www.cursemaven.com"
     }
     flatDir {
-             dir 'libs'
-         }
+        dir 'libs'
+    }
 }
 
 dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-
-    // Real mod deobf dependency examples - these get remapped to your current mappings
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
-    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
-    // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
-
-    // Examples using mod jars from ./libs
-    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
-
-    // For more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
-    def footwork="jackiecrazy.footwork:footwork-${footwork_version}:${mc_version}"
-    compileOnly(footwork)
-    runtimeOnly(fg.deobf(footwork))
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    implementation fg.deobf("jackiecrazy.footwork:footwork-${footwork_version}:${mc_version}")
+    runtimeOnly fg.deobf("curse.maven:patchouli-306770:4636277")
     //compile fg.deobf("curse.maven:offhandcombat-417112:3203449")
 }
 
@@ -139,21 +126,21 @@ dependencies {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "cloakanddagger",
-            "Specification-Vendor": "jackiecrazy",
-            "Specification-Version": "1", // We are version 1 of ourselves
-            "Implementation-Title": project.name,
-            "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"jackiecrazy",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-            "MixinConfigs": "cloakanddagger.mixins.json"
+                "Specification-Title": "cloakanddagger",
+                "Specification-Vendor": "jackiecrazy",
+                "Specification-Version": "1", // We are version 1 of ourselves
+                "Implementation-Title": project.name,
+                "Implementation-Version": "${version}",
+                "Implementation-Vendor" :"jackiecrazy",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs": "cloakanddagger.mixins.json"
         ])
     }
 }
 
 // Example configuration to allow publishing using the maven-publish task
 // This is the preferred method to reobfuscate your jar file
-jar.finalizedBy('reobfJar') 
+jar.finalizedBy('reobfJar')
 // However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
 //publish.dependsOn('reobfJar')
 
@@ -172,6 +159,4 @@ publishing {
 
 mixin {
     add sourceSets.main, "cloakanddagger.refmap.json"
-    config "cloakanddagger.mixins.json"
-    debug.verbose = true
 }
