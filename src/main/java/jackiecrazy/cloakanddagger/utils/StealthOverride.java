@@ -4,6 +4,7 @@ import io.netty.util.CharsetUtil;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.capability.action.PermissionData;
 import jackiecrazy.cloakanddagger.capability.vision.SenseData;
+import jackiecrazy.cloakanddagger.config.StealthTags;
 import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.SyncMobDataPacket;
 import jackiecrazy.footwork.event.EntityAwarenessEvent;
@@ -116,13 +117,17 @@ public class StealthOverride extends StealthUtils {
             return Awareness.ALERT;
         StealthData sd = stealthMap.getOrDefault(EntityType.getKey(target.getType()), STEALTH);
         Awareness a = Awareness.ALERT;
-        //sleep, paralysis, and petrify take highest priority
+        //sleep, paralysis, and petrify take the highest priority
         if (target.hasEffect(FootworkEffects.SLEEP.get()) || target.hasEffect(FootworkEffects.PARALYSIS.get()) || target.hasEffect(FootworkEffects.PETRIFY.get()))
             a = Awareness.UNAWARE;
             //idle and not vigilant
-        else if (!sd.vigil && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null))
-            a = target.level().isClientSide || target.getHealth() > target.getMaxHealth() * (1 - SenseData.getCap(target).getDetectionPerc(attacker)) ? Awareness.UNAWARE : Awareness.DISTRACTED;
-            //distraction, confusion, and choking take top priority in inferior tier
+        else if (!sd.vigil && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null)) {
+            double health = target.getHealth();
+            double maxHealth = target.getMaxHealth();
+            double detect = SenseData.getCap(target).getDetectionPerc(attacker);
+            a = target.level().isClientSide || health >= maxHealth * detect ? Awareness.UNAWARE : Awareness.DISTRACTED;
+        }
+        //distraction, confusion, and choking take top priority in inferior tier
         else if (target.hasEffect(FootworkEffects.DISTRACTION.get()) || target.hasEffect(FootworkEffects.CONFUSION.get()) || target.getAirSupply() <= 0)
             a = Awareness.DISTRACTED;
             //looking around for you, but cannot see
@@ -142,8 +147,8 @@ public class StealthOverride extends StealthUtils {
 
     public static class StealthData {
 
-        private final String string;
         public final boolean allSeeing, blind, cheliceric, deaf, eyeless, heatSeeking, instant, lazy, mindful, nightvision, observant, perceptive, skeptical, quiet, vigil, wary;
+        private final String string;
 
         public StealthData(String value) {
             allSeeing = value.contains("a");
@@ -164,6 +169,16 @@ public class StealthOverride extends StealthUtils {
             wary = value.contains("w");
             string = value;
         }
+
+//        public StealthData(EntityType<?> type){
+//            this(new StringBuilder()
+//                    .append(type.is(StealthTags.IGNORE_FOV)?"a":"")
+//                    .append(type.is(StealthTags.IGNORE_COBWEB)?"c":"")
+//                    .append(type.is(StealthTags.IGNORE_SOUND)?"d":"")
+//                    .append(type.is(StealthTags.IGNORE_BLINDNESS)?"e":"")
+//                    .append(type.is(StealthTags.IGN)?"d":"")
+//                    .toString());
+//        }
 
         public static StealthData read(FriendlyByteBuf f) {
             int length = f.readInt();

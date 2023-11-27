@@ -220,7 +220,9 @@ public class RenderEvents {
         //draws the red filling overlay
         poseStack.pushPose();
         if (info.getAwareness() == StealthUtils.Awareness.UNAWARE) {
-            RenderSystem.setShaderColor(1, 0, 0, 1);
+            if (info.getDetect() > passedEntity.getHealth() / passedEntity.getMaxHealth())
+                RenderSystem.setShaderColor(ClientConfig.dis.getRed()/255f, ClientConfig.dis.getGreen()/255f, ClientConfig.dis.getBlue()/255f, ClientConfig.dis.getAlpha()/255f);
+            else RenderSystem.setShaderColor(ClientConfig.una.getRed()/255f, ClientConfig.una.getGreen()/255f, ClientConfig.una.getBlue()/255f, ClientConfig.una.getAlpha()/255f);
             blit(poseStack, shift * 16, (int) (32 * SenseData.getCap(passedEntity).getDetection(Minecraft.getInstance().player)));
             RenderSystem.setShaderColor(1, 1, 1, 1);
         }

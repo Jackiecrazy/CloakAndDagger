@@ -55,7 +55,7 @@ public class SearchLookGoal extends Goal {
     public void start() {
         this.lookTime = this.adjustedTickDelay(40 + this.mob.getRandom().nextInt(40));
         this.spread = (1 - SenseData.getCap(mob).getDetectionPerc(lookAt)) * GeneralUtils.getAttributeValueSafe(mob, Attributes.FOLLOW_RANGE);
-        this.randomized = new Vec3((CloakAndDagger.rand.nextFloat()-0.5) * spread, (CloakAndDagger.rand.nextFloat()-0.5) * spread, (CloakAndDagger.rand.nextFloat()-0.5) * spread);
+        this.randomized = new Vec3((CloakAndDagger.rand.nextFloat()-0.5) * spread, (CloakAndDagger.rand.nextFloat()-0.5) * spread/3, (CloakAndDagger.rand.nextFloat()-0.5) * spread);
     }
 
     public void stop() {

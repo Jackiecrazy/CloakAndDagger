@@ -30,8 +30,7 @@ public class StealthOverlay implements IGuiOverlay {
         if (mc.getCameraEntity() instanceof Player && mc.player != null && !mc.options.hideGui) {
             LocalPlayer player = mc.player;
             Entity look = RenderEvents.getEntityLookedAt(player, 32);
-            if (look instanceof LivingEntity) {
-                LivingEntity looked = (LivingEntity) look;
+            if (look instanceof LivingEntity looked) {
                 stealth:
                 {
                     if (ClientConfig.CONFIG.stealth.enabled) {
@@ -54,7 +53,9 @@ public class StealthOverlay implements IGuiOverlay {
                             shift = 0;
                         guiGraphics.blit(stealth, pair.getFirst() - 16, pair.getSecond() - 8, 0, shift * 16, 32, 16, 64, 64);
                         if (info.getAwareness() == StealthUtils.Awareness.UNAWARE) {
-                            RenderSystem.setShaderColor(1, 0, 0, 1);
+                            if (info.getDetect() > looked.getHealth() / looked.getMaxHealth())
+                                RenderSystem.setShaderColor(ClientConfig.dis.getRed()/255f, ClientConfig.dis.getGreen()/255f, ClientConfig.dis.getBlue()/255f, ClientConfig.dis.getAlpha()/255f);
+                            else RenderSystem.setShaderColor(ClientConfig.una.getRed()/255f, ClientConfig.una.getGreen()/255f, ClientConfig.una.getBlue()/255f, ClientConfig.una.getAlpha()/255f);
                             guiGraphics.blit(stealth, pair.getFirst() - 16, pair.getSecond() - 8, 0, shift * 16, (int) (32 * (prevTick + (SenseData.getCap(looked).getDetection(player) - prevTick) * (partialTick))), 16, 64, 64);
                             RenderSystem.setShaderColor(1, 1, 1, 1);
                         }

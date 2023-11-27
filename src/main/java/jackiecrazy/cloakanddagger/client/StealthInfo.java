@@ -28,8 +28,8 @@ public class StealthInfo {
         return awareness;
     }
 
-    public double range;
-    public double detect;
+    private double range;
+    private double detect;
     public StealthUtils.Awareness awareness;
 
     public StealthInfo(StealthUtils.Awareness awareness, double range, double detect) {
@@ -45,11 +45,11 @@ public class StealthInfo {
             return cache.get(at, () -> {
                 StealthOverride.Awareness a = StealthUtils.INSTANCE.getAwareness(player, at);
                 double mult = player.getVisibilityPercent(at);
-                return new StealthInfo(a, mult * SenseData.getCap(at).visionRange(), SenseData.getCap(at).getDetection(player));
+                return new StealthInfo(a, mult * SenseData.getCap(at).visionRange(), SenseData.getCap(at).getDetectionPerc(player));
             });
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        return new StealthInfo(StealthOverride.Awareness.ALERT, 1d, SenseData.getCap(at).getDetection(player));
+        return new StealthInfo(StealthOverride.Awareness.ALERT, 1d, SenseData.getCap(at).getDetectionPerc(player));
     }
 }

@@ -131,13 +131,14 @@ public class EntityHandler {
                 double posMult = 1;
                 //each level of negative stealth reduces effectiveness by 5%
                 if (stealth < 0) {
-                    negMult -= (stealth * stealth) / 225;//magic number for full iron
+                    negMult -= (stealth * stealth) / 225;//magic number for full diamond
                 }
                 //each level of positive stealth multiplies ineffectiveness by 0.93
                 while (stealth >= 1) {
                     posMult *= 0.933;
                     stealth--;
                 }
+                negMult = Math.max(0, negMult);
                 float lightMalus = 0;
                 //stay dark, stay dank
                 //light is treated as "neutral" on light level 9
@@ -150,8 +151,8 @@ public class EntityHandler {
                         final int wlight = StealthOverride.getActualLightLevel(world, watcher.blockPosition());
                         int lightDiff = wlight - slight;//higher is better
                         float magicLightCutoff = 10;
-                        lightDiff += Math.min(0, slight - magicLightCutoff);//less than 10? bonus
-                        lightDiff -= Math.max(0, wlight - magicLightCutoff);//more than 10? bonus
+                        lightDiff -= Math.min(0, slight - magicLightCutoff);//less than 10? bonus
+                        lightDiff += Math.max(0, wlight - magicLightCutoff);//more than 10? bonus
                         float modifiedLight = 1 - lightDiff / magicLightCutoff;//lower is better, 10 is baseline
                         lightMalus = (float) Mth.clamp((1 - modifiedLight) / posMult, -10f, 0.7f); //higher is better
                         mult *= (1 - (lightMalus * negMult));
@@ -185,6 +186,7 @@ public class EntityHandler {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void detect(final LivingEvent.LivingVisibilityEvent e) {
         //if you are in detection range, add the range-modified multiplier to detection, otherwise subtract fixed amount
+        if (e.getEntity() instanceof Player p && p.getAbilities().invulnerable) return;
         if (e.getLookingEntity() instanceof LivingEntity watcher && !watcher.level().isClientSide) {
             StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(watcher.getType()), StealthOverride.STEALTH);
             if (sd.instant) return;//unnecessary
@@ -195,10 +197,7 @@ public class EntityHandler {
             if (!out) {
                 //bout 3 or 4 seconds when naked, 2 when in chain, about 0.6 in diamond
                 //3.5+3*stealth/20
-                double modifiedVisibility = e.getVisibilityModifier();
-                for (int ignored = 0; ignored < 2; ignored++) {
-                    modifiedVisibility = Math.log(1.7 * modifiedVisibility + 1);
-                }
+                double modifiedVisibility = e.getVisibilityModifier() * 1.2;
                 final double add = Mth.clamp(0.5 + ((follow - Math.sqrt(sqdist)) / (follow)) / 2, 0, 1) * modifiedVisibility / 20;
                 SenseData.getCap(watcher).modifyDetection(e.getEntity(), (float) add);
             }
@@ -208,47 +207,38 @@ public class EntityHandler {
 
     @SubscribeEvent
     public static void pray(LivingChangeTargetEvent e) {
-        if (e.getNewTarget() == null) return;
-        if (e.getOriginalTarget() instanceof DecoyEntity && CloakAndDagger.rand.nextFloat() < 0.3) return;
+        final LivingEntity newTarget = e.getNewTarget();
+        if (newTarget == null) return;
+        final LivingEntity originalTarget = e.getOriginalTarget();
+        if (originalTarget instanceof DecoyEntity && CloakAndDagger.rand.nextFloat() < 0.3) return;
         if (!(e.getEntity() instanceof final Mob mob)) return;
         StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(mob.getType()), StealthOverride.STEALTH);
         final ISense cap = SenseData.getCap(mob);
         if (mob.hasEffect(FootworkEffects.FEAR.get()) || mob.hasEffect(FootworkEffects.CONFUSION.get()) || mob.hasEffect(FootworkEffects.SLEEP.get()))
             e.setCanceled(true);
-        if (lastDecoy.containsKey(e.getOriginalTarget()) && e.getOriginalTarget().isInvisible() && !sd.observant && e.getOriginalTarget() == e.getNewTarget()) {
+        if (lastDecoy.containsKey(originalTarget) && originalTarget.isInvisible() && !sd.observant && originalTarget == newTarget) {
             //shift aggro to decoy
-            e.setNewTarget(lastDecoy.get(e.getOriginalTarget()));
+            e.setNewTarget(lastDecoy.get(originalTarget));
         }
         //not (owner) or self revenge target
         if (mob instanceof OwnableEntity pet) {
             if (pet.getOwner() != null) {
                 LivingEntity owner = pet.getOwner();
-                if (owner.getLastHurtByMob() == e.getNewTarget() || owner.getLastHurtMob() == e.getNewTarget())
+                if (owner.getLastHurtByMob() == newTarget || owner.getLastHurtMob() == newTarget)
                     return;
             }
         }
-        if (mob.getLastHurtByMob() != e.getNewTarget()) {
-            if (cap.getDetection(e.getNewTarget()) < 1 && !sd.instant) {
+        if (mob.getLastHurtByMob() != newTarget) {
+            if (cap.getDetection(newTarget) < 1 && !sd.instant) {
                 //cancel unless "alert"
                 cap.modifyDetection(e.getEntity(), 0);
-                e.setCanceled(true);
-            }
-            if (!GeneralUtils.isFacingEntity(mob, e.getNewTarget(), GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection)) {
-                if (sd.allSeeing || sd.wary) return;
-                //outside LoS, perform luck check. Pray to RNGesus!
-                double luckDiff = GeneralUtils.getAttributeValueSafe(e.getNewTarget(), Attributes.LUCK) - GeneralUtils.getAttributeValueSafe(mob, Attributes.LUCK);
-                if (luckDiff <= 0 || !LuckUtils.luckRoll(e.getNewTarget(), (float) (luckDiff / (2 + luckDiff)))) {
-                    //you failed!
-                    if (sd.skeptical) {
-                        e.setCanceled(true);
-                        cap.setLookingFor(e.getNewTarget());
-                    }
-                } else {
-                    //success!
-                    e.setCanceled(true);
-                    if (!sd.lazy)
-                        cap.setLookingFor(e.getNewTarget());
+                //Pray to RNGesus!
+                double luckDiff = GeneralUtils.getAttributeValueSafe(newTarget, Attributes.LUCK) - GeneralUtils.getAttributeValueSafe(mob, Attributes.LUCK);
+                if (!sd.lazy && (sd.allSeeing || sd.wary || luckDiff < 0 || !LuckUtils.luckRoll(newTarget, (float) (luckDiff / (1 + luckDiff))))) {
+                    //you failed! mob begins searching
+                    SenseData.getCap(mob).setLookingFor(newTarget);
                 }
+                e.setCanceled(true);
             }
         }
     }

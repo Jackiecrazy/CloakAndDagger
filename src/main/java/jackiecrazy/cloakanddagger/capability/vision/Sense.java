@@ -160,6 +160,13 @@ public class Sense implements ISense {
     }
 
     @Override
+    public float getMaxDetection(LivingEntity target) {
+        final LivingEntity dud = dude.get();
+        if (dud == null) return 1;
+        return 0.5f + dud.getHealth() / dud.getMaxHealth();
+    }
+
+    @Override
     public void resetDetection(LivingEntity target) {
         detectionTracker.remove(target);
     }
