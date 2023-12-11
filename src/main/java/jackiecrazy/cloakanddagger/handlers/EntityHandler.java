@@ -6,6 +6,7 @@ import jackiecrazy.cloakanddagger.capability.vision.ISense;
 import jackiecrazy.cloakanddagger.capability.vision.SenseData;
 import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import jackiecrazy.cloakanddagger.config.SoundConfig;
+import jackiecrazy.cloakanddagger.config.StealthTags;
 import jackiecrazy.cloakanddagger.entity.DecoyEntity;
 import jackiecrazy.cloakanddagger.entity.ai.InvestigateSoundGoal;
 import jackiecrazy.cloakanddagger.entity.ai.SearchLookGoal;
@@ -89,8 +90,7 @@ public class EntityHandler {
     public static void takeThis(EntityJoinLevelEvent e) {
         if (e.getEntity() instanceof Mob mob) {
             if (e.getEntity() instanceof PathfinderMob creature) {
-                StealthOverride.StealthData stealthData = StealthOverride.getStealth(creature);
-                if (!stealthData.deaf)
+                if (!creature.getType().is(StealthTags.IGNORE_SOUND))
                     mob.goalSelector.addGoal(0, new InvestigateSoundGoal(creature));
                 mob.goalSelector.addGoal(0, new SearchLookGoal(creature));
                 //nuke target alert
@@ -120,7 +120,8 @@ public class EntityHandler {
         if (e.getLookingEntity() != e.getEntity() && e.getLookingEntity() instanceof LivingEntity watcher) {
             double mult = 1;
             LivingEntity sneaker = e.getEntity();
-            StealthOverride.StealthData sd = StealthOverride.getStealth(watcher);
+            //bumbling fools don't get visibility changes
+            if (sneaker.getType().is(StealthTags.NO_STEALTH)) return;
             //initial detection, won't save you from counterattacking
             if (watcher.getKillCredit() != sneaker && watcher.getLastHurtByMob() != sneaker && (!(watcher instanceof Mob) || ((Mob) watcher).getTarget() != sneaker)) {
                 double stealth = GeneralUtils.getAttributeValueSafe(sneaker, FootworkAttributes.STEALTH.get());
@@ -144,7 +145,7 @@ public class EntityHandler {
                 //light is treated as "neutral" on light level 9
                 //up to 60%
                 //let's try this for a while: light difference directly adds to stealth score instead. Bad stealth bottoms out at -10 to amend for diamond
-                if (!sd.nightvision && !watcher.hasEffect(MobEffects.NIGHT_VISION) && !sneaker.hasEffect(MobEffects.GLOWING) && sneaker.getRemainingFireTicks() <= 0) {
+                if (!watcher.getType().is(StealthTags.IGNORE_LIGHT) && !watcher.hasEffect(MobEffects.NIGHT_VISION) && !sneaker.hasEffect(MobEffects.GLOWING) && sneaker.getRemainingFireTicks() <= 0) {
                     Level world = sneaker.level();
                     if (world.isAreaLoaded(sneaker.blockPosition(), 5) && world.isAreaLoaded(watcher.blockPosition(), 5)) {
                         final int slight = StealthOverride.getActualLightLevel(world, sneaker.blockPosition());
@@ -159,7 +160,7 @@ public class EntityHandler {
                     }
                 }
                 //slow is smooth, smooth is fast, not modified by light anymore because people keep saying it's too good
-                if (!sd.perceptive) {
+                if (!watcher.getType().is(StealthTags.IGNORE_MOTION)) {
                     final double speedSq = GeneralUtils.getSpeedSq(sneaker);
                     final float speed = Mth.sqrt((float) speedSq);
                     mult *= (1 - (0.5 - speed * 2 * posMult) * negMult);// * (1 - lightMalus)
@@ -167,15 +168,16 @@ public class EntityHandler {
                 //internally enforced 3 blocks of vision, the other two can bypass this
                 mult = Math.max(mult, 3 / (watcher.getAttributeValue(Attributes.FOLLOW_RANGE) + 1));
                 //mobs that can't see behind their backs get a hefty debuff
-                if (!sd.allSeeing && !GeneralUtils.isFacingEntity(watcher, sneaker, GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection))
+                if (!watcher.getType().is(StealthTags.IGNORE_FOV) && !GeneralUtils.isFacingEntity(watcher, sneaker, GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection))
                     mult *= (1 - (0.7 * negMult));
             }
             //normalize values
             //mult = Math.min(1, mult);
             //blinded mobs cannot see
-            if (watcher.hasEffect(MobEffects.BLINDNESS) && !sd.eyeless) mult /= 11;
+            if (watcher.hasEffect(MobEffects.BLINDNESS) && !watcher.getType().is(StealthTags.IGNORE_BLINDNESS))
+                mult /= 11;
             //is this LoS?
-            if (!sd.heatSeeking && GeneralUtils.viewBlocked(watcher, sneaker, true))
+            if (!watcher.getType().is(StealthTags.IGNORE_LOS) && GeneralUtils.viewBlocked(watcher, sneaker, true))
                 mult *= (0.6);
             //dude you literally just bumped into me
             mult = Math.max(mult, 2f / (watcher.getAttributeValue(Attributes.FOLLOW_RANGE) + 1));
@@ -188,8 +190,7 @@ public class EntityHandler {
         //if you are in detection range, add the range-modified multiplier to detection, otherwise subtract fixed amount
         if (e.getEntity() instanceof Player p && p.getAbilities().invulnerable) return;
         if (e.getLookingEntity() instanceof LivingEntity watcher && !watcher.level().isClientSide) {
-            StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(watcher.getType()), StealthOverride.STEALTH);
-            if (sd.instant) return;//unnecessary
+            if (watcher.getType().is(StealthTags.SKIP_SEARCH)) return;//unnecessary
             final double maxDist = watcher.getAttributeValue(Attributes.FOLLOW_RANGE);
             double follow = maxDist * e.getVisibilityModifier();
             final double sqdist = e.getEntity().distanceToSqr(watcher);
@@ -212,11 +213,10 @@ public class EntityHandler {
         final LivingEntity originalTarget = e.getOriginalTarget();
         if (originalTarget instanceof DecoyEntity && CloakAndDagger.rand.nextFloat() < 0.3) return;
         if (!(e.getEntity() instanceof final Mob mob)) return;
-        StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(mob.getType()), StealthOverride.STEALTH);
         final ISense cap = SenseData.getCap(mob);
         if (mob.hasEffect(FootworkEffects.FEAR.get()) || mob.hasEffect(FootworkEffects.CONFUSION.get()) || mob.hasEffect(FootworkEffects.SLEEP.get()))
             e.setCanceled(true);
-        if (lastDecoy.containsKey(originalTarget) && originalTarget.isInvisible() && !sd.observant && originalTarget == newTarget) {
+        if (lastDecoy.containsKey(originalTarget) && originalTarget.isInvisible() && !mob.getType().is(StealthTags.IGNORE_INVIS) && originalTarget == newTarget) {
             //shift aggro to decoy
             e.setNewTarget(lastDecoy.get(originalTarget));
         }
@@ -229,12 +229,12 @@ public class EntityHandler {
             }
         }
         if (mob.getLastHurtByMob() != newTarget) {
-            if (cap.getDetection(newTarget) < 1 && !sd.instant) {
+            if (cap.getDetection(newTarget) < 1 && !mob.getType().is(StealthTags.SKIP_SEARCH)) {
                 //cancel unless "alert"
                 cap.modifyDetection(e.getEntity(), 0);
                 //Pray to RNGesus!
                 double luckDiff = GeneralUtils.getAttributeValueSafe(newTarget, Attributes.LUCK) - GeneralUtils.getAttributeValueSafe(mob, Attributes.LUCK);
-                if (!sd.lazy && (sd.allSeeing || sd.wary || luckDiff < 0 || !LuckUtils.luckRoll(newTarget, (float) (luckDiff / (1 + luckDiff))))) {
+                if (!mob.getType().is(StealthTags.NEVER_LOOK) && (mob.getType().is(StealthTags.IGNORE_FOV) || mob.getType().is(StealthTags.IGNORE_LUCK) || luckDiff < 0 || !LuckUtils.luckRoll(newTarget, (float) (luckDiff / (1 + luckDiff))))) {
                     //you failed! mob begins searching
                     SenseData.getCap(mob).setLookingFor(newTarget);
                 }
@@ -251,8 +251,7 @@ public class EntityHandler {
 
     @SubscribeEvent
     public static void nigerundayo(final MobEffectEvent e) {
-        StealthOverride.StealthData sd = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(e.getEntity().getType()), StealthOverride.STEALTH);
-        if (e.getEffectInstance() != null && !sd.eyeless && e.getEffectInstance().getEffect() == MobEffects.BLINDNESS) {
+        if (e.getEffectInstance() != null && !e.getEntity().getType().is(StealthTags.IGNORE_BLINDNESS) && e.getEffectInstance().getEffect() == MobEffects.BLINDNESS) {
             if (e.getEntity() instanceof Mob)
                 ((Mob) e.getEntity()).setTarget(null);
             e.getEntity().setLastHurtByMob(null);
@@ -267,8 +266,7 @@ public class EntityHandler {
             if (n.getKey().getA().isAreaLoaded(n.getKey().getB(), n.getValue().intValue())) {
                 for (PathfinderMob c : (n.getKey().getA().getEntitiesOfClass(PathfinderMob.class, new AABB(n.getKey().getB()).inflate(n.getValue())))) {
                     if (StealthUtils.INSTANCE.getAwareness(null, c) == StealthOverride.Awareness.UNAWARE) {
-                        StealthOverride.StealthData stealthData = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(c.getType()), StealthOverride.STEALTH);
-                        if (!stealthData.deaf) {
+                        if (!c.getType().is(StealthTags.IGNORE_SOUND)) {
                             c.goalSelector.disableControlFlag(Goal.Flag.MOVE);
                             c.getNavigation().stop();
                             c.getNavigation().moveTo(c.getNavigation().createPath(n.getKey().getB(), (int) (n.getValue() + 3)), 1);
@@ -292,7 +290,7 @@ public class EntityHandler {
             if (elb.tickCount % 100 == 0 || mustUpdate.containsValue(elb))
                 cap.serverTick();
         }
-        if (!elb.level().isClientSide && elb.tickCount % 108 == 0 && elb.isInvisible()) {
+        if (!elb.level().isClientSide && elb.tickCount % 108 == 0 && elb.isInvisible() && elb instanceof Player p && !p.getAbilities().invulnerable) {
             DummyEntity d = new DecoyEntity(FootworkEntities.DUMMY.get(), elb.level()).setBoundTo(elb).setTicksToLive(100);
             d.setPos(elb.getEyePosition().add(CloakAndDagger.rand.nextInt(6) - 3, 0, CloakAndDagger.rand.nextInt(6) - 3));
             elb.level().addFreshEntity(d);

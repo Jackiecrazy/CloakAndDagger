@@ -1,5 +1,6 @@
 package jackiecrazy.cloakanddagger.mixin;
 
+import jackiecrazy.cloakanddagger.config.StealthTags;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import jackiecrazy.footwork.api.FootworkAttributes;
 import jackiecrazy.footwork.utils.GeneralUtils;
@@ -30,11 +31,8 @@ public abstract class MixinArmorStealth extends Entity {
     @Redirect(method = "getVisibilityPercent",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isInvisible()Z"))
     private boolean observant(LivingEntity e) {
-        if (e != null) {
-            StealthOverride.StealthData stealthData = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(e.getType()), StealthOverride.STEALTH);
-            if (stealthData.observant)
-                return false;
-        }
+        if (e != null && e.getType().is(StealthTags.IGNORE_INVIS))
+            return false;
         return isInvisible();
     }
 }

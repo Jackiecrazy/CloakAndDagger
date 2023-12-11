@@ -1,6 +1,7 @@
 package jackiecrazy.cloakanddagger.mixin;
 
 import jackiecrazy.cloakanddagger.config.SoundConfig;
+import jackiecrazy.cloakanddagger.config.StealthTags;
 import jackiecrazy.cloakanddagger.handlers.EntityHandler;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import net.minecraft.world.entity.EntityType;
@@ -20,8 +21,7 @@ public abstract class MixinMobAlert {
     @Inject(method = "playHurtSound", at = @At("TAIL"))
     private void alert(DamageSource source, CallbackInfo ci) {
         Mob me = ((Mob) (Object) this);
-        StealthOverride.StealthData stealthData = StealthOverride.stealthMap.getOrDefault(EntityType.getKey(me.getType()), StealthOverride.STEALTH);
-        if (me.isSilent() || stealthData.quiet)
+        if (me.isSilent() || me.getType().is(StealthTags.NO_SOUND))
             return;
         float volume = ((MixinMobSound) me).callGetSoundVolume();
 

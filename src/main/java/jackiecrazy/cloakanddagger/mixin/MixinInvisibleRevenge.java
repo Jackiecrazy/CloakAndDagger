@@ -1,5 +1,6 @@
 package jackiecrazy.cloakanddagger.mixin;
 
+import jackiecrazy.cloakanddagger.config.StealthTags;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -28,12 +29,11 @@ public abstract class MixinInvisibleRevenge extends TargetGoal {
     @Redirect(method = "canUse",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/ai/goal/target/HurtByTargetGoal;canAttack(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;)Z"))
     private boolean change(HurtByTargetGoal instance, LivingEntity livingEntity, TargetingConditions targetingConditions) {
-        StealthOverride.StealthData sd = StealthOverride.getStealth(livingEntity);
         TargetingConditions tc = targetingConditions;
-        if (!sd.perceptive) {
-            if (sd.heatSeeking) tc = HURT_BY_TARGETING_3;
+        if (!livingEntity.getType().is(StealthTags.IGNORE_INVIS)) {
+            if (livingEntity.getType().is(StealthTags.IGNORE_LOS)) tc = HURT_BY_TARGETING_3;
             else tc = HURT_BY_TARGETING_1;
-        } else if (!sd.heatSeeking) tc = HURT_BY_TARGETING_2;
+        } else if (!livingEntity.getType().is(StealthTags.IGNORE_LOS)) tc = HURT_BY_TARGETING_2;
         return canAttack(livingEntity, tc);
     }
 
