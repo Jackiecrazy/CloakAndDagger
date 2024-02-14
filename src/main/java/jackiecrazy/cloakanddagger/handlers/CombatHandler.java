@@ -66,8 +66,8 @@ public class CombatHandler {
         LivingEntity uke = e.getEntity();
         LivingEntity kek = null;
         DamageSource ds = e.getSource();
-        if (ds.getDirectEntity() instanceof LivingEntity) {
-            kek = (LivingEntity) ds.getDirectEntity();
+        if (ds.getEntity() instanceof LivingEntity eee) {
+            kek = eee;
         }
         StealthOverride.Awareness awareness = StealthUtils.INSTANCE.getAwareness(kek, uke);
         if (ds.getEntity() instanceof LivingEntity) {
@@ -94,7 +94,7 @@ public class CombatHandler {
     public static void apingus(PlayLevelSoundEvent.AtEntity e) {
         if (e.getSound() == null) return;
         Entity entityIn = e.getEntity();
-        double x = entityIn.getX(), y = entityIn.getY(), z = entityIn.getZ();
+        double x = entityIn.getX(), y = entityIn.getY()+entityIn.getEyeHeight(), z = entityIn.getZ();
         if (StealthOverride.soundMap.containsKey(e.getSound()) && e.getLevel().hasNearbyAlivePlayer(x, y, z, 40))
             EntityHandler.alertTracker.put(new Tuple<>(e.getLevel(), BlockPos.containing(x, y, z)), (float) (StealthOverride.soundMap.get(e.getSound())));
     }

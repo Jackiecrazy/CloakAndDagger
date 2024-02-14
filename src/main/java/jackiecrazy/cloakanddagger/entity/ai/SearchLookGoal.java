@@ -32,7 +32,7 @@ public class SearchLookGoal extends Goal {
     public boolean canUse() {
         if (mob.getTarget() != null) return false;
         Optional<IGoalHelper> goals = mob.getCapability(GoalCapabilityProvider.CAP).resolve();
-        if (goals.isPresent() && goals.get().getSoundLocation() != null) {
+        if (goals.isPresent() && goals.get().getSoundLocation() != null && goals.get().getSoundLocation().getY()>-50) {
             lookAt = goals.get().getSoundLocation().getCenter();
             return true;
         }
@@ -45,7 +45,7 @@ public class SearchLookGoal extends Goal {
     }
 
     public boolean canContinueToUse() {
-        if (lookAt == null) return false;
+        if (lookAt == null||lookAt==Vec3.ZERO) return false;
         if (mob.getTarget() != null) {
             return false;
         } else {

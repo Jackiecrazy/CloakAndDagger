@@ -52,7 +52,7 @@ public class InvestigateSoundGoal extends MoveToBlockGoal {
 
     @Override
     public boolean canContinueToUse() {
-        return mob.getTarget() == null && mob.getLastHurtMob() == null && super.canContinueToUse();
+        return mob.getTarget() == null && mob.getLastHurtMob() == null &&  this.blockPos != BlockPos.ZERO && super.canContinueToUse();
     }
 
     @Override
@@ -64,6 +64,6 @@ public class InvestigateSoundGoal extends MoveToBlockGoal {
     @Override
     public void stop() {
         super.stop();
-        mob.getCapability(GoalCapabilityProvider.CAP).ifPresent(a -> a.setSoundLocation(BlockPos.ZERO));
+        mob.getCapability(GoalCapabilityProvider.CAP).ifPresent(a -> a.setSoundLocation(BlockPos.ZERO.below(100)));
     }
 }
