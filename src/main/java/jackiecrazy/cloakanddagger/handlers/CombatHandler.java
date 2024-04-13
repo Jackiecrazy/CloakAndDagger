@@ -50,7 +50,7 @@ public class CombatHandler {
                 seme.addEffect(new MobEffectInstance(FootworkEffects.EXPOSED.get(), GeneralConfig.inv));
                 EntityHandler.lastDecoy.clear();
             }
-            EntityAwarenessEvent.Attack subevent = new EntityAwarenessEvent.Attack(seme, e.getEntity(), StealthUtils.INSTANCE.getAwareness(seme, e.getEntity()), e.getSource());
+            EntityAwarenessEvent.Attack subevent = new EntityAwarenessEvent.Attack(e.getEntity(), seme, StealthUtils.INSTANCE.getAwareness(seme, e.getEntity()), e.getSource());
             MinecraftForge.EVENT_BUS.post(subevent);
         }
     }
@@ -75,7 +75,7 @@ public class CombatHandler {
         if (ds.getEntity() instanceof LivingEntity eee) {
             seme = eee;
         }
-        EntityAwarenessEvent.Hurt subevent = new EntityAwarenessEvent.Hurt(seme, uke, StealthUtils.INSTANCE.getAwareness(seme, uke), e.getSource());
+        EntityAwarenessEvent.Hurt subevent = new EntityAwarenessEvent.Hurt(uke, seme, StealthUtils.INSTANCE.getAwareness(seme, uke), e.getSource());
         subevent.setAlertMultiplier(1);
         subevent.setDistractedMultiplier(CombatUtils.getDamageMultiplier(StealthUtils.Awareness.DISTRACTED, CombatUtils.getAttackingItemStack(ds)));
         subevent.setUnawareMultiplier(CombatUtils.getDamageMultiplier(StealthUtils.Awareness.UNAWARE, CombatUtils.getAttackingItemStack(ds)));
