@@ -6,6 +6,7 @@ import jackiecrazy.cloakanddagger.config.SoundConfig;
 import jackiecrazy.cloakanddagger.mixin.MixinMobSound;
 import jackiecrazy.cloakanddagger.utils.CombatUtils;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
+import jackiecrazy.footwork.event.EntityAwarenessEvent;
 import jackiecrazy.footwork.potion.FootworkEffects;
 import jackiecrazy.footwork.utils.EffectUtils;
 import jackiecrazy.footwork.utils.StealthUtils;
@@ -21,6 +22,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.Panda;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.PlayLevelSoundEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
@@ -43,9 +45,13 @@ public class CombatHandler {
     public static void parry(final LivingAttackEvent e) {
         //parrying stealth checks are handled by PWD for sanity reasons.
         DamageSource ds = e.getSource();
-        if (ds.getEntity() instanceof LivingEntity seme && GeneralConfig.inv > 0) {
-            seme.addEffect(new MobEffectInstance(FootworkEffects.EXPOSED.get(), GeneralConfig.inv));
-            EntityHandler.lastDecoy.clear();
+        if (ds.getEntity() instanceof LivingEntity seme) {
+            if (GeneralConfig.inv > 0) {
+                seme.addEffect(new MobEffectInstance(FootworkEffects.EXPOSED.get(), GeneralConfig.inv));
+                EntityHandler.lastDecoy.clear();
+            }
+            EntityAwarenessEvent.Attack subevent = new EntityAwarenessEvent.Attack(seme, e.getEntity(), StealthUtils.INSTANCE.getAwareness(seme, e.getEntity()), e.getSource());
+            MinecraftForge.EVENT_BUS.post(subevent);
         }
     }
 
@@ -64,17 +70,25 @@ public class CombatHandler {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void pain(LivingHurtEvent e) {
         LivingEntity uke = e.getEntity();
-        LivingEntity kek = null;
+        LivingEntity seme = null;
         DamageSource ds = e.getSource();
         if (ds.getEntity() instanceof LivingEntity eee) {
-            kek = eee;
+            seme = eee;
         }
-        StealthOverride.Awareness awareness = StealthUtils.INSTANCE.getAwareness(kek, uke);
+        EntityAwarenessEvent.Hurt subevent = new EntityAwarenessEvent.Hurt(seme, uke, StealthUtils.INSTANCE.getAwareness(seme, uke), e.getSource());
+        subevent.setAlertMultiplier(1);
+        subevent.setDistractedMultiplier(CombatUtils.getDamageMultiplier(StealthUtils.Awareness.DISTRACTED, CombatUtils.getAttackingItemStack(ds)));
+        subevent.setUnawareMultiplier(CombatUtils.getDamageMultiplier(StealthUtils.Awareness.UNAWARE, CombatUtils.getAttackingItemStack(ds)));
+        MinecraftForge.EVENT_BUS.post(subevent);
         if (ds.getEntity() instanceof LivingEntity) {
             if (CombatUtils.isPhysicalAttack(e.getSource())) {
-                if (awareness != StealthOverride.Awareness.ALERT) {
-                    e.setAmount((float) (e.getAmount() * CombatUtils.getDamageMultiplier(awareness, CombatUtils.getAttackingItemStack(ds))));
+                double amount = 1;
+                switch (subevent.getAwareness()) {
+                    case ALERT -> amount = subevent.getAlertMultiplier();
+                    case DISTRACTED -> amount = subevent.getDistractedMultiplier();
+                    case UNAWARE -> amount = subevent.getUnawareMultiplier();
                 }
+                e.setAmount((float) (e.getAmount() * amount));
             }
         }
     }
@@ -94,7 +108,7 @@ public class CombatHandler {
     public static void apingus(PlayLevelSoundEvent.AtEntity e) {
         if (e.getSound() == null) return;
         Entity entityIn = e.getEntity();
-        double x = entityIn.getX(), y = entityIn.getY()+entityIn.getEyeHeight(), z = entityIn.getZ();
+        double x = entityIn.getX(), y = entityIn.getY() + entityIn.getEyeHeight(), z = entityIn.getZ();
         if (StealthOverride.soundMap.containsKey(e.getSound()) && e.getLevel().hasNearbyAlivePlayer(x, y, z, 40))
             EntityHandler.alertTracker.put(new Tuple<>(e.getLevel(), BlockPos.containing(x, y, z)), (float) (StealthOverride.soundMap.get(e.getSound())));
     }
