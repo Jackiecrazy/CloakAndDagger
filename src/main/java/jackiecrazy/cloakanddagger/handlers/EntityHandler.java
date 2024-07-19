@@ -144,7 +144,6 @@ public class EntityHandler {
                 //stay dark, stay dank
                 //light is treated as "neutral" on light level 9
                 //up to 60%
-                //let's try this for a while: light difference directly adds to stealth score instead. Bad stealth bottoms out at -10 to amend for diamond
                 if (!watcher.getType().is(StealthTags.IGNORE_LIGHT) && !watcher.hasEffect(MobEffects.NIGHT_VISION) && !sneaker.hasEffect(MobEffects.GLOWING) && sneaker.getRemainingFireTicks() <= 0) {
                     Level world = sneaker.level();
                     if (world.isAreaLoaded(sneaker.blockPosition(), 5) && world.isAreaLoaded(watcher.blockPosition(), 5)) {

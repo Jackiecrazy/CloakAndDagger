@@ -1,0 +1,25 @@
+{
+  "name": "Parrying[2]: Tips etc",
+  "icon": "minecraft:shield",
+  "category": "footwork:selfdefense",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Be careful of what you're fighting, but also of its gear! A standard minecraft zombie will knock you further off balance with a shovel than with fists alone! $(br2)An amount of knockback will also pop you backwards or even launch you, depending on the size of the blow deflected."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A zombie will barely send you anywhere on parry, but a strong smash from a vindicator's axe or an iron golem will knock you back considerably.$(br2)Some skills such as $(#0000FF)Mikiri$() or $(#FF0000)Overpower$() can modify parries to have additional effects.$(br2)Most enemies who hold tools or weapons in their hands are also capable of parrying to defend against damage."
+    },
+
+    {
+      "type": "patchouli:text",
+      "text": "Despite parrying existing, blocking normally with a shield the default minecraft way still helps. We didn't get rid of that.$(br)In some cases, due to the damage going to the shield's durability instead, it may save you some posture damage.$(br)Just $(l)continue to be aware of attacks which can disable your shield$() as a shield that is disabled cannot parry passively while on cooldown."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Finally $(l)be cautious of a mobs height and position relative to you$(). Some enemy's attack damage hitboxes or directions might be different to the actual direction they're attacking from.$(br2)A simple example is trying to parry an enderman. If you're looking too far down it may hit you over the top of the parry blocking area due to your facing, especially if it's sticking too close to you or is above you."
+    }
+  ]
+}
