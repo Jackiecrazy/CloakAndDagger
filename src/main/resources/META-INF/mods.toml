@@ -17,9 +17,7 @@ issueTrackerURL="https://github.com/Jackiecrazy/CloakAndDagger/issues" #optional
 # The modid of the mod
 modId="cloakanddagger" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-# ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
-# see the associated build.gradle script for how to populate this completely automatically during a build
-version="${file.jarVersion}" #mandatory
+version="${mod_version}" #mandatory
  # A display name for the mod
 displayName="Cloak and Dagger" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
@@ -52,13 +50,13 @@ A mod about stealth and detection. Slink through the shadows and deliver devasta
 [[dependencies.cloakanddagger]]
     modId="footwork"
     mandatory=true
-    versionRange="[2.0,)"
+    versionRange="[${footwork_version},)"
     ordering="AFTER"
     side="BOTH"
 [[dependencies.cloakanddagger]]
    modId="minecraft"
    mandatory=true
    # This version range declares a minimum of the current minecraft version up to but not including the next major version
-   versionRange="[1.20.1,1.20.2)"
+   versionRange="${minecraft_version_range}"
    ordering="NONE"
    side="BOTH"

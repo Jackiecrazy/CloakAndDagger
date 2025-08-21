@@ -314,7 +314,8 @@ public class EntityHandler {
         }
         if (!elb.level().isClientSide && elb.tickCount % 108 == 0 && elb.isInvisible() && elb instanceof Player p && !p.getAbilities().invulnerable) {
             DummyEntity d = new DecoyEntity(FootworkEntities.DUMMY.get(), elb.level()).setBoundTo(elb).setTicksToLive(100);
-            d.setPos(elb.getEyePosition().add(CloakAndDagger.rand.nextInt(6) - 3, 0, CloakAndDagger.rand.nextInt(6) - 3));
+            d.setPos(elb.getEyePosition().add(CloakAndDagger.rand.nextInt(6) - 3, CloakAndDagger.rand.nextInt(6)-3, CloakAndDagger.rand.nextInt(6) - 3));
+            d.setNoGravity(true);
             elb.level().addFreshEntity(d);
             lastDecoy.put(elb, d);
         }
