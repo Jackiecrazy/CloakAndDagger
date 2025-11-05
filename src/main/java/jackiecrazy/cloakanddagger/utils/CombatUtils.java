@@ -8,7 +8,6 @@ import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.SyncItemDataPacket;
 import jackiecrazy.cloakanddagger.networking.SyncTagDataPacket;
 import jackiecrazy.footwork.api.CombatDamageSource;
-import jackiecrazy.footwork.api.FootworkDamageArchetype;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -107,7 +106,7 @@ public class CombatUtils {
 
     public static boolean isPhysicalAttack(DamageSource s) {
         if (s instanceof CombatDamageSource cds) {
-            return cds.getDamageTyping() == FootworkDamageArchetype.PHYSICAL;
+            return cds.getDamageTyping() == CombatDamageSource.TYPE.PHYSICAL;
         }
         return !s.is(DamageTypeTags.IS_EXPLOSION) && !s.is(DamageTypeTags.IS_FIRE) && !s.is(DamageTypeTags.WITCH_RESISTANT_TO) && !s.is(DamageTypeTags.BYPASSES_ARMOR);
     }
