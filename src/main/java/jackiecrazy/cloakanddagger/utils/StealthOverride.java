@@ -1,6 +1,5 @@
 package jackiecrazy.cloakanddagger.utils;
 
-import io.netty.util.CharsetUtil;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.api.Awareness;
 import jackiecrazy.cloakanddagger.api.StealthUtils;
@@ -9,11 +8,9 @@ import jackiecrazy.cloakanddagger.capability.action.PermissionData;
 import jackiecrazy.cloakanddagger.capability.vision.SenseData;
 import jackiecrazy.cloakanddagger.config.StealthTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
@@ -21,63 +18,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 
 public class StealthOverride extends StealthUtils {
-    public static final StealthData STEALTH = new StealthData("");
-    public static HashMap<ResourceLocation, StealthData> stealthMap = new HashMap<>();
     public static HashMap<SoundEvent, Integer> soundMap = new HashMap<>();
-
-    public static void clientMobOverride(Map<ResourceLocation, StealthData> server) {
-        stealthMap = new HashMap<>(server);
-    }
-
-    public static StealthData getStealth(LivingEntity e) {
-        return stealthMap.getOrDefault(EntityType.getKey(e.getType()), STEALTH);
-    }
-
-    public static void updateMobDetection(List<? extends String> interpretS) {
-        stealthMap.clear();
-        for (String s : interpretS) {
-            try {
-                String[] val = s.split(",");
-                final ResourceLocation key = new ResourceLocation(val[0]);
-                String value = val[1];
-                stealthMap.put(key, new StealthData(value.toLowerCase(Locale.ROOT)));
-                String print = getString(val, value);
-                System.out.println(print);
-            } catch (Exception e) {
-                CloakAndDagger.LOGGER.warn("improperly formatted mob stealth definition " + s + "!");
-            }
-        }
-    }
-
-    @NotNull
-    private static String getString(String[] val, String value) {
-        String print = val[0]+", ";
-        print = print.concat(value.contains("a") ? "ignore_fov;" : "");
-        print = print.concat(value.contains("c") ? "ignore_cobweb;" : "");
-        print = print.concat(value.contains("d") ? "ignore_sound;" : "");
-        print = print.concat(value.contains("e") ? "ignore_blindness;" : "");
-        print = print.concat(value.contains("h") ? "ignore_los;" : "");
-        print = print.concat(value.contains("k") ? "bumbling_fool;" : "");
-        print = print.concat(value.contains("l") ? "never_look;" : "");
-        print = print.concat(value.contains("m") ? "alert_when_attacking_others;" : "");
-        print = print.concat(value.contains("n") ? "ignore_light;" : "");
-        print = print.concat(value.contains("o") ? "ignore_invis;" : "");
-        print = print.concat(value.contains("p") ? "ignore_motion;" : "");
-        print = print.concat(value.contains("q") ? "does_not_make_sound;" : "");
-        print = print.concat(value.contains("v") ? "alert_when_no_target;" : "");
-        print = print.concat(value.contains("w") ? "ignore_luck;" : "");
-        if(print.endsWith(";"))
-            print=print.substring(0, print.lastIndexOf(";"));
-        return print;
-    }
 
     public static void updateSound(List<? extends String> interpretS) {
         soundMap.clear();
@@ -122,7 +68,6 @@ public class StealthOverride extends StealthUtils {
             return Awareness.ALERT;
         if (attacker instanceof Player p && !PermissionData.getCap(p).canStab())
             return Awareness.ALERT;
-        StealthData sd = stealthMap.getOrDefault(EntityType.getKey(target.getType()), STEALTH);
         Awareness a = Awareness.ALERT;
         if (!target.getType().is(StealthTags.NOT_UNAWARE) && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null)) {
             double health = target.getHealth();
@@ -141,28 +86,6 @@ public class StealthOverride extends StealthUtils {
         EntityAwarenessEvent eae = new EntityAwarenessEvent(target, attacker, a);
         MinecraftForge.EVENT_BUS.post(eae);
         return eae.getAwareness();
-    }
-
-    public static class StealthData {
-
-        public boolean allSeeing, blind, cheliceric, deaf, eyeless, heatSeeking, instant, lazy, mindful, nightvision, observant, perceptive, skeptical, quiet, vigil, wary;
-        private final String string;
-
-        public StealthData(String value) {
-            string = value;
-        }
-
-        public static StealthData read(FriendlyByteBuf f) {
-            int length = f.readInt();
-            return new StealthData(String.valueOf(f.readCharSequence(length, CharsetUtil.US_ASCII)));
-        }
-
-        public void write(FriendlyByteBuf f) {
-            f.writeInt(string.length());
-            f.writeCharSequence(string, CharsetUtil.US_ASCII);
-        }
-
-
     }
 
 }

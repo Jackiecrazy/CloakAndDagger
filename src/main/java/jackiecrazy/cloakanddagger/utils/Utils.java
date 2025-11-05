@@ -209,7 +209,6 @@ public class Utils {
         if (horAngle < 0) return isBehindEntity(entity2, entity1, -horAngle, Math.abs(vertAngle));
         double xDiff = entity1.getX() - entity2.getX(), zDiff = entity1.getZ() - entity2.getZ();
         if (vertAngle != 360) {
-            Vec3 posVec = entity2.position().add(0, entity2.getEyeHeight(), 0);
             double distIgnoreY = Math.sqrt(xDiff * xDiff + zDiff * zDiff);
             double relativeHeadVec = entity2.getY() - entity1.getY() - entity1.getEyeHeight() + entity2.getBbHeight();
             double relativeFootVec = entity2.getY() - entity1.getY() - entity1.getEyeHeight();

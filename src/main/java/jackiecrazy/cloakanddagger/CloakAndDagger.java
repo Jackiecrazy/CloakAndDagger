@@ -53,7 +53,6 @@ public class CloakAndDagger {
         MinecraftForge.EVENT_BUS.addListener(this::commands);
         CnDAttributes.registerAttributes(bus);
         CnDEntities.register(bus);
-
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -64,7 +63,6 @@ public class CloakAndDagger {
         StealthChannel.INSTANCE.registerMessage(index++, UpdateTargetPacket.class, new UpdateTargetPacket.UpdateTargetEncoder(), new UpdateTargetPacket.UpdateTargetDecoder(), new UpdateTargetPacket.UpdateTargetHandler());
         StealthChannel.INSTANCE.registerMessage(index++, ShoutPacket.class, new ShoutPacket.ShoutEncoder(), new ShoutPacket.ShoutDecoder(), new ShoutPacket.ShoutHandler());
         StealthChannel.INSTANCE.registerMessage(index++, SyncItemDataPacket.class, new SyncItemDataPacket.Encoder(), new SyncItemDataPacket.Decoder(), new SyncItemDataPacket.Handler());
-        //StealthChannel.INSTANCE.registerMessage(index++, SyncMobDataPacket.class, new SyncMobDataPacket.Encoder(), new SyncMobDataPacket.Decoder(), new SyncMobDataPacket.Handler());
         StealthChannel.INSTANCE.registerMessage(index++, SyncTagDataPacket.class, new SyncTagDataPacket.Encoder(), new SyncTagDataPacket.Decoder(), new SyncTagDataPacket.Handler());
         StealthChannel.INSTANCE.registerMessage(index++, UpdateClientPermissionPacket.class, new UpdateClientPermissionPacket.Encoder(), new UpdateClientPermissionPacket.Decoder(), new UpdateClientPermissionPacket.Handler());
     }

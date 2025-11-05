@@ -21,8 +21,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.event.entity.player.CriticalHitEvent;
-import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -56,7 +54,7 @@ public class CombatUtils {
             JsonObject file = value.getAsJsonObject();
             file.entrySet().forEach(entry -> {
                 final String name = entry.getKey();
-                if (name.startsWith("#")) {//register tags separately
+                if (name.startsWith("#")) {
                     try {
                         JsonObject obj = entry.getValue().getAsJsonObject();
                         StabInfo put = new StabInfo(GeneralConfig.distract, GeneralConfig.unaware);
@@ -95,8 +93,7 @@ public class CombatUtils {
 
     @Nullable
     public static ItemStack getAttackingItemStack(DamageSource ds) {
-        if (ds.getDirectEntity() instanceof LivingEntity) {
-            LivingEntity e = (LivingEntity) ds.getDirectEntity();
+        if (ds.getDirectEntity() instanceof LivingEntity e) {
             return e.getMainHandItem();
         }
         return null;
@@ -123,10 +120,6 @@ public class CombatUtils {
             case UNAWARE -> ci.unawareDamageBonus;
             default -> 1;
         };
-    }
-
-    public static boolean isCrit(CriticalHitEvent e) {
-        return e.getResult() == Event.Result.ALLOW || (e.getResult() == Event.Result.DEFAULT && e.isVanillaCritical());
     }
 
     public static boolean isWeapon(ItemStack itemStack) {
