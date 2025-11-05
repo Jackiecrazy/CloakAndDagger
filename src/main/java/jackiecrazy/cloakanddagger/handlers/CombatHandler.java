@@ -1,32 +1,19 @@
 package jackiecrazy.cloakanddagger.handlers;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
-import jackiecrazy.cloakanddagger.config.GeneralConfig;
-import jackiecrazy.cloakanddagger.config.SoundConfig;
-import jackiecrazy.cloakanddagger.mixin.MixinMobSound;
+import jackiecrazy.cloakanddagger.api.Awareness;
+import jackiecrazy.cloakanddagger.api.StealthUtils;
+import jackiecrazy.cloakanddagger.api.event.EntityAwarenessEvent;
 import jackiecrazy.cloakanddagger.utils.CombatUtils;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
-import jackiecrazy.footwork.event.EntityAwarenessEvent;
-import jackiecrazy.footwork.potion.FootworkEffects;
-import jackiecrazy.footwork.utils.EffectUtils;
-import jackiecrazy.footwork.utils.StealthUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Tuple;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.animal.Panda;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.PlayLevelSoundEvent;
-import net.minecraftforge.event.entity.ProjectileImpactEvent;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -37,32 +24,12 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = CloakAndDagger.MODID)
 public class CombatHandler {
     @SubscribeEvent
-    public static void projectileParry(final ProjectileImpactEvent e) {
-        //deflection stealth checks are handled by PWD for sanity reasons.
-    }
-
-    @SubscribeEvent(priority = EventPriority.LOWEST)//because compat with BHT...
-    public static void parry(final LivingAttackEvent e) {
-        //parrying stealth checks are handled by PWD for sanity reasons.
-        DamageSource ds = e.getSource();
-        if (ds.getEntity() instanceof LivingEntity seme) {
-            if (GeneralConfig.inv > 0) {
-                seme.addEffect(new MobEffectInstance(FootworkEffects.EXPOSED.get(), GeneralConfig.inv));
-                EntityHandler.lastDecoy.clear();
-            }
-            EntityAwarenessEvent.Attack subevent = new EntityAwarenessEvent.Attack(e.getEntity(), seme, StealthUtils.INSTANCE.getAwareness(seme, e.getEntity()), e.getSource());
-            MinecraftForge.EVENT_BUS.post(subevent);
-        }
-    }
-
-    @SubscribeEvent
     public static void critHooks(CriticalHitEvent e) {
         if (!e.getEntity().level().isClientSide && e.getTarget() instanceof LivingEntity) {
             LivingEntity uke = (LivingEntity) e.getTarget();
             LivingEntity seme = e.getEntity();
-            //stealth attacks automatically crit
-            StealthUtils.Awareness awareness = StealthUtils.INSTANCE.getAwareness(seme, uke);
-            if (awareness == StealthUtils.Awareness.UNAWARE)
+            Awareness awareness = StealthOverride.INSTANCE.getAwareness(seme, uke);
+            if (awareness == Awareness.UNAWARE)
                 e.setResult(Event.Result.ALLOW);
         }
     }
@@ -77,8 +44,8 @@ public class CombatHandler {
         }
         EntityAwarenessEvent.Hurt subevent = new EntityAwarenessEvent.Hurt(uke, seme, StealthUtils.INSTANCE.getAwareness(seme, uke), e.getSource());
         subevent.setAlertMultiplier(1);
-        subevent.setDistractedMultiplier(CombatUtils.getDamageMultiplier(StealthUtils.Awareness.DISTRACTED, CombatUtils.getAttackingItemStack(ds)));
-        subevent.setUnawareMultiplier(CombatUtils.getDamageMultiplier(StealthUtils.Awareness.UNAWARE, CombatUtils.getAttackingItemStack(ds)));
+        subevent.setDistractedMultiplier(CombatUtils.getDamageMultiplier(Awareness.DISTRACTED, CombatUtils.getAttackingItemStack(ds)));
+        subevent.setUnawareMultiplier(CombatUtils.getDamageMultiplier(Awareness.UNAWARE, CombatUtils.getAttackingItemStack(ds)));
         MinecraftForge.EVENT_BUS.post(subevent);
         if (ds.getEntity() instanceof LivingEntity) {
             if (CombatUtils.isPhysicalAttack(e.getSource())) {

@@ -3,7 +3,6 @@ package jackiecrazy.cloakanddagger.capability.vision;
 import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.UpdateClientPacket;
 import jackiecrazy.cloakanddagger.utils.StealthOverride;
-import jackiecrazy.footwork.potion.FootworkEffects;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
@@ -56,11 +55,7 @@ public class Sense implements ISense {
                 it.remove();
         }
         ;
-        //update max values
         vision = (float) elb.getAttributeValue(Attributes.FOLLOW_RANGE);
-        if (elb.hasEffect(FootworkEffects.SLEEP.get()) || elb.hasEffect(FootworkEffects.PARALYSIS.get()) || elb.hasEffect(FootworkEffects.PETRIFY.get()))
-            vision = -1;
-        //update internal retina values
         int light = StealthOverride.getActualLightLevel(elb.level(), elb.blockPosition());
         for (long x = lastUpdate + ticks; x > lastUpdate; x--) {
             if (x % 3 == 0) {
@@ -70,7 +65,6 @@ public class Sense implements ISense {
                     retina--;
             }
         }
-        //store motion for further use
         if (ticks > 5 || (lastUpdate + ticks) % 5 != lastUpdate % 5)
             motion = elb.position();
         lastUpdate = elb.level().getGameTime();
@@ -147,9 +141,6 @@ public class Sense implements ISense {
     public void modifyDetection(LivingEntity target, float amnt) {
         final int lastCheck = detectionTracker.getOrDefault(target, DUMMY).lastUpdate;
         if (lastCheck < target.tickCount) {
-            //interpolate a bit
-//            if (lastCheck + SEE_COOLDOWN > target.tickCount)
-//                amnt *= (target.tickCount - lastCheck) / 20f;
             detectionTracker.merge(target, new DetectionData(target.tickCount, amnt), (a, b) -> new DetectionData(target.tickCount, Mth.clamp(b.perTick, 0, getMaxDetection(target)), a.current));
         }
     }

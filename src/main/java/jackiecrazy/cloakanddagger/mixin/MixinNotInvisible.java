@@ -1,6 +1,5 @@
 package jackiecrazy.cloakanddagger.mixin;
 
-import jackiecrazy.footwork.potion.FootworkEffects;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -26,6 +25,6 @@ public abstract class MixinNotInvisible extends Entity {
     @Inject(method = "updateInvisibilityStatus",
             at = @At(value = "INVOKE", ordinal = 1, shift = At.Shift.AFTER, target = "Lnet/minecraft/world/entity/LivingEntity;setInvisible(Z)V"))
     private void change(CallbackInfo ci) {
-        this.setInvisible(this.hasEffect(MobEffects.INVISIBILITY) && !this.hasEffect(FootworkEffects.EXPOSED.get()));
+        this.setInvisible(this.hasEffect(MobEffects.INVISIBILITY));
     }
 }

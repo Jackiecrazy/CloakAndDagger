@@ -3,11 +3,11 @@ package jackiecrazy.cloakanddagger.utils;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
+import jackiecrazy.cloakanddagger.api.Awareness;
 import jackiecrazy.cloakanddagger.config.GeneralConfig;
 import jackiecrazy.cloakanddagger.networking.StealthChannel;
 import jackiecrazy.cloakanddagger.networking.SyncItemDataPacket;
 import jackiecrazy.cloakanddagger.networking.SyncTagDataPacket;
-import jackiecrazy.footwork.api.CombatDamageSource;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -95,19 +95,14 @@ public class CombatUtils {
 
     @Nullable
     public static ItemStack getAttackingItemStack(DamageSource ds) {
-        if (ds instanceof CombatDamageSource)
-            return ((CombatDamageSource) ds).getDamageDealer();
-        else if (ds.getEntity() instanceof LivingEntity) {
-            LivingEntity e = (LivingEntity) ds.getEntity();
-            return e.getMainHandItem();//CombatData.getCap(e).isOffhandAttack() ? e.getHeldItemOffhand() : e.getHeldItemMainhand();
+        if (ds.getDirectEntity() instanceof LivingEntity) {
+            LivingEntity e = (LivingEntity) ds.getDirectEntity();
+            return e.getMainHandItem();
         }
         return null;
     }
 
     public static boolean isPhysicalAttack(DamageSource s) {
-        if (s instanceof CombatDamageSource cds) {
-            return cds.getDamageTyping() == CombatDamageSource.TYPE.PHYSICAL;
-        }
         return !s.is(DamageTypeTags.IS_EXPLOSION) && !s.is(DamageTypeTags.IS_FIRE) && !s.is(DamageTypeTags.WITCH_RESISTANT_TO) && !s.is(DamageTypeTags.BYPASSES_ARMOR);
     }
 
@@ -120,7 +115,7 @@ public class CombatUtils {
         return DEFAULTMELEE;
     }
 
-    public static double getDamageMultiplier(StealthOverride.Awareness a, ItemStack is) {
+    public static double getDamageMultiplier(Awareness a, ItemStack is) {
         if (is == null) return 1;
         StabInfo ci = lookupStats(is);
         return switch (a) {

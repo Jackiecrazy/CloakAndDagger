@@ -2,18 +2,15 @@ package jackiecrazy.cloakanddagger.utils;
 
 import io.netty.util.CharsetUtil;
 import jackiecrazy.cloakanddagger.CloakAndDagger;
+import jackiecrazy.cloakanddagger.api.Awareness;
+import jackiecrazy.cloakanddagger.api.StealthUtils;
+import jackiecrazy.cloakanddagger.api.event.EntityAwarenessEvent;
 import jackiecrazy.cloakanddagger.capability.action.PermissionData;
 import jackiecrazy.cloakanddagger.capability.vision.SenseData;
 import jackiecrazy.cloakanddagger.config.StealthTags;
-import jackiecrazy.cloakanddagger.networking.StealthChannel;
-import jackiecrazy.cloakanddagger.networking.SyncMobDataPacket;
-import jackiecrazy.footwork.event.EntityAwarenessEvent;
-import jackiecrazy.footwork.potion.FootworkEffects;
-import jackiecrazy.footwork.utils.StealthUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
@@ -23,7 +20,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,10 +32,6 @@ public class StealthOverride extends StealthUtils {
     public static final StealthData STEALTH = new StealthData("");
     public static HashMap<ResourceLocation, StealthData> stealthMap = new HashMap<>();
     public static HashMap<SoundEvent, Integer> soundMap = new HashMap<>();
-
-    public static void sendMobData(ServerPlayer p) {
-        //StealthChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> p), new SyncMobDataPacket(stealthMap));
-    }
 
     public static void clientMobOverride(Map<ResourceLocation, StealthData> server) {
         stealthMap = new HashMap<>(server);
@@ -68,7 +60,6 @@ public class StealthOverride extends StealthUtils {
     @NotNull
     private static String getString(String[] val, String value) {
         String print = val[0]+", ";
-        //StealthData sd = stealthMap.get(key);
         print = print.concat(value.contains("a") ? "ignore_fov;" : "");
         print = print.concat(value.contains("c") ? "ignore_cobweb;" : "");
         print = print.concat(value.contains("d") ? "ignore_sound;" : "");
@@ -107,7 +98,7 @@ public class StealthOverride extends StealthUtils {
                     }
                 }
             } catch (Exception e) {
-                CloakAndDagger.LOGGER.warn("improperly formatted sound definition " + s + "!");
+                CloakAndDagger.LOGGER.warn("Improperly formatted sound definition " + s + "!");
             }
         }
     }
@@ -126,38 +117,27 @@ public class StealthOverride extends StealthUtils {
 
     public Awareness getAwareness(LivingEntity attacker, LivingEntity target) {
         if (target == null || attacker == target)
-            return Awareness.ALERT;//the cases that don't make sense.
-        //players are alert because being jumped with 2.5x daggers feel bad
+            return Awareness.ALERT;
         if (target instanceof Player)
             return Awareness.ALERT;
-        //no permission to stab, permanently treated as alert
         if (attacker instanceof Player p && !PermissionData.getCap(p).canStab())
             return Awareness.ALERT;
         StealthData sd = stealthMap.getOrDefault(EntityType.getKey(target.getType()), STEALTH);
         Awareness a = Awareness.ALERT;
-        //sleep, paralysis, and petrify take the highest priority
-        if (target.hasEffect(FootworkEffects.SLEEP.get()) || target.hasEffect(FootworkEffects.PARALYSIS.get()) || target.hasEffect(FootworkEffects.PETRIFY.get()))
-            a = Awareness.UNAWARE;
-            //idle and not vigilant
-        else if (!target.getType().is(StealthTags.NOT_UNAWARE) && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null)) {
+        if (!target.getType().is(StealthTags.NOT_UNAWARE) && target.getLastHurtByMob() == null && (!(target instanceof Mob) || ((Mob) target).getTarget() == null)) {
             double health = target.getHealth();
             double maxHealth = target.getMaxHealth();
             double detect = SenseData.getCap(target).getDetectionPerc(attacker);
             a = target.level().isClientSide || health >= maxHealth * detect ? Awareness.UNAWARE : Awareness.DISTRACTED;
         }
-        //distraction, confusion, and choking take top priority in inferior tier
-        else if (target.hasEffect(FootworkEffects.DISTRACTION.get()) || target.hasEffect(FootworkEffects.CONFUSION.get()) || target.getAirSupply() <= 0)
+        else if (target.getAirSupply() <= 0)
             a = Awareness.DISTRACTED;
-            //looking around for you, but cannot see
         else if (attacker != null && attacker.isInvisible() && !target.getType().is(StealthTags.IGNORE_INVIS))
             a = Awareness.DISTRACTED;
-            //webbed and not a spider
         else if (inWeb(target) && !target.getType().is(StealthTags.IGNORE_COBWEB))
             a = Awareness.DISTRACTED;
-            //hurt by something else
         else if (!target.getType().is(StealthTags.NOT_DISTRACTED) && target.getLastHurtByMob() != attacker && (!(target instanceof Mob) || ((Mob) target).getTarget() != attacker))
             a = Awareness.DISTRACTED;
-        //event for more compat
         EntityAwarenessEvent eae = new EntityAwarenessEvent(target, attacker, a);
         MinecraftForge.EVENT_BUS.post(eae);
         return eae.getAwareness();
@@ -171,16 +151,6 @@ public class StealthOverride extends StealthUtils {
         public StealthData(String value) {
             string = value;
         }
-
-//        public StealthData(EntityType<?> type){
-//            this(new StringBuilder()
-//                    .append(type.is(StealthTags.IGNORE_FOV)?"a":"")
-//                    .append(type.is(StealthTags.IGNORE_COBWEB)?"c":"")
-//                    .append(type.is(StealthTags.IGNORE_SOUND)?"d":"")
-//                    .append(type.is(StealthTags.IGNORE_BLINDNESS)?"e":"")
-//                    .append(type.is(StealthTags.IGN)?"d":"")
-//                    .toString());
-//        }
 
         public static StealthData read(FriendlyByteBuf f) {
             int length = f.readInt();

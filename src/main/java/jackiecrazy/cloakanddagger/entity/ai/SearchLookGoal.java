@@ -2,9 +2,7 @@ package jackiecrazy.cloakanddagger.entity.ai;
 
 import jackiecrazy.cloakanddagger.CloakAndDagger;
 import jackiecrazy.cloakanddagger.capability.vision.SenseData;
-import jackiecrazy.footwork.capability.goal.GoalCapabilityProvider;
-import jackiecrazy.footwork.capability.goal.IGoalHelper;
-import jackiecrazy.footwork.utils.GeneralUtils;
+import jackiecrazy.cloakanddagger.utils.Utils;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -12,10 +10,8 @@ import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
-import java.util.Optional;
 
 public class SearchLookGoal extends Goal {
-    public static final float DEFAULT_PROBABILITY = 0.02F;
     protected final Mob mob;
     protected double spread;
     @Nullable
@@ -31,14 +27,9 @@ public class SearchLookGoal extends Goal {
 
     public boolean canUse() {
         if (mob.getTarget() != null) return false;
-        Optional<IGoalHelper> goals = mob.getCapability(GoalCapabilityProvider.CAP).resolve();
-        if (goals.isPresent() && goals.get().getSoundLocation() != null && goals.get().getSoundLocation().getY()>-50) {
-            lookAt = goals.get().getSoundLocation().getCenter();
-            return true;
-        }
         if (SenseData.getCap(mob).getLookingFor() != null) {
             lookAt = SenseData.getCap(mob).getLookingFor().getEyePosition();
-            this.spread = (1 - SenseData.getCap(mob).getDetectionPerc(SenseData.getCap(mob).getLookingFor())) * GeneralUtils.getAttributeValueSafe(mob, Attributes.FOLLOW_RANGE);
+            this.spread = (1 - SenseData.getCap(mob).getDetectionPerc(SenseData.getCap(mob).getLookingFor())) * Utils.getAttributeValueSafe(mob, Attributes.FOLLOW_RANGE);
             return true;
         }
         return false;
