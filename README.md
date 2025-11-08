@@ -1,4 +1,4 @@
-# Cloak and Dagger: Revamp
+# Missing in Action
 A fork of Cloak and Dagger 1.9.0, slimmed down to just stealth.
 
 ## Reasons
