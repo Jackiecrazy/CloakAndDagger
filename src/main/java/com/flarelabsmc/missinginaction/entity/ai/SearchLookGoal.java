@@ -1,0 +1,63 @@
+package com.flarelabsmc.missinginaction.entity.ai;
+
+import com.flarelabsmc.missinginaction.MissingInAction;
+import com.flarelabsmc.missinginaction.capability.vision.SenseData;
+import com.flarelabsmc.missinginaction.utils.Utils;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.phys.Vec3;
+
+import javax.annotation.Nullable;
+import java.util.EnumSet;
+
+public class SearchLookGoal extends Goal {
+    protected final Mob mob;
+    protected double spread;
+    @Nullable
+    protected Vec3 lookAt;
+    private Vec3 randomized = Vec3.ZERO;
+    private int lookTime;
+
+    public SearchLookGoal(Mob mob) {
+        this.mob = mob;
+        this.setFlags(EnumSet.of(Goal.Flag.LOOK));
+
+    }
+
+    public boolean canUse() {
+        if (mob.getTarget() != null) return false;
+        if (SenseData.getCap(mob).getLookingFor() != null) {
+            lookAt = SenseData.getCap(mob).getLookingFor().getEyePosition();
+            this.spread = (1 - SenseData.getCap(mob).getDetectionPerc(SenseData.getCap(mob).getLookingFor())) * Utils.getAttributeValueSafe(mob, Attributes.FOLLOW_RANGE);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean canContinueToUse() {
+        if (lookAt == null||lookAt==Vec3.ZERO) return false;
+        if (mob.getTarget() != null) {
+            return false;
+        } else {
+            return this.lookTime > 0;
+        }
+    }
+
+    public void start() {
+        this.lookTime = this.adjustedTickDelay(40 + this.mob.getRandom().nextInt(40));
+        this.randomized = new Vec3((MissingInAction.rand.nextFloat() - 0.5) * spread, (MissingInAction.rand.nextFloat() - 0.5) * spread / 3, (MissingInAction.rand.nextFloat() - 0.5) * spread);
+    }
+
+    public void stop() {
+        this.lookAt = null;
+        SenseData.getCap(mob).setLookingFor(null);
+    }
+
+    public void tick() {
+        if (lookAt != null) {
+            this.mob.getLookControl().setLookAt(lookAt.add(randomized));
+            --this.lookTime;
+        }
+    }
+}

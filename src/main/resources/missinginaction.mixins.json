@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "com.flarelabsmc.missinginaction.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "missinginaction.refmap.json",
+  "mixins": [
+    "LivingEntityMixin",
+    "TargetGoalMixin",
+    "HurtByTargetGoalMixin",
+    "MobMixin",
+    "LivingEntityInvoker",
+    "HurtByTargetGoalAccessor"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8.5"
+}
