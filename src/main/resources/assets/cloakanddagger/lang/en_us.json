@@ -1,25 +1,8 @@
 {
-  "missinginaction.command.missing": "unknown command",
-  "missinginaction.command.permission.SEE.true": "%1$s can see the stealth display",
-  "missinginaction.command.permission.SEE.false": "%1$s cannot see the stealth display",
-  "missinginaction.command.permission.STAB.true": "%1$s can perform backstabs",
-  "missinginaction.command.permission.STAB.false": "%1$s cannot perform backstabs",
-
   "missinginaction.tooltip.distract": "%s distracted damage",
   "missinginaction.tooltip.unaware": "%s unaware damage",
-  "missinginaction.tag.allsee": "All-Seeing",
-  "missinginaction.tag.cheliceric": "Cheliceric",
-  "missinginaction.tag.deaf": "Deaf",
-  "missinginaction.tag.eyeless": "Eyeless",
-  "missinginaction.tag.heat": "Heat-Seeking",
-  "missinginaction.tag.klutzy": "Klutzy",
-  "missinginaction.tag.lazy": "Lazy",
-  "missinginaction.tag.mindful": "Mindful",
-  "missinginaction.tag.night": "Night Vision",
-  "missinginaction.tag.observant": "Observant",
-  "missinginaction.tag.perceptive": "Perceptive",
-  "missinginaction.tag.quiet": "Quiet",
-  "missinginaction.tag.skeptical": "Skeptical",
-  "missinginaction.tag.vigilant": "Vigilant",
-  "missinginaction.tag.wary": "Wary"
+
+  "missinginaction.shout": "Shout",
+
+  "attribute.name.missinginaction.stealth": "Stealth"
 }
