@@ -2,6 +2,7 @@ package jackiecrazy.cloakanddagger.entity;
 
 import jackiecrazy.footwork.entity.DummyEntity;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -18,5 +19,15 @@ public class DecoyEntity extends DummyEntity {
             mob.setTarget(getBoundTo());
         }
         remove(RemovalReason.KILLED);
+    }
+
+    @Override
+    public boolean skipAttackInteraction(Entity p_20357_) {
+        return true;
+    }
+
+    @Override
+    public boolean isAttackable() {
+        return false;
     }
 }
