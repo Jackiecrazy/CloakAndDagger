@@ -8,7 +8,6 @@ import com.flarelabsmc.missinginaction.config.SoundConfig;
 import com.flarelabsmc.missinginaction.config.WeaponStats;
 import com.flarelabsmc.missinginaction.networking.*;
 import com.flarelabsmc.missinginaction.entity.MiAAttributes;
-import com.flarelabsmc.missinginaction.entity.MiAEntities;
 import com.flarelabsmc.missinginaction.handlers.EntityHandler;
 import com.flarelabsmc.missinginaction.utils.CombatUtils;
 import com.flarelabsmc.missinginaction.utils.StealthOverride;
@@ -52,7 +51,6 @@ public class MissingInAction {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfig.CONFIG_SPEC, MODID + "/client.toml");
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         MiAAttributes.registerAttributes(bus);
-        MiAEntities.register(bus);
     }
 
     private void setup(final FMLCommonSetupEvent event) {

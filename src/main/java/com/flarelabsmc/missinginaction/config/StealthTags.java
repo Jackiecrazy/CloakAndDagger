@@ -14,7 +14,6 @@ public class StealthTags {
     public static final TagKey<EntityType<?>> IGNORE_SOUND = makeKey("ignore_sound");
     public static final TagKey<EntityType<?>> IGNORE_BLINDNESS = makeKey("ignore_blindness");
     public static final TagKey<EntityType<?>> IGNORE_LOS = makeKey("ignore_los");
-    public static final TagKey<EntityType<?>> SKIP_SEARCH = makeKey("skip_search");
     public static final TagKey<EntityType<?>> NOT_DISTRACTED = makeKey("alert_when_attacking_others");
     public static final TagKey<EntityType<?>> IGNORE_LIGHT = makeKey("ignore_light");
     public static final TagKey<EntityType<?>> IGNORE_INVIS = makeKey("ignore_invis");

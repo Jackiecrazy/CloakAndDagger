@@ -9,7 +9,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.network.PacketDistributor;
 
@@ -19,19 +18,20 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class Sense implements ISense {
+    private static final float DETECTION_DECAY = 0.01f;
 
-    public static final DetectionData DUMMY = new DetectionData(0);
-    private static final int SEE_COOLDOWN = 20;
-    private final WeakReference<LivingEntity> dude;
+    private final WeakReference<LivingEntity> entity;
     private final HashMap<LivingEntity, DetectionData> detectionTracker = new HashMap<>();
     private float vision;
     private int retina;
     private long lastUpdate;
-
     private LivingEntity target;
 
+    private CompoundTag cachedData;
+    private boolean isDirty = true;
+
     public Sense(LivingEntity e) {
-        dude = new WeakReference<>(e);
+        entity = new WeakReference<>(e);
     }
 
     @Override
@@ -40,43 +40,61 @@ public class Sense implements ISense {
 
     @Override
     public void serverTick() {
-        LivingEntity elb = dude.get();
-        if (elb == null) return;
-        final int ticks = (int) (elb.level().getGameTime() - lastUpdate);
-        if (ticks < 1) return;//sometimes time runs backwards
-        for (Iterator<Map.Entry<LivingEntity, DetectionData>> it = detectionTracker.entrySet().iterator(); it.hasNext(); ) {
-            Map.Entry<LivingEntity, DetectionData> next = it.next();
-            final DetectionData data = next.getValue();
-            if (data.lastUpdate + SEE_COOLDOWN < next.getKey().tickCount)
-                data.current -= (0.01f * ticks);
-            else data.current = Math.min(data.current + data.perTick * ticks, 1);
-            if (next.getKey().isDeadOrDying() || data.current <= 0)
-                it.remove();
-        }
-        ;
-        vision = (float) elb.getAttributeValue(Attributes.FOLLOW_RANGE);
-        int light = StealthOverride.getActualLightLevel(elb.level(), elb.blockPosition());
-        for (long x = lastUpdate + ticks; x > lastUpdate; x--) {
-            if (x % 3 == 0) {
-                if (light > retina)
-                    retina++;
-                if (light < retina)
-                    retina--;
+        LivingEntity e = entity.get();
+        if (e == null) return;
+        final long currentTime = e.level().getGameTime();
+        final int ticks = (int) (currentTime - lastUpdate);
+        if (ticks < 1) return;
+        final float decay = DETECTION_DECAY * ticks;
+        Iterator<Map.Entry<LivingEntity, DetectionData>> iterator = detectionTracker.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<LivingEntity, DetectionData> entry = iterator.next();
+            LivingEntity entity = entry.getKey();
+            DetectionData data = entry.getValue();
+            if (entity.isDeadOrDying()) {
+                iterator.remove();
+                continue;
+            }
+            if (data.lastUpdate < entity.tickCount) {
+                data.current -= decay;
+            } else {
+                data.current = Math.min(data.current + data.perTick * ticks, 1);
+            }
+            if (data.current <= 0) {
+                iterator.remove();
             }
         }
-        lastUpdate = elb.level().getGameTime();
+        vision = (float) e.getAttributeValue(Attributes.FOLLOW_RANGE);
+        int light = StealthOverride.getActualLightLevel(e.level(), e.blockPosition());
+        int lightUpdates = ticks / 3;
+        if (light != retina) {
+            retina = light > retina
+                    ? Math.min(retina + lightUpdates, light)
+                    : Math.max(retina - lightUpdates, light);
+        }
+        lastUpdate = currentTime;
+        isDirty = true;
         sync();
     }
 
     @Override
     public void sync() {
-
-        LivingEntity elb = dude.get();
+        LivingEntity elb = entity.get();
         if (elb == null || elb.level().isClientSide) return;
-        StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(() -> elb), new UpdateClientPacket(elb.getId(), write()));
-        if (!(elb instanceof FakePlayer) && elb instanceof ServerPlayer)
-            StealthChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) elb), new UpdateClientPacket(elb.getId(), write()));
-
+        if (isDirty) {
+            cachedData = write();
+            isDirty = false;
+        }
+        StealthChannel.INSTANCE.send(
+                PacketDistributor.TRACKING_ENTITY.with(() -> elb),
+                new UpdateClientPacket(elb.getId(), cachedData)
+        );
+        if (elb instanceof ServerPlayer sp && !(elb instanceof FakePlayer)) {
+            StealthChannel.INSTANCE.send(
+                    PacketDistributor.PLAYER.with(() -> sp),
+                    new UpdateClientPacket(elb.getId(), cachedData)
+            );
+        }
     }
 
     @Override
@@ -84,37 +102,49 @@ public class Sense implements ISense {
         lastUpdate = c.getLong("lastUpdate");
         retina = c.getInt("retina");
         vision = c.getFloat("vision");
-        final LivingEntity dude = this.dude.get();
-        if (dude instanceof Mob m && m.level().getEntity(c.getInt("target")) instanceof LivingEntity t) {
-            m.setTarget(t);
+        final LivingEntity dude = this.entity.get();
+        if (dude instanceof Mob m) {
+            int targetId = c.getInt("target");
+            if (targetId != 0 && m.level().getEntity(targetId) instanceof LivingEntity t) {
+                m.setTarget(t);
+            }
         }
         detectionTracker.clear();
         if (c.get("detecting") instanceof CompoundTag ct && dude != null) {
-            for (String i : ct.getAllKeys()) {
-                if (dude.level().getEntity(Integer.valueOf(i)) instanceof LivingEntity elb) {
-                    detectionTracker.put(elb, new DetectionData(ct.getFloat(i)));
-                }
+            for (String key : ct.getAllKeys()) {
+                try {
+                    int entityId = Integer.parseInt(key);
+                    if (dude.level().getEntity(entityId) instanceof LivingEntity elb) {
+                        detectionTracker.put(elb, new DetectionData(ct.getFloat(key)));
+                    }
+                } catch (NumberFormatException ignored) {}
             }
         }
+        isDirty = true;
     }
 
     @Override
     public boolean isValid() {
-        return true;
+        return entity.get() != null;
     }
 
     @Override
     public CompoundTag write() {
         CompoundTag c = new CompoundTag();
-        c.putInt("retina", getRetina());
-        c.putFloat("vision", visionRange());
+        c.putInt("retina", retina);
+        c.putFloat("vision", vision);
         c.putLong("lastUpdate", lastUpdate);
-        if (dude.get() instanceof Mob m && m.getTarget() != null) {
+        LivingEntity ent = entity.get();
+        if (ent instanceof Mob m && m.getTarget() != null) {
             c.putInt("target", m.getTarget().getId());
         }
-        CompoundTag list = new CompoundTag();
-        detectionTracker.forEach((a, b) -> list.putFloat(String.valueOf(a.getId()), b.current));
-        c.put("detecting", list);
+        if (!detectionTracker.isEmpty()) {
+            CompoundTag list = new CompoundTag();
+            detectionTracker.forEach((entity, data) ->
+                    list.putFloat(String.valueOf(entity.getId()), data.current)
+            );
+            c.put("detecting", list);
+        }
         return c;
     }
 
@@ -130,27 +160,38 @@ public class Sense implements ISense {
 
     @Override
     public void modifyDetection(LivingEntity target, float amnt) {
-        final int lastCheck = detectionTracker.getOrDefault(target, DUMMY).lastUpdate;
+        final DetectionData existing = detectionTracker.get(target);
+        final int lastCheck = existing != null ? existing.lastUpdate : 0;
         if (lastCheck < target.tickCount) {
-            detectionTracker.merge(target, new DetectionData(target.tickCount, amnt), (a, b) -> new DetectionData(target.tickCount, Mth.clamp(b.perTick, 0, getMaxDetection(target)), a.current));
+            float clampedAmount = Mth.clamp(amnt, 0, getMaxDetection(target));
+            if (existing != null) {
+                existing.lastUpdate = target.tickCount;
+                existing.perTick = clampedAmount;
+            } else {
+                detectionTracker.put(target, new DetectionData(target.tickCount, clampedAmount));
+            }
+            isDirty = true;
         }
     }
 
     @Override
     public float getDetection(LivingEntity target) {
-        return detectionTracker.getOrDefault(target, DUMMY).current;
+        DetectionData data = detectionTracker.get(target);
+        return data != null ? data.current : 0;
     }
 
     @Override
     public float getMaxDetection(LivingEntity target) {
-        final LivingEntity dud = dude.get();
+        final LivingEntity dud = entity.get();
         if (dud == null) return 1;
         return 0.5f + dud.getHealth() / dud.getMaxHealth();
     }
 
     @Override
     public void resetDetection(LivingEntity target) {
-        detectionTracker.remove(target);
+        if (detectionTracker.remove(target) != null) {
+            isDirty = true;
+        }
     }
 
     @Override
@@ -163,7 +204,7 @@ public class Sense implements ISense {
         this.target = target;
     }
 
-    private static class DetectionData {
+    public static class DetectionData {
         int lastUpdate = 0;
         float perTick = 0;
         float current = 0;
@@ -171,12 +212,6 @@ public class Sense implements ISense {
         public DetectionData(int lastUpdate, float perTick) {
             this.lastUpdate = lastUpdate;
             this.perTick = perTick;
-        }
-
-        public DetectionData(int lastUpdate, float perTick, float current) {
-            this.lastUpdate = lastUpdate;
-            this.perTick = perTick;
-            this.current = current;
         }
 
         public DetectionData(float current) {
