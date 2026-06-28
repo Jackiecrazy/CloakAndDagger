@@ -7,6 +7,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.MoveToBlockGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.phys.Vec3;
 
 public class InvestigateSoundGoal extends MoveToBlockGoal {
     int hesitation;
@@ -47,12 +48,12 @@ public class InvestigateSoundGoal extends MoveToBlockGoal {
 
     @Override
     public double acceptedDistance() {
-        return 1 + (int) (mob.getX() * mob.getZ()) & 15;
+        return (mob.getAttributeValue(Attributes.FOLLOW_RANGE)/4) + ((int) (mob.getX() * mob.getZ()) & 15);
     }
 
     @Override
     public boolean canContinueToUse() {
-        return mob.getTarget() == null && mob.getLastHurtMob() == null &&  this.blockPos != BlockPos.ZERO && super.canContinueToUse();
+        return mob.getTarget() == null && mob.getLastHurtMob() == null &&  this.blockPos != BlockPos.ZERO && !isReachedTarget() && super.canContinueToUse();
     }
 
     @Override

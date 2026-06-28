@@ -29,6 +29,8 @@ public class Sense implements ISense {
     private int retina;
     private long lastUpdate;
     private Vec3 motion;
+    private boolean isDirty;
+    private CompoundTag cachedData;
 
     private LivingEntity target;
 
@@ -49,31 +51,27 @@ public class Sense implements ISense {
         for (Iterator<Map.Entry<LivingEntity, DetectionData>> it = detectionTracker.entrySet().iterator(); it.hasNext(); ) {
             Map.Entry<LivingEntity, DetectionData> next = it.next();
             final DetectionData data = next.getValue();
-            if (data.lastUpdate + SEE_COOLDOWN < next.getKey().tickCount)
-                data.current -= (0.01f * ticks);
+            if (next.getKey().isDeadOrDying() || data.current <= 0) it.remove();
+            if (data.lastUpdate + SEE_COOLDOWN < next.getKey().tickCount) data.current -= (0.01f * ticks);
             else data.current = Math.min(data.current + data.perTick * ticks, 1);
-            if (next.getKey().isDeadOrDying() || data.current <= 0)
-                it.remove();
         }
         ;
         //update max values
-        vision = (float) elb.getAttributeValue(Attributes.FOLLOW_RANGE);
         if (elb.hasEffect(FootworkEffects.SLEEP.get()) || elb.hasEffect(FootworkEffects.PARALYSIS.get()) || elb.hasEffect(FootworkEffects.PETRIFY.get()))
             vision = -1;
+        vision = (float) elb.getAttributeValue(Attributes.FOLLOW_RANGE);
         //update internal retina values
         int light = StealthOverride.getActualLightLevel(elb.level(), elb.blockPosition());
         for (long x = lastUpdate + ticks; x > lastUpdate; x--) {
             if (x % 3 == 0) {
-                if (light > retina)
-                    retina++;
-                if (light < retina)
-                    retina--;
+                if (light > retina) retina++;
+                if (light < retina) retina--;
             }
         }
         //store motion for further use
-        if (ticks > 5 || (lastUpdate + ticks) % 5 != lastUpdate % 5)
-            motion = elb.position();
+        if (ticks > 5 || (lastUpdate + ticks) % 5 != lastUpdate % 5) motion = elb.position();
         lastUpdate = elb.level().getGameTime();
+        isDirty = true;
         sync();
     }
 
@@ -82,9 +80,13 @@ public class Sense implements ISense {
 
         LivingEntity elb = dude.get();
         if (elb == null || elb.level().isClientSide) return;
-        StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(() -> elb), new UpdateClientPacket(elb.getId(), write()));
+        if (isDirty) {
+            cachedData = write();
+            isDirty = false;
+        }
+        StealthChannel.INSTANCE.send(PacketDistributor.TRACKING_ENTITY.with(() -> elb), new UpdateClientPacket(elb.getId(), cachedData));
         if (!(elb instanceof FakePlayer) && elb instanceof ServerPlayer)
-            StealthChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) elb), new UpdateClientPacket(elb.getId(), write()));
+            StealthChannel.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) elb), new UpdateClientPacket(elb.getId(), cachedData));
 
     }
 
@@ -109,7 +111,7 @@ public class Sense implements ISense {
 
     @Override
     public boolean isValid() {
-        return true;
+        return dude.get()!=null;
     }
 
     @Override
@@ -121,15 +123,17 @@ public class Sense implements ISense {
     @Override
     public CompoundTag write() {
         CompoundTag c = new CompoundTag();
-        c.putInt("retina", getRetina());
-        c.putFloat("vision", visionRange());
+        c.putInt("retina", retina);
+        c.putFloat("vision", vision);
         c.putLong("lastUpdate", lastUpdate);
         if (dude.get() instanceof Mob m && m.getTarget() != null) {
             c.putInt("target", m.getTarget().getId());
         }
         CompoundTag list = new CompoundTag();
-        detectionTracker.forEach((a, b) -> list.putFloat(String.valueOf(a.getId()), b.current));
-        c.put("detecting", list);
+        if (!detectionTracker.isEmpty()) {
+            detectionTracker.forEach((a, b) -> list.putFloat(String.valueOf(a.getId()), b.current));
+            c.put("detecting", list);
+        }
         return c;
     }
 

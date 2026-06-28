@@ -65,7 +65,7 @@ public class RenderEvents {
                 if (entity != null && (entity != look || !ClientConfig.CONFIG.stealth.enabled) && entity instanceof LivingEntity le && le != cameraEntity && le.isAlive() &&
                         !entity.getIndirectPassengers().iterator().hasNext() &&
                         entity.shouldRender(cameraPos.x(), cameraPos.y(), cameraPos.z()) &&
-                        !GeneralUtils.viewBlocked(mc.player, le, false) &&
+                        //!GeneralUtils.viewBlocked(mc.player, le, false) &&
                         (entity.noCulling || frustum.isVisible(entity.getBoundingBox()))) {
                     renderEye((LivingEntity) entity, partialTicks, poseStack);
                 }

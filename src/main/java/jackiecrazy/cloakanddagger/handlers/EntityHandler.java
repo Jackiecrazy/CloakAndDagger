@@ -64,7 +64,6 @@ public class EntityHandler {
     @SubscribeEvent
     public static void caps(AttachCapabilitiesEvent<Entity> e) {
         if (e.getObject() instanceof Mob m) {
-            e.addCapability(new ResourceLocation("cloakanddagger:targeting"), new GoalCapabilityProvider());
             e.addCapability(new ResourceLocation("cloakanddagger:vision"), new SenseData(m));
 
         }
@@ -89,7 +88,7 @@ public class EntityHandler {
                             c.getNavigation().stop();
                             c.getNavigation().moveTo(c.getNavigation().createPath(n.getKey().getB(), (int) (n.getValue() + 3)), 1);
                             BlockPos vec = n.getKey().getB();
-                            c.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(vec.getX(), vec.getY(), vec.getZ()));
+                            c.getLookControl().setLookAt(new Vec3(vec.getX(), vec.getY(), vec.getZ()));
                             c.getCapability(GoalCapabilityProvider.CAP).ifPresent(a -> a.setSoundLocation(n.getKey().getB()));
                         }
                     }
@@ -141,7 +140,7 @@ public class EntityHandler {
                     //you failed! mob begins searching
                     SenseData.getCap(mob).setLookingFor(newTarget);
                 }
-                e.setCanceled(true);
+                //e.setCanceled(true);
             }
         }
     }
@@ -166,12 +165,11 @@ public class EntityHandler {
         up to 0.11x from blind
          */
         if (e.getLookingEntity() != e.getEntity() && e.getLookingEntity() instanceof LivingEntity watcher) {
-            double hardMult = e.getVisibilityModifier();
             double mult = e.getVisibilityModifier();
             LivingEntity sneaker = e.getEntity();
             //bumbling fools don't get visibility changes
             if (sneaker.getType().is(StealthTags.NO_STEALTH)) return;
-            double stealth = GeneralUtils.getAttributeValueSafe(sneaker, FootworkAttributes.STEALTH.get());
+            double stealth = -sneaker.getArmorValue()+GeneralUtils.getAttributeValueSafe(sneaker, FootworkAttributes.STEALTH.get());
             //it's time for RNGesus!
             double luckDiff = GeneralUtils.getAttributeValueSafe(sneaker, Attributes.LUCK) - GeneralUtils.getAttributeValueSafe(watcher, Attributes.LUCK);
             stealth += CloakAndDagger.rand.nextDouble() * luckDiff * GeneralConfig.luck;
@@ -202,47 +200,42 @@ public class EntityHandler {
                         //light level adds a flat 6% per level around the 10 mark
                         if (slight < 10) {
                             mult *= (1 - compensation((magicLightCutoff - slight) * 0.07, 0.7, posMult));
-                            hardMult *= (1 - compensation((magicLightCutoff - slight) * 0.02, 0.2, posMult));
                         }
                         //light level also adds 6% either way per level of difference between sneaker and watcher
                         double lightDiff = 1 - compensation((wlight - slight) * 0.07, 0.7, posMult);//higher is better
                         double hardLightDiff = 1 - compensation((wlight - slight) * 0.02, 0.2, posMult);//lower is better, 10 is baseline
                         mult *= (lightDiff);
-                        hardMult *= hardLightDiff;
                     }
                 }
                 //slow is smooth, smooth is fast, not modified by light anymore because people keep saying it's too good
                 if (!watcher.getType().is(StealthTags.IGNORE_MOTION)) {
                     final double speedSq = GeneralUtils.getSpeedSq(sneaker);
                     final float speed = Mth.sqrt((float) speedSq);
-                    mult *= (1 - compensation(0.6 - speed * 2, 0.7, posMult));// * (1 - lightMalus)
+                    mult *= (1 - compensation(0.7 - speed * 2, 0.8, posMult));// * (1 - lightMalus)
                 }
                 //internally enforced 3 blocks of vision, the other two can bypass this
                 //mult = Math.max(mult, 3 / (watcher.getAttributeValue(Attributes.FOLLOW_RANGE) + 1));
                 //mobs that can't see behind their backs get a hefty debuff
                 if (!watcher.getType().is(StealthTags.IGNORE_FOV) && !GeneralUtils.isFacingEntity(watcher, sneaker, GeneralConfig.baseHorizontalDetection, GeneralConfig.baseVerticalDetection))
-                    mult *= (1 - (compensation(0.4, 0.8, posMult)));
+                    mult *= (1 - (compensation(0.5, 0.9, posMult)));
             }
             //normalize values
             //mult = Math.min(1, mult);
             //blinded mobs cannot see
             if (watcher.hasEffect(MobEffects.BLINDNESS) && !watcher.getType().is(StealthTags.IGNORE_BLINDNESS)) {
-                hardMult /= 11;
                 mult /= 11;
             }
             //is this LoS?
             if (!watcher.getType().is(StealthTags.IGNORE_LOS) && GeneralUtils.viewBlocked(watcher, sneaker, true)) {
-                hardMult *= 1 - compensation(0.5, 0.7, posMult);
-                mult *= 1 - compensation(0.3, 0.5, posMult);
+                mult *= 1 - compensation(0.4, 0.6, posMult);
             }
             //dude you literally just bumped into me
             //mult = Math.max(mult, 2f / (watcher.getAttributeValue(Attributes.FOLLOW_RANGE) + 1));
 
             //normalizing for negative stealth
-            hardMult = 1 - (1 - hardMult) * negMult;
             mult = 1 - (1 - mult) * negMult;
 
-            e.modifyVisibility(Math.max(hardMult, 0));
+            e.modifyVisibility(Math.max(mult, 0));
 
 
             //if you are in detection range, add the range-modified multiplier to detection, otherwise subtract fixed amount

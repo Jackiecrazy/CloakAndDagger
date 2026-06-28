@@ -4,12 +4,11 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "cloakanddagger.refmap.json",
   "mixins": [
-    "MixinArmorStealth",
     "MixinGiveUpRevenge",
     "MixinInvisibleRevenge",
     "MixinMobAlert",
     "MixinMobSound",
-    "MixinNotInvisible",
+    "LivingEntityMixin",
     "RevengeAccessor"
   ],
   "client": [
